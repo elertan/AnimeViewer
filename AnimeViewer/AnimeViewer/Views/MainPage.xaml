@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:AnimeViewer"
+                  xmlns:views="clr-namespace:AnimeViewer.Views;assembly=AnimeViewer"
+                  x:Class="AnimeViewer.Views.MainPage"
+                  Appearing="MainPage_OnAppearing">
+    <MasterDetailPage.Master>
+        <views:MasterPage x:Name="MasterPage" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage x:Name="NavigationPage">
+            <x:Arguments>
+                <views:AllAnimeCollectionPage />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

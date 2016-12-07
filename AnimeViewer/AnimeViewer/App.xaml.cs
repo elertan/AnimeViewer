@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using AnimeViewer.Views;
 
-using Xamarin.Forms;
+//[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace AnimeViewer
 {
-    public partial class App : Application
+    public partial class App
     {
         public App()
         {
             InitializeComponent();
 
-            MainPage = new AnimeViewer.MainPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
