@@ -10,7 +10,8 @@
         <views:MasterPage x:Name="MasterPage" />
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage x:Name="NavigationPage">
+        <NavigationPage x:Name="NavigationPage"
+                        BarTextColor="White">
             <x:Arguments>
                 <views:AllAnimeCollectionPage />
             </x:Arguments>

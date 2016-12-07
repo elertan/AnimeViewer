@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace AnimeViewer.Views
 {
@@ -12,6 +6,8 @@ namespace AnimeViewer.Views
     {
         public MasterPage()
         {
+            if (Device.OS == TargetPlatform.iOS)
+                Icon = "menu.png";
             InitializeComponent();
         }
     }
