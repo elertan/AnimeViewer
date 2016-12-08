@@ -1,4 +1,5 @@
 ﻿using AnimeViewer.Views;
+using DLToolkit.Forms.Controls;
 
 //[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
@@ -9,6 +10,8 @@ namespace AnimeViewer
         public App()
         {
             InitializeComponent();
+
+            FlowListView.Init();
 
             MainPage = new MainPage();
         }

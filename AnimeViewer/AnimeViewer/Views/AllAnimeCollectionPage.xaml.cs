@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using KissAnime.Models;
+using MvvmHelpers;
 using Xamarin.Forms;
 
 namespace AnimeViewer.Views
@@ -13,6 +9,10 @@ namespace AnimeViewer.Views
         public AllAnimeCollectionPage()
         {
             InitializeComponent();
+
+            Animes.Add(new Anime {Name = "test"});
         }
+
+        public ObservableRangeCollection<Anime> Animes { get; set; } = new ObservableRangeCollection<Anime>();
     }
 }

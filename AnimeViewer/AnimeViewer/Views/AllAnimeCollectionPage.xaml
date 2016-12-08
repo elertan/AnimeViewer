@@ -2,12 +2,24 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              x:Class="AnimeViewer.Views.AllAnimeCollectionPage"
+             x:Name="Page"
              Title="All Anime">
     <StackLayout>
         <SearchBar Placeholder="Search..." />
-        <Label Text="Collection Will Come Here!"
-               VerticalOptions="Center"
-               HorizontalOptions="Center" />
+        <flv:FlowListView FlowColumnMinWidth="125"
+                          BindingContext="{x:Reference Page}"
+                          FlowItemsSource="{Binding Animes}">
+            <flv:FlowListView.FlowColumnTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Label Text="{Binding Name}"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </flv:FlowListView.FlowColumnTemplate>
+        </flv:FlowListView>
     </StackLayout>
 </ContentPage>
