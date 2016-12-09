@@ -1,18 +1,23 @@
-﻿using KissAnime.Models;
-using MvvmHelpers;
+﻿using AnimeViewer.ViewModels;
 using Xamarin.Forms;
 
 namespace AnimeViewer.Views
 {
     public partial class AllAnimeCollectionPage : ContentPage
     {
+        private readonly AllAnimeCollectionPageViewModel _viewModel;
+
         public AllAnimeCollectionPage()
         {
             InitializeComponent();
-
-            Animes.Add(new Anime {Name = "test"});
+            _viewModel = new AllAnimeCollectionPageViewModel();
+            BindingContext = _viewModel;
         }
 
-        public ObservableRangeCollection<Anime> Animes { get; set; } = new ObservableRangeCollection<Anime>();
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await _viewModel.InitializeAsync();
+        }
     }
 }

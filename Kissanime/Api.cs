@@ -40,12 +40,12 @@ namespace KissAnime
         /// <summary>
         ///     Initializes the api for usage (clears javascript challenge from cloudflare)
         /// </summary>
-        public static async Task Initialize()
+        public static async Task InitializeAsync()
         {
-            await Initialize(new Dictionary<string, string>(), () => { });
+            await InitializeAsync(new Dictionary<string, string>(), () => { });
         }
 
-        public static async Task Initialize(Dictionary<string, string> cookies, Action preBroadcastAction)
+        public static async Task InitializeAsync(Dictionary<string, string> cookies, Action preBroadcastAction)
         {
             var api = new Api();
             foreach (var cookie in cookies)
@@ -59,9 +59,9 @@ namespace KissAnime
             OnInitialized(api);
         }
 
-        public static async Task Initialize(Action preBroadcastAction)
+        public static async Task InitializeAsync(Action preBroadcastAction)
         {
-            await Initialize(new Dictionary<string, string>(), preBroadcastAction);
+            await InitializeAsync(new Dictionary<string, string>(), preBroadcastAction);
         }
 
         private List<Anime> ExtractFromListingTable(string html)

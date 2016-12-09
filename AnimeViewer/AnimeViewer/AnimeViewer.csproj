@@ -35,10 +35,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AnimeManager.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Database.cs" />
+    <Compile Include="Models\AnimeDto.cs" />
+    <Compile Include="Models\CookieDto.cs" />
+    <Compile Include="Models\EpisodeDto.cs" />
     <Compile Include="Services\IDatabaseService.cs" />
+    <Compile Include="ViewModels\AllAnimeCollectionPageViewModel.cs" />
     <Compile Include="Views\AllAnimeCollectionPage.xaml.cs">
       <DependentUpon>AllAnimeCollectionPage.xaml</DependentUpon>
     </Compile>

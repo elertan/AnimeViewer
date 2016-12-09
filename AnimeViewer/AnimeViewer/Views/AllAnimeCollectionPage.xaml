@@ -9,14 +9,13 @@
     <StackLayout>
         <SearchBar Placeholder="Search..." />
         <flv:FlowListView FlowColumnMinWidth="125"
-                          BindingContext="{x:Reference Page}"
                           FlowItemsSource="{Binding Animes}">
             <flv:FlowListView.FlowColumnTemplate>
                 <DataTemplate>
                     <Grid>
                         <Label Text="{Binding Name}"
                                VerticalOptions="Center"
-                               HorizontalOptions="Center"/>
+                               HorizontalOptions="Center" />
                     </Grid>
                 </DataTemplate>
             </flv:FlowListView.FlowColumnTemplate>
