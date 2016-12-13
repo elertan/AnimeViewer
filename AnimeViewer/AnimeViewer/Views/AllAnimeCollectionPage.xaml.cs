@@ -19,5 +19,10 @@ namespace AnimeViewer.Views
             base.OnAppearing();
             await _viewModel.InitializeAsync();
         }
+
+        private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            _viewModel.SetSearchQuery(e.NewTextValue);
+        }
     }
 }

@@ -1,40 +1,93 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
-using KissAnime.Models;
+using AnimeViewer.EventArguments;
 using MvvmHelpers;
+using NineAnimeApi.Models;
 
 namespace AnimeViewer.ViewModels
 {
-    public class AllAnimeCollectionPageViewModel : INotifyPropertyChanged
+    public class AllAnimeCollectionPageViewModel : BaseViewModel
     {
-        private ObservableRangeCollection<Anime> _animes;
+        private ObservableRangeCollection<Anime> _allAnimes;
+
+        private bool _hasConnectionIssue;
+        private ObservableRangeCollection<Anime> _visibleAnimes;
 
         public AllAnimeCollectionPageViewModel()
         {
-            Animes = new ObservableRangeCollection<Anime>();
+            AllAnimes = new ObservableRangeCollection<Anime>();
         }
 
-        public ObservableRangeCollection<Anime> Animes
+        public string SearchKeyword { get; private set; }
+
+        public ObservableRangeCollection<Anime> AllAnimes
         {
-            get { return _animes; }
+            get { return _allAnimes; }
             set
             {
-                _animes = value;
+                _allAnimes = value;
                 OnPropertyChanged();
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public ObservableRangeCollection<Anime> VisibleAnimes
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            get { return _visibleAnimes; }
+            set
+            {
+                _visibleAnimes = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool HasConnectionIssue
+        {
+            get { return _hasConnectionIssue; }
+            set
+            {
+                _hasConnectionIssue = value;
+                OnPropertyChanged();
+            }
         }
 
         public async Task InitializeAsync()
         {
-            //await AnimeManager
+            IsBusy = true;
+            await AnimeManager.InitializeAsync();
+            AnimeManager.Instance.CachedAnimesUpdated += Instance_CachedAnimesUpdated;
+            AnimeManager.Instance.AnimeManagerApiConnectionError += Instance_AnimeManagerApiConnectionError;
+            AllAnimes.AddRange(await AnimeManager.Instance.GetAnimeListAsync());
+            VisibleAnimes = AllAnimes;
+            IsBusy = false;
+        }
+
+        public void SetSearchQuery(string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+                SearchKeyword = "";
+            else
+                SearchKeyword = query.ToLower();
+            ApplySearchQuery();
+        }
+
+        private void ApplySearchQuery()
+        {
+            if (string.IsNullOrWhiteSpace(SearchKeyword))
+                VisibleAnimes = AllAnimes;
+            else
+                VisibleAnimes = new ObservableRangeCollection<Anime>(AllAnimes.Where(anime => anime.Name.ToLower().Contains(SearchKeyword)).ToArray());
+        }
+
+        private void Instance_AnimeManagerApiConnectionError(object sender, EventArgs e)
+        {
+            HasConnectionIssue = true;
+        }
+
+        private void Instance_CachedAnimesUpdated(object sender, AnimesUpdatedEventArgs e)
+        {
+            AllAnimes.AddRange(e.Animes);
+            ApplySearchQuery();
         }
     }
 }

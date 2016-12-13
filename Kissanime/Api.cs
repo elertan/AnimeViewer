@@ -16,13 +16,12 @@ namespace KissAnime
     public class Api
     {
         public static readonly string HostAddress = "http://kissanime.to";
-        private readonly CookieContainer _cookies;
         private readonly HttpClientHandler _handler;
         public readonly HttpClient HttpClient;
 
         public Api()
         {
-            _handler = new HttpClientHandler {CookieContainer = _cookies};
+            _handler = new HttpClientHandler();
             HttpClient = new HttpClient(new ClearanceHandler(_handler)) {BaseAddress = new Uri(HostAddress)};
         }
 
@@ -45,7 +44,7 @@ namespace KissAnime
             await InitializeAsync(new Dictionary<string, string>(), () => { });
         }
 
-        public static async Task InitializeAsync(Dictionary<string, string> cookies, Action preBroadcastAction)
+        public static async Task InitializeAsync(Dictionary<string, string> cookies, Action preBroadcastAction = null)
         {
             var api = new Api();
             foreach (var cookie in cookies)
@@ -55,13 +54,8 @@ namespace KissAnime
                 throw new HttpRequestException("Initialization of the KissAnime Api failed.");
             Instance = api;
             HasInitialized = true;
-            preBroadcastAction();
+            preBroadcastAction?.Invoke();
             OnInitialized(api);
-        }
-
-        public static async Task InitializeAsync(Action preBroadcastAction)
-        {
-            await InitializeAsync(new Dictionary<string, string>(), preBroadcastAction);
         }
 
         private List<Anime> ExtractFromListingTable(string html)

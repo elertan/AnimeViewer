@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using FFImageLoading.Forms.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms.Themes;
@@ -20,6 +21,8 @@ namespace AnimeViewer.Droid
 
             Forms.Init(this, bundle);
             LoadApplication(new App());
+
+            CachedImageRenderer.Init();
 
             var x = typeof(DarkThemeResources);
             x = typeof(UnderlineEffect);

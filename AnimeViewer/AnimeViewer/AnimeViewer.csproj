@@ -40,6 +40,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="EventArguments\AnimesUpdatedEventArgs.cs" />
+    <Compile Include="ExtensionsMethods.cs" />
     <Compile Include="Models\AnimeDto.cs" />
     <Compile Include="Models\CookieDto.cs" />
     <Compile Include="Models\EpisodeDto.cs" />
@@ -151,11 +153,20 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.3.175\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.2.5\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.2.5\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.2.5\lib\portable-net45+win8+wpa81+wp8\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Kissanime\KissAnime.csproj">
-      <Project>{4cb68120-4562-48db-96ab-0fb3b90ed2fb}</Project>
-      <Name>KissAnime</Name>
+    <ProjectReference Include="..\..\NineAnimeApi\NineAnimeApi.csproj">
+      <Project>{AB6E242F-0B37-488D-A96D-A9038CC8FDEC}</Project>
+      <Name>NineAnimeApi</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

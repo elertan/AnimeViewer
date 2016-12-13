@@ -1,24 +1,55 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:viewModels="clr-namespace:AnimeViewer.ViewModels;assembly=AnimeViewer"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="AnimeViewer.Views.AllAnimeCollectionPage"
              x:Name="Page"
              Title="All Anime">
     <StackLayout>
-        <SearchBar Placeholder="Search..." />
+        <Label Text="Connection to host failed."
+               VerticalOptions="Center"
+               TextColor="White"
+               HorizontalOptions="CenterAndExpand"
+               IsVisible="{Binding HasConnectionIssue}" />
+        <SearchBar Placeholder="Search..."
+                   TextChanged="SearchBar_OnTextChanged" />
         <flv:FlowListView FlowColumnMinWidth="125"
-                          FlowItemsSource="{Binding Animes}">
+                          RowHeight="200"
+                          FlowItemsSource="{Binding VisibleAnimes}"
+                          IsVisible="{Binding IsNotBusy}">
             <flv:FlowListView.FlowColumnTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <Label Text="{Binding Name}"
-                               VerticalOptions="Center"
-                               HorizontalOptions="Center" />
+                    <Grid Padding="3">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <ffimageloading:CachedImage Aspect="Fill"
+                                                    DownsampleToViewSize="True"
+                                                    Source="{Binding PosterImageUrl}"
+                                                    HorizontalOptions="Center"
+                                                    CacheType="Disk"
+                                                    VerticalOptions="Center" />
+
+                        <Label x:Name="Label"
+                               HorizontalOptions="Fill"
+                               HorizontalTextAlignment="Center"
+                               VerticalOptions="End"
+                               Text="{Binding Name}"
+                               Grid.Row="1" />
                     </Grid>
                 </DataTemplate>
             </flv:FlowListView.FlowColumnTemplate>
         </flv:FlowListView>
+        <ActivityIndicator IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}" />
     </StackLayout>
 </ContentPage>

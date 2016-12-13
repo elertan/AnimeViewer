@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using Xamarin.Forms.Themes;
 using Xamarin.Forms.Themes.iOS;
+using FFImageLoading.Forms.Touch;
 
 namespace AnimeViewer.iOS
 {
@@ -27,6 +28,8 @@ namespace AnimeViewer.iOS
 
             var x = typeof(DarkThemeResources);
             x = typeof(UnderlineEffect);
+
+            CachedImageRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }
