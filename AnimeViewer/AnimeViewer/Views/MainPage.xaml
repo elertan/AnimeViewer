@@ -5,6 +5,7 @@
                   xmlns:local="clr-namespace:AnimeViewer"
                   xmlns:views="clr-namespace:AnimeViewer.Views;assembly=AnimeViewer"
                   x:Class="AnimeViewer.Views.MainPage"
+                  IsPresentedChanged="MainPage_OnIsPresentedChanged"
                   Appearing="MainPage_OnAppearing">
     <MasterDetailPage.Master>
         <views:MasterPage x:Name="MasterPage" />

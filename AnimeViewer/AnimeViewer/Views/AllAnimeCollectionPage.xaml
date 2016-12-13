@@ -15,6 +15,8 @@
                HorizontalOptions="CenterAndExpand"
                IsVisible="{Binding HasConnectionIssue}" />
         <SearchBar Placeholder="Search..."
+                   BackgroundColor="Transparent"
+                   TextColor="Black"
                    TextChanged="SearchBar_OnTextChanged" />
         <flv:FlowListView FlowColumnMinWidth="125"
                           RowHeight="200"

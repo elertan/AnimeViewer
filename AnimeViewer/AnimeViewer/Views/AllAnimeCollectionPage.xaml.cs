@@ -17,6 +17,7 @@ namespace AnimeViewer.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
             await _viewModel.InitializeAsync();
         }
 

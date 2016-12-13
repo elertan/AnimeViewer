@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace AnimeViewer.Views
 {
@@ -9,6 +10,10 @@ namespace AnimeViewer.Views
             if (Device.OS == TargetPlatform.iOS)
                 Icon = "menu.png";
             InitializeComponent();
+        }
+
+        private void MasterPage_OnAppearing(object sender, EventArgs e)
+        {
         }
     }
 }
