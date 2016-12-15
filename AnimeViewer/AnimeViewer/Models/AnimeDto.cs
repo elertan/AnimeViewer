@@ -16,8 +16,6 @@ namespace AnimeViewer.Models
 
         public string Summary { get; set; }
 
-        public string DisqusScript { get; set; }
-
         public bool ContainsAllInformation { get; set; }
     }
 }

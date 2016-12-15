@@ -37,8 +37,6 @@ namespace NineAnimeApi.Models
 
         public string Keywords { get; set; }
 
-        public string DisqusScript { get; set; }
-
         public List<Episode> Episodes { get; set; }
     }
 }

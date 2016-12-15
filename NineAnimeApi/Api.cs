@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using NineAnimeApi.Models;
+// ReSharper disable PossibleMultipleEnumeration
 
 namespace NineAnimeApi
 {
@@ -45,6 +46,8 @@ namespace NineAnimeApi
             anime.Name = itemProps.First(div => div.Attributes["itemprop"].Value == "name").InnerText;
             anime.PosterImageUrl = itemProps.First(div => div.Attributes["itemprop"].Value == "image").Attributes["src"].Value;
             anime.Summary = itemProps.First(div => div.Attributes["itemprop"].Value == "description").InnerText;
+            anime.AmountOfRatings = int.Parse(itemProps.First(div => div.Attributes["itemprop"].Value == "ratingCount").InnerText);
+            anime.Identifier = htmlDoc.DocumentNode.Descendants("div").First(div => div.Attributes.Contains("id") && div.Attributes["id"].Value == "movie").Attributes["data-id"].Value;
             return anime;
         }
 
