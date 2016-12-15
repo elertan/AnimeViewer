@@ -19,16 +19,16 @@
                    TextColor="Black"
                    TextChanged="SearchBar_OnTextChanged" />
         <flv:FlowListView FlowColumnMinWidth="125"
-                          RowHeight="200"
+                          RowHeight="175"
                           FlowItemsSource="{Binding VisibleAnimes}"
+                          FlowItemTapped="FlowListView_OnFlowItemTapped"
                           IsVisible="{Binding IsNotBusy}">
             <flv:FlowListView.FlowColumnTemplate>
                 <DataTemplate>
-                    <Grid Padding="3">
+                    <Grid Padding="5">
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
-                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -37,16 +37,18 @@
                         <ffimageloading:CachedImage Aspect="Fill"
                                                     DownsampleToViewSize="True"
                                                     Source="{Binding PosterImageUrl}"
-                                                    HorizontalOptions="Center"
+                                                    HorizontalOptions="FillAndExpand"
                                                     CacheType="Disk"
-                                                    VerticalOptions="Center" />
+                                                    VerticalOptions="FillAndExpand" />
 
                         <Label x:Name="Label"
                                HorizontalOptions="Fill"
                                HorizontalTextAlignment="Center"
                                VerticalOptions="End"
-                               Text="{Binding Name}"
-                               Grid.Row="1" />
+                               TextColor="White"
+                               BackgroundColor="Black"
+                               Opacity="0.8"
+                               Text="{Binding Name}"/>
                     </Grid>
                 </DataTemplate>
             </flv:FlowListView.FlowColumnTemplate>

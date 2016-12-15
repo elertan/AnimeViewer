@@ -47,8 +47,12 @@
     <Compile Include="Models\EpisodeDto.cs" />
     <Compile Include="Services\IDatabaseService.cs" />
     <Compile Include="ViewModels\AllAnimeCollectionPageViewModel.cs" />
+    <Compile Include="ViewModels\AnimePageViewModel.cs" />
     <Compile Include="Views\AllAnimeCollectionPage.xaml.cs">
       <DependentUpon>AllAnimeCollectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AnimePage.xaml.cs">
+      <DependentUpon>AnimePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -168,6 +172,12 @@
       <Project>{AB6E242F-0B37-488D-A96D-A9038CC8FDEC}</Project>
       <Name>NineAnimeApi</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AnimePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="AnimeViewer.Views.AnimePage"
+             Title="Anime"
+             Appearing="AnimePage_OnAppearing">
+    <ScrollView>
+        <StackLayout>
+            <Label HorizontalOptions="Center"
+                   TextColor="White"
+                   Margin="10"
+                   FontSize="Large"
+                   Text="{Binding Anime.Name}" />
+            <Grid Padding="15"
+                  ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <ffimageloading:CachedImage Source="{Binding Anime.PosterImageUrl}"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand" />
+                <StackLayout Grid.Column="1">
+                    <Label Text="Other Information"
+                           FontSize="Small" />
+                </StackLayout>
+            </Grid>
+
+            <ScrollView HeightRequest="100"
+                        Padding="25">
+                <Label Text="{Binding Anime.Summary}"
+                       FontSize="Small"
+                       TextColor="#999999" />
+            </ScrollView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
