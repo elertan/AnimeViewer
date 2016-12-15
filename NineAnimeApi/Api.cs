@@ -36,15 +36,38 @@ namespace NineAnimeApi
             return animes;
         }
 
+        private Anime ExtractAnimeFromPage(string html)
+        {
+            var htmlDoc = new HtmlDocument();
+            htmlDoc.LoadHtml(html);
+            var anime = new Anime();
+            var itemProps = htmlDoc.DocumentNode.Descendants().Where(div => div.Attributes.Contains("itemprop"));
+            anime.Name = itemProps.First(div => div.Attributes["itemprop"].Value == "name").InnerText;
+            anime.PosterImageUrl = itemProps.First(div => div.Attributes["itemprop"].Value == "image").Attributes["src"].Value;
+            anime.Summary = itemProps.First(div => div.Attributes["itemprop"].Value == "description").InnerText;
+            return anime;
+        }
+
         private async Task<List<Anime>> ExtractAnimesFromPageAsync(string html)
         {
             return await Task.Run(() => ExtractAnimesFromPage(html));
+        }
+
+        private async Task<Anime> ExtractAnimeFromPageAsync(string html)
+        {
+            return await Task.Run(() => ExtractAnimeFromPage(html));
         }
 
         public async Task<List<Anime>> GetAnimesAscendingOrderByPageAsync(int pageNumber)
         {
             var response = await HttpClient.GetStringAsync($"filter?sort=title%3Aasc&page={pageNumber}");
             return await ExtractAnimesFromPageAsync(response);
+        }
+
+        public async Task<Anime> GetAnimeByPageUrl(string pageUrl)
+        {
+            var response = await HttpClient.GetStringAsync(pageUrl);
+            return await ExtractAnimeFromPageAsync(response);
         }
     }
 }

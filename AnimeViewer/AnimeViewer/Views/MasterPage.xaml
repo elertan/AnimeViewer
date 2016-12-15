@@ -5,5 +5,55 @@
              x:Class="AnimeViewer.Views.MasterPage"
              Title="Menu"
              Appearing="MasterPage_OnAppearing">
-    <Label Text="This is the menu!" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ContentView BackgroundColor="#0d9666">
+            <ContentView.Margin>
+                <Thickness Top="20" />
+            </ContentView.Margin>
+            <Label HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Text="ANIMEVIEWER"
+                   TextColor="White"
+                   Margin="10" />
+        </ContentView>
+
+        <StackLayout Grid.Row="1"
+                     Padding="20">
+            <StackLayout Orientation="Horizontal"
+                         BackgroundColor="#202020"
+                         HeightRequest="50"
+                         HorizontalOptions="FillAndExpand">
+                <Image Source="list-icon.png"
+                       Margin="15,0,0,0"
+                       HeightRequest="24"
+                       WidthRequest="24" />
+                <Label Text="List"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       Margin="20,0,0,0" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         BackgroundColor="Black"
+                         Opacity="0.1"
+                         HeightRequest="50"
+                         HorizontalOptions="FillAndExpand">
+                <Image Source="icon.png"
+                       Margin="15,0,0,0"
+                       HeightRequest="24"
+                       WidthRequest="24" />
+                <Label Text="Other Inactive Item"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       Margin="20,0,0,0" />
+            </StackLayout>
+        </StackLayout>
+    </Grid>
 </ContentPage>

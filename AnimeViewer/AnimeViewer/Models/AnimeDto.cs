@@ -11,5 +11,13 @@ namespace AnimeViewer.Models
         public string Name { get; set; }
 
         public string ImageUrl { get; set; }
+
+        public string PageUrl { get; set; }
+
+        public string Summary { get; set; }
+
+        public string DisqusScript { get; set; }
+
+        public bool ContainsAllInformation { get; set; }
     }
 }

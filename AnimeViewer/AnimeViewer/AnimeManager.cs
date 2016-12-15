@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AnimeViewer.EventArguments;
 using AnimeViewer.Models;
+using NineAnimeApi;
 using NineAnimeApi.Models;
 using SQLite.Net.Async;
 using Xamarin.Forms;
@@ -16,17 +16,14 @@ namespace AnimeViewer
         public static SQLiteAsyncConnection DbConnection { get; set; }
         public static AnimeManager Instance { get; set; }
 
+        public Api Api { get; set; }
+
         public event EventHandler<AnimesUpdatedEventArgs> CachedAnimesUpdated;
         public event EventHandler AnimeManagerApiConnectionError;
-        public NineAnimeApi.Api Api
-        {
-            get;
-            set;
-        }
 
         private void OnCachedAnimesUpdated(List<Anime> addedAnimes)
         {
-            CachedAnimesUpdated?.Invoke(this, new AnimesUpdatedEventArgs { Animes = addedAnimes });
+            CachedAnimesUpdated?.Invoke(this, new AnimesUpdatedEventArgs {Animes = addedAnimes});
         }
 
         private void OnAnimeManagerApiConnectionError()
@@ -40,18 +37,17 @@ namespace AnimeViewer
                 DbConnection = await Database.GetConnection();
 
             if (!Application.Current.Properties.ContainsKey(AnimeManagerLastUpdatedListPagePropertyKey))
-                Application.Current.Properties[AnimeManagerLastUpdatedListPagePropertyKey] = 0;
+                Application.Current.Properties[AnimeManagerLastUpdatedListPagePropertyKey] = 1;
             await Application.Current.SavePropertiesAsync();
 
-            Instance = new AnimeManager();
-            Instance.Api = new NineAnimeApi.Api();
+            Instance = new AnimeManager {Api = new Api()};
         }
 
         private async Task UpdateCachedAnimesByApi()
         {
             while (true)
             {
-                var currentListPage = (int)Application.Current.Properties[AnimeManagerLastUpdatedListPagePropertyKey];
+                var currentListPage = (int) Application.Current.Properties[AnimeManagerLastUpdatedListPagePropertyKey];
                 var animes = await Api.GetAnimesAscendingOrderByPageAsync(currentListPage);
                 if (animes.Count > 0)
                 {
@@ -77,8 +73,23 @@ namespace AnimeViewer
         public async Task<List<Anime>> GetAnimeListAsync()
         {
             var animeDtos = await DbConnection.Table<AnimeDto>().ToListAsync();
+#pragma warning disable 4014
             UpdateCachedAnimesByApi().ContinueWith(UpdateCachedAnimesByApiThrowedException, TaskContinuationOptions.OnlyOnFaulted);
+#pragma warning restore 4014
             return animeDtos.ToAnimes();
+        }
+
+        public async Task<Anime> GetFullAnimeInformation(Anime anime)
+        {
+            var animeDto = await DbConnection.Table<AnimeDto>().Where(dto => dto.Name == anime.Name).FirstAsync();
+            if (animeDto.ContainsAllInformation)
+                return animeDto.ToAnime();
+
+            var fullAnime = await Api.GetAnimeByPageUrl(anime.PageUrl);
+            animeDto.Summary = fullAnime.Summary;
+            animeDto.ContainsAllInformation = true;
+            await DbConnection.UpdateAsync(animeDto);
+            return fullAnime;
         }
     }
 }

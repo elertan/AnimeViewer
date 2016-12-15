@@ -12,7 +12,9 @@ namespace AnimeViewer
             return new Anime
             {
                 Name = animeDto.Name,
-                PosterImageUrl = animeDto.ImageUrl
+                PosterImageUrl = animeDto.ImageUrl,
+                PageUrl = animeDto.PageUrl,
+                Summary = animeDto.Summary
             };
         }
 
@@ -21,7 +23,9 @@ namespace AnimeViewer
             return new AnimeDto
             {
                 Name = anime.Name,
-                ImageUrl = anime.PosterImageUrl
+                ImageUrl = anime.PosterImageUrl,
+                PageUrl = anime.PageUrl,
+                Summary = anime.Summary
             };
         }
 

@@ -8,6 +8,8 @@ namespace AnimeViewer
 {
     public partial class App : Application
     {
+        public static INavigation Navigation;
+
         public App()
         {
             InitializeComponent();
@@ -15,6 +17,7 @@ namespace AnimeViewer
             FlowListView.Init();
 
             MainPage = new MainPage();
+            Navigation = ((MasterDetailPage) MainPage).Detail.Navigation;
         }
 
         protected override void OnStart()
