@@ -16,8 +16,13 @@
                IsVisible="{Binding HasConnectionIssue}" />
         <SearchBar Placeholder="Search..."
                    BackgroundColor="Transparent"
-                   TextColor="Black"
-                   TextChanged="SearchBar_OnTextChanged" />
+                   TextChanged="SearchBar_OnTextChanged">
+            <SearchBar.TextColor>
+                <OnPlatform x:TypeArguments="Color"
+                            iOS="Black"
+                            Android="White" />
+            </SearchBar.TextColor>
+        </SearchBar>
         <flv:FlowListView FlowColumnMinWidth="125"
                           RowHeight="175"
                           FlowItemsSource="{Binding VisibleAnimes}"
@@ -48,7 +53,7 @@
                                TextColor="White"
                                BackgroundColor="Black"
                                Opacity="0.8"
-                               Text="{Binding Name}"/>
+                               Text="{Binding Name}" />
                     </Grid>
                 </DataTemplate>
             </flv:FlowListView.FlowColumnTemplate>
