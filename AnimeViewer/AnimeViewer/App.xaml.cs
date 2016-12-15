@@ -1,11 +1,12 @@
 ﻿using AnimeViewer.Views;
 using DLToolkit.Forms.Controls;
+using Xamarin.Forms;
 
 //[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace AnimeViewer
 {
-    public partial class App
+    public partial class App : Application
     {
         public App()
         {
