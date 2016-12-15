@@ -29,9 +29,9 @@ namespace AnimeViewer.Droid
 
             CachedImageRenderer.Init();
 
-            Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
-            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            Window.SetStatusBarColor(Color.ParseColor("#0d9666"));
+            //Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
+            //Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
+            //Window.SetStatusBarColor(Color.ParseColor("#0d9666"));
         }
     }
 }
