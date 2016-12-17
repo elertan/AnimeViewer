@@ -1,4 +1,5 @@
-﻿using AnimeViewer.ViewModels;
+﻿using System;
+using AnimeViewer.ViewModels;
 using NineAnimeApi.Models;
 using Xamarin.Forms;
 
@@ -36,6 +37,12 @@ namespace AnimeViewer.Views
         {
             var anime = (Anime) e.Item;
             await App.Navigation.PushAsync(new AnimePage(anime));
+        }
+
+        private void FlowListView_OnTapped(object sender, EventArgs e)
+        {
+            // TODO: DOES NOT WORK
+            //SearchBar.Unfocus();
         }
     }
 }

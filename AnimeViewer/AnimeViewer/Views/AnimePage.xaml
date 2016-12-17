@@ -34,8 +34,6 @@
                        FontSize="Small"
                        TextColor="#999999" />
             </ScrollView>
-
-            <Button Text="asdsdasd" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

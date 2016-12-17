@@ -16,7 +16,8 @@
                IsVisible="{Binding HasConnectionIssue}" />
         <SearchBar Placeholder="Search..."
                    BackgroundColor="Transparent"
-                   TextChanged="SearchBar_OnTextChanged">
+                   TextChanged="SearchBar_OnTextChanged"
+                   x:Name="SearchBar">
             <SearchBar.TextColor>
                 <OnPlatform x:TypeArguments="Color"
                             iOS="Black"
@@ -28,6 +29,9 @@
                           FlowItemsSource="{Binding VisibleAnimes}"
                           FlowItemTapped="FlowListView_OnFlowItemTapped"
                           IsVisible="{Binding IsNotBusy}">
+            <flv:FlowListView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="FlowListView_OnTapped" />
+            </flv:FlowListView.GestureRecognizers>
             <flv:FlowListView.FlowColumnTemplate>
                 <DataTemplate>
                     <Grid Padding="5">

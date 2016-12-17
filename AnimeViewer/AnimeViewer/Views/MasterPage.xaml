@@ -31,6 +31,9 @@
                          BackgroundColor="#202020"
                          HeightRequest="50"
                          HorizontalOptions="FillAndExpand">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ListMenuItem_OnTapped" />
+                </StackLayout.GestureRecognizers>
                 <Image Source="list-icon.png"
                        Margin="15,0,0,0"
                        HeightRequest="24"
