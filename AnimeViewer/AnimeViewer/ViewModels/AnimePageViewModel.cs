@@ -8,7 +8,7 @@ namespace AnimeViewer.ViewModels
     public class AnimePageViewModel : BaseViewModel
     {
         private Anime _anime;
-
+        private bool _hasConnectionIssue;
 
         public AnimePageViewModel()
         {
@@ -21,6 +21,16 @@ namespace AnimeViewer.ViewModels
             set
             {
                 _anime = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool HasConnectionIssue
+        {
+            get { return _hasConnectionIssue; }
+            set
+            {
+                _hasConnectionIssue = value;
                 OnPropertyChanged();
             }
         }

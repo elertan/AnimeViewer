@@ -8,17 +8,18 @@ namespace AnimeViewer.Views
     {
         private readonly AnimePageViewModel _viewModel;
 
-        public AnimePage(Anime anime)
+        public AnimePage(Anime anime, bool hasConnectionIssue = false)
         {
             InitializeComponent();
-            _viewModel = new AnimePageViewModel {Anime = anime}; //Image and Anime Name
+            _viewModel = new AnimePageViewModel {Anime = anime, HasConnectionIssue = hasConnectionIssue}; //Image and Anime Name
             BindingContext = _viewModel;
         }
 
         private async void AnimePage_OnAppearing(object sender, EventArgs e)
         {
             BackgroundImage.Source = _viewModel.Anime.PosterImageUrl;
-            await _viewModel.GetAllAnimeInformationAsync();
+            if (!_viewModel.HasConnectionIssue)
+                await _viewModel.GetAllAnimeInformationAsync();
         }
     }
 }

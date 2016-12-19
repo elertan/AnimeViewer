@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using NineAnimeApi.Models;
+
 // ReSharper disable PossibleMultipleEnumeration
 
 namespace NineAnimeApi
@@ -15,6 +16,10 @@ namespace NineAnimeApi
         public static readonly string Hostname = "http://9anime.to/";
         public static readonly Uri HostnameUri = new Uri(Hostname, UriKind.Absolute);
         public static readonly HttpClient HttpClient = new HttpClient {BaseAddress = HostnameUri};
+
+        public int MaxHttpClientRetries { get; set; } = 5;
+
+        public int HttpClientRetryDelay { get; set; } = 1000;
 
         private List<Anime> ExtractAnimesFromPage(string html)
         {
@@ -47,7 +52,7 @@ namespace NineAnimeApi
             anime.PosterImageUrl = WebUtility.HtmlDecode(itemProps.First(div => div.Attributes["itemprop"].Value == "image").Attributes["src"].Value);
             anime.Summary = itemProps.First(div => div.Attributes["itemprop"].Value == "description").InnerText;
             anime.AmountOfRatings = int.Parse(itemProps.First(div => div.Attributes["itemprop"].Value == "ratingCount").InnerText);
-            anime.Identifier = htmlDoc.DocumentNode.Descendants("div").First(div => div.Attributes.Contains("id") && div.Attributes["id"].Value == "movie").Attributes["data-id"].Value;
+            anime.Identifier = htmlDoc.DocumentNode.Descendants("div").First(div => div.Attributes.Contains("id") && (div.Attributes["id"].Value == "movie")).Attributes["data-id"].Value;
             return anime;
         }
 
@@ -63,14 +68,35 @@ namespace NineAnimeApi
 
         public async Task<List<Anime>> GetAnimesAscendingOrderByPageAsync(int pageNumber)
         {
-            var response = await HttpClient.GetStringAsync($"filter?sort=title%3Aasc&page={pageNumber}");
-            return await ExtractAnimesFromPageAsync(response);
+            // 3 Retries
+            for (var i = 0; i < MaxHttpClientRetries; i++)
+                try
+                {
+                    var response = await HttpClient.GetStringAsync($"filter?sort=title%3Aasc&page={pageNumber}");
+                    await Task.Delay(1000);
+                    return await ExtractAnimesFromPageAsync(response);
+                }
+                catch
+                {
+                    await Task.Delay(HttpClientRetryDelay);
+                }
+            throw new HttpRequestException(nameof(GetAnimesAscendingOrderByPageAsync) + " failed to retrieve animes.");
         }
 
         public async Task<Anime> GetAnimeByPageUrl(string pageUrl)
         {
-            var response = await HttpClient.GetStringAsync(pageUrl);
-            return await ExtractAnimeFromPageAsync(response);
+            for (var i = 0; i < MaxHttpClientRetries; i++)
+                try
+                {
+                    var response = await HttpClient.GetStringAsync(pageUrl);
+                    await Task.Delay(1000);
+                    return await ExtractAnimeFromPageAsync(response);
+                }
+                catch
+                {
+                    await Task.Delay(HttpClientRetryDelay);
+                }
+            throw new HttpRequestException(nameof(GetAnimeByPageUrl) + " failed to retrieve anime information.");
         }
     }
 }

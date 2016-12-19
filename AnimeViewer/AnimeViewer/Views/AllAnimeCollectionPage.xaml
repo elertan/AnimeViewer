@@ -9,11 +9,36 @@
              x:Name="Page"
              Title="All Anime">
     <StackLayout>
-        <Label Text="Connection to host failed."
-               VerticalOptions="Center"
-               TextColor="White"
-               HorizontalOptions="CenterAndExpand"
-               IsVisible="{Binding HasConnectionIssue}" />
+        <Frame HasShadow="True"
+               Padding="10"
+               BackgroundColor="Transparent"
+               OutlineColor="Black"
+               IsVisible="{Binding IsCachingAnimes}">
+            <StackLayout>
+                <ProgressBar Progress="{Binding CachingAnimeProgress}" />
+                <Label Text="{Binding CachingAnimeText}"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center" />
+            </StackLayout>
+        </Frame>
+        <Frame HasShadow="True"
+               Padding="10"
+               BackgroundColor="Transparent"
+               IsVisible="{Binding HasConnectionIssue}"
+               OutlineColor="Black">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1"
+                                      Tapped="HasConnectionIssueFrame_Tapped" />
+            </Frame.GestureRecognizers>
+            <Label Text="Connection to host failed.&#10;Tap to retry connection"
+                   VerticalOptions="Center"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+        </Frame>
         <SearchBar Placeholder="Search..."
                    BackgroundColor="Transparent"
                    TextChanged="SearchBar_OnTextChanged"

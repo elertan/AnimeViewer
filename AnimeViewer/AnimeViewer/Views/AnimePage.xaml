@@ -20,6 +20,20 @@
         <!-- What used to be your page content goes here -->
         <ScrollView>
             <StackLayout>
+                <Frame HasShadow="True"
+                       Padding="10"
+                       BackgroundColor="Transparent"
+
+                       IsVisible="{Binding HasConnectionIssue}"
+                       OutlineColor="Black">
+                    <Label
+                        Text="No active connection, some information might not be available and you won't be able to watch episodes"
+                        VerticalOptions="Center"
+                        TextColor="White"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        FontSize="Small" />
+                </Frame>
                 <Label HorizontalOptions="Center"
                        TextColor="White"
                        Margin="10"

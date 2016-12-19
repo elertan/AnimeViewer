@@ -18,12 +18,19 @@ namespace AnimeViewer
 
         public Api Api { get; set; }
 
+        public event EventHandler FinishedCachingAnimes;
+
+        private void OnFinishedCachingAnimes()
+        {
+            FinishedCachingAnimes?.Invoke(this, EventArgs.Empty);
+        }
+
         public event EventHandler<AnimesUpdatedEventArgs> CachedAnimesUpdated;
         public event EventHandler AnimeManagerApiConnectionError;
 
-        private void OnCachedAnimesUpdated(List<Anime> addedAnimes)
+        private void OnCachedAnimesUpdated(List<Anime> addedAnimes, int page)
         {
-            CachedAnimesUpdated?.Invoke(this, new AnimesUpdatedEventArgs {Animes = addedAnimes});
+            CachedAnimesUpdated?.Invoke(this, new AnimesUpdatedEventArgs {Animes = addedAnimes, Page = page});
         }
 
         private void OnAnimeManagerApiConnectionError()
@@ -54,11 +61,12 @@ namespace AnimeViewer
                     await DbConnection.InsertOrIgnoreAllAsync(animes.ToAnimeDtos());
                     Application.Current.Properties[AnimeManagerLastUpdatedListPagePropertyKey] = currentListPage + 1;
                     await Application.Current.SavePropertiesAsync();
-                    OnCachedAnimesUpdated(animes);
+                    OnCachedAnimesUpdated(animes, currentListPage);
                     //Device.BeginInvokeOnMainThread(() => OnCachedAnimesUpdated(animes));
                 }
                 else
                 {
+                    OnFinishedCachingAnimes();
                     break;
                 }
             }
