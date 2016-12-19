@@ -3,37 +3,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              x:Class="AnimeViewer.Views.AnimePage"
              Title="Anime"
              Appearing="AnimePage_OnAppearing">
-    <ScrollView>
-        <StackLayout>
-            <Label HorizontalOptions="Center"
-                   TextColor="White"
-                   Margin="10"
-                   FontSize="Large"
-                   Text="{Binding Anime.Name}" />
-            <Grid Padding="15"
-                  ColumnSpacing="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="2*" />
-                </Grid.ColumnDefinitions>
-                <ffimageloading:CachedImage Source="{Binding Anime.PosterImageUrl}"
-                                            HorizontalOptions="FillAndExpand"
-                                            VerticalOptions="FillAndExpand" />
-                <StackLayout Grid.Column="1">
-                    <Label Text="Other Information"
-                           FontSize="Small" />
-                </StackLayout>
-            </Grid>
+    <Grid>
+        <!-- This is a background that supports urls -->
+        <ffimageloading:CachedImage x:Name="BackgroundImage"
+                                    Aspect="Fill">
+            <ffimageloading:CachedImage.Transformations>
+                <fftransformations:BlurredTransformation Radius="5" />
+            </ffimageloading:CachedImage.Transformations>
+        </ffimageloading:CachedImage>
+        <ContentView BackgroundColor="Black"
+                     Opacity="0.5" />
+        <!-- What used to be your page content goes here -->
+        <ScrollView>
+            <StackLayout>
+                <Label HorizontalOptions="Center"
+                       TextColor="White"
+                       Margin="10"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       Text="{Binding Anime.Name}" />
+                <Grid Padding="15"
+                      ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <ffimageloading:CachedImage Source="{Binding Anime.PosterImageUrl}"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="FillAndExpand" />
+                    <StackLayout Grid.Column="1">
+                        <Label Text="Other Information"
+                               FontSize="Small" />
+                    </StackLayout>
+                </Grid>
 
-            <ScrollView HeightRequest="100"
-                        Padding="25">
-                <Label Text="{Binding Anime.Summary}"
-                       FontSize="Small"
-                       TextColor="#999999" />
-            </ScrollView>
-        </StackLayout>
-    </ScrollView>
+                <ScrollView HeightRequest="100"
+                            Padding="25">
+                    <Label Text="{Binding Anime.Summary}"
+                           FontSize="Small"
+                           TextColor="#999999" />
+                </ScrollView>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

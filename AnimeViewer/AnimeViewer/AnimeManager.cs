@@ -91,5 +91,13 @@ namespace AnimeViewer
             await DbConnection.UpdateAsync(animeDto);
             return fullAnime;
         }
+
+        public async Task RemoveCache()
+        {
+            await DbConnection.DeleteAllAsync<AnimeDto>();
+            await DbConnection.DeleteAllAsync<EpisodeDto>();
+            Application.Current.Properties[AnimeManagerLastUpdatedListPagePropertyKey] = 1;
+            await Application.Current.SavePropertiesAsync();
+        }
     }
 }

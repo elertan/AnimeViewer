@@ -16,7 +16,8 @@
                IsVisible="{Binding HasConnectionIssue}" />
         <SearchBar Placeholder="Search..."
                    BackgroundColor="Transparent"
-                   TextChanged="SearchBar_OnTextChanged">
+                   TextChanged="SearchBar_OnTextChanged"
+                   x:Name="SearchBar">
             <SearchBar.TextColor>
                 <OnPlatform x:TypeArguments="Color"
                             iOS="Black"
@@ -31,32 +32,31 @@
                           RowHeight="175"
                           FlowItemsSource="{Binding VisibleAnimes}"
                           FlowItemTapped="FlowListView_OnFlowItemTapped"
+                          IsPullToRefreshEnabled="False"
+                          Refreshing="ListView_OnRefreshing"
+                          IsRefreshing="{Binding IsBusy}"
                           IsVisible="{Binding IsNotBusy}">
+            <flv:FlowListView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="FlowListView_OnTapped" />
+            </flv:FlowListView.GestureRecognizers>
             <flv:FlowListView.FlowColumnTemplate>
                 <DataTemplate>
                     <Grid Padding="5">
-
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-
                         <ffimageloading:CachedImage Aspect="Fill"
-                                                    DownsampleToViewSize="True"
                                                     Source="{Binding PosterImageUrl}"
                                                     HorizontalOptions="FillAndExpand"
                                                     CacheType="Disk"
                                                     VerticalOptions="FillAndExpand" />
-
+                        <ContentView BackgroundColor="Black"
+                                     Opacity="0.8"
+                                     VerticalOptions="End"
+                                     BindingContext="{x:Reference Label}"
+                                     HeightRequest="{Binding Path=Height}" />
                         <Label x:Name="Label"
                                HorizontalOptions="Fill"
                                HorizontalTextAlignment="Center"
                                VerticalOptions="End"
                                TextColor="White"
-                               BackgroundColor="Black"
-                               Opacity="0.8"
                                Text="{Binding Name}" />
                     </Grid>
                 </DataTemplate>

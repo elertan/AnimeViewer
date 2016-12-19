@@ -89,5 +89,15 @@ namespace AnimeViewer.ViewModels
             AllAnimes.AddRange(e.Animes);
             ApplySearchQuery();
         }
+
+        public async Task RecacheAllAnimes()
+        {
+            IsBusy = true;
+            await AnimeManager.Instance.RemoveCache();
+            AllAnimes = new ObservableRangeCollection<Anime>();
+            AllAnimes.AddRange(await AnimeManager.Instance.GetAnimeListAsync());
+            VisibleAnimes = AllAnimes;
+            IsBusy = false;
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace AnimeViewer.Views
 
         private async void AnimePage_OnAppearing(object sender, EventArgs e)
         {
+            BackgroundImage.Source = _viewModel.Anime.PosterImageUrl;
             await _viewModel.GetAllAnimeInformationAsync();
         }
     }

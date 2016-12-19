@@ -1,13 +1,12 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Android.Views;
 using FFImageLoading.Forms.Droid;
+using FFImageLoading.Transformations;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms.Themes;
 using Xamarin.Forms.Themes.Android;
-using Color = Android.Graphics.Color;
 
 namespace AnimeViewer.Droid
 {
@@ -26,6 +25,7 @@ namespace AnimeViewer.Droid
 
             var x = typeof(DarkThemeResources);
             x = typeof(UnderlineEffect);
+            x = typeof(BlurredTransformation);
 
             CachedImageRenderer.Init();
 

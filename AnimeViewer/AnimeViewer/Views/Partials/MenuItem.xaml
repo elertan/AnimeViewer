@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimeViewer.Views.Partials.MenuItem">
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal"
+                     BackgroundColor="#202020"
+                     HeightRequest="50"
+                     HorizontalOptions="FillAndExpand">
+            <StackLayout.Triggers>
+                <DataTrigger TargetType="StackLayout"
+                             Binding="{Binding IsActive}"
+                             Value="False">
+                    <Setter Property="BackgroundColor" Value="Black" />
+                    <Setter Property="Opacity" Value="0.7" />
+                </DataTrigger>
+                <DataTrigger TargetType="StackLayout"
+                             Binding="{Binding IsActive}"
+                             Value="True">
+                    <Setter Property="BackgroundColor" Value="#202020" />
+                    <Setter Property="Opacity" Value="1" />
+                </DataTrigger>
+            </StackLayout.Triggers>
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="MenuItem_OnTapped" />
+            </StackLayout.GestureRecognizers>
+            <Image Source="{Binding Image}"
+                   Margin="15,0,0,0"
+                   HeightRequest="24"
+                   WidthRequest="24" />
+            <Label Text="{Binding Text}"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   Margin="20,0,0,0" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
