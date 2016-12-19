@@ -28,6 +28,9 @@
                           RowHeight="175"
                           FlowItemsSource="{Binding VisibleAnimes}"
                           FlowItemTapped="FlowListView_OnFlowItemTapped"
+                          IsPullToRefreshEnabled="False"
+                          Refreshing="ListView_OnRefreshing"
+                          IsRefreshing="{Binding IsBusy}"
                           IsVisible="{Binding IsNotBusy}">
             <flv:FlowListView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="FlowListView_OnTapped" />
@@ -44,7 +47,6 @@
                         </Grid.ColumnDefinitions>
 
                         <ffimageloading:CachedImage Aspect="Fill"
-                                                    DownsampleToViewSize="True"
                                                     Source="{Binding PosterImageUrl}"
                                                     HorizontalOptions="FillAndExpand"
                                                     CacheType="Disk"

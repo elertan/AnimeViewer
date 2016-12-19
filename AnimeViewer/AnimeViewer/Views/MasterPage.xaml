@@ -2,9 +2,9 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:partials="clr-namespace:AnimeViewer.Views.Partials;assembly=AnimeViewer"
              x:Class="AnimeViewer.Views.MasterPage"
-             Title="Menu"
-             Appearing="MasterPage_OnAppearing">
+             Title="Menu">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -16,7 +16,11 @@
 
         <ContentView BackgroundColor="#0d9666">
             <ContentView.Margin>
-                <Thickness Top="20" />
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.iOS>
+                        <Thickness Top="20" />
+                    </OnPlatform.iOS>
+                </OnPlatform>
             </ContentView.Margin>
             <Label HorizontalOptions="Center"
                    VerticalOptions="Center"
@@ -25,38 +29,28 @@
                    Margin="10" />
         </ContentView>
 
-        <StackLayout Grid.Row="1"
-                     Padding="20">
-            <StackLayout Orientation="Horizontal"
-                         BackgroundColor="#202020"
-                         HeightRequest="50"
-                         HorizontalOptions="FillAndExpand">
-                <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="ListMenuItem_OnTapped" />
-                </StackLayout.GestureRecognizers>
-                <Image Source="list-icon.png"
-                       Margin="15,0,0,0"
-                       HeightRequest="24"
-                       WidthRequest="24" />
-                <Label Text="List"
-                       TextColor="White"
-                       VerticalOptions="Center"
-                       Margin="20,0,0,0" />
+        <ScrollView Padding="20"
+                    Grid.Row="1">
+            <StackLayout x:Name="MenuItemsContainer">
+                <partials:MenuItem Text="List"
+                                   Image="list_icon.png"
+                                   IsActive="True"
+                                   Tapped="MenuItem_OnTapped" />
+                <partials:MenuItem Text="Genre" />
+                <partials:MenuItem Text="Most Watched"
+                                   Tapped="MenuItem_OnTapped" />
+                <partials:MenuItem Text="Newest"
+                                   Tapped="MenuItem_OnTapped" />
+                <partials:MenuItem Text="On Going"
+                                   Tapped="MenuItem_OnTapped" />
+                <partials:MenuItem Text="Up Coming"
+                                   Tapped="MenuItem_OnTapped" />
+                <partials:MenuItem Text="Recent"
+                                   Tapped="MenuItem_OnTapped" />
+                <partials:MenuItem Text="About"
+                                   Image="about.png"
+                                   Tapped="MenuItem_OnTapped" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal"
-                         BackgroundColor="Black"
-                         Opacity="0.1"
-                         HeightRequest="50"
-                         HorizontalOptions="FillAndExpand">
-                <Image Source="icon.png"
-                       Margin="15,0,0,0"
-                       HeightRequest="24"
-                       WidthRequest="24" />
-                <Label Text="Other Inactive Item"
-                       TextColor="White"
-                       VerticalOptions="Center"
-                       Margin="20,0,0,0" />
-            </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </Grid>
 </ContentPage>

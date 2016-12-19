@@ -1,4 +1,5 @@
 ﻿using FFImageLoading.Forms.Touch;
+using FFImageLoading.Transformations;
 using Foundation;
 using UIKit;
 using Xamarin.Forms;
@@ -28,6 +29,7 @@ namespace AnimeViewer.iOS
 
             var x = typeof(DarkThemeResources);
             x = typeof(UnderlineEffect);
+            x = typeof(BlurredTransformation);
 
             CachedImageRenderer.Init();
 

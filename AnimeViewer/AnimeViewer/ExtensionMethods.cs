@@ -5,7 +5,7 @@ using NineAnimeApi.Models;
 
 namespace AnimeViewer
 {
-    public static class ExtensionsMethods
+    public static class ExtensionMethods
     {
         public static Anime ToAnime(this AnimeDto animeDto)
         {

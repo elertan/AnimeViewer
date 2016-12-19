@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimeViewer.Views.AboutPage"
+             Title="About">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Source="heart.png"
+                   Aspect="Fill"
+                   HeightRequest="300"
+                   WidthRequest="300"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center" />
+            <Label HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="32"
+                   Text="Made with love"
+                   FontFamily="BradleyHandITCTT-Bold"
+                   Grid.Row="1" />
+            <Label Grid.Row="2"
+                   Margin="30"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Text="Watch anime free &amp; adfree on any iOS or Android device. Developed and maintained by Elertan." />
+            <Label Grid.Row="3"
+                   Margin="35"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   FontSize="Micro"
+                   HorizontalTextAlignment="Center"
+                   Text="AnimeViewer isn't endorsed by 9Anime and doesn't reflect the views or opinions of 9Anime or anyone officially involved in producing or managing 9Anime." />
+            <Button Text="I love it!"
+                    StyleClass="Success"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Margin="20"
+                    Clicked="Button_OnClicked"
+                    Grid.Row="4" />
+        </Grid>
+    </ScrollView>
+</ContentPage>

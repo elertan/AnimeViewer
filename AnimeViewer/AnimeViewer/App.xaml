@@ -5,7 +5,6 @@
              x:Class="AnimeViewer.App"
              xmlns:dark="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark">
     <Application.Resources>
-
         <!-- Application resource dictionary -->
         <ResourceDictionary MergedWith="dark:DarkThemeResources" />
     </Application.Resources>

@@ -21,11 +21,10 @@ namespace AnimeViewer.Views
         {
             base.OnAppearing();
 
-            if (_firstTimeAppearing)
-            {
-                await _viewModel.InitializeAsync();
-                _firstTimeAppearing = false;
-            }
+            if (!_firstTimeAppearing) return;
+
+            await _viewModel.InitializeAsync();
+            _firstTimeAppearing = false;
         }
 
         private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
@@ -36,13 +35,18 @@ namespace AnimeViewer.Views
         private async void FlowListView_OnFlowItemTapped(object sender, ItemTappedEventArgs e)
         {
             var anime = (Anime) e.Item;
-            await App.Navigation.PushAsync(new AnimePage(anime));
+            await Navigation.PushAsync(new AnimePage(anime));
         }
 
         private void FlowListView_OnTapped(object sender, EventArgs e)
         {
             // TODO: DOES NOT WORK
             //SearchBar.Unfocus();
+        }
+
+        private async void ListView_OnRefreshing(object sender, EventArgs e)
+        {
+            //await _viewModel.RecacheAllAnimes();
         }
     }
 }

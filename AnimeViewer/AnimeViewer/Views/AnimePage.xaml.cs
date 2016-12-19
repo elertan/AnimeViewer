@@ -1,7 +1,6 @@
 ﻿using System;
 using AnimeViewer.ViewModels;
 using NineAnimeApi.Models;
-using Xamarin.Forms;
 
 namespace AnimeViewer.Views
 {
@@ -12,12 +11,13 @@ namespace AnimeViewer.Views
         public AnimePage(Anime anime)
         {
             InitializeComponent();
-            _viewModel = new AnimePageViewModel {Anime = anime};//Image and Anime Name
+            _viewModel = new AnimePageViewModel {Anime = anime}; //Image and Anime Name
             BindingContext = _viewModel;
         }
 
         private async void AnimePage_OnAppearing(object sender, EventArgs e)
         {
+            BackgroundImage.Source = _viewModel.Anime.PosterImageUrl;
             await _viewModel.GetAllAnimeInformationAsync();
         }
     }
