@@ -25,7 +25,9 @@ namespace NineAnimeApi
         {
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(html);
-            var animeNodes = htmlDoc.DocumentNode.Descendants("div").Where(div => div.Attributes.Contains("class") && (div.Attributes["class"].Value == "item"));
+            var animeNodes =
+                htmlDoc.DocumentNode.Descendants("div")
+                    .Where(div => div.Attributes.Contains("class") && (div.Attributes["class"].Value == "item"));
             var animes = new List<Anime>();
             foreach (var node in animeNodes)
             {
@@ -44,15 +46,20 @@ namespace NineAnimeApi
 
         private Anime ExtractAnimeFromPage(string html)
         {
+            var anime = new Anime();
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(html);
-            var anime = new Anime();
+
             var itemProps = htmlDoc.DocumentNode.Descendants().Where(div => div.Attributes.Contains("itemprop"));
             anime.Name = itemProps.First(div => div.Attributes["itemprop"].Value == "name").InnerText;
-            anime.PosterImageUrl = WebUtility.HtmlDecode(itemProps.First(div => div.Attributes["itemprop"].Value == "image").Attributes["src"].Value);
+
+            anime.PosterImageUrl =
+                itemProps.First(div => div.Attributes["itemprop"].Value == "image").Attributes["src"].Value;
+
             anime.Summary = itemProps.First(div => div.Attributes["itemprop"].Value == "description").InnerText;
             anime.AmountOfRatings = int.Parse(itemProps.First(div => div.Attributes["itemprop"].Value == "ratingCount").InnerText);
-            anime.Identifier = htmlDoc.DocumentNode.Descendants("div").First(div => div.Attributes.Contains("id") && (div.Attributes["id"].Value == "movie")).Attributes["data-id"].Value;
+            anime.Identifier = htmlDoc.DocumentNode.Descendants("div").First(div => div.Attributes.Contains("id") && div.Attributes["id"].Value == "movie").Attributes["data-id"].Value;
+            anime.PageUrl = "http://9anime.to/watch/" + anime.Identifier;
             return anime;
         }
 

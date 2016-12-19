@@ -48,6 +48,10 @@
                             iOS="Black"
                             Android="White" />
             </SearchBar.TextColor>
+            <SearchBar.PlaceholderColor>
+                <OnPlatform x:TypeArguments="Color"
+                            Android="Gray" />
+            </SearchBar.PlaceholderColor>
         </SearchBar>
         <flv:FlowListView FlowColumnMinWidth="125"
                           RowHeight="175"
