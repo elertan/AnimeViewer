@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnimeViewer.Views.Partials.BannerView">
+    <Frame HasShadow="True"
+           Padding="10"
+           BackgroundColor="Transparent"
+           OutlineColor="Black">
+        <StackLayout>
+            <ContentView Content="{Binding CustomView}" />
+            <Label Text="{Binding Text}"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+        </StackLayout>
+    </Frame>
+</ContentView>

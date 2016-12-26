@@ -9,10 +9,12 @@
              Appearing="AnimePage_OnAppearing">
     <Grid>
         <!-- This is a background that supports urls -->
-        <ffimageloading:CachedImage x:Name="BackgroundImage"
+        <ffimageloading:CachedImage x:Name="CustomBackgroundImage"
+                                    DownsampleHeight="50"
+                                    DownsampleWidth="38"
                                     Aspect="Fill">
             <ffimageloading:CachedImage.Transformations>
-                <fftransformations:BlurredTransformation Radius="5" />
+                <fftransformations:BlurredTransformation Radius="3" />
             </ffimageloading:CachedImage.Transformations>
         </ffimageloading:CachedImage>
         <ContentView BackgroundColor="Black"
@@ -46,7 +48,7 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="2*" />
                     </Grid.ColumnDefinitions>
-                    <ffimageloading:CachedImage Source="{Binding Anime.PosterImageUrl}"
+                    <ffimageloading:CachedImage Source="{Binding Anime.ImageUrl}"
                                                 HorizontalOptions="FillAndExpand"
                                                 VerticalOptions="FillAndExpand" />
                     <StackLayout Grid.Column="1">
@@ -61,6 +63,48 @@
                            FontSize="Small"
                            TextColor="#999999" />
                 </ScrollView>
+                <Frame HeightRequest="250"
+                       HasShadow="True"
+                       BackgroundColor="Transparent"
+                       Padding="0"
+                       Margin="30">
+                    <Grid>
+                        <ContentView BackgroundColor="Black"
+                                     Opacity="0.2" />
+                        <ActivityIndicator VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           IsRunning="True"
+                                           IsVisible="False">
+                            <ActivityIndicator.Triggers>
+                                <DataTrigger TargetType="ActivityIndicator"
+                                             Binding="{Binding Anime.Episodes}"
+                                             Value="{x:Null}">
+                                    <Setter Property="IsVisible" Value="True" />
+                                </DataTrigger>
+                            </ActivityIndicator.Triggers>
+                        </ActivityIndicator>
+                        <ListView BackgroundColor="Transparent"
+                                  Margin="10"
+                                  ItemTapped="Episode_Tapped"
+                                  ItemsSource="{Binding Anime.Episodes}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout BackgroundColor="Transparent"
+                                                     HorizontalOptions="FillAndExpand"
+                                                     VerticalOptions="FillAndExpand">
+                                            <Label Text="{Binding Name}"
+                                                   TextColor="White"
+                                                   HorizontalOptions="Center"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalOptions="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Frame>
             </StackLayout>
         </ScrollView>
     </Grid>

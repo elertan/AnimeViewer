@@ -11,9 +11,9 @@ namespace AnimeViewer
         public static async Task<SQLiteAsyncConnection> GetConnection()
         {
             var conn = DependencyService.Get<IDatabaseService>().GetConnection();
-            await conn.CreateTableAsync<CookieDto>();
-            await conn.CreateTableAsync<AnimeDto>();
-            await conn.CreateTableAsync<EpisodeDto>();
+            await conn.CreateTablesAsync(
+                typeof(Episode),
+                typeof(Anime));
             return conn;
         }
     }

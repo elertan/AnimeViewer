@@ -15,6 +15,7 @@ namespace AnimeViewer.iOS
     [Register("AppDelegate")]
     public class AppDelegate : FormsApplicationDelegate
     {
+        public static AppDelegate Delegate;
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
         // method you should instantiate the window, load the UI into it and then make the window
@@ -32,6 +33,8 @@ namespace AnimeViewer.iOS
             x = typeof(BlurredTransformation);
 
             CachedImageRenderer.Init();
+
+            Delegate = this;
 
             return base.FinishedLaunching(app, options);
         }

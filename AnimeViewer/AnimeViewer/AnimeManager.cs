@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AnimeViewer.EventArguments;
 using AnimeViewer.Models;
-using NineAnimeApi;
-using NineAnimeApi.Models;
+using AnimeViewer.Services;
+using Microsoft.Practices.Unity;
 using SQLite.Net.Async;
 using Xamarin.Forms;
 
@@ -16,7 +16,7 @@ namespace AnimeViewer
         public static SQLiteAsyncConnection DbConnection { get; set; }
         public static AnimeManager Instance { get; set; }
 
-        public Api Api { get; set; }
+        public IAnimeApi Api { get; set; }
 
         public event EventHandler FinishedCachingAnimes;
 
@@ -47,7 +47,7 @@ namespace AnimeViewer
                 Application.Current.Properties[AnimeManagerLastUpdatedListPagePropertyKey] = 1;
             await Application.Current.SavePropertiesAsync();
 
-            Instance = new AnimeManager {Api = new Api()};
+            Instance = new AnimeManager {Api = ((App) Application.Current).DiContainer.Resolve<IAnimeApi>()};
         }
 
         private async Task UpdateCachedAnimesByApi()
@@ -55,10 +55,11 @@ namespace AnimeViewer
             while (true)
             {
                 var currentListPage = (int) Application.Current.Properties[AnimeManagerLastUpdatedListPagePropertyKey];
-                var animes = await Api.GetAnimesAscendingOrderByPageAsync(currentListPage);
+                var result = await Api.GetAnimesByListPageNumberAsync(currentListPage);
+                var animes = new List<Anime>(result);
                 if (animes.Count > 0)
                 {
-                    await DbConnection.InsertOrIgnoreAllAsync(animes.ToAnimeDtos());
+                    await DbConnection.InsertOrIgnoreAllAsync(animes);
                     Application.Current.Properties[AnimeManagerLastUpdatedListPagePropertyKey] = currentListPage + 1;
                     await Application.Current.SavePropertiesAsync();
                     OnCachedAnimesUpdated(animes, currentListPage);
@@ -80,32 +81,35 @@ namespace AnimeViewer
 
         public async Task<List<Anime>> GetAnimeListAsync()
         {
-            var animeDtos = await DbConnection.Table<AnimeDto>().ToListAsync();
+            var animes = await DbConnection.Table<Anime>().ToListAsync();
 #pragma warning disable 4014
             UpdateCachedAnimesByApi().ContinueWith(UpdateCachedAnimesByApiThrowedException, TaskContinuationOptions.OnlyOnFaulted);
 #pragma warning restore 4014
-            return animeDtos.ToAnimes();
+            return animes;
         }
 
         public async Task<Anime> GetFullAnimeInformation(Anime anime)
         {
-            var animeDto = await DbConnection.Table<AnimeDto>().Where(dto => dto.Name == anime.Name).FirstAsync();
-            if (animeDto.ContainsAllInformation)
-                return animeDto.ToAnime();
+            var a = await DbConnection.Table<Anime>().Where(dto => dto.Name == anime.Name).FirstAsync();
+            if (a.ContainsAllInformation)
+                return a;
 
-            var fullAnime = await Api.GetAnimeByPageUrl(anime.PageUrl);
-            animeDto.Summary = fullAnime.Summary;
-            animeDto.ContainsAllInformation = true;
-            await DbConnection.UpdateAsync(animeDto);
-            return fullAnime;
+            a = await Api.GetFullAnimeInformationByPageUrlAsync(anime.PageUrl);
+            await DbConnection.UpdateAsync(a);
+            return a;
         }
 
         public async Task RemoveCache()
         {
-            await DbConnection.DeleteAllAsync<AnimeDto>();
-            await DbConnection.DeleteAllAsync<EpisodeDto>();
+            await DbConnection.DeleteAllAsync<Anime>();
+            await DbConnection.DeleteAllAsync<Episode>();
             Application.Current.Properties[AnimeManagerLastUpdatedListPagePropertyKey] = 1;
             await Application.Current.SavePropertiesAsync();
+        }
+
+        public async Task<IEnumerable<VideoSource>> GetVideoSourcesByEpisode(Episode episode)
+        {
+            return await Api.GetVideoSourcesByEpisodeUrlAsync(episode.EpisodeUrl);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
+using AnimeViewer.Models;
 using AnimeViewer.ViewModels;
-using NineAnimeApi.Models;
 using Xamarin.Forms;
 
 namespace AnimeViewer.Views
@@ -22,7 +22,6 @@ namespace AnimeViewer.Views
             base.OnAppearing();
 
             if (!_firstTimeAppearing) return;
-
             await _viewModel.InitializeAsync();
             _firstTimeAppearing = false;
         }
@@ -44,7 +43,7 @@ namespace AnimeViewer.Views
             //SearchBar.Unfocus();
         }
 
-        private async void ListView_OnRefreshing(object sender, EventArgs e)
+        private void ListView_OnRefreshing(object sender, EventArgs e)
         {
             //await _viewModel.RecacheAllAnimes();
         }
@@ -53,7 +52,7 @@ namespace AnimeViewer.Views
         {
             //var accepted = await DisplayAlert("Retry Connection", "Do you want to retry the connection?", "Yes", "No");
             //if (accepted)
-                await _viewModel.RetryConnection();
+            await _viewModel.RetryConnection();
         }
     }
 }

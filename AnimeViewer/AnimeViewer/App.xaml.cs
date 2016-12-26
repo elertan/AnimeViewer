@@ -1,5 +1,8 @@
-﻿using AnimeViewer.Views;
+﻿using AnimeViewer.Services;
+using AnimeViewer.Services.Implementations;
+using AnimeViewer.Views;
 using DLToolkit.Forms.Controls;
+using Microsoft.Practices.Unity;
 using Xamarin.Forms;
 
 //[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -8,8 +11,6 @@ namespace AnimeViewer
 {
     public partial class App : Application
     {
-        public INavigation Navigation { get; set; }
-
         public App()
         {
             InitializeComponent();
@@ -19,9 +20,17 @@ namespace AnimeViewer
             MainPage = new MainPage();
         }
 
-        protected override void OnStart()
+        public UnityContainer DiContainer { get; set; } = new UnityContainer();
+        public INavigation Navigation { get; set; }
+
+        protected override async void OnStart()
         {
             // Handle when your app starts
+
+            // Register services
+            DiContainer.RegisterType<IAnimeApi, KissanimeApi>();
+
+            await AnimeManager.InitializeAsync();
         }
 
         protected override void OnSleep()

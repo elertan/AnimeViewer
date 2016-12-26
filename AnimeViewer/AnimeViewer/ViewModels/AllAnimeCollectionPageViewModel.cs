@@ -2,18 +2,17 @@
 using System.Linq;
 using System.Threading.Tasks;
 using AnimeViewer.EventArguments;
+using AnimeViewer.Models;
 using MvvmHelpers;
-using NineAnimeApi.Models;
 
 namespace AnimeViewer.ViewModels
 {
     public class AllAnimeCollectionPageViewModel : BaseViewModel
     {
         private ObservableRangeCollection<Anime> _allAnimes;
-        private float _cachingAnimeProgress;
-        private int _currentCachedAnimePageNumber;
         private bool _hasConnectionIssue;
-        private bool _isCachingAnimes = true;
+        private bool _isCachingAnimes;
+        private bool _isInitializing = true;
         private ObservableRangeCollection<Anime> _visibleAnimes;
 
         public AllAnimeCollectionPageViewModel()
@@ -21,14 +20,12 @@ namespace AnimeViewer.ViewModels
             AllAnimes = new ObservableRangeCollection<Anime>();
         }
 
-        public int TotalAnimePages => 164;
-
-        public int CurrentCachedAnimePageNumber
+        public bool IsInitializing
         {
-            get { return _currentCachedAnimePageNumber; }
+            get { return _isInitializing; }
             set
             {
-                _currentCachedAnimePageNumber = value;
+                _isInitializing = value;
                 OnPropertyChanged();
             }
         }
@@ -40,19 +37,6 @@ namespace AnimeViewer.ViewModels
             {
                 _isCachingAnimes = value;
                 OnPropertyChanged();
-            }
-        }
-
-        public string CachingAnimeText => $"Caching {CurrentCachedAnimePageNumber} of {TotalAnimePages}";
-
-        public float CachingAnimeProgress
-        {
-            get { return _cachingAnimeProgress; }
-            set
-            {
-                _cachingAnimeProgress = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(CachingAnimeText));
             }
         }
 
@@ -91,7 +75,7 @@ namespace AnimeViewer.ViewModels
         public async Task InitializeAsync()
         {
             IsBusy = true;
-            await AnimeManager.InitializeAsync();
+            while (AnimeManager.Instance == null) await Task.Delay(50);
             AnimeManager.Instance.CachedAnimesUpdated += Instance_CachedAnimesUpdated;
             AnimeManager.Instance.FinishedCachingAnimes += Instance_FinishedCachingAnimes;
             AnimeManager.Instance.AnimeManagerApiConnectionError += Instance_AnimeManagerApiConnectionError;
@@ -103,6 +87,7 @@ namespace AnimeViewer.ViewModels
         private void Instance_FinishedCachingAnimes(object sender, EventArgs e)
         {
             IsCachingAnimes = false;
+            IsInitializing = false;
         }
 
         public async Task RetryConnection()
@@ -139,9 +124,8 @@ namespace AnimeViewer.ViewModels
 
         private void Instance_CachedAnimesUpdated(object sender, AnimesUpdatedEventArgs e)
         {
+            if (IsInitializing) IsInitializing = false;
             IsCachingAnimes = true;
-            CurrentCachedAnimePageNumber = e.Page;
-            CachingAnimeProgress = Convert.ToSingle(e.Page)/Convert.ToSingle(TotalAnimePages);
             AllAnimes.AddRange(e.Animes);
             ApplySearchQuery();
         }

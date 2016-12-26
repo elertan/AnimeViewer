@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Threading.Tasks;
+using AnimeViewer.Models;
 using MvvmHelpers;
-using NineAnimeApi.Models;
 
 namespace AnimeViewer.ViewModels
 {
