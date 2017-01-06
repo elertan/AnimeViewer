@@ -20,7 +20,14 @@
         <ContentView IsVisible="{Binding IsCachingAnimes}">
             <partials:BannerView Text="Caching Animes">
                 <partials:BannerView.CustomView>
-                    <ActivityIndicator IsRunning="True" />
+                    <StackLayout>
+                        <ActivityIndicator IsRunning="True" />
+                        <Label FontSize="Small"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               Text="Please be patient. This takes a while." />
+                    </StackLayout>
                 </partials:BannerView.CustomView>
             </partials:BannerView>
         </ContentView>
@@ -64,6 +71,8 @@
                                                     Source="{Binding ImageUrl}"
                                                     HorizontalOptions="FillAndExpand"
                                                     CacheType="Disk"
+                                                    RetryCount="3"
+                                                    RetryDelay="500"
                                                     VerticalOptions="FillAndExpand" />
                         <ContentView BackgroundColor="Black"
                                      Opacity="0.8"

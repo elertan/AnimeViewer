@@ -33,6 +33,7 @@ namespace AnimeViewer.iOS
             x = typeof(BlurredTransformation);
 
             CachedImageRenderer.Init();
+            //app.SetStatusBarHidden(true, UIStatusBarAnimation.Fade);
 
             Delegate = this;
 

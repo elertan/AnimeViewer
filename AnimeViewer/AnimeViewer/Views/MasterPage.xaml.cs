@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Practices.Unity;
 using Xamarin.Forms;
 using MenuItem = AnimeViewer.Views.Partials.MenuItem;
 
@@ -8,6 +9,8 @@ namespace AnimeViewer.Views
 {
     public partial class MasterPage : ContentPage
     {
+        private INavigation _globalNavigation;
+
         public MasterPage()
         {
             if (Device.OS == TargetPlatform.iOS)
@@ -15,7 +18,11 @@ namespace AnimeViewer.Views
             InitializeComponent();
         }
 
-        public new INavigation Navigation => ((App) Application.Current).Navigation;
+        public INavigation GlobalNavigation
+        {
+            get { return _globalNavigation ?? (_globalNavigation = ((App) Application.Current).DiContainer.Resolve<INavigation>()); }
+            set { _globalNavigation = value; }
+        }
 
         private void MenuItem_OnTapped(object sender, EventArgs e)
         {
@@ -50,7 +57,7 @@ namespace AnimeViewer.Views
 
         private async void AboutMenuItem_OnTapped(MenuItem menuItem, EventArgs e)
         {
-            await Navigation.PushModalAsync(new AboutPage());
+            await GlobalNavigation.PushAsync(new AboutPage());
         }
     }
 }

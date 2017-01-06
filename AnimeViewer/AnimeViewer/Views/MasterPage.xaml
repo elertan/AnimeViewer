@@ -50,6 +50,8 @@
                 <partials:MenuItem Text="About"
                                    Image="about.png"
                                    Tapped="MenuItem_OnTapped" />
+                <partials:MenuItem Text="Settings"
+                                   Tapped="MenuItem_OnTapped" />
             </StackLayout>
         </ScrollView>
     </Grid>

@@ -12,7 +12,7 @@ namespace AnimeViewer.Views
 
         private async void Button_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            await Navigation.PopToRootAsync(true);
         }
     }
 }

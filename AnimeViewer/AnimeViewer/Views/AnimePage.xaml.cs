@@ -10,6 +10,7 @@ namespace AnimeViewer.Views
     public partial class AnimePage
     {
         private readonly AnimePageViewModel _viewModel;
+        private bool _firstAppearance = true;
 
         public AnimePage(Anime anime, bool hasConnectionIssue = false)
         {
@@ -20,6 +21,9 @@ namespace AnimeViewer.Views
 
         private async void AnimePage_OnAppearing(object sender, EventArgs e)
         {
+            if (!_firstAppearance) return;
+            _firstAppearance = false;
+
             CustomBackgroundImage.Source = _viewModel.Anime.ImageUrl;
             if (!_viewModel.HasConnectionIssue)
                 await _viewModel.GetAllAnimeInformationAsync();
@@ -27,11 +31,16 @@ namespace AnimeViewer.Views
 
         private async void Episode_Tapped(object sender, ItemTappedEventArgs e)
         {
+            if (e.Item == null) return;
+
             ((ListView) sender).SelectedItem = null;
+            if (e.Item == null) return;
             var episode = (Episode) e.Item;
             var sources = await AnimeManager.Instance.GetVideoSourcesByEpisode(episode);
-            var sourceUrl = sources.First().SourceUrl;
-            //await Navigation.PushAsync(new VideoPlayerPage(sourceUrl));
+
+            var sourceUrl = sources?.First()?.SourceUrl;
+            if (sourceUrl == null) return;
+
             var videoPlayer = DependencyService.Get<IVideoPlayer>();
             videoPlayer.Play(sourceUrl);
         }

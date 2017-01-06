@@ -24,6 +24,8 @@ namespace AnimeViewer.iOS.Services
             vc.PresentViewController(playerViewController, true, null);
             playerViewController.View.Frame = vc.View.Frame;
             player.Play();
+
+            UIApplication.SharedApplication.SetStatusBarHidden(true, UIStatusBarAnimation.Fade);
         }
     }
 }

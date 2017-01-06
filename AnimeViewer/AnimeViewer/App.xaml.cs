@@ -21,7 +21,6 @@ namespace AnimeViewer
         }
 
         public UnityContainer DiContainer { get; set; } = new UnityContainer();
-        public INavigation Navigation { get; set; }
 
         protected override async void OnStart()
         {
