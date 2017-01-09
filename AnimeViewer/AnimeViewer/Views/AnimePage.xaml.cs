@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Acr.UserDialogs;
 using AnimeViewer.Models;
 using AnimeViewer.Services;
 using AnimeViewer.ViewModels;
@@ -39,6 +40,7 @@ namespace AnimeViewer.Views
         {
             if (e.Item == null) return;
 
+            UserDialogs.Instance.ShowLoading("Loading Episode");
             ((ListView) sender).SelectedItem = null;
             if (e.Item == null) return;
             var episode = (Episode) e.Item;
@@ -53,6 +55,8 @@ namespace AnimeViewer.Views
 
             var videoPlayer = DependencyService.Get<IVideoPlayer>();
             videoPlayer.Play(sourceUrl);
+
+            UserDialogs.Instance.HideLoading();
         }
     }
 }
