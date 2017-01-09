@@ -12,6 +12,7 @@
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <NavigationPage x:Name="NavigationPage"
+                        Appearing="NavigationPage_OnAppearing"
                         BarTextColor="White">
             <x:Arguments>
                 <views:AllAnimeCollectionPage />

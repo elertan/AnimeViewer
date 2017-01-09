@@ -5,15 +5,40 @@
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              xmlns:viewModels="clr-namespace:AnimeViewer.ViewModels;assembly=AnimeViewer"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:partials="clr-namespace:AnimeViewer.Views.Partials;assembly=AnimeViewer"
              x:Class="AnimeViewer.Views.AllAnimeCollectionPage"
              x:Name="Page"
              Title="All Anime">
     <StackLayout>
-        <Label Text="Connection to host failed."
-               VerticalOptions="Center"
-               TextColor="White"
-               HorizontalOptions="CenterAndExpand"
-               IsVisible="{Binding HasConnectionIssue}" />
+        <ContentView IsVisible="{Binding IsInitializing}">
+            <partials:BannerView Text="Establishing Connection">
+                <partials:BannerView.CustomView>
+                    <ActivityIndicator IsRunning="True" />
+                </partials:BannerView.CustomView>
+            </partials:BannerView>
+        </ContentView>
+        <ContentView IsVisible="{Binding IsCachingAnimes}">
+            <partials:BannerView Text="Caching Animes">
+                <partials:BannerView.CustomView>
+                    <StackLayout>
+                        <ActivityIndicator IsRunning="True" />
+                        <Label FontSize="Small"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               Text="Please be patient. This takes a while." />
+                    </StackLayout>
+                </partials:BannerView.CustomView>
+            </partials:BannerView>
+        </ContentView>
+        <ContentView IsVisible="{Binding HasConnectionIssue}">
+            <partials:BannerView Text="Connection to host failed.&#10;Tap to retry connection">
+                <partials:BannerView.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1"
+                                          Tapped="HasConnectionIssueFrame_Tapped" />
+                </partials:BannerView.GestureRecognizers>
+            </partials:BannerView>
+        </ContentView>
         <SearchBar Placeholder="Search..."
                    BackgroundColor="Transparent"
                    TextChanged="SearchBar_OnTextChanged"
@@ -43,9 +68,11 @@
                 <DataTemplate>
                     <Grid Padding="5">
                         <ffimageloading:CachedImage Aspect="Fill"
-                                                    Source="{Binding PosterImageUrl}"
+                                                    Source="{Binding ImageUrl}"
                                                     HorizontalOptions="FillAndExpand"
                                                     CacheType="Disk"
+                                                    RetryCount="3"
+                                                    RetryDelay="500"
                                                     VerticalOptions="FillAndExpand" />
                         <ContentView BackgroundColor="Black"
                                      Opacity="0.8"

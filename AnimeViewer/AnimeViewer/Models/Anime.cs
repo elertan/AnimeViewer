@@ -1,8 +1,10 @@
-﻿using SQLite.Net.Attributes;
+﻿using System.Collections.Generic;
+using SQLite.Net.Attributes;
+using SQLiteNetExtensions.Attributes;
 
 namespace AnimeViewer.Models
 {
-    public class AnimeDto
+    public class Anime
     {
         [PrimaryKey]
         [AutoIncrement]
@@ -15,6 +17,11 @@ namespace AnimeViewer.Models
         public string PageUrl { get; set; }
 
         public string Summary { get; set; }
+
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<Episode> Episodes { get; set; }
+
+        public string Genres { get; set; }
 
         public bool ContainsAllInformation { get; set; }
     }

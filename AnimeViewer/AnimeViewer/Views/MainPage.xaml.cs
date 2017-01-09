@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Practices.Unity;
 using Xamarin.Forms;
 
 namespace AnimeViewer.Views
@@ -12,13 +13,18 @@ namespace AnimeViewer.Views
 
         private void MainPage_OnAppearing(object sender, EventArgs e)
         {
-            ((App) Application.Current).Navigation = Detail.Navigation;
         }
 
         private void MainPage_OnIsPresentedChanged(object sender, EventArgs e)
         {
             //if (IsPresented)
             //    Focus();
+        }
+
+        private void NavigationPage_OnAppearing(object sender, EventArgs e)
+        {
+            // Register global navigation
+            ((App) Application.Current).DiContainer.RegisterInstance(typeof(INavigation), NavigationPage.Navigation);
         }
     }
 }
