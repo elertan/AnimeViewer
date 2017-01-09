@@ -9,7 +9,6 @@ namespace AnimeViewer.ViewModels
     {
         private Anime _anime;
 
-
         public AnimePageViewModel()
         {
             PropertyChanged += AnimePageViewModel_PropertyChanged;
