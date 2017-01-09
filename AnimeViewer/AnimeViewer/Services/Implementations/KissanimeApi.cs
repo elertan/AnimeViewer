@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,12 +21,13 @@ namespace AnimeViewer.Services.Implementations
         public KissanimeApi()
         {
             _handler = new HttpClientHandler();
-            HttpClient = new HttpClient(new ClearanceHandler(_handler)) {BaseAddress = new Uri(HostAddress)};
+            HttpClient = new HttpClient(new ClearanceHandler(_handler)) {BaseAddress = new Uri(HostAddress), Timeout = TimeSpan.FromMilliseconds(7500)};
         }
 
         public bool HasInitialized { get; set; }
 
         public HttpClient HttpClient { get; set; }
+        public Dictionary<string, object> Settings { get; set; }
 
         public async Task<IEnumerable<Anime>> GetAnimesByListPageNumberAsync(int pageNumber)
         {
@@ -111,10 +113,22 @@ namespace AnimeViewer.Services.Implementations
 
         public async Task Initialize()
         {
+            // Add cookies to request data
+            var uri = new Uri(HostAddress);
+            foreach (var setting in Settings)
+                _handler.CookieContainer.Add(uri, new Cookie(setting.Key, (string) setting.Value));
+
             var response = await HttpClient.GetAsync("/");
             if (!response.IsSuccessStatusCode)
                 throw new HttpRequestException("Initialization of the KissAnime Api failed.");
             ImageService.Instance.Initialize(new Configuration {HttpClient = HttpClient});
+
+            // Save cookies
+            foreach (var cookie in _handler.CookieContainer.GetCookies(uri))
+            {
+                var c = (Cookie) cookie;
+                Settings[c.Name] = c.Value;
+            }
             HasInitialized = true;
         }
 

@@ -36,7 +36,8 @@
                                    Image="list_icon.png"
                                    IsActive="True"
                                    Tapped="MenuItem_OnTapped" />
-                <partials:MenuItem Text="Genre" />
+                <partials:MenuItem Text="Genre"
+                                   Tapped="MenuItem_OnTapped" />
                 <partials:MenuItem Text="Most Watched"
                                    Tapped="MenuItem_OnTapped" />
                 <partials:MenuItem Text="Newest"

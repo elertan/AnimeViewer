@@ -37,7 +37,7 @@
                    HorizontalOptions="Center"
                    FontSize="Micro"
                    HorizontalTextAlignment="Center"
-                   Text="AnimeViewer isn't endorsed by 9Anime and doesn't reflect the views or opinions of 9Anime or anyone officially involved in producing or managing 9Anime." />
+                   Text="AnimeViewer isn't endorsed by KissAnime and doesn't reflect the views or opinions of KissAnime or anyone officially involved in producing or managing KissAnime." />
             <Button Text="I love it!"
                     StyleClass="Success"
                     HorizontalOptions="FillAndExpand"

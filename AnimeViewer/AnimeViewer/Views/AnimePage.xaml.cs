@@ -21,7 +21,7 @@ namespace AnimeViewer.Views
             BindingContext = _viewModel;
         }
 
-        private async void _viewModel_AllInformationLoaded(object sender, EventArgs e)
+        private void _viewModel_AllInformationLoaded(object sender, EventArgs e)
         {
             ListView.HeightRequest = ListView.RowHeight*_viewModel.Anime.Episodes.Count;
         }
@@ -31,9 +31,13 @@ namespace AnimeViewer.Views
             if (!_firstAppearance) return;
             _firstAppearance = false;
 
+            UserDialogs.Instance.ShowLoading("Loading Anime");
+
             CustomBackgroundImage.Source = _viewModel.Anime.ImageUrl;
             if (!_viewModel.HasConnectionIssue)
                 await _viewModel.GetAllAnimeInformationAsync();
+
+            UserDialogs.Instance.HideLoading();
         }
 
         private async void Episode_Tapped(object sender, ItemTappedEventArgs e)
@@ -41,6 +45,7 @@ namespace AnimeViewer.Views
             if (e.Item == null) return;
 
             UserDialogs.Instance.ShowLoading("Loading Episode");
+
             ((ListView) sender).SelectedItem = null;
             if (e.Item == null) return;
             var episode = (Episode) e.Item;
@@ -54,9 +59,14 @@ namespace AnimeViewer.Views
                 await _viewModel.SetEpisodeAsWatched(episode);
 
             var videoPlayer = DependencyService.Get<IVideoPlayer>();
-            videoPlayer.Play(sourceUrl);
+            if (!videoPlayer.Play(sourceUrl)) await UserDialogs.Instance.ConfirmAsync("No video player found on your device, please install one via the playstore.", "VideoPlayer Required", "OK");
 
             UserDialogs.Instance.HideLoading();
+        }
+
+        private void ListView_OnItemAppearing(object sender, ItemVisibilityEventArgs e)
+        {
+            var item = e.Item;
         }
     }
 }
