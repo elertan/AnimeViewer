@@ -16,7 +16,13 @@ namespace AnimeViewer.Views
         {
             InitializeComponent();
             _viewModel = new AnimePageViewModel {Anime = anime, HasConnectionIssue = hasConnectionIssue}; //Image and Anime Name
+            _viewModel.AllInformationLoaded += _viewModel_AllInformationLoaded;
             BindingContext = _viewModel;
+        }
+
+        private async void _viewModel_AllInformationLoaded(object sender, EventArgs e)
+        {
+            ListView.HeightRequest = ListView.RowHeight*_viewModel.Anime.Episodes.Count;
         }
 
         private async void AnimePage_OnAppearing(object sender, EventArgs e)
@@ -40,6 +46,10 @@ namespace AnimeViewer.Views
 
             var sourceUrl = sources?.First()?.SourceUrl;
             if (sourceUrl == null) return;
+
+
+            if (!episode.HasWatched)
+                await _viewModel.SetEpisodeAsWatched(episode);
 
             var videoPlayer = DependencyService.Get<IVideoPlayer>();
             videoPlayer.Play(sourceUrl);

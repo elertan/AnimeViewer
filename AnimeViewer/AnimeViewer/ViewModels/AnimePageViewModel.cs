@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using AnimeViewer.Models;
 using MvvmHelpers;
@@ -35,6 +36,13 @@ namespace AnimeViewer.ViewModels
             }
         }
 
+        public event EventHandler AllInformationLoaded;
+
+        private void OnAllInformationLoaded()
+        {
+            AllInformationLoaded?.Invoke(this, EventArgs.Empty);
+        }
+
         private void AnimePageViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
         }
@@ -42,6 +50,14 @@ namespace AnimeViewer.ViewModels
         public async Task GetAllAnimeInformationAsync()
         {
             Anime = await AnimeManager.Instance.GetFullAnimeInformation(Anime);
+            OnAllInformationLoaded();
+        }
+
+        public async Task SetEpisodeAsWatched(Episode episode)
+        {
+            episode.HasWatched = true;
+            await AnimeManager.Instance.UpdateAnimeInformationForCachedAnime(episode.Anime);
+            OnPropertyChanged(nameof(Anime));
         }
     }
 }

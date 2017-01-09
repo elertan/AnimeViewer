@@ -65,6 +65,7 @@ namespace AnimeViewer.Services.Implementations
             {
                 var episode = new Episode();
 
+                episode.Anime = anime;
                 //episode.AnimeId = anime.Id;
                 episode.Name = episodeNode.InnerText.Trim().Replace(anime.Name, "");
                 episode.EpisodeUrl = episodeNode.Attributes["href"].Value;

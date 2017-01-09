@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AnimeViewer.EventArguments;
 using AnimeViewer.Models;
 using AnimeViewer.Services;
 using Microsoft.Practices.Unity;
 using SQLite.Net.Async;
+using SQLiteNetExtensionsAsync.Extensions;
 using Xamarin.Forms;
 
 namespace AnimeViewer
@@ -90,13 +92,29 @@ namespace AnimeViewer
 
         public async Task<Anime> GetFullAnimeInformation(Anime anime)
         {
-            var a = await DbConnection.Table<Anime>().Where(dto => dto.Name == anime.Name).FirstAsync();
+            var animes = await DbConnection.GetAllWithChildrenAsync<Anime>(dto => dto.Name == anime.Name);
+            var a = animes.First();
+            //a.Episodes = await DbConnection.Table<Episode>().Where(ep => ep.AnimeId)
             if (a.ContainsAllInformation)
                 return a;
 
             a = await Api.GetFullAnimeInformationByPageUrlAsync(anime.PageUrl);
-            await DbConnection.UpdateAsync(a);
+            // Assign same id to overwrite current cached anime
+            a.Id = anime.Id;
+
+            // TEMPORARY SINCE PAGEURL IS NULL
+            a.PageUrl = anime.PageUrl;
+            a.ContainsAllInformation = true;
+            await DbConnection.InsertAllWithChildrenAsync(a.Episodes);
+            await UpdateAnimeInformationForCachedAnime(a);
             return a;
+        }
+
+        public async Task UpdateAnimeInformationForCachedAnime(Anime anime)
+        {
+            await DbConnection.UpdateWithChildrenAsync(anime);
+            //await DbConnection.UpdateAsync(anime);
+            //await DbConnection.UpdateAllAsync(anime.Episodes);
         }
 
         public async Task RemoveCache()

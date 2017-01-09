@@ -15,6 +15,8 @@ namespace AnimeViewer.Models
         [ManyToOne]
         public Anime Anime { get; set; }
 
+        public bool HasWatched { get; set; }
+
         public string Name { get; set; }
         public string EpisodeUrl { get; set; }
     }

@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using Acr.UserDialogs;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using FFImageLoading.Forms.Droid;
@@ -28,6 +29,7 @@ namespace AnimeViewer.Droid
             x = typeof(BlurredTransformation);
 
             CachedImageRenderer.Init();
+            UserDialogs.Init(() => (Activity) Forms.Context);
 
             //Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
             //Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
