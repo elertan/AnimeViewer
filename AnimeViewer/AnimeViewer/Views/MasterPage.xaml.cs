@@ -14,20 +14,32 @@ namespace AnimeViewer.Views
 
         public MasterPage()
         {
+            // If our device is running iOS, apply an icon to our masterpage (the hamburger icon, since by default iOS doesnt include one and android does)
             if (Device.OS == TargetPlatform.iOS)
                 Icon = "menu.png";
             InitializeComponent();
         }
 
+        /// <summary>
+        ///     This navigation is globally accessible and is linked to our detailpage's navigationpage, retrieved via our losely
+        ///     coupled container to easily change our main navigation
+        /// </summary>
         public INavigation GlobalNavigation
         {
             get { return _globalNavigation ?? (_globalNavigation = ((App) Application.Current).DiContainer.Resolve<INavigation>()); }
             set { _globalNavigation = value; }
         }
 
+        /// <summary>
+        ///     This method is linked via our view and gets called once a menu item gets tapped
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void MenuItem_OnTapped(object sender, EventArgs e)
         {
+            // Get our menu item via the sender
             var menuItem = (MenuItem) sender;
+            // Check our items text and do things depending on which item it is
             switch (menuItem.Text)
             {
                 case "List":
@@ -44,6 +56,9 @@ namespace AnimeViewer.Views
             ((MainPage) Application.Current.MainPage).IsPresented = false;
         }
 
+        /// <summary>
+        ///     Makes all menu items inactive (dimmed)
+        /// </summary>
         private void MakeAllMenuItemsInactive()
         {
             foreach (var view in MenuItemsContainer.Children)
@@ -61,6 +76,7 @@ namespace AnimeViewer.Views
 
         private async void AboutMenuItem_OnTapped(MenuItem menuItem, EventArgs e)
         {
+            // Show our about page
             await GlobalNavigation.PushAsync(new AboutPage());
         }
     }

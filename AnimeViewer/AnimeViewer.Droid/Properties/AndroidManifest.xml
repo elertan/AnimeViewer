@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.elertan.AnimeViewer" android:versionCode="1">
 	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="AnimeViewer.Droid"></application>
+	<application android:label="AnimeViewer" android:icon="@drawable/appicon"></application>
 </manifest>

@@ -38,9 +38,11 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>
+    </DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -259,6 +261,10 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\heart.png" />
     <AndroidResource Include="Resources\drawable\list_icon.png" />
+    <AndroidResource Include="Resources\drawable\appicon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\appicon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\appicon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\appicon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />

@@ -31,13 +31,14 @@
                    HorizontalOptions="Center"
                    HorizontalTextAlignment="Center"
                    Text="Watch anime free &amp; adfree on any iOS or Android device. Developed and maintained by Elertan." />
-            <Label Grid.Row="3"
+            <!-- This label shows the fact we don't have official consent by our host -->
+            <!--<Label Grid.Row="3"
                    Margin="35"
                    VerticalOptions="Center"
                    HorizontalOptions="Center"
                    FontSize="Micro"
                    HorizontalTextAlignment="Center"
-                   Text="AnimeViewer isn't endorsed by KissAnime and doesn't reflect the views or opinions of KissAnime or anyone officially involved in producing or managing KissAnime." />
+                   Text="AnimeViewer isn't endorsed by KissAnime and doesn't reflect the views or opinions of KissAnime or anyone officially involved in producing or managing KissAnime." />-->
             <Button Text="I love it!"
                     StyleClass="Success"
                     HorizontalOptions="FillAndExpand"
