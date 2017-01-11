@@ -8,9 +8,11 @@
                   IsPresentedChanged="MainPage_OnIsPresentedChanged"
                   Appearing="MainPage_OnAppearing">
     <MasterDetailPage.Master>
+        <!-- The masterpage, or in other words menupage -->
         <views:MasterPage x:Name="MasterPage" />
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
+        <!-- The detail page, that contains our firstpage, the AllAnimeCollection page -->
         <NavigationPage x:Name="NavigationPage"
                         Appearing="NavigationPage_OnAppearing"
                         BarTextColor="White">

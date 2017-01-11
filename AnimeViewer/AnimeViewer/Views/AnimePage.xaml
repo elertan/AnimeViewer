@@ -14,16 +14,21 @@
                                     DownsampleWidth="38"
                                     Aspect="Fill">
             <ffimageloading:CachedImage.Transformations>
+                <!-- For a blurry image -->
                 <fftransformations:BlurredTransformation Radius="3" />
             </ffimageloading:CachedImage.Transformations>
         </ffimageloading:CachedImage>
+        <!-- Apply a dark tint over the blurry image, so its easier to read to content on it -->
         <ContentView BackgroundColor="Black"
                      Opacity="0.5" />
         <!-- What used to be your page content goes here -->
+        <!-- A scrollview to scroll through all content if larger then the page (which is likely due to episodes) -->
         <ScrollView IsClippedToBounds="True"
                     VerticalOptions="FillAndExpand"
                     HorizontalOptions="FillAndExpand">
             <StackLayout>
+                <!-- These are the notification frames, for example the Establishing Connection notification -->
+                <!-- Notification that shows when there are connection issue(s) -->
                 <Frame HasShadow="True"
                        Padding="10"
                        BackgroundColor="Transparent"
@@ -37,6 +42,7 @@
                         HorizontalTextAlignment="Center"
                         FontSize="Small" />
                 </Frame>
+                <!-- Anime Name -->
                 <Label HorizontalOptions="Center"
                        TextColor="White"
                        Margin="10"
@@ -48,24 +54,22 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="2*" />
                     </Grid.ColumnDefinitions>
+                    <!-- Poster Image of the anime -->
                     <ffimageloading:CachedImage Source="{Binding Anime.ImageUrl}"
                                                 HorizontalOptions="FillAndExpand"
                                                 VerticalOptions="FillAndExpand" />
                     <StackLayout Grid.Column="1">
+                        <!-- Some more detailed information will be shown here -->
                         <Label Text="Other Information"
                                FontSize="Small" />
                     </StackLayout>
                 </Grid>
+                <!-- Summary of the anime -->
                 <Label Text="{Binding Anime.Summary}"
                        FontSize="Small"
                        TextColor="#999999"
                        Margin="25" />
-                <!--<Frame HasShadow="True"
-                       BackgroundColor="Transparent"
-                       Padding="0"
-                       VerticalOptions="FillAndExpand"
-                       HorizontalOptions="FillAndExpand"
-                       Margin="30">-->
+                <!-- Episodes and an activityindicator when the list is empty -->
                 <Grid VerticalOptions="FillAndExpand"
                       HorizontalOptions="FillAndExpand">
                     <ContentView BackgroundColor="Black"
@@ -83,23 +87,7 @@
                             </DataTrigger>
                         </ActivityIndicator.Triggers>
                     </ActivityIndicator>
-                    <!--<partials:ItemsStack ItemsSource="{Binding Anime.Episodes}"
-                                             SelectedItemChanged="ItemsStack_OnSelectedItemChanged">
-                            <partials:ItemsStack.ItemTemplate>
-                                <DataTemplate>
-                                    <StackLayout BackgroundColor="Transparent"
-                                                 HorizontalOptions="FillAndExpand"
-                                                 VerticalOptions="FillAndExpand"
-                                                Padding="10">
-                                        <Label Text="{Binding Name}"
-                                               TextColor="White"
-                                               HorizontalOptions="Center"
-                                               HorizontalTextAlignment="Center"
-                                               VerticalOptions="Center" />
-                                    </StackLayout>
-                                </DataTemplate>
-                            </partials:ItemsStack.ItemTemplate>
-                        </partials:ItemsStack>-->
+                    <!-- The episode list -->
                     <ListView BackgroundColor="Transparent"
                               x:Name="ListView"
                               Margin="10"
@@ -107,7 +95,6 @@
                               HorizontalOptions="FillAndExpand"
                               RowHeight="50"
                               ItemTapped="Episode_Tapped"
-                              ItemAppearing="ListView_OnItemAppearing"
                               ItemsSource="{Binding Anime.Episodes}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -116,6 +103,7 @@
                                                  HorizontalOptions="Center"
                                                  VerticalOptions="Center">
                                         <StackLayout.Triggers>
+                                            <!-- Change backgroundcolor if watched TODO: NOT WORKING -->
                                             <DataTrigger TargetType="StackLayout"
                                                          Binding="{Binding HasWatched}"
                                                          Value="True">
@@ -123,6 +111,7 @@
                                                         Value="Green" />
                                             </DataTrigger>
                                         </StackLayout.Triggers>
+                                        <!-- The episode text -->
                                         <Label Text="{Binding Name}"
                                                TextColor="White"
                                                HorizontalOptions="Center"
@@ -134,7 +123,6 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </Grid>
-                <!--</Frame>-->
             </StackLayout>
         </ScrollView>
     </Grid>

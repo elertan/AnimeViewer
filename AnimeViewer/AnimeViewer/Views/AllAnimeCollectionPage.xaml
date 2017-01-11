@@ -10,6 +10,8 @@
              x:Name="Page"
              Title="All Anime">
     <StackLayout>
+        <!-- These are the notification views, for example the Establishing Connection notification -->
+        <!-- Notification that shows when the animemanager is establishing a connection with the api -->
         <ContentView IsVisible="{Binding IsInitializing}">
             <partials:BannerView Text="Establishing Connection">
                 <partials:BannerView.CustomView>
@@ -17,6 +19,7 @@
                 </partials:BannerView.CustomView>
             </partials:BannerView>
         </ContentView>
+        <!-- Notification that shows when the animemanager is caching animes on the device -->
         <ContentView IsVisible="{Binding IsCachingAnimes}">
             <partials:BannerView Text="Caching Animes">
                 <partials:BannerView.CustomView>
@@ -31,6 +34,7 @@
                 </partials:BannerView.CustomView>
             </partials:BannerView>
         </ContentView>
+        <!-- Notification that shows when there are connection issue(s) and if tapped, retries connecting -->
         <ContentView IsVisible="{Binding HasConnectionIssue}">
             <partials:BannerView Text="Connection to host failed.&#10;Tap to retry connection">
                 <partials:BannerView.GestureRecognizers>
@@ -39,6 +43,7 @@
                 </partials:BannerView.GestureRecognizers>
             </partials:BannerView>
         </ContentView>
+        <!-- The searchbar -->
         <SearchBar Placeholder="Search..."
                    BackgroundColor="Transparent"
                    TextChanged="SearchBar_OnTextChanged"
@@ -53,6 +58,7 @@
                             Android="Gray" />
             </SearchBar.PlaceholderColor>
         </SearchBar>
+        <!-- The animes to show in a collectionview format -->
         <flv:FlowListView FlowColumnMinWidth="125"
                           RowHeight="175"
                           FlowItemsSource="{Binding VisibleAnimes}"
@@ -67,6 +73,7 @@
             <flv:FlowListView.FlowColumnTemplate>
                 <DataTemplate>
                     <Grid Padding="5">
+                        <!-- The poster image of an anime -->
                         <ffimageloading:CachedImage Aspect="Fill"
                                                     Source="{Binding ImageUrl}"
                                                     HorizontalOptions="FillAndExpand"
@@ -74,11 +81,13 @@
                                                     RetryCount="3"
                                                     RetryDelay="500"
                                                     VerticalOptions="FillAndExpand" />
+                        <!-- The black bar on the bottom over the image -->
                         <ContentView BackgroundColor="Black"
                                      Opacity="0.8"
                                      VerticalOptions="End"
                                      BindingContext="{x:Reference Label}"
                                      HeightRequest="{Binding Path=Height}" />
+                        <!-- The textlabel over te bottom black bar -->
                         <Label x:Name="Label"
                                HorizontalOptions="Fill"
                                HorizontalTextAlignment="Center"
@@ -89,6 +98,7 @@
                 </DataTemplate>
             </flv:FlowListView.FlowColumnTemplate>
         </flv:FlowListView>
+        <!-- The activity indicator that shows when the app is busy -->
         <ActivityIndicator IsRunning="{Binding IsBusy}"
                            IsVisible="{Binding IsBusy}" />
     </StackLayout>

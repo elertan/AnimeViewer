@@ -13,7 +13,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-
+        <!-- The bar on top with the white coloured ANIMEVIEWER text in it -->
         <ContentView BackgroundColor="#0d9666">
             <ContentView.Margin>
                 <OnPlatform x:TypeArguments="Thickness">
@@ -28,9 +28,10 @@
                    TextColor="White"
                    Margin="10" />
         </ContentView>
-
+        <!-- A scrollview with padding to allow scrolling in case the menu is to large for some screens -->
         <ScrollView Padding="20"
                     Grid.Row="1">
+            <!-- StackLayout to contain all our menu items -->
             <StackLayout x:Name="MenuItemsContainer">
                 <partials:MenuItem Text="List"
                                    Image="list_icon.png"
