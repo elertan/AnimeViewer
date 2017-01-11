@@ -1,4 +1,5 @@
 ﻿using System;
+using Acr.UserDialogs;
 using Microsoft.Practices.Unity;
 using Xamarin.Forms;
 using MenuItem = AnimeViewer.Views.Partials.MenuItem;
@@ -28,7 +29,7 @@ namespace AnimeViewer.Views
             set { _globalNavigation = value; }
         }
 
-        private void MenuItem_OnTapped(object sender, EventArgs e)
+        private async void MenuItem_OnTapped(object sender, EventArgs e)
         {
             var menuItem = (MenuItem) sender;
             switch (menuItem.Text)
@@ -38,6 +39,9 @@ namespace AnimeViewer.Views
                     break;
                 case "About":
                     AboutMenuItem_OnTapped(menuItem, e);
+                    break;
+                default:
+                    await UserDialogs.Instance.AlertAsync("This feature is still under construction! Please show the developer some love so he finishes this.", "Oops! Pretend you saw nothing");
                     break;
             }
 

@@ -1,7 +1,7 @@
 ﻿namespace AnimeViewer.Services
 {
-    public interface IVideoPlayer
-    {
-        void Play(string source);
-    }
+	public interface IVideoPlayer
+	{
+		bool Play(string source);
+	}
 }

@@ -49,7 +49,20 @@ namespace AnimeViewer
                 Application.Current.Properties[AnimeManagerLastUpdatedListPagePropertyKey] = 1;
             await Application.Current.SavePropertiesAsync();
 
-            Instance = new AnimeManager {Api = ((App) Application.Current).DiContainer.Resolve<IAnimeApi>()};
+            var api = ((App) Application.Current).DiContainer.Resolve<IAnimeApi>();
+            var settings = new Dictionary<string, object>();
+            foreach (var setting in Application.Current.Properties.Where(prop => prop.Key.Contains(api.GetType().FullName)))
+            {
+                var key = setting.Key.Replace(api.GetType().FullName, "");
+                settings.Add(key, setting.Value);
+            }
+
+            api.Settings = settings;
+            await api.Initialize();
+            foreach (var setting in api.Settings)
+                Application.Current.Properties[api.GetType().FullName + setting.Key] = setting.Value;
+            await Application.Current.SavePropertiesAsync();
+            Instance = new AnimeManager {Api = api};
         }
 
         private async Task UpdateCachedAnimesByApi()

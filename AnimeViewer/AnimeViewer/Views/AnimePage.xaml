@@ -107,6 +107,7 @@
                               HorizontalOptions="FillAndExpand"
                               RowHeight="50"
                               ItemTapped="Episode_Tapped"
+                              ItemAppearing="ListView_OnItemAppearing"
                               ItemsSource="{Binding Anime.Episodes}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -114,6 +115,14 @@
                                     <StackLayout BackgroundColor="Transparent"
                                                  HorizontalOptions="Center"
                                                  VerticalOptions="Center">
+                                        <StackLayout.Triggers>
+                                            <DataTrigger TargetType="StackLayout"
+                                                         Binding="{Binding HasWatched}"
+                                                         Value="True">
+                                                <Setter Property="BackgroundColor"
+                                                        Value="Green" />
+                                            </DataTrigger>
+                                        </StackLayout.Triggers>
                                         <Label Text="{Binding Name}"
                                                TextColor="White"
                                                HorizontalOptions="Center"

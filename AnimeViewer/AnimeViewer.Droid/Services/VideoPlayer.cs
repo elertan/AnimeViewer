@@ -1,5 +1,6 @@
 using Android.App;
-using Android.Widget;
+using Android.Content;
+using Android.Net;
 using AnimeViewer.Droid.Services;
 using AnimeViewer.Services;
 using Xamarin.Forms;
@@ -8,27 +9,22 @@ using Xamarin.Forms;
 
 namespace AnimeViewer.Droid.Services
 {
-    public class VideoPlayer : IVideoPlayer
-    {
-        public void Play(string source)
-        {
-            var activity = (Activity) Forms.Context;
-            var videoView = new VideoView(activity);
-            videoView.SetVideoPath(source);
+	public class VideoPlayer : IVideoPlayer
+	{
+		public bool Play(string source)
+		{
+			var activity = (Activity)Forms.Context;
 
-            var mediaController = new MediaController(activity);
-            videoView.SetMediaController(mediaController);
+			try {
+				var parsedSource = Uri.Parse(source);
+				var i = new Intent(Intent.ActionView, parsedSource);
+				i.SetDataAndType(parsedSource, "video/mp4");
+				activity.StartActivity(i);
 
-
-            //var layout = new LinearLayout(activity)
-            //{
-            //    LayoutParameters =
-            //        new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent)
-            //};
-
-            //layout.AddView(mediaController, layout.LayoutParameters);
-
-            //activity.AddContentView(layout, layout.LayoutParameters);
-        }
-    }
+				return true;
+			} catch {
+				return false;
+			}
+		}
+	}
 }

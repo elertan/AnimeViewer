@@ -12,7 +12,7 @@ namespace AnimeViewer.iOS.Services
 {
     public class VideoPlayer : IVideoPlayer
     {
-        public void Play(string source)
+        public bool Play(string source)
         {
             var player = new AVPlayer(new NSUrl(source));
             var playerViewController = new AVPlayerViewController {Player = player};
@@ -25,7 +25,12 @@ namespace AnimeViewer.iOS.Services
             playerViewController.View.Frame = vc.View.Frame;
             player.Play();
 
+            // Allow sound thru muted state
+            AVAudioSession.SharedInstance().SetCategory(AVAudioSessionCategory.Playback);
+            // Remove visible statusbar
             UIApplication.SharedApplication.SetStatusBarHidden(true, UIStatusBarAnimation.Fade);
+
+            return true;
         }
     }
 }
