@@ -15,7 +15,8 @@ namespace AnimeViewer.Views
         public AnimePage(Anime anime, bool hasConnectionIssue = false)
         {
             InitializeComponent();
-            _viewModel = new AnimePageViewModel {Anime = anime, HasConnectionIssue = hasConnectionIssue}; //Image and Anime Name
+            _viewModel = new AnimePageViewModel {Anime = anime, HasConnectionIssue = hasConnectionIssue};
+            //Image and Anime Name
             _viewModel.AllInformationLoaded += _viewModel_AllInformationLoaded;
             BindingContext = _viewModel;
         }
@@ -46,7 +47,6 @@ namespace AnimeViewer.Views
 
             var sourceUrl = sources?.First()?.SourceUrl;
             if (sourceUrl == null) return;
-
 
             if (!episode.HasWatched)
                 await _viewModel.SetEpisodeAsWatched(episode);

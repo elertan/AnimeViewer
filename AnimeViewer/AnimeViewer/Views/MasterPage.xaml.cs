@@ -7,7 +7,7 @@ using MenuItem = AnimeViewer.Views.Partials.MenuItem;
 
 namespace AnimeViewer.Views
 {
-    public partial class MasterPage : ContentPage
+    public partial class MasterPage
     {
         private INavigation _globalNavigation;
 
@@ -20,7 +20,11 @@ namespace AnimeViewer.Views
 
         public INavigation GlobalNavigation
         {
-            get { return _globalNavigation ?? (_globalNavigation = ((App) Application.Current).DiContainer.Resolve<INavigation>()); }
+            get
+            {
+                return _globalNavigation ??
+                       (_globalNavigation = ((App) Application.Current).DiContainer.Resolve<INavigation>());
+            }
             set { _globalNavigation = value; }
         }
 
