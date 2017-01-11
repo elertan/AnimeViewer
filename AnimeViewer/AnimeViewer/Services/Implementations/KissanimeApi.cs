@@ -13,34 +13,62 @@ using HtmlAgilityPack;
 
 namespace AnimeViewer.Services.Implementations
 {
+    /// <summary>
+    ///     This is the implementation of the anime api for KissAnime(.ru)
+    /// </summary>
     public class KissanimeApi : IAnimeApi
     {
+        /// <summary>
+        ///     The host address
+        /// </summary>
         public static readonly string HostAddress = "http://kissanime.ru";
+
+        /// <summary>
+        ///     The innerhandler, used to read and write cookies to
+        /// </summary>
         private readonly HttpClientHandler _handler;
 
         public KissanimeApi()
         {
+            // Create a new handler
             _handler = new HttpClientHandler();
+            // Create a new clearancehandler (to bypass cloudflare protection) and use our handler as innerhandler, and set the base address so we can use relative url's.
             HttpClient = new HttpClient(new ClearanceHandler(_handler)) {BaseAddress = new Uri(HostAddress)};
         }
 
+        /// <summary>
+        ///     Has the api initialized
+        /// </summary>
         public bool HasInitialized { get; set; }
 
+        /// <summary>
+        ///     The used httpclient
+        /// </summary>
         public HttpClient HttpClient { get; set; }
+
+        /// <summary>
+        ///     The settings
+        /// </summary>
         public Dictionary<string, object> Settings { get; set; }
 
         public async Task<IEnumerable<Anime>> GetAnimesByListPageNumberAsync(int pageNumber)
         {
+            // Wait until the api has initialized, check each 100ms
             while (!HasInitialized) await Task.Delay(100);
+            // Get the pages html for the page
             var responseString = await HttpClient.GetStringAsync($"/AnimeList?page={pageNumber}");
+            // Scrape the html for the animes
             return ExtractFromListingTable(responseString);
         }
 
         public async Task<Anime> GetFullAnimeInformationByPageUrlAsync(string pageUrl)
         {
+            // Wait until the api has initialized, check each 100ms
             while (!HasInitialized) await Task.Delay(100);
+            // Get the pages html for the page
             var responseString = await HttpClient.GetStringAsync(pageUrl);
 
+            // Scrape the html
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(responseString);
 
@@ -90,8 +118,12 @@ namespace AnimeViewer.Services.Implementations
 
         public async Task<IEnumerable<VideoSource>> GetVideoSourcesByEpisodeUrlAsync(string episodeUrl)
         {
+            // Wait until the api has initialized, check each 100ms
             while (!HasInitialized) await Task.Delay(100);
+            // Get the html response
             var responseString = await HttpClient.GetStringAsync(episodeUrl);
+
+            // scrape the html
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(responseString);
 
@@ -119,9 +151,11 @@ namespace AnimeViewer.Services.Implementations
             foreach (var setting in Settings)
                 _handler.CookieContainer.Add(uri, new Cookie(setting.Key, (string) setting.Value));
 
+            // Retrieve homepage to bypass cloudflare and gain the cookies
             var response = await HttpClient.GetAsync("/");
             if (!response.IsSuccessStatusCode)
                 throw new HttpRequestException("Initialization of the KissAnime Api failed.");
+            // Set imageservice httpclient so it can download the images (it needs the cloudflare cookies)
             ImageService.Instance.Initialize(new Configuration {HttpClient = HttpClient});
 
             // Save cookies
@@ -133,6 +167,11 @@ namespace AnimeViewer.Services.Implementations
             HasInitialized = true;
         }
 
+        /// <summary>
+        ///     Logic for extracting the animes from the listing table
+        /// </summary>
+        /// <param name="html"></param>
+        /// <returns></returns>
         private IEnumerable<Anime> ExtractFromListingTable(string html)
         {
             var htmlDoc = new HtmlDocument();

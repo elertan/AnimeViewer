@@ -1,7 +1,15 @@
 ﻿namespace AnimeViewer.Services
 {
-	public interface IVideoPlayer
-	{
-		bool Play(string source);
-	}
+    /// <summary>
+    ///     Used to play videos on the specific platform
+    /// </summary>
+    public interface IVideoPlayer
+    {
+        /// <summary>
+        ///     Plays a video by a video source
+        /// </summary>
+        /// <param name="source">The source</param>
+        /// <returns>Success or not</returns>
+        bool Play(string source);
+    }
 }
