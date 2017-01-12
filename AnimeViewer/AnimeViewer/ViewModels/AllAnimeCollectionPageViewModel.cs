@@ -114,7 +114,9 @@ namespace AnimeViewer.ViewModels
             if (string.IsNullOrWhiteSpace(SearchKeyword))
                 VisibleAnimes = AllAnimes;
             else
-                VisibleAnimes = new ObservableRangeCollection<Anime>(AllAnimes.Where(anime => anime.Name.ToLower().Contains(SearchKeyword)).ToArray());
+                VisibleAnimes =
+                    new ObservableRangeCollection<Anime>(
+                        AllAnimes.Where(anime => anime.Name.ToLower().Contains(SearchKeyword)).ToArray());
         }
 
         private void Instance_AnimeManagerApiConnectionError(object sender, EventArgs e)

@@ -52,8 +52,14 @@ namespace AnimeViewer.Views
                 case "About":
                     AboutMenuItem_OnTapped(menuItem, e);
                     break;
+                case "Newest":
+                    NewestMenuItem_OnTapped(menuItem, e);
+                    break;
                 default:
-                    await UserDialogs.Instance.AlertAsync("This feature is still under construction! Please show the developer some love so he finishes this.", "Oops! Pretend you saw nothing");
+                    await
+                        UserDialogs.Instance.AlertAsync(
+                            "This feature is still under construction! Please show the developer some love so he finishes this.",
+                            "Oops! Pretend you saw nothing");
                     break;
             }
 
@@ -70,6 +76,14 @@ namespace AnimeViewer.Views
                 var item = (MenuItem) view;
                 item.IsActive = false;
             }
+        }
+
+        private async void NewestMenuItem_OnTapped(MenuItem menuItem, EventArgs e)
+        {
+            MakeAllMenuItemsInactive();
+            menuItem.IsActive = true;
+            var animes = await AnimeManager.Instance.GetUpdatedAnimes();
+            await GlobalNavigation.PushAsync(new AnimeCollectionPage(animes));
         }
 
         private void ListMenuItem_OnTapped(MenuItem menuItem, EventArgs e)

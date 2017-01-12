@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             x:Class="AnimeViewer.Views.AnimeCollectionPage">
+    <Label Text="Mark" />
+
+    <!-- The animes to show in a collectionview format -->
+    <controls:FlowListView FlowColumnMinWidth="110"
+                           RowHeight="190"
+                           FlowItemsSource="{Binding Animes}"
+                           FlowItemTapped="FlowListView_OnFlowItemTapped">
+        <controls:FlowListView.FlowColumnTemplate>
+            <DataTemplate>
+                <Grid Padding="5"
+                      WidthRequest="110"
+                      HorizontalOptions="Center"
+                      VerticalOptions="CenterAndExpand">
+                    <!-- The poster image of an anime -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <forms:CachedImage Aspect="Fill"
+                                       Source="{Binding ImageUrl}"
+                                       HeightRequest="125"
+                                       WidthRequest="100"
+                                       HorizontalOptions="Center"
+                                       CacheType="Disk"
+                                       RetryCount="3"
+                                       RetryDelay="500"
+                                       VerticalOptions="FillAndExpand">
+                        <forms:CachedImage.Transformations>
+                            <transformations:RoundedTransformation Radius="5" />
+                        </forms:CachedImage.Transformations>
+                    </forms:CachedImage>
+                    <Label x:Name="Label"
+                           HorizontalOptions="Fill"
+                           HorizontalTextAlignment="Center"
+                           VerticalOptions="FillAndExpand"
+                           TextColor="White"
+                           Text="{Binding Name}"
+                           VerticalTextAlignment="Center"
+                           LineBreakMode="WordWrap"
+                           FontSize="Small"
+                           Grid.Row="1" />
+                </Grid>
+            </DataTemplate>
+        </controls:FlowListView.FlowColumnTemplate>
+    </controls:FlowListView>
+</ContentPage>

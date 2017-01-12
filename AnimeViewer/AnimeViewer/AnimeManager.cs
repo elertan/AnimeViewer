@@ -100,7 +100,8 @@ namespace AnimeViewer
             // Create settings for our api, so it can store its settings
             var settings = new Dictionary<string, object>();
             // Get all created settings from our total app settings, settings are saved using the full typename, so if we use another api the old settings wont be overridden
-            foreach (var setting in Application.Current.Properties.Where(prop => prop.Key.Contains(api.GetType().FullName)))
+            foreach (
+                var setting in Application.Current.Properties.Where(prop => prop.Key.Contains(api.GetType().FullName)))
             {
                 // Get the key that was stored using the api's code
                 var key = setting.Key.Replace(api.GetType().FullName, "");
@@ -172,7 +173,8 @@ namespace AnimeViewer
             var animes = await DbConnection.Table<Anime>().ToListAsync();
 #pragma warning disable 4014
             // Start caching all animes on the background
-            UpdateCachedAnimesByApi().ContinueWith(UpdateCachedAnimesByApiThrowedException, TaskContinuationOptions.OnlyOnFaulted);
+            UpdateCachedAnimesByApi()
+                .ContinueWith(UpdateCachedAnimesByApiThrowedException, TaskContinuationOptions.OnlyOnFaulted);
 #pragma warning restore 4014
             return animes;
         }
@@ -251,6 +253,15 @@ namespace AnimeViewer
                 source.SourceUrl = response.RequestMessage.RequestUri.ToString();
             }
             return sources;
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<Anime>> GetUpdatedAnimes()
+        {
+            var animes = await Api.GetUpdatedAnimesAsync();
+            return animes;
         }
     }
 }

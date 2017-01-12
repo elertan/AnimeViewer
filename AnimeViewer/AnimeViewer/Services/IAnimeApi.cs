@@ -21,6 +21,13 @@ namespace AnimeViewer.Services
         Dictionary<string, object> Settings { get; set; }
 
         /// <summary>
+        ///     This is a test you can remove this
+        /// </summary>
+        /// <param name="pageUrl"></param>
+        /// <returns></returns>
+        Task<IEnumerable<Anime>> GetUpdatedAnimesAsync();
+
+        /// <summary>
         ///     Initializes the api for use
         /// </summary>
         /// <returns></returns>

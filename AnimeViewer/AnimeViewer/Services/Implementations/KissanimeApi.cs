@@ -88,7 +88,10 @@ namespace AnimeViewer.Services.Implementations
                             span.Attributes.Contains("class") && (span.Attributes["class"].Value == "info") &&
                             (span.InnerText == "Summary:"))
                     .NextSibling.NextSibling.InnerText.Trim();
-            anime.ImageUrl = htmlDoc.DocumentNode.Descendants("img").First(img => img.Attributes.Contains("height") && (img.Attributes["height"].Value == "250px")).Attributes["src"].Value;
+            anime.ImageUrl =
+                htmlDoc.DocumentNode.Descendants("img")
+                    .First(img => img.Attributes.Contains("height") && (img.Attributes["height"].Value == "250px"))
+                    .Attributes["src"].Value;
 
             var episodes = new List<Episode>();
             foreach (var episodeNode in tableListing.Descendants("a"))
@@ -180,6 +183,12 @@ namespace AnimeViewer.Services.Implementations
             HasInitialized = true;
         }
 
+        public async Task<IEnumerable<Anime>> GetUpdatedAnimesAsync()
+        {
+            var responseString = await HttpClient.GetStringAsync("/AnimeList/Newest");
+            return ExtractFromListingTable(responseString);
+        }
+
         /// <summary>
         ///     Logic for extracting the animes from the listing table
         /// </summary>
@@ -193,7 +202,8 @@ namespace AnimeViewer.Services.Implementations
             {
                 var tableListing =
                     htmlDoc.DocumentNode.Descendants("table")
-                        .FirstOrDefault(n => n.Attributes.Contains("class") && (n.Attributes["class"].Value == "listing"));
+                        .FirstOrDefault(
+                            n => n.Attributes.Contains("class") && (n.Attributes["class"].Value == "listing"));
 
                 var animeTableRows = tableListing.Descendants("tr").Where(tr => tr.Descendants("td").Count() != 0);
 
@@ -208,7 +218,9 @@ namespace AnimeViewer.Services.Implementations
                     var doc = new HtmlDocument();
                     doc.LoadHtml(animeTableRow.Descendants("td").First().Attributes["title"].Value);
                     anime.ImageUrl = doc.DocumentNode.Descendants("img").First().Attributes["src"].Value;
-                    anime.PageUrl = HostAddress + doc.DocumentNode.Descendants("div").First().Descendants("a").First().Attributes["href"].Value;
+                    anime.PageUrl = HostAddress +
+                                    doc.DocumentNode.Descendants("div").First().Descendants("a").First().Attributes[
+                                        "href"].Value;
 
                     animes.Add(anime);
                 }
