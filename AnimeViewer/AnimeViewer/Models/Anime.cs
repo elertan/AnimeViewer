@@ -23,6 +23,9 @@ namespace AnimeViewer.Models
 
         public string Genres { get; set; }
 
+        public bool JustUpdated { get; set; }
+        public bool IsHot { get; set; }
+
         public bool ContainsAllInformation { get; set; }
     }
 }

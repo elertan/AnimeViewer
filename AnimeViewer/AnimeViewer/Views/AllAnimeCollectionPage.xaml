@@ -103,6 +103,16 @@
                                      BindingContext="{x:Reference Label}"
                                      HeightRequest="{Binding Path=Height}" />-->
                         <!-- The textlabel over te bottom black bar -->
+                        <controls:ContentViewRoundedCorners BackgroundColor="Red"
+                                                            IsVisible="{Binding IsHot}"
+                                                            Grid.Row="1"
+                                                            CornerRadius="5"
+                                                            Opacity="0.8" />
+                        <controls:ContentViewRoundedCorners BackgroundColor="Blue"
+                                                            IsVisible="{Binding JustUpdated}"
+                                                            Grid.Row="1"
+                                                            CornerRadius="5"
+                                                            Opacity="0.8" />
                         <Label x:Name="Label"
                                HorizontalOptions="Fill"
                                HorizontalTextAlignment="Center"

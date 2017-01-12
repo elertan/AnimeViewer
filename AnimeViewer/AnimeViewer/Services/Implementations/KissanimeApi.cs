@@ -214,6 +214,14 @@ namespace AnimeViewer.Services.Implementations
                     var anime = new Anime();
 
                     anime.Name = animeTableRow.Descendants("td").First().Descendants("a").First().InnerText.Trim();
+                    var tags = animeTableRow.Descendants("td").First().Descendants("img");
+                    foreach (var tag in tags)
+                    {
+                        if (!tag.Attributes.Contains("title")) continue;
+                        // Anime tags for updated and hot
+                        if (tag.Attributes["title"].Value.Contains("updated")) anime.JustUpdated = true;
+                        if (tag.Attributes["title"].Value.Contains("Popular")) anime.IsHot = true;
+                    }
 
                     var doc = new HtmlDocument();
                     doc.LoadHtml(animeTableRow.Descendants("td").First().Attributes["title"].Value);
