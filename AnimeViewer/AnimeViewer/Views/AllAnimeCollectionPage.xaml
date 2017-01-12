@@ -6,6 +6,8 @@
              xmlns:viewModels="clr-namespace:AnimeViewer.ViewModels;assembly=AnimeViewer"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:partials="clr-namespace:AnimeViewer.Views.Partials;assembly=AnimeViewer"
+             xmlns:controls="clr-namespace:AnimeViewer.Controls;assembly=AnimeViewer"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              x:Class="AnimeViewer.Views.AllAnimeCollectionPage"
              x:Name="Page"
              Title="All Anime">
@@ -59,8 +61,8 @@
             </SearchBar.PlaceholderColor>
         </SearchBar>
         <!-- The animes to show in a collectionview format -->
-        <flv:FlowListView FlowColumnMinWidth="125"
-                          RowHeight="175"
+        <flv:FlowListView FlowColumnMinWidth="110"
+                          RowHeight="185"
                           FlowItemsSource="{Binding VisibleAnimes}"
                           FlowItemTapped="FlowListView_OnFlowItemTapped"
                           IsPullToRefreshEnabled="False"
@@ -72,28 +74,45 @@
             </flv:FlowListView.GestureRecognizers>
             <flv:FlowListView.FlowColumnTemplate>
                 <DataTemplate>
-                    <Grid Padding="5">
+                    <Grid Padding="5"
+                          WidthRequest="110"
+                          HorizontalOptions="Center"
+                          VerticalOptions="CenterAndExpand">
                         <!-- The poster image of an anime -->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
                         <ffimageloading:CachedImage Aspect="Fill"
                                                     Source="{Binding ImageUrl}"
-                                                    HorizontalOptions="FillAndExpand"
+                                                    HeightRequest="125"
+                                                    WidthRequest="100"
+                                                    HorizontalOptions="Center"
                                                     CacheType="Disk"
                                                     RetryCount="3"
                                                     RetryDelay="500"
-                                                    VerticalOptions="FillAndExpand" />
+                                                    VerticalOptions="FillAndExpand">
+                            <ffimageloading:CachedImage.Transformations>
+                                <transformations:RoundedTransformation Radius="5" />
+                            </ffimageloading:CachedImage.Transformations>
+                        </ffimageloading:CachedImage>
                         <!-- The black bar on the bottom over the image -->
-                        <ContentView BackgroundColor="Black"
+                        <!--<ContentView BackgroundColor="Black"
                                      Opacity="0.8"
                                      VerticalOptions="End"
                                      BindingContext="{x:Reference Label}"
-                                     HeightRequest="{Binding Path=Height}" />
+                                     HeightRequest="{Binding Path=Height}" />-->
                         <!-- The textlabel over te bottom black bar -->
                         <Label x:Name="Label"
                                HorizontalOptions="Fill"
                                HorizontalTextAlignment="Center"
-                               VerticalOptions="End"
+                               VerticalOptions="FillAndExpand"
                                TextColor="White"
-                               Text="{Binding Name}" />
+                               Text="{Binding Name}"
+                               VerticalTextAlignment="Center"
+                               LineBreakMode="WordWrap"
+                               FontSize="Small"
+                               Grid.Row="1" />
                     </Grid>
                 </DataTemplate>
             </flv:FlowListView.FlowColumnTemplate>

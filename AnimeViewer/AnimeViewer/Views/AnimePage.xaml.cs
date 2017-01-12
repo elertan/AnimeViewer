@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Acr.UserDialogs;
 using AnimeViewer.Models;
 using AnimeViewer.Services;
 using AnimeViewer.ViewModels;
+using FFImageLoading.Transformations;
+using FFImageLoading.Work;
 using Xamarin.Forms;
 
 namespace AnimeViewer.Views
@@ -58,6 +61,7 @@ namespace AnimeViewer.Views
 
             // Set the custom background (blur background) to the anime's poster image
             CustomBackgroundImage.Source = _viewModel.Anime.ImageUrl;
+            CustomBackgroundImage.Transformations = new List<ITransformation> {new BlurredTransformation(3)};
             // If there is no connection issue
             //if (!_viewModel.HasConnectionIssue)
             // Get all information async

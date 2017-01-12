@@ -148,13 +148,26 @@ namespace AnimeViewer.Services.Implementations
         {
             // Add cookies to request data
             var uri = new Uri(HostAddress);
-            foreach (var setting in Settings)
-                _handler.CookieContainer.Add(uri, new Cookie(setting.Key, (string) setting.Value));
+            // TODO: FIX THIS COOKIES INVALID AFTER LONG PERIOD INACTIVE
+            //foreach (var setting in Settings)
+            //    _handler.CookieContainer.Add(uri, new Cookie(setting.Key, (string) setting.Value));
 
-            // Retrieve homepage to bypass cloudflare and gain the cookies
+            // Retrieve homepage to bypass cloudflare and gain the cookies, 3 retries
             var response = await HttpClient.GetAsync("/");
             if (!response.IsSuccessStatusCode)
                 throw new HttpRequestException("Initialization of the KissAnime Api failed.");
+            //catch (AggregateException ex) when (ex.InnerException is CloudFlareClearanceException)
+            //{
+            //    // After all retries, clearance still failed.
+            //    var e = ex.InnerException;
+            //}
+            //catch (AggregateException ex) when (ex.InnerException is TaskCanceledException)
+            //{
+            //    // Looks like we ran into a timeout. Too many clearance attempts?
+            //    // Maybe you should increase client.Timeout as each attempt will take about five seconds.
+            //    var e = ex.InnerException;
+            //}
+
             // Set imageservice httpclient so it can download the images (it needs the cloudflare cookies)
             ImageService.Instance.Initialize(new Configuration {HttpClient = HttpClient});
 

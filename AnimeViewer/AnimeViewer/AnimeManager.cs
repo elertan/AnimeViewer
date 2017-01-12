@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using AnimeViewer.EventArguments;
 using AnimeViewer.Models;
@@ -93,6 +94,9 @@ namespace AnimeViewer
 
             // Get our api instance from our losely coupled container (abstract api, so its easily changed to another api if needed)
             var api = ((App) Application.Current).DiContainer.Resolve<IAnimeApi>();
+            // Instance is now set and ready to be used
+            Instance = new AnimeManager {Api = api};
+
             // Create settings for our api, so it can store its settings
             var settings = new Dictionary<string, object>();
             // Get all created settings from our total app settings, settings are saved using the full typename, so if we use another api the old settings wont be overridden
@@ -103,7 +107,6 @@ namespace AnimeViewer
                 // Put the settings in our settings variable again
                 settings.Add(key, setting.Value);
             }
-
             // Add them back on the api
             api.Settings = settings;
             // Initialize the api
@@ -112,9 +115,6 @@ namespace AnimeViewer
             foreach (var setting in api.Settings)
                 Application.Current.Properties[api.GetType().FullName + setting.Key] = setting.Value;
             await Application.Current.SavePropertiesAsync();
-
-            // Instance is now set and ready to be used
-            Instance = new AnimeManager {Api = api};
         }
 
         /// <summary>
@@ -240,7 +240,14 @@ namespace AnimeViewer
         public async Task<IEnumerable<VideoSource>> GetVideoSourcesByEpisode(Episode episode)
         {
             // Retrieve the sources via our api with the episodes url
-            return await Api.GetVideoSourcesByEpisodeUrlAsync(episode.EpisodeUrl);
+            var sources = await Api.GetVideoSourcesByEpisodeUrlAsync(episode.EpisodeUrl);
+            var httpClient = new HttpClient();
+            foreach (var source in sources.Where(s => !s.SourceUrl.Contains("googlevideo")))
+            {
+                var response = await httpClient.GetAsync(source.SourceUrl, HttpCompletionOption.ResponseHeadersRead);
+                source.SourceUrl = response.RequestMessage.RequestUri.ToString();
+            }
+            return sources;
         }
     }
 }
