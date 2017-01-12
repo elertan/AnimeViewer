@@ -62,7 +62,7 @@
         </SearchBar>
         <!-- The animes to show in a collectionview format -->
         <flv:FlowListView FlowColumnMinWidth="110"
-                          RowHeight="185"
+                          RowHeight="190"
                           FlowItemsSource="{Binding VisibleAnimes}"
                           FlowItemTapped="FlowListView_OnFlowItemTapped"
                           IsPullToRefreshEnabled="False"

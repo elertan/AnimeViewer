@@ -241,6 +241,9 @@ namespace AnimeViewer
         {
             // Retrieve the sources via our api with the episodes url
             var sources = await Api.GetVideoSourcesByEpisodeUrlAsync(episode.EpisodeUrl);
+            if (Device.OS != TargetPlatform.iOS) return sources;
+
+            // iOS requires some extra fixing if the sources arent of googlevideo yet
             var httpClient = new HttpClient();
             foreach (var source in sources.Where(s => !s.SourceUrl.Contains("googlevideo")))
             {
