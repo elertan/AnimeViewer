@@ -55,6 +55,9 @@ namespace AnimeViewer.Views
                 case "Newest":
                     NewestMenuItem_OnTapped(menuItem, e);
                     break;
+                case "Settings":
+                    SettingsMenuItem_OnTapped(menuItem, e);
+                    break;
                 default:
                     await
                         UserDialogs.Instance.AlertAsync(
@@ -76,6 +79,11 @@ namespace AnimeViewer.Views
                 var item = (MenuItem) view;
                 item.IsActive = false;
             }
+        }
+
+        private async void SettingsMenuItem_OnTapped(MenuItem menuItem, EventArgs e)
+        {
+            await GlobalNavigation.PushAsync(new SettingsPage());
         }
 
         private async void NewestMenuItem_OnTapped(MenuItem menuItem, EventArgs e)

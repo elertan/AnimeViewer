@@ -26,6 +26,21 @@ namespace AnimeViewer.Models
         public bool JustUpdated { get; set; }
         public bool IsHot { get; set; }
 
+        public virtual int LanguageId { get; set; }
+
+        public AnimeLanguage Language
+        {
+            get { return (AnimeLanguage) LanguageId; }
+            set { LanguageId = (int) value; }
+        }
+
         public bool ContainsAllInformation { get; set; }
+    }
+
+    public enum AnimeLanguage
+    {
+        JapaneseSub,
+        EnglishDub,
+        Unknown
     }
 }

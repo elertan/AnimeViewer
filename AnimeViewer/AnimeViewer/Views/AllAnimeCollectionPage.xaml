@@ -93,6 +93,58 @@
                                 <transformations:RoundedTransformation Radius="5" />
                             </ffimageloading:CachedImage.Transformations>
                         </ffimageloading:CachedImage>
+                        <!-- Subbed and dubbed indicators -->
+                        <controls:ContentViewRoundedCorners HeightRequest="10"
+                                                            Margin="3"
+                                                            CornerRadius="3"
+                                                            Padding="3"
+                                                            HorizontalOptions="Start"
+                                                            VerticalOptions="Start"
+                                                            BackgroundColor="Orange"
+                                                            IsVisible="False"
+                                                            Grid.Row="0">
+                            <Label Text="Sub"
+                                   FontSize="Micro"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center" />
+                            <ContentView.Triggers>
+                                <DataTrigger TargetType="ContentView"
+                                             Binding="{Binding Language}"
+                                             Value="JapaneseSub">
+                                    <Setter Property="IsVisible"
+                                            Value="True" />
+                                </DataTrigger>
+                            </ContentView.Triggers>
+                        </controls:ContentViewRoundedCorners>
+
+                        <controls:ContentViewRoundedCorners HeightRequest="10"
+                                                            Margin="3"
+                                                            CornerRadius="3"
+                                                            Padding="3"
+                                                            HorizontalOptions="Start"
+                                                            VerticalOptions="Start"
+                                                            BackgroundColor="Blue"
+                                                            IsVisible="False"
+                                                            Grid.Row="0">
+                            <Label Text="Dub"
+                                   FontSize="Micro"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center" />
+                            <ContentView.Triggers>
+                                <DataTrigger TargetType="ContentView"
+                                             Binding="{Binding Language}"
+                                             Value="EnglishDub">
+                                    <Setter Property="IsVisible"
+                                            Value="True" />
+                                </DataTrigger>
+                            </ContentView.Triggers>
+                        </controls:ContentViewRoundedCorners>
 
                         <!-- Label color background (to indicate popular and hot animes -->
                         <controls:ContentViewRoundedCorners BackgroundColor="Black"

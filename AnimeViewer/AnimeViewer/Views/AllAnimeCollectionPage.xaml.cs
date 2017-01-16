@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using AnimeViewer.Models;
 using AnimeViewer.ViewModels;
 using Xamarin.Forms;
@@ -79,6 +80,16 @@ namespace AnimeViewer.Views
             //if (accepted)
             // Retries the connection
             await _viewModel.RetryConnection();
+        }
+
+        private void IndicatorLabel_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == IsVisibleProperty.PropertyName)
+            {
+                var label = (Label) sender;
+                var contentView = (ContentView) label.Parent;
+                contentView.IsVisible = true;
+            }
         }
     }
 }

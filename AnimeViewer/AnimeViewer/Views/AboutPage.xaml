@@ -10,8 +10,8 @@
                 <RowDefinition Height="5*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="2*" />
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="*" />
+                <!--<RowDefinition Height="2*" />
+                <RowDefinition Height="*" />-->
             </Grid.RowDefinitions>
             <Image Source="heart.png"
                    Aspect="Fill"
@@ -39,13 +39,13 @@
                    FontSize="Micro"
                    HorizontalTextAlignment="Center"
                    Text="AnimeViewer isn't endorsed by KissAnime and doesn't reflect the views or opinions of KissAnime or anyone officially involved in producing or managing KissAnime." />-->
-            <Button Text="I love it!"
+            <!--<Button Text="I love it!"
                     StyleClass="Success"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     Margin="20"
                     Clicked="Button_OnClicked"
-                    Grid.Row="4" />
+                    Grid.Row="4" />-->
         </Grid>
     </ScrollView>
 </ContentPage>

@@ -243,6 +243,7 @@
     <Compile Include="CustomRenderers\ContentViewRoundedCornersRenderer.cs" />
     <Compile Include="CustomRenderers\ListViewRenderer.cs" />
     <Compile Include="CustomRenderers\ScrollViewRenderer.cs" />
+    <Compile Include="CustomRenderers\ViewCellButtonRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

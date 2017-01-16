@@ -88,10 +88,25 @@ namespace AnimeViewer.Services.Implementations
                             span.Attributes.Contains("class") && (span.Attributes["class"].Value == "info") &&
                             (span.InnerText == "Summary:"))
                     .NextSibling.NextSibling.InnerText.Trim();
+            anime.Summary = WebUtility.HtmlDecode(anime.Summary);
             anime.ImageUrl =
                 htmlDoc.DocumentNode.Descendants("img")
                     .First(img => img.Attributes.Contains("height") && (img.Attributes["height"].Value == "250px"))
                     .Attributes["src"].Value;
+            if (anime.Name.Contains(" (Sub)"))
+            {
+                anime.Name = anime.Name.Replace(" (Sub)", "");
+                anime.Language = AnimeLanguage.JapaneseSub;
+            }
+            else if (anime.Name.Contains(" (Dub)"))
+            {
+                anime.Name = anime.Name.Replace(" (Dub)", "");
+                anime.Language = AnimeLanguage.EnglishDub;
+            }
+            else
+            {
+                anime.Language = AnimeLanguage.Unknown;
+            }
 
             var episodes = new List<Episode>();
             foreach (var episodeNode in tableListing.Descendants("a"))
@@ -214,6 +229,21 @@ namespace AnimeViewer.Services.Implementations
                     var anime = new Anime();
 
                     anime.Name = animeTableRow.Descendants("td").First().Descendants("a").First().InnerText.Trim();
+                    if (anime.Name.Contains(" (Sub)"))
+                    {
+                        anime.Name = anime.Name.Replace(" (Sub)", "");
+                        anime.Language = AnimeLanguage.JapaneseSub;
+                    }
+                    else if (anime.Name.Contains(" (Dub)"))
+                    {
+                        anime.Name = anime.Name.Replace(" (Dub)", "");
+                        anime.Language = AnimeLanguage.EnglishDub;
+                    }
+                    else
+                    {
+                        anime.Language = AnimeLanguage.Unknown;
+                    }
+
                     var tags = animeTableRow.Descendants("td").First().Descendants("img");
                     foreach (var tag in tags)
                     {

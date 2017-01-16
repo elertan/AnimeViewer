@@ -79,9 +79,16 @@ namespace AnimeViewer.ViewModels
             AnimeManager.Instance.CachedAnimesUpdated += Instance_CachedAnimesUpdated;
             AnimeManager.Instance.FinishedCachingAnimes += Instance_FinishedCachingAnimes;
             AnimeManager.Instance.AnimeManagerApiConnectionError += Instance_AnimeManagerApiConnectionError;
+            AnimeManager.Instance.CacheRemoved += Instance_CacheRemoved;
             AllAnimes.AddRange(await AnimeManager.Instance.GetAnimeListAsync());
             VisibleAnimes = AllAnimes;
             IsBusy = false;
+        }
+
+        private async void Instance_CacheRemoved(object sender, EventArgs e)
+        {
+            // Retry caching
+            await RetryConnection();
         }
 
         private void Instance_FinishedCachingAnimes(object sender, EventArgs e)

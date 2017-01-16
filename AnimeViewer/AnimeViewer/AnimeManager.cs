@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using AnimeViewer.EventArguments;
 using AnimeViewer.Models;
@@ -35,10 +36,17 @@ namespace AnimeViewer
         /// </summary>
         public IAnimeApi Api { get; set; }
 
+        public CancellationTokenSource CachingUpdateTaskCancellationSource { get; set; }
+
         /// <summary>
         ///     This event gets called when we are done caching animes
         /// </summary>
         public event EventHandler FinishedCachingAnimes;
+
+        /// <summary>
+        ///     Occurs when the cache is removed
+        /// </summary>
+        public event EventHandler CacheRemoved;
 
         /// <summary>
         ///     This method is used to invoke our FinishedCachingAnimes event
@@ -122,7 +130,7 @@ namespace AnimeViewer
         ///     Updates and caches animes by the api
         /// </summary>
         /// <returns></returns>
-        private async Task UpdateCachedAnimesByApi()
+        private async Task UpdateCachedAnimesByApi(CancellationToken token)
         {
             // Infinite loop, gets broken if there are no more animes to be found on a page
             while (true)
@@ -134,7 +142,7 @@ namespace AnimeViewer
                 // Store it into a list type variable
                 var animes = new List<Anime>(result);
                 // Did we retrieve more than 1 anime?
-                if (animes.Count > 0)
+                if ((animes.Count > 0) && !token.IsCancellationRequested)
                 {
                     // Store it all into our database
                     await DbConnection.InsertOrIgnoreAllAsync(animes);
@@ -169,12 +177,16 @@ namespace AnimeViewer
         /// <returns></returns>
         public async Task<List<Anime>> GetAnimeListAsync()
         {
+            // Cancel current updating task if not null
+            CachingUpdateTaskCancellationSource?.Cancel();
+            // Create new cancel source
+            CachingUpdateTaskCancellationSource = new CancellationTokenSource();
             // Get all animes from the database
             var animes = await DbConnection.Table<Anime>().ToListAsync();
 #pragma warning disable 4014
             // Start caching all animes on the background
-            UpdateCachedAnimesByApi()
-                .ContinueWith(UpdateCachedAnimesByApiThrowedException, TaskContinuationOptions.OnlyOnFaulted);
+            UpdateCachedAnimesByApi(CachingUpdateTaskCancellationSource.Token)
+                .ContinueWith(UpdateCachedAnimesByApiThrowedException, CachingUpdateTaskCancellationSource.Token, TaskContinuationOptions.OnlyOnFaulted, TaskScheduler.Default);
 #pragma warning restore 4014
             return animes;
         }
@@ -187,7 +199,7 @@ namespace AnimeViewer
         public async Task<Anime> GetFullAnimeInformation(Anime anime)
         {
             // Get the anime from the database that corresponds to the given anime (so we can store the full data after using its id)
-            var animes = await DbConnection.GetAllWithChildrenAsync<Anime>(dto => dto.Name == anime.Name);
+            var animes = await DbConnection.GetAllWithChildrenAsync<Anime>(dto => (dto.Name == anime.Name) && (dto.Language == anime.Language));
             var a = animes.First();
             // If it already contains all information, simply return that anime
             if (a.ContainsAllInformation)
@@ -226,12 +238,15 @@ namespace AnimeViewer
         /// <returns></returns>
         public async Task RemoveCache()
         {
-            throw new NotSupportedException("Not yet finished");
+            // Cancel updating task if possible
+            CachingUpdateTaskCancellationSource?.Cancel();
 
             await DbConnection.DeleteAllAsync<Anime>();
             await DbConnection.DeleteAllAsync<Episode>();
             Application.Current.Properties[AnimeManagerLastUpdatedListPagePropertyKey] = 1;
             await Application.Current.SavePropertiesAsync();
+
+            OnCacheRemoved();
         }
 
         /// <summary>
@@ -262,6 +277,11 @@ namespace AnimeViewer
         {
             var animes = await Api.GetUpdatedAnimesAsync();
             return animes;
+        }
+
+        protected virtual void OnCacheRemoved()
+        {
+            CacheRemoved?.Invoke(this, EventArgs.Empty);
         }
     }
 }
