@@ -64,14 +64,7 @@
         <flv:FlowListView FlowColumnMinWidth="110"
                           RowHeight="190"
                           FlowItemsSource="{Binding VisibleAnimes}"
-                          FlowItemTapped="FlowListView_OnFlowItemTapped"
-                          IsPullToRefreshEnabled="False"
-                          Refreshing="ListView_OnRefreshing"
-                          IsRefreshing="{Binding IsBusy}"
-                          IsVisible="{Binding IsNotBusy}">
-            <flv:FlowListView.GestureRecognizers>
-                <TapGestureRecognizer Tapped="FlowListView_OnTapped" />
-            </flv:FlowListView.GestureRecognizers>
+                          FlowItemTapped="FlowListView_OnFlowItemTapped">
             <flv:FlowListView.FlowColumnTemplate>
                 <DataTemplate>
                     <Grid Padding="5"
@@ -80,29 +73,32 @@
                           VerticalOptions="CenterAndExpand">
                         <!-- The poster image of an anime -->
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="7*" />
+                            <RowDefinition Height="2*" />
                         </Grid.RowDefinitions>
+                        <!-- Gray color when no poster image is loaded -->
+                        <ContentView BackgroundColor="Gray"
+                                     Grid.Row="0" />
+                        <!-- The poster image -->
                         <ffimageloading:CachedImage Aspect="Fill"
                                                     Source="{Binding ImageUrl}"
                                                     HeightRequest="125"
-                                                    WidthRequest="100"
-                                                    HorizontalOptions="Center"
+                                                    HorizontalOptions="FillAndExpand"
                                                     CacheType="Disk"
                                                     RetryCount="3"
                                                     RetryDelay="500"
-                                                    VerticalOptions="FillAndExpand">
+                                                    VerticalOptions="FillAndExpand"
+                                                    Grid.Row="0">
                             <ffimageloading:CachedImage.Transformations>
                                 <transformations:RoundedTransformation Radius="5" />
                             </ffimageloading:CachedImage.Transformations>
                         </ffimageloading:CachedImage>
-                        <!-- The black bar on the bottom over the image -->
-                        <!--<ContentView BackgroundColor="Black"
-                                     Opacity="0.8"
-                                     VerticalOptions="End"
-                                     BindingContext="{x:Reference Label}"
-                                     HeightRequest="{Binding Path=Height}" />-->
-                        <!-- The textlabel over te bottom black bar -->
+
+                        <!-- Label color background (to indicate popular and hot animes -->
+                        <controls:ContentViewRoundedCorners BackgroundColor="Black"
+                                                            Grid.Row="1"
+                                                            CornerRadius="5"
+                                                            Opacity="0.8" />
                         <controls:ContentViewRoundedCorners BackgroundColor="Red"
                                                             IsVisible="{Binding IsHot}"
                                                             Grid.Row="1"
