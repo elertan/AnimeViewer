@@ -88,6 +88,7 @@ namespace AnimeViewer.Services.Implementations
                             span.Attributes.Contains("class") && (span.Attributes["class"].Value == "info") &&
                             (span.InnerText == "Summary:"))
                     .NextSibling.NextSibling.InnerText.Trim();
+            //anime.Summary = anime.Summary.Replace("<br>", "\n");
             anime.Summary = WebUtility.HtmlDecode(anime.Summary);
             anime.ImageUrl =
                 htmlDoc.DocumentNode.Descendants("img")
@@ -115,11 +116,13 @@ namespace AnimeViewer.Services.Implementations
 
                 episode.Anime = anime;
                 //episode.AnimeId = anime.Id;
-                episode.Name = episodeNode.InnerText.Trim().Replace(anime.Name, "");
+                episode.Name = episodeNode.InnerText.Trim().Replace(anime.Name, "").Replace("(Sub) ", "").Replace("(Dub) ", "");
                 episode.EpisodeUrl = episodeNode.Attributes["href"].Value;
 
                 episodes.Add(episode);
             }
+            // and reverse to make episode 1 appear on top
+            episodes.Reverse();
             anime.Episodes = episodes;
 
             var genres = "";

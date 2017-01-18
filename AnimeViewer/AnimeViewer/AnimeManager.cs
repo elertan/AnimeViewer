@@ -233,7 +233,7 @@ namespace AnimeViewer
         }
 
         /// <summary>
-        ///     TODO: FINISH IMPLEMENTATION NOT WORKING: Removes the current cached animes
+        ///     Removes all cached animes and their episodes
         /// </summary>
         /// <returns></returns>
         public async Task RemoveCache()

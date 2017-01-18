@@ -5,6 +5,8 @@ using DLToolkit.Forms.Controls;
 using Microsoft.Practices.Unity;
 using Xamarin.Forms;
 
+// Xaml Compilation for a faster app experience
+
 //[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace AnimeViewer
