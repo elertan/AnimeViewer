@@ -46,138 +46,190 @@
             </partials:BannerView>
         </ContentView>
         <!-- The searchbar -->
-        <SearchBar Placeholder="Search..."
-                   BackgroundColor="Transparent"
-                   TextChanged="SearchBar_OnTextChanged"
-                   SearchButtonPressed="SearchBar_OnSearchButtonPressed"
-                   x:Name="SearchBar">
-            <SearchBar.TextColor>
-                <OnPlatform x:TypeArguments="Color"
-                            iOS="Black"
-                            Android="White" />
-            </SearchBar.TextColor>
-            <SearchBar.PlaceholderColor>
-                <OnPlatform x:TypeArguments="Color"
-                            Android="Gray" />
-            </SearchBar.PlaceholderColor>
-        </SearchBar>
-        <!-- The animes to show in a collectionview format -->
-        <flv:FlowListView FlowColumnMinWidth="110"
-                          RowHeight="190"
-                          FlowItemsSource="{Binding VisibleAnimes}"
-                          FlowItemTapped="FlowListView_OnFlowItemTapped">
-            <flv:FlowListView.FlowColumnTemplate>
-                <DataTemplate>
-                    <Grid Padding="5"
-                          WidthRequest="110"
-                          HorizontalOptions="Center"
-                          VerticalOptions="CenterAndExpand">
-                        <!-- The poster image of an anime -->
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="7*" />
-                            <RowDefinition Height="2*" />
-                        </Grid.RowDefinitions>
-                        <!-- Gray color when no poster image is loaded -->
-                        <ContentView BackgroundColor="Gray"
-                                     Grid.Row="0" />
-                        <!-- The poster image -->
-                        <ffimageloading:CachedImage Aspect="Fill"
-                                                    Source="{Binding ImageUrl}"
-                                                    HeightRequest="125"
-                                                    HorizontalOptions="FillAndExpand"
-                                                    CacheType="Disk"
-                                                    RetryCount="3"
-                                                    RetryDelay="500"
-                                                    VerticalOptions="FillAndExpand"
-                                                    Grid.Row="0">
-                            <ffimageloading:CachedImage.Transformations>
-                                <transformations:RoundedTransformation Radius="5" />
-                            </ffimageloading:CachedImage.Transformations>
-                        </ffimageloading:CachedImage>
-                        <!-- Subbed and dubbed indicators -->
-                        <controls:ContentViewRoundedCorners HeightRequest="10"
-                                                            Margin="3"
-                                                            CornerRadius="3"
-                                                            Padding="3"
-                                                            HorizontalOptions="Start"
-                                                            VerticalOptions="Start"
-                                                            BackgroundColor="Orange"
-                                                            IsVisible="False"
-                                                            Grid.Row="0">
-                            <Label Text="Sub"
-                                   FontSize="Micro"
-                                   TextColor="White"
-                                   HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   HorizontalTextAlignment="Center"
-                                   VerticalTextAlignment="Center" />
-                            <ContentView.Triggers>
-                                <DataTrigger TargetType="ContentView"
-                                             Binding="{Binding Language}"
-                                             Value="JapaneseSub">
-                                    <Setter Property="IsVisible"
-                                            Value="True" />
-                                </DataTrigger>
-                            </ContentView.Triggers>
-                        </controls:ContentViewRoundedCorners>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <SearchBar Placeholder="Search..."
+                       BackgroundColor="Transparent"
+                       TextChanged="SearchBar_OnTextChanged"
+                       SearchButtonPressed="SearchBar_OnSearchButtonPressed"
+                       x:Name="SearchBar"
+                       Grid.Column="0">
+                <SearchBar.TextColor>
+                    <OnPlatform x:TypeArguments="Color"
+                                iOS="Black"
+                                Android="White" />
+                </SearchBar.TextColor>
+                <SearchBar.PlaceholderColor>
+                    <OnPlatform x:TypeArguments="Color"
+                                Android="Gray" />
+                </SearchBar.PlaceholderColor>
+            </SearchBar>
+            <ffimageloading:CachedImage HeightRequest="25"
+                                        WidthRequest="25"
+                                        Aspect="Fill"
+                                        Source="arrow_disclosure.png"
+                                        x:Name="SearchBarDisclosureImage"
+                                        Margin="5, 5, 15, 5"
+                                        Grid.Column="1">
+                <ffimageloading:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SearchBarDisclosureImage_Tapped" />
+                </ffimageloading:CachedImage.GestureRecognizers>
+                <ffimageloading:CachedImage.Transformations>
+                    <transformations:RotateTransformation Degrees="90" />
+                </ffimageloading:CachedImage.Transformations>
+            </ffimageloading:CachedImage>
+        </Grid>
+        <!-- Using grids to create advanced search overlay -->
+        <Grid VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!-- The animes to show in a collectionview format -->
+            <flv:FlowListView FlowColumnMinWidth="110"
+                              RowHeight="190"
+                              FlowItemsSource="{Binding VisibleAnimes}"
+                              FlowItemTapped="FlowListView_OnFlowItemTapped"
+                              Grid.Row="0">
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <Grid Padding="5"
+                              WidthRequest="110"
+                              HorizontalOptions="Center"
+                              VerticalOptions="CenterAndExpand">
+                            <!-- The poster image of an anime -->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="7*" />
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <!-- Gray color when no poster image is loaded -->
+                            <ContentView BackgroundColor="Gray"
+                                         Grid.Row="0" />
+                            <!-- The poster image -->
+                            <ffimageloading:CachedImage Aspect="Fill"
+                                                        Source="{Binding ImageUrl}"
+                                                        HeightRequest="125"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        CacheType="Disk"
+                                                        RetryCount="3"
+                                                        RetryDelay="500"
+                                                        VerticalOptions="FillAndExpand"
+                                                        Grid.Row="0">
+                                <ffimageloading:CachedImage.Transformations>
+                                    <transformations:RoundedTransformation Radius="5" />
+                                </ffimageloading:CachedImage.Transformations>
+                            </ffimageloading:CachedImage>
+                            <!-- Subbed and dubbed indicators -->
+                            <controls:ContentViewRoundedCorners HeightRequest="10"
+                                                                Margin="3"
+                                                                CornerRadius="3"
+                                                                Padding="3"
+                                                                HorizontalOptions="Start"
+                                                                VerticalOptions="Start"
+                                                                BackgroundColor="Orange"
+                                                                IsVisible="False"
+                                                                Grid.Row="0">
+                                <Label Text="Sub"
+                                       FontSize="Micro"
+                                       TextColor="White"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center" />
+                                <ContentView.Triggers>
+                                    <DataTrigger TargetType="ContentView"
+                                                 Binding="{Binding Language}"
+                                                 Value="JapaneseSub">
+                                        <Setter Property="IsVisible"
+                                                Value="True" />
+                                    </DataTrigger>
+                                </ContentView.Triggers>
+                            </controls:ContentViewRoundedCorners>
 
-                        <controls:ContentViewRoundedCorners HeightRequest="10"
-                                                            Margin="3"
-                                                            CornerRadius="3"
-                                                            Padding="3"
-                                                            HorizontalOptions="Start"
-                                                            VerticalOptions="Start"
-                                                            BackgroundColor="Blue"
-                                                            IsVisible="False"
-                                                            Grid.Row="0">
-                            <Label Text="Dub"
-                                   FontSize="Micro"
-                                   TextColor="White"
-                                   HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   HorizontalTextAlignment="Center"
-                                   VerticalTextAlignment="Center" />
-                            <ContentView.Triggers>
-                                <DataTrigger TargetType="ContentView"
-                                             Binding="{Binding Language}"
-                                             Value="EnglishDub">
-                                    <Setter Property="IsVisible"
-                                            Value="True" />
-                                </DataTrigger>
-                            </ContentView.Triggers>
-                        </controls:ContentViewRoundedCorners>
+                            <controls:ContentViewRoundedCorners HeightRequest="10"
+                                                                Margin="3"
+                                                                CornerRadius="3"
+                                                                Padding="3"
+                                                                HorizontalOptions="Start"
+                                                                VerticalOptions="Start"
+                                                                BackgroundColor="Blue"
+                                                                IsVisible="False"
+                                                                Grid.Row="0">
+                                <Label Text="Dub"
+                                       FontSize="Micro"
+                                       TextColor="White"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center" />
+                                <ContentView.Triggers>
+                                    <DataTrigger TargetType="ContentView"
+                                                 Binding="{Binding Language}"
+                                                 Value="EnglishDub">
+                                        <Setter Property="IsVisible"
+                                                Value="True" />
+                                    </DataTrigger>
+                                </ContentView.Triggers>
+                            </controls:ContentViewRoundedCorners>
 
-                        <!-- Label color background (to indicate popular and hot animes -->
-                        <controls:ContentViewRoundedCorners BackgroundColor="Black"
-                                                            Grid.Row="1"
-                                                            CornerRadius="5"
-                                                            Opacity="0.8" />
-                        <controls:ContentViewRoundedCorners BackgroundColor="Red"
-                                                            IsVisible="{Binding IsHot}"
-                                                            Grid.Row="1"
-                                                            CornerRadius="5"
-                                                            Opacity="0.8" />
-                        <controls:ContentViewRoundedCorners BackgroundColor="Blue"
-                                                            IsVisible="{Binding JustUpdated}"
-                                                            Grid.Row="1"
-                                                            CornerRadius="5"
-                                                            Opacity="0.8" />
-                        <Label x:Name="Label"
-                               HorizontalOptions="Fill"
-                               HorizontalTextAlignment="Center"
-                               VerticalOptions="FillAndExpand"
+                            <!-- Label color background (to indicate popular and hot animes -->
+                            <controls:ContentViewRoundedCorners BackgroundColor="Black"
+                                                                Grid.Row="1"
+                                                                CornerRadius="5"
+                                                                Opacity="0.8" />
+                            <controls:ContentViewRoundedCorners BackgroundColor="Red"
+                                                                IsVisible="{Binding IsHot}"
+                                                                Grid.Row="1"
+                                                                CornerRadius="5"
+                                                                Opacity="0.8" />
+                            <controls:ContentViewRoundedCorners BackgroundColor="Blue"
+                                                                IsVisible="{Binding JustUpdated}"
+                                                                Grid.Row="1"
+                                                                CornerRadius="5"
+                                                                Opacity="0.8" />
+                            <Label x:Name="Label"
+                                   HorizontalOptions="Fill"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalOptions="FillAndExpand"
+                                   TextColor="White"
+                                   Text="{Binding Name}"
+                                   VerticalTextAlignment="Center"
+                                   LineBreakMode="WordWrap"
+                                   FontSize="Small"
+                                   Grid.Row="1" />
+                        </Grid>
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+            </flv:FlowListView>
+            <ContentView x:Name="AdvancedSearchOptionsView"
+                         Opacity="0"
+                         IsVisible="False"
+                         BackgroundColor="Transparent"
+                         Grid.Row="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ContentView BackgroundColor="Black"
+                                 Opacity="0.9"
+                                 Grid.Row="0" />
+                    <StackLayout Grid.Row="0">
+                        <Label Text="Advanced Search"
+                               Margin="10"
                                TextColor="White"
-                               Text="{Binding Name}"
-                               VerticalTextAlignment="Center"
-                               LineBreakMode="WordWrap"
-                               FontSize="Small"
-                               Grid.Row="1" />
-                    </Grid>
-                </DataTemplate>
-            </flv:FlowListView.FlowColumnTemplate>
-        </flv:FlowListView>
+                               FontSize="Large"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center" />
+                    </StackLayout>
+                </Grid>
+            </ContentView>
+        </Grid>
         <!-- The activity indicator that shows when the app is busy -->
-        <ActivityIndicator IsRunning="{Binding IsBusy}"
-                           IsVisible="{Binding IsBusy}" />
+        <!--<ActivityIndicator IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}" />-->
     </StackLayout>
 </ContentPage>

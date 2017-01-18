@@ -132,6 +132,9 @@
                        Margin="20"
                        Padding="10">
                     <StackLayout>
+                        <!--<ContentView BackgroundColor="Yellow">
+                            <ffimageloading:CachedImage Source="star_icon.png" />
+                        </ContentView>-->
                         <Button Text="Favourite"
                                 Clicked="FavouriteButton_OnClicked">
                             <Button.Triggers>
@@ -207,20 +210,6 @@
                                                HorizontalTextAlignment="Center"
                                                VerticalOptions="Center" />
                                     </Grid>
-                                    <!--<StackLayout BackgroundColor="Transparent"
-                                                 HorizontalOptions="FillAndExpand"
-                                                 VerticalOptions="FillAndExpand">
-                                        <StackLayout.Triggers>
-                                            --><!-- Change backgroundcolor if watched TODO: NOT WORKING --><!--
-                                            <DataTrigger TargetType="StackLayout"
-                                                         Binding="{Binding HasWatched}"
-                                                         Value="True">
-                                                <Setter Property="BackgroundColor"
-                                                        Value="Gray" />
-                                            </DataTrigger>
-                                        </StackLayout.Triggers>
-
-                                    </StackLayout>-->
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>

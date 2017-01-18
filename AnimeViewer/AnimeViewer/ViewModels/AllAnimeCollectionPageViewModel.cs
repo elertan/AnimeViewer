@@ -109,7 +109,7 @@ namespace AnimeViewer.ViewModels
 
         public async Task SetSearchQueryAsync(string query)
         {
-            while ((VisibleAnimes == null) || (VisibleAnimes.Count == 0)) await Task.Delay(200);
+            //while ((VisibleAnimes == null) || (VisibleAnimes.Count == 0)) await Task.Delay(200);
             if (string.IsNullOrWhiteSpace(query))
                 SearchKeyword = "";
             else

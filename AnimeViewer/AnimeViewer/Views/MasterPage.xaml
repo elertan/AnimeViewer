@@ -37,7 +37,7 @@
                                    Image="list_icon.png"
                                    IsActive="True"
                                    Tapped="MenuItem_OnTapped" />
-                <partials:MenuItem Text="Genre"
+                <!--<partials:MenuItem Text="Genre"
                                    Tapped="MenuItem_OnTapped" />
                 <partials:MenuItem Text="Most Watched"
                                    Tapped="MenuItem_OnTapped" />
@@ -48,11 +48,12 @@
                 <partials:MenuItem Text="Up Coming"
                                    Tapped="MenuItem_OnTapped" />
                 <partials:MenuItem Text="Recent"
-                                   Tapped="MenuItem_OnTapped" />
+                                   Tapped="MenuItem_OnTapped" />-->
                 <partials:MenuItem Text="About"
                                    Image="about.png"
                                    Tapped="MenuItem_OnTapped" />
                 <partials:MenuItem Text="Settings"
+                                   Image="settings_icon.png"
                                    Tapped="MenuItem_OnTapped" />
             </StackLayout>
         </ScrollView>
