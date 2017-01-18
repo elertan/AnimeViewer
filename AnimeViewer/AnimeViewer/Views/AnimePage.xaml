@@ -4,6 +4,7 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:partials="clr-namespace:AnimeViewer.Views.Partials;assembly=AnimeViewer"
+             xmlns:controls="clr-namespace:AnimeViewer.Controls;assembly=AnimeViewer"
              x:Class="AnimeViewer.Views.AnimePage"
              Title="Anime"
              Appearing="AnimePage_OnAppearing">
@@ -55,6 +56,57 @@
                        FontSize="Large"
                        HorizontalTextAlignment="Center"
                        Text="{Binding Anime.Name}" />
+                <!-- Subbed and dubbed indicators -->
+                <controls:ContentViewRoundedCorners HeightRequest="15"
+                                                    Margin="5"
+                                                    CornerRadius="5"
+                                                    Padding="5"
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center"
+                                                    BackgroundColor="Orange"
+                                                    IsVisible="False">
+                    <Label Text="Subbed"
+                           FontSize="Small"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center" />
+                    <ContentView.Triggers>
+                        <DataTrigger TargetType="ContentView"
+                                     Binding="{Binding Anime.Language}"
+                                     Value="JapaneseSub">
+                            <Setter Property="IsVisible"
+                                    Value="True" />
+                        </DataTrigger>
+                    </ContentView.Triggers>
+                </controls:ContentViewRoundedCorners>
+
+                <controls:ContentViewRoundedCorners HeightRequest="15"
+                                                    Margin="5"
+                                                    CornerRadius="5"
+                                                    Padding="5"
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center"
+                                                    BackgroundColor="Blue"
+                                                    IsVisible="False">
+                    <Label Text="Dubbed"
+                           FontSize="Small"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center" />
+                    <ContentView.Triggers>
+                        <DataTrigger TargetType="ContentView"
+                                     Binding="{Binding Anime.Language}"
+                                     Value="EnglishDub">
+                            <Setter Property="IsVisible"
+                                    Value="True" />
+                        </DataTrigger>
+                    </ContentView.Triggers>
+                </controls:ContentViewRoundedCorners>
+
                 <Grid Padding="15" ColumnSpacing="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />

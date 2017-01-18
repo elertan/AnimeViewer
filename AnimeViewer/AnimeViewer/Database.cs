@@ -19,7 +19,8 @@ namespace AnimeViewer
             // Create the tables for each of our models for CRUD operations
             await conn.CreateTablesAsync(
                 typeof(Episode),
-                typeof(Anime));
+                typeof(Anime)
+            );
 
             return conn;
         }
