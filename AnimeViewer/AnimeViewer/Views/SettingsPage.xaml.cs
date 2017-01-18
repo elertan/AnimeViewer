@@ -15,5 +15,24 @@ namespace AnimeViewer.Views
             if (await DisplayAlert("Clear cache", "Are you sure you want to clear the cache?", "Yes", "No"))
                 await AnimeManager.Instance.RemoveCache();
         }
+
+        private void QualitySelectionPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var picker = (Picker) sender;
+            var quality = picker.Items[picker.SelectedIndex];
+        }
+
+        private void SettingsPage_OnAppearing(object sender, EventArgs e)
+        {
+            QualitySelectionPicker.SelectedIndex = QualitySelectionPicker.Items.IndexOf((string)App.Current.Properties[AppSettingsKeys.VideoQuality]);
+        }
+
+        private async void SettingsPage_OnDisappearing(object sender, EventArgs e)
+        {
+            // Video Settings
+            App.Current.Properties[AppSettingsKeys.VideoQuality] = QualitySelectionPicker.Items[QualitySelectionPicker.SelectedIndex];
+
+            await App.Current.SavePropertiesAsync();
+        }
     }
 }

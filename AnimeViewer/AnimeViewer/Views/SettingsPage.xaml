@@ -4,30 +4,60 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:AnimeViewer.Controls;assembly=AnimeViewer"
              Title="Settings"
+             Appearing="SettingsPage_OnAppearing"
+             Disappearing="SettingsPage_OnDisappearing"
              x:Class="AnimeViewer.Views.SettingsPage">
-  <TableView Intent="Settings"
-             HasUnevenRows="True"
-             BackgroundColor="Transparent">
-    <TableRoot>
-      <TableSection Title="Caching">
-        <ViewCell Height="60">
-          <Grid>
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="*" />
-              <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Label Text="Clear cache"
-                   VerticalOptions="Center"
-                   Margin="15,0"
-                   Grid.Column="0" />
-            <controls:ViewCellButton Text="Clear"
-                                     VerticalOptions="Center"
-                                     Margin="15,0"
-                                     Clicked="ClearCacheButton_Clicked"
-                                     Grid.Column="1" />
-          </Grid>
-        </ViewCell>
-      </TableSection>
-    </TableRoot>
-  </TableView>
+    <TableView Intent="Settings"
+               HasUnevenRows="True"
+               BackgroundColor="Transparent">
+        <TableRoot>
+            <TableSection Title="Video">
+                <ViewCell Height="60">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Default video quality"
+                               VerticalOptions="Center"
+                               Margin="15,0"
+                               Grid.Column="0" />
+                        <Picker Grid.Column="1"
+                                x:Name="QualitySelectionPicker"
+                                BackgroundColor="Transparent"
+                                Margin="5"
+                                Title="Choose quality"
+                                TextColor="White"
+                                SelectedIndexChanged="QualitySelectionPicker_SelectedIndexChanged">
+                            <Picker.Items>
+                                <x:String>1080p</x:String>
+                                <x:String>720p</x:String>
+                                <x:String>480p</x:String>
+                                <x:String>360p</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Grid>
+                </ViewCell>
+            </TableSection>
+            <TableSection Title="Caching">
+                <ViewCell Height="60">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Clear cache"
+                               VerticalOptions="Center"
+                               Margin="15,0"
+                               Grid.Column="0" />
+                        <controls:ViewCellButton Text="Clear"
+                                                 VerticalOptions="Center"
+                                                 Margin="15,0"
+                                                 Clicked="ClearCacheButton_Clicked"
+                                                 Grid.Column="1" />
+                    </Grid>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
 </ContentPage>

@@ -12,7 +12,7 @@ namespace AnimeViewer
         ///     Returns a connection to the database
         /// </summary>
         /// <returns></returns>
-        public static async Task<SQLiteAsyncConnection> GetConnection()
+        public static async Task<SQLiteAsyncConnection> GetConnectionAsync()
         {
             // Get our platform specific implementation (AnimeViewer.iOS.Services.DatabaseService, AnimeViewer.Droid.Services.DatabaseService)
             var conn = DependencyService.Get<IDatabaseService>().GetConnection();

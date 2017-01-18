@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(ContentViewRoundedCorners), typeof(ContentViewRoundedCornersRenderer))]
+
 namespace AnimeViewer.Droid.CustomRenderers
 {
     public class ContentViewRoundedCornersRenderer : VisualElementRenderer<ContentView>
@@ -18,6 +19,7 @@ namespace AnimeViewer.Droid.CustomRenderers
         {
             base.OnElementChanged(e);
 
+            return;
             if (e.OldElement != null)
                 return;
 
@@ -30,6 +32,7 @@ namespace AnimeViewer.Droid.CustomRenderers
         protected override void OnSizeChanged(int w, int h, int oldw, int oldh)
         {
             base.OnSizeChanged(w, h, oldw, oldh);
+            return;
             if ((w != oldw) && (h != oldh))
                 _bounds = new RectF(0, 0, w, h);
 
@@ -41,10 +44,10 @@ namespace AnimeViewer.Droid.CustomRenderers
 
         public override void Draw(Canvas canvas)
         {
-            canvas.Save();
-            canvas.ClipPath(_path);
+            //canvas.Save();
+            //canvas.ClipPath(_path);
             base.Draw(canvas);
-            canvas.Restore();
+            //canvas.Restore();
         }
     }
 }

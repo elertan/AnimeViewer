@@ -92,9 +92,22 @@ namespace AnimeViewer.Views
             // Get all the videosources via our animemanager
             var sources = await AnimeManager.Instance.GetVideoSourcesByEpisode(episode);
 
-            // Grab the first video source and return if there is none
-            var sourceUrl = sources?.First()?.SourceUrl;
-            if (sourceUrl == null) return;
+            // return if there are no sources
+            if ((sources == null) || !sources.Any())
+            {
+                await UserDialogs.Instance.AlertAsync("Video could not be found on our host");
+                return;
+            }
+
+            string sourceUrl;
+            try
+            {
+                sourceUrl = sources.First(s => s.Quality == (string) Application.Current.Properties[AppSettingsKeys.VideoQuality]).SourceUrl;
+            }
+            catch
+            {
+                sourceUrl = sources.First().SourceUrl;
+            }
 
             // Set the episode as watched if it is not yet
             if (!episode.HasWatched)

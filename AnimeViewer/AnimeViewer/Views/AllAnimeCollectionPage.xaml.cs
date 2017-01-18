@@ -39,10 +39,10 @@ namespace AnimeViewer.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
+        private async void SearchBar_OnTextChanged(object sender, TextChangedEventArgs e)
         {
             // Set the search query on our viewmodel to change the animes we see on the flowlistview (collectionview)
-            _viewModel.SetSearchQuery(e.NewTextValue);
+            await _viewModel.SetSearchQueryAsync(e.NewTextValue);
         }
 
         /// <summary>
@@ -90,6 +90,11 @@ namespace AnimeViewer.Views
                 var contentView = (ContentView) label.Parent;
                 contentView.IsVisible = true;
             }
+        }
+
+        private async void SearchBar_OnSearchButtonPressed(object sender, EventArgs e)
+        {
+            //await _viewModel.SetSearchQueryAsync(SearchBar.Text);
         }
     }
 }

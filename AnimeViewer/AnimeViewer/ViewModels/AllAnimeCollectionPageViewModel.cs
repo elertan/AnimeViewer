@@ -103,27 +103,30 @@ namespace AnimeViewer.ViewModels
             HasConnectionIssue = false;
             AllAnimes = new ObservableRangeCollection<Anime>(await AnimeManager.Instance.GetAnimeListAsync());
             VisibleAnimes = AllAnimes;
-            SetSearchQuery(SearchKeyword);
+            await SetSearchQueryAsync(SearchKeyword);
             IsBusy = false;
         }
 
-        public void SetSearchQuery(string query)
+        public async Task SetSearchQueryAsync(string query)
         {
+            while ((VisibleAnimes == null) || (VisibleAnimes.Count == 0)) await Task.Delay(200);
             if (string.IsNullOrWhiteSpace(query))
                 SearchKeyword = "";
             else
                 SearchKeyword = query.ToLower();
-            ApplySearchQuery();
+            await ApplySearchQueryAsync();
         }
 
-        private void ApplySearchQuery()
+        private async Task ApplySearchQueryAsync()
         {
             if (string.IsNullOrWhiteSpace(SearchKeyword))
                 VisibleAnimes = AllAnimes;
             else
-                VisibleAnimes =
-                    new ObservableRangeCollection<Anime>(
-                        AllAnimes.Where(anime => anime.Name.ToLower().Contains(SearchKeyword)).ToArray());
+            {
+                var animes = await Task.Run(() => new ObservableRangeCollection<Anime>(
+                    AllAnimes.Where(anime => anime.Name.ToLower().Contains(SearchKeyword)).ToArray()));
+                VisibleAnimes = animes;
+            }
         }
 
         private void Instance_AnimeManagerApiConnectionError(object sender, EventArgs e)
@@ -136,7 +139,7 @@ namespace AnimeViewer.ViewModels
             if (IsInitializing) IsInitializing = false;
             IsCachingAnimes = true;
             AllAnimes.AddRange(e.Animes);
-            ApplySearchQuery();
+            ApplySearchQueryAsync();
         }
 
         public async Task RecacheAllAnimes()

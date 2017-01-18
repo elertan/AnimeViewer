@@ -29,7 +29,15 @@ namespace AnimeViewer
 
         protected override async void OnStart()
         {
-            // Handle when your app starts
+            // First time
+            if (!Current.Properties.ContainsKey(AppSettingsKeys.FirstTimeOpeningApp))
+            {
+                // Set default video quality
+                Current.Properties[AppSettingsKeys.VideoQuality] = "720p";
+
+                Current.Properties[AppSettingsKeys.FirstTimeOpeningApp] = true;
+                await Current.SavePropertiesAsync();
+            }
 
             // Register services to get a losely coupled structure in our app (easily being able to swap our api)
             DiContainer.RegisterType<IAnimeApi, KissanimeApi>();

@@ -49,6 +49,7 @@
         <SearchBar Placeholder="Search..."
                    BackgroundColor="Transparent"
                    TextChanged="SearchBar_OnTextChanged"
+                   SearchButtonPressed="SearchBar_OnSearchButtonPressed"
                    x:Name="SearchBar">
             <SearchBar.TextColor>
                 <OnPlatform x:TypeArguments="Color"

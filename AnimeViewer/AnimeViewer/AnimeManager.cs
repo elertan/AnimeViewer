@@ -92,7 +92,7 @@ namespace AnimeViewer
         {
             // If we dont have a connection yet, get one
             if (DbConnection == null)
-                DbConnection = await Database.GetConnection();
+                DbConnection = await Database.GetConnectionAsync();
 
             // If it's our first time caching animes, set the last cached page to 1
             if (!Application.Current.Properties.ContainsKey(AnimeManagerLastUpdatedListPagePropertyKey))
