@@ -186,7 +186,8 @@ namespace AnimeViewer
 #pragma warning disable 4014
             // Start caching all animes on the background
             UpdateCachedAnimesByApi(CachingUpdateTaskCancellationSource.Token)
-                .ContinueWith(UpdateCachedAnimesByApiThrowedException, CachingUpdateTaskCancellationSource.Token, TaskContinuationOptions.OnlyOnFaulted, TaskScheduler.Default);
+                .ContinueWith(UpdateCachedAnimesByApiThrowedException, CachingUpdateTaskCancellationSource.Token,
+                    TaskContinuationOptions.OnlyOnFaulted, TaskScheduler.Default);
 #pragma warning restore 4014
             return animes;
         }
@@ -199,7 +200,10 @@ namespace AnimeViewer
         public async Task<Anime> GetFullAnimeInformation(Anime anime)
         {
             // Get the anime from the database that corresponds to the given anime (so we can store the full data after using its id)
-            var animes = await DbConnection.GetAllWithChildrenAsync<Anime>(dto => (dto.Name == anime.Name) && (dto.Language == anime.Language));
+            var animes =
+                await
+                    DbConnection.GetAllWithChildrenAsync<Anime>(
+                        dto => (dto.Name == anime.Name) && (dto.Language == anime.Language));
             var a = animes.First();
             // If it already contains all information, simply return that anime
             if (a.ContainsAllInformation)

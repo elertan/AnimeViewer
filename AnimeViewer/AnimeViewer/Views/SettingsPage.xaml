@@ -5,29 +5,29 @@
              xmlns:controls="clr-namespace:AnimeViewer.Controls;assembly=AnimeViewer"
              Title="Settings"
              x:Class="AnimeViewer.Views.SettingsPage">
-    <TableView Intent="Settings"
-               HasUnevenRows="True"
-               BackgroundColor="Transparent">
-        <TableRoot>
-            <TableSection Title="Caching">
-                <ViewCell Height="60">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Label Text="Clear cache"
-                               VerticalOptions="Center"
-                               Margin="15,0"
-                               Grid.Column="0" />
-                        <controls:ViewCellButton Text="Clear"
-                                                 VerticalOptions="Center"
-                                                 Margin="15,0"
-                                                 Clicked="ClearCacheButton_Clicked"
-                                                 Grid.Column="1" />
-                    </Grid>
-                </ViewCell>
-            </TableSection>
-        </TableRoot>
-    </TableView>
+  <TableView Intent="Settings"
+             HasUnevenRows="True"
+             BackgroundColor="Transparent">
+    <TableRoot>
+      <TableSection Title="Caching">
+        <ViewCell Height="60">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Text="Clear cache"
+                   VerticalOptions="Center"
+                   Margin="15,0"
+                   Grid.Column="0" />
+            <controls:ViewCellButton Text="Clear"
+                                     VerticalOptions="Center"
+                                     Margin="15,0"
+                                     Clicked="ClearCacheButton_Clicked"
+                                     Grid.Column="1" />
+          </Grid>
+        </ViewCell>
+      </TableSection>
+    </TableRoot>
+  </TableView>
 </ContentPage>
