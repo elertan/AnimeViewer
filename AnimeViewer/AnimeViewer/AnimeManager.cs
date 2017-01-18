@@ -227,9 +227,9 @@ namespace AnimeViewer
         /// <returns></returns>
         public async Task UpdateAnimeInformationForCachedAnime(Anime anime)
         {
-            await DbConnection.UpdateWithChildrenAsync(anime);
-            //await DbConnection.UpdateAsync(anime);
-            //await DbConnection.UpdateAllAsync(anime.Episodes);
+            //await DbConnection.UpdateWithChildrenAsync(anime);
+            await DbConnection.UpdateAsync(anime);
+            await DbConnection.UpdateAllAsync(anime.Episodes);
         }
 
         /// <summary>

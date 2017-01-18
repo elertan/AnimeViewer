@@ -32,7 +32,8 @@
         <!-- A scrollview to scroll through all content if larger then the page (which is likely due to episodes) -->
         <ScrollView IsClippedToBounds="True"
                     VerticalOptions="FillAndExpand"
-                    HorizontalOptions="FillAndExpand">
+                    HorizontalOptions="FillAndExpand"
+                    x:Name="ScrollView">
             <StackLayout>
                 <!-- These are the notification frames, for example the Establishing Connection notification -->
                 <!-- Notification that shows when there are connection issue(s) -->
@@ -127,6 +128,18 @@
                        FontSize="Small"
                        TextColor="#999999"
                        Margin="25" />
+                <Frame HasShadow="True"
+                       Margin="20"
+                       Padding="10">
+                    <StackLayout>
+                        <Button Text="Scroll to last watched episode"
+                                FontSize="Small"
+                                Clicked="ScrollToLastWatchedEpisode_Clicked" />
+                        <Button Text="Options"
+                                FontSize="Small"
+                                Clicked="Options_Clicked" />
+                    </StackLayout>
+                </Frame>
                 <!-- Episodes and an activityindicator when the list is empty -->
                 <Grid VerticalOptions="FillAndExpand"
                       HorizontalOptions="FillAndExpand">
@@ -157,25 +170,34 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <StackLayout BackgroundColor="Transparent"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center">
-                                        <StackLayout.Triggers>
-                                            <!-- Change backgroundcolor if watched TODO: NOT WORKING -->
-                                            <DataTrigger TargetType="StackLayout"
-                                                         Binding="{Binding HasWatched}"
-                                                         Value="True">
-                                                <Setter Property="BackgroundColor"
-                                                        Value="Green" />
-                                            </DataTrigger>
-                                        </StackLayout.Triggers>
+                                    <Grid BackgroundColor="Transparent"
+                                          HorizontalOptions="FillAndExpand"
+                                          VerticalOptions="FillAndExpand">
+                                        <ContentView IsVisible="{Binding HasWatched}"
+                                                     BackgroundColor="Black"
+                                                     Opacity="0.5" />
                                         <!-- The episode text -->
                                         <Label Text="{Binding Name}"
                                                TextColor="White"
                                                HorizontalOptions="Center"
+                                               VerticalTextAlignment="Center"
                                                HorizontalTextAlignment="Center"
                                                VerticalOptions="Center" />
-                                    </StackLayout>
+                                    </Grid>
+                                    <!--<StackLayout BackgroundColor="Transparent"
+                                                 HorizontalOptions="FillAndExpand"
+                                                 VerticalOptions="FillAndExpand">
+                                        <StackLayout.Triggers>
+                                            --><!-- Change backgroundcolor if watched TODO: NOT WORKING --><!--
+                                            <DataTrigger TargetType="StackLayout"
+                                                         Binding="{Binding HasWatched}"
+                                                         Value="True">
+                                                <Setter Property="BackgroundColor"
+                                                        Value="Gray" />
+                                            </DataTrigger>
+                                        </StackLayout.Triggers>
+
+                                    </StackLayout>-->
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>

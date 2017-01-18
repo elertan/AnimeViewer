@@ -57,7 +57,17 @@ namespace AnimeViewer.ViewModels
         {
             episode.HasWatched = true;
             await AnimeManager.Instance.UpdateAnimeInformationForCachedAnime(episode.Anime);
-            OnPropertyChanged(nameof(Anime));
+        }
+
+        public async Task ClearWatchedIndicators()
+        {
+            foreach (var episode in Anime.Episodes)
+                episode.HasWatched = false;
+            await AnimeManager.Instance.UpdateAnimeInformationForCachedAnime(Anime);
+        }
+
+        public void UpdateEpisodes()
+        {
         }
     }
 }

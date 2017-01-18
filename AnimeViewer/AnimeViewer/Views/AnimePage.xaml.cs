@@ -98,7 +98,12 @@ namespace AnimeViewer.Views
 
             // Set the episode as watched if it is not yet
             if (!episode.HasWatched)
+            {
                 await _viewModel.SetEpisodeAsWatched(episode);
+                // Update to show has watched
+                ListView.ItemsSource = new List<Episode>(_viewModel.Anime.Episodes);
+            }
+
 
             // Get the videoplayer (platform specific, iOS and android has their own 'videoplayer')
             var videoPlayer = DependencyService.Get<IVideoPlayer>();
@@ -107,6 +112,36 @@ namespace AnimeViewer.Views
 
             // Hide the loading dialog
             UserDialogs.Instance.HideLoading();
+        }
+
+        private async void Options_Clicked(object sender, EventArgs e)
+        {
+            const string clearWatchedIndicatorsOption = "Clear watched indicators";
+            var option = await UserDialogs.Instance.ActionSheetAsync("Options", "Cancel", null, null, clearWatchedIndicatorsOption);
+            if (option == clearWatchedIndicatorsOption)
+            {
+                await _viewModel.ClearWatchedIndicators();
+
+                // Update to remove has watched
+                ListView.ItemsSource = new List<Episode>(_viewModel.Anime.Episodes);
+            }
+        }
+
+        private async void ScrollToLastWatchedEpisode_Clicked(object sender, EventArgs e)
+        {
+            var lastWatchedEpisode = _viewModel.Anime.Episodes.LastOrDefault(ep => ep.HasWatched);
+            if (lastWatchedEpisode == default(Episode))
+            {
+                await UserDialogs.Instance.AlertAsync("You haven't watched any episode of this anime yet.");
+                return;
+            } // No episodes watched yet
+
+            await ScrollView.ScrollToAsync(ListView, ScrollToPosition.Start, true);
+
+            var lastWatchedEpisodeIndex = _viewModel.Anime.Episodes.IndexOf(lastWatchedEpisode);
+            var listViewOffset = lastWatchedEpisodeIndex*ListView.RowHeight;
+
+            await ScrollView.ScrollToAsync(0, ScrollView.ScrollY + listViewOffset, true);
         }
     }
 }
