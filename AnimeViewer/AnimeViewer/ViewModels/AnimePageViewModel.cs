@@ -59,6 +59,13 @@ namespace AnimeViewer.ViewModels
             await AnimeManager.Instance.UpdateAnimeInformationForCachedAnime(episode.Anime);
         }
 
+        public async Task SetAnimeFavouriteStateAsync(bool state)
+        {
+            Anime.IsFavourited = state;
+            await AnimeManager.Instance.UpdateAnimeInformationForCachedAnime(Anime);
+            OnPropertyChanged(nameof(Anime));
+        }
+
         public async Task ClearWatchedIndicators()
         {
             foreach (var episode in Anime.Episodes)

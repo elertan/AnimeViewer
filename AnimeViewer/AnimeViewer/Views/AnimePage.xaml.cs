@@ -27,7 +27,8 @@ namespace AnimeViewer.Views
         {
             InitializeComponent();
             // Create new viewmodel with the given variables
-            _viewModel = new AnimePageViewModel {Anime = anime, HasConnectionIssue = hasConnectionIssue}; //Image and Anime Name
+            _viewModel = new AnimePageViewModel {Anime = anime, HasConnectionIssue = hasConnectionIssue};
+            //Image and Anime Name
             // Bind event if all information loaded
             _viewModel.AllInformationLoaded += _viewModel_AllInformationLoaded;
             // Apply to binding context so we can bind to the viewmodel's properties in the view
@@ -108,7 +109,11 @@ namespace AnimeViewer.Views
             // Get the videoplayer (platform specific, iOS and android has their own 'videoplayer')
             var videoPlayer = DependencyService.Get<IVideoPlayer>();
             // Try playing the video, if it fails tell the user to download a 3rd party videoplayer (on android)
-            if (!videoPlayer.Play(sourceUrl)) await UserDialogs.Instance.ConfirmAsync("No video player found on your device, please install one via the playstore.", "VideoPlayer Required", "OK");
+            if (!videoPlayer.Play(sourceUrl))
+                await
+                    UserDialogs.Instance.ConfirmAsync(
+                        "No video player found on your device, please install one via the playstore.",
+                        "VideoPlayer Required", "OK");
 
             // Hide the loading dialog
             UserDialogs.Instance.HideLoading();
@@ -117,8 +122,11 @@ namespace AnimeViewer.Views
         private async void Options_Clicked(object sender, EventArgs e)
         {
             const string clearWatchedIndicatorsOption = "Clear watched indicators";
-            var option = await UserDialogs.Instance.ActionSheetAsync("Options", "Cancel", null, null, clearWatchedIndicatorsOption);
-            if (option == clearWatchedIndicatorsOption)
+            var clearWatchedEpisodesOption =
+                await
+                    UserDialogs.Instance.ActionSheetAsync("Options", "Cancel", null, null, clearWatchedIndicatorsOption);
+
+            if (clearWatchedEpisodesOption == clearWatchedIndicatorsOption)
             {
                 await _viewModel.ClearWatchedIndicators();
 
@@ -142,6 +150,11 @@ namespace AnimeViewer.Views
             var listViewOffset = lastWatchedEpisodeIndex*ListView.RowHeight;
 
             await ScrollView.ScrollToAsync(0, ScrollView.ScrollY + listViewOffset, true);
+        }
+
+        private async void FavouriteButton_OnClicked(object sender, EventArgs e)
+        {
+            await _viewModel.SetAnimeFavouriteStateAsync(!_viewModel.Anime.IsFavourited);
         }
     }
 }

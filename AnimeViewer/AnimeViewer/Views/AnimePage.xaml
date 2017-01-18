@@ -132,6 +132,29 @@
                        Margin="20"
                        Padding="10">
                     <StackLayout>
+                        <Button Text="Favourite"
+                                Clicked="FavouriteButton_OnClicked">
+                            <Button.Triggers>
+                                <DataTrigger Binding="{ Binding Anime.IsFavourited }"
+                                             TargetType="Button"
+                                             Value="True">
+                                    <DataTrigger.Setters>
+                                        <Setter Value="Yellow" Property="BackgroundColor" />
+                                        <Setter Value="Unfavourite" Property="Text" />
+                                        <Setter Value="Black" Property="TextColor" />
+                                    </DataTrigger.Setters>
+                                </DataTrigger>
+                                <DataTrigger Binding="{ Binding Anime.IsFavourited }"
+                                             TargetType="Button"
+                                             Value="False">
+                                    <DataTrigger.Setters>
+                                        <Setter Value="Gray" Property="BackgroundColor" />
+                                        <Setter Value="Favourite" Property="Text" />
+                                        <Setter Value="White" Property="TextColor" />
+                                    </DataTrigger.Setters>
+                                </DataTrigger>
+                            </Button.Triggers>
+                        </Button>
                         <Button Text="Scroll to last watched episode"
                                 FontSize="Small"
                                 Clicked="ScrollToLastWatchedEpisode_Clicked" />

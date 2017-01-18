@@ -12,6 +12,8 @@ namespace AnimeViewer.Models
 
         public string Name { get; set; }
 
+        public bool IsFavourited { get; set; }
+
         public string ImageUrl { get; set; }
 
         public string PageUrl { get; set; }
