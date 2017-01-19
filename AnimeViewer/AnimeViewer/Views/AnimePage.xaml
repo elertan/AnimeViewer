@@ -7,7 +7,8 @@
              xmlns:controls="clr-namespace:AnimeViewer.Controls;assembly=AnimeViewer"
              x:Class="AnimeViewer.Views.AnimePage"
              Title="Anime"
-             Appearing="AnimePage_OnAppearing">
+             Appearing="AnimePage_OnAppearing"
+             Disappearing="AnimePage_OnDisappearing">
     <Grid>
         <!-- This is a background that supports urls -->
         <ffimageloading:CachedImage x:Name="CustomBackgroundImage"
@@ -131,6 +132,10 @@
                 <Frame HasShadow="True"
                        Margin="20"
                        Padding="10">
+                    <Frame.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color"
+                                    Android="Transparent" />
+                    </Frame.BackgroundColor>
                     <StackLayout>
                         <!--<ContentView BackgroundColor="Yellow">
                             <ffimageloading:CachedImage Source="star_icon.png" />
@@ -217,5 +222,51 @@
                 </Grid>
             </StackLayout>
         </ScrollView>
+        <ContentView BackgroundColor="Black"
+                     x:Name="AutoPlayContentView"
+                     Opacity="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!--<RowDefinition Height="2*" />-->
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="3*" />
+                </Grid.RowDefinitions>
+                <!--<Label Text="AutoPlay"
+                       FontSize="Large"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Grid.Row="0" />-->
+                <controls:RadialProgressView VerticalOptions="Center"
+                                             HorizontalOptions="Center"
+                                             x:Name="AutoPlayRadialProgressView"
+                                             Grid.Row="0" />
+                <Label Text="{Binding NextEpisode.Name, StringFormat='Playing next - {0:S}'}"
+                       Margin="15"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       Grid.Row="1" />
+                <Label Text="You can change the way autoplay behaves in the settings"
+                       Margin="15"
+                       FontSize="Small"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       Grid.Row="2" />
+                <Button Text="Cancel"
+                        Clicked="AutoPlayCancelButton_Clicked"
+                        Margin="20"
+                        Grid.Row="3" />
+            </Grid>
+        </ContentView>
     </Grid>
 </ContentPage>

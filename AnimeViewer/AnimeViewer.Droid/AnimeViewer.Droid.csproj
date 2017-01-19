@@ -115,6 +115,9 @@
       <HintPath>..\..\packages\modernhttpclient.2.4.2\lib\MonoAndroid\OkHttp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RadialProgress.Android">
+      <HintPath>..\..\Components\radialprogress-1.0.1.3\lib\android\RadialProgress.Android.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleInjector, Version=3.3.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SimpleInjector.3.3.2\lib\netstandard1.0\SimpleInjector.dll</HintPath>
       <Private>True</Private>
@@ -242,6 +245,7 @@
   <ItemGroup>
     <Compile Include="CustomRenderers\ContentViewRoundedCornersRenderer.cs" />
     <Compile Include="CustomRenderers\ListViewRenderer.cs" />
+    <Compile Include="CustomRenderers\RadialProgressViewRenderer.cs" />
     <Compile Include="CustomRenderers\ScrollViewRenderer.cs" />
     <Compile Include="CustomRenderers\ViewCellButtonRenderer.cs" />
     <Compile Include="MainActivity.cs" />
@@ -303,6 +307,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\star_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="radialprogress">
+      <Visible>False</Visible>
+      <Version>1.0.1.3</Version>
+    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

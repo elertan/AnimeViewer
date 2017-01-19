@@ -24,13 +24,13 @@ namespace AnimeViewer.Views
 
         private void SettingsPage_OnAppearing(object sender, EventArgs e)
         {
-            QualitySelectionPicker.SelectedIndex = QualitySelectionPicker.Items.IndexOf((string)App.Current.Properties[AppSettingsKeys.VideoQuality]);
+            QualitySelectionPicker.SelectedIndex = QualitySelectionPicker.Items.IndexOf((string)App.Current.Properties[AppSettingKeys.VideoQuality]);
         }
 
         private async void SettingsPage_OnDisappearing(object sender, EventArgs e)
         {
             // Video Settings
-            App.Current.Properties[AppSettingsKeys.VideoQuality] = QualitySelectionPicker.Items[QualitySelectionPicker.SelectedIndex];
+            App.Current.Properties[AppSettingKeys.VideoQuality] = QualitySelectionPicker.Items[QualitySelectionPicker.SelectedIndex];
 
             await App.Current.SavePropertiesAsync();
         }

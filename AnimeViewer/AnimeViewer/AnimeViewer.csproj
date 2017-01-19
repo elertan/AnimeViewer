@@ -39,8 +39,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AppSettingsKeys.cs" />
+    <Compile Include="AppSettingKeys.cs" />
     <Compile Include="Controls\ContentViewRoundedCorners.cs" />
+    <Compile Include="Controls\RadialProgressView.cs" />
     <Compile Include="Controls\ViewCellButton.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="EventArguments\AnimesUpdatedEventArgs.cs" />

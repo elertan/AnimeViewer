@@ -17,6 +17,9 @@ namespace AnimeViewer.Views
         private readonly AnimePageViewModel _viewModel;
         // Is it the first time this page is appearing (leaving the videoplayer causes another OnAppearing call)
         private bool _firstAppearance = true;
+        private bool _hasCancelledAutoPlay;
+        private Episode _lastTappedEpisode;
+        private DateTime _lastTappedEpisodeTime;
 
         /// <summary>
         ///     Constructs a new animepage
@@ -26,6 +29,13 @@ namespace AnimeViewer.Views
         public AnimePage(Anime anime, bool hasConnectionIssue = false)
         {
             InitializeComponent();
+            // How to show the autoplay progress
+            if (Device.OS == TargetPlatform.Android)
+                AutoPlayRadialProgressView.WidthRequest = 150;
+            AutoPlayRadialProgressView.ValueToLabelTextFunc = val => ""; //Math.Ceiling(val).ToString();
+            AutoPlayRadialProgressView.MaxValue = 8f; //(float) Application.Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisodeCancellableDelay]/1000f;
+            AutoPlayRadialProgressView.Value = 0f; //(float) Application.Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisodeCancellableDelay]/1000f;
+
             // Create new viewmodel with the given variables
             _viewModel = new AnimePageViewModel {Anime = anime, HasConnectionIssue = hasConnectionIssue};
             //Image and Anime Name
@@ -54,8 +64,44 @@ namespace AnimeViewer.Views
         private async void AnimePage_OnAppearing(object sender, EventArgs e)
         {
             // Is it the first time this page is appearing (leaving the videoplayer causes another OnAppearing call) only proceed if so
-            if (!_firstAppearance) return;
+            if (!_firstAppearance)
+            {
+                // Autoplay enabled, atleast 3 minutes in the video and there is another episode after this one
+                if (true && (_lastTappedEpisodeTime.AddMinutes(3) < DateTime.Now) && (_viewModel.Anime.Episodes.IndexOf(_lastTappedEpisode) < _viewModel.Anime.Episodes.Count - 1)) //(bool) Application.Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisode])
+                {
+                    AutoPlayContentView.IsVisible = true;
+                    const float updatesPerSecond = 40;
+
+                    _viewModel.NextEpisode = _viewModel.Anime.Episodes[_viewModel.Anime.Episodes.IndexOf(_lastTappedEpisode) + 1];
+                    var lastDateTime = DateTime.Now;
+                    Device.StartTimer(TimeSpan.FromMilliseconds(1000/updatesPerSecond), () =>
+                    {
+                        var value = (DateTime.Now - lastDateTime).Milliseconds/1000f;
+                        if (AutoPlayRadialProgressView.Value + value > AutoPlayRadialProgressView.MaxValue)
+                        {
+                            if (!_hasCancelledAutoPlay)
+                            {
+                                AutoPlayContentView.IsVisible = false;
+                                Episode_Tapped(ListView, new ItemTappedEventArgs(null, _viewModel.NextEpisode));
+                            }
+
+                            AutoPlayRadialProgressView.Value = AutoPlayRadialProgressView.MinValue;
+                            _hasCancelledAutoPlay = false;
+                            return false;
+                        }
+
+                        AutoPlayRadialProgressView.Value += value;
+
+                        lastDateTime = DateTime.Now;
+                        return true;
+                    });
+                }
+
+                return;
+            }
             _firstAppearance = false;
+            AutoPlayContentView.IsVisible = false;
+            AutoPlayContentView.Opacity = 0.85;
 
             // Show a loading dialog
             UserDialogs.Instance.ShowLoading("Loading Anime");
@@ -82,14 +128,17 @@ namespace AnimeViewer.Views
             // Only proceed if the selected item isn't null (nothing) since we are setting the selecteditem to null this method gets reinvoked again, and we dont want that
             if (e.Item == null) return;
 
-            // Show a loading dialog
-            UserDialogs.Instance.ShowLoading("Loading Episode");
-
             // Remove the item being selected (Reinvokes this method)
             ((ListView) sender).SelectedItem = null;
 
+            // Show a loading dialog
+            UserDialogs.Instance.ShowLoading("Loading Episode");
+
             // Get the episode
             var episode = (Episode) e.Item;
+            _lastTappedEpisode = episode;
+            _lastTappedEpisodeTime = DateTime.Now;
+
             // Get all the videosources via our animemanager
             var sources = await AnimeManager.Instance.GetVideoSourcesByEpisode(episode);
 
@@ -103,7 +152,7 @@ namespace AnimeViewer.Views
             string sourceUrl;
             try
             {
-                sourceUrl = sources.First(s => s.Quality == (string) Application.Current.Properties[AppSettingsKeys.VideoQuality]).SourceUrl;
+                sourceUrl = sources.First(s => s.Quality == (string) Application.Current.Properties[AppSettingKeys.VideoQuality]).SourceUrl;
             }
             catch
             {
@@ -168,6 +217,18 @@ namespace AnimeViewer.Views
         private async void FavouriteButton_OnClicked(object sender, EventArgs e)
         {
             await _viewModel.SetAnimeFavouriteStateAsync(!_viewModel.Anime.IsFavourited);
+        }
+
+        private void AutoPlayCancelButton_Clicked(object sender, EventArgs e)
+        {
+            _hasCancelledAutoPlay = true;
+            AutoPlayContentView.IsVisible = false;
+        }
+
+        private void AnimePage_OnDisappearing(object sender, EventArgs e)
+        {
+            if (AutoPlayContentView.IsVisible)
+                _hasCancelledAutoPlay = true;
         }
     }
 }

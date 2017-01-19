@@ -213,17 +213,66 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <ContentView BackgroundColor="Black"
-                                 Opacity="0.9"
+                    <ContentView Opacity="0.95"
+                                 BackgroundColor="#111111"
                                  Grid.Row="0" />
                     <StackLayout Grid.Row="0">
-                        <Label Text="Advanced Search"
-                               Margin="10"
-                               TextColor="White"
-                               FontSize="Large"
-                               HorizontalOptions="Center"
-                               HorizontalTextAlignment="Center"
-                               VerticalTextAlignment="Center" />
+                        <TableView Intent="Settings"
+                                   HasUnevenRows="True"
+                                   BackgroundColor="Transparent">
+                            <TableRoot>
+                                <TableSection Title="Language">
+                                    <ViewCell Height="60">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="Show All"
+                                                   TextColor="White"
+                                                   VerticalOptions="Center"
+                                                   Margin="15,0"
+                                                   Grid.Column="0" />
+                                            <Switch Grid.Column="1"
+                                                    VerticalOptions="Center"
+                                                    IsToggled="True" />
+                                        </Grid>
+                                    </ViewCell>
+                                    <ViewCell Height="60">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="Subbed"
+                                                   TextColor="White"
+                                                   VerticalOptions="Center"
+                                                   Margin="15,0"
+                                                   Grid.Column="0" />
+                                            <Switch Grid.Column="1"
+                                                    VerticalOptions="Center"
+                                                    IsToggled="False" />
+                                        </Grid>
+                                    </ViewCell>
+                                    <ViewCell Height="60">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="Dubbed"
+                                                   TextColor="White"
+                                                   VerticalOptions="Center"
+                                                   Margin="15,0"
+                                                   Grid.Column="0" />
+                                            <Switch Grid.Column="1"
+                                                    VerticalOptions="Center"
+                                                    IsToggled="False" />
+                                        </Grid>
+                                    </ViewCell>
+                                </TableSection>
+                            </TableRoot>
+                        </TableView>
                     </StackLayout>
                 </Grid>
             </ContentView>

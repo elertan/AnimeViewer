@@ -2,6 +2,7 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:AnimeViewer.Controls;assembly=AnimeViewer"
              x:Class="AnimeViewer.Views.AboutPage"
              Title="About">
     <ScrollView>
@@ -10,8 +11,8 @@
                 <RowDefinition Height="5*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="2*" />
-                <!--<RowDefinition Height="2*" />
-                <RowDefinition Height="*" />-->
+                <RowDefinition Height="2*" />
+                <!--<RowDefinition Height="*" />-->
             </Grid.RowDefinitions>
             <Image Source="heart.png"
                    Aspect="Fill"
@@ -31,6 +32,17 @@
                    HorizontalOptions="Center"
                    HorizontalTextAlignment="Center"
                    Text="Watch anime free &amp; adfree on any iOS or Android device. Developed and maintained by Elertan." />
+            <controls:RadialProgressView HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         MinValue="0"
+                                         MaxValue="5"
+                                         Value="5"
+                                         x:Name="ProgressView"
+                                         Grid.Row="3">
+                <controls:RadialProgressView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
+                </controls:RadialProgressView.GestureRecognizers>
+            </controls:RadialProgressView>
             <!-- This label shows the fact we don't have official consent by our host -->
             <!--<Label Grid.Row="3"
                    Margin="35"

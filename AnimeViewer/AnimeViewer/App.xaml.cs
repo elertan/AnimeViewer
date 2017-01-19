@@ -30,12 +30,14 @@ namespace AnimeViewer
         protected override async void OnStart()
         {
             // First time
-            if (!Current.Properties.ContainsKey(AppSettingsKeys.FirstTimeOpeningApp))
+            if (!Current.Properties.ContainsKey(AppSettingKeys.NotFirstTimeOpeningApp))
             {
                 // Set default video quality
-                Current.Properties[AppSettingsKeys.VideoQuality] = "720p";
+                Current.Properties[AppSettingKeys.VideoQuality] = "720p";
+                Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisode] = true;
+                Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisodeCancellableDelay] = 8000f;
 
-                Current.Properties[AppSettingsKeys.FirstTimeOpeningApp] = true;
+                Current.Properties[AppSettingKeys.NotFirstTimeOpeningApp] = true;
                 await Current.SavePropertiesAsync();
             }
 

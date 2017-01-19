@@ -10,10 +10,21 @@ namespace AnimeViewer.ViewModels
     {
         private Anime _anime;
         private bool _hasConnectionIssue;
+        private Episode _nextEpisode;
 
         public AnimePageViewModel()
         {
             PropertyChanged += AnimePageViewModel_PropertyChanged;
+        }
+
+        public Episode NextEpisode
+        {
+            get { return _nextEpisode; }
+            set
+            {
+                _nextEpisode = value;
+                OnPropertyChanged();
+            }
         }
 
         public Anime Anime
