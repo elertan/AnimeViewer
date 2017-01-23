@@ -131,11 +131,8 @@
                        Margin="25" />
                 <Frame HasShadow="True"
                        Margin="20"
+                       BackgroundColor="Transparent"
                        Padding="10">
-                    <Frame.BackgroundColor>
-                        <OnPlatform x:TypeArguments="Color"
-                                    Android="Transparent" />
-                    </Frame.BackgroundColor>
                     <StackLayout>
                         <!--<ContentView BackgroundColor="Yellow">
                             <ffimageloading:CachedImage Source="star_icon.png" />
@@ -245,7 +242,19 @@
                                              HorizontalOptions="Center"
                                              x:Name="AutoPlayRadialProgressView"
                                              Grid.Row="0" />
-                <Label Text="{Binding NextEpisode.Name, StringFormat='Playing next - {0:S}'}"
+                <ffimageloading:CachedImage Source="playbutton_icon.png"
+                                            Margin="10,0,0,0"
+                                            WidthRequest="80"
+                                            HeightRequest="80"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Center"
+                                            Aspect="AspectFill"
+                                            Grid.Row="0">
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                      <TapGestureRecognizer Tapped="AutoPlayProgressPlayButton_Tapped"></TapGestureRecognizer>
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                </ffimageloading:CachedImage>
+                <Label Text="Playing Next"
                        Margin="15"
                        TextColor="White"
                        VerticalOptions="Center"
@@ -253,9 +262,9 @@
                        VerticalTextAlignment="Center"
                        HorizontalTextAlignment="Center"
                        Grid.Row="1" />
-                <Label Text="You can change the way autoplay behaves in the settings"
+                <Label Text="{Binding NextEpisode.Name}"
                        Margin="15"
-                       FontSize="Small"
+                       FontSize="Large"
                        TextColor="White"
                        VerticalOptions="Center"
                        HorizontalOptions="Center"

@@ -38,6 +38,48 @@
                         </Picker>
                     </Grid>
                 </ViewCell>
+                <ViewCell Height="60">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Automatically play next episode"
+                               VerticalOptions="Center"
+                               Margin="15,0"
+                               Grid.Column="0" />
+                        <Switch Grid.Column="1"
+                                Margin="0,0,10,0"
+                                IsToggled="True" />
+                    </Grid>
+                </ViewCell>
+                <ViewCell Height="60">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Automatically play next episode delay"
+                               VerticalOptions="Center"
+                               Margin="15,0"
+                               Grid.Column="0" />
+                        <Entry Grid.Column="1"
+                               Keyboard="Numeric"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Text="5000" />
+                        <Label Grid.Column="2"
+                               FontSize="Small"
+                               VerticalOptions="Center"
+                               VerticalTextAlignment="Center"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               Margin="0,0,5,0"
+                               Text="ms"
+                               TextColor="White" />
+                    </Grid>
+                </ViewCell>
             </TableSection>
             <TableSection Title="Caching">
                 <ViewCell Height="60">

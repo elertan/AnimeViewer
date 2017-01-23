@@ -31,8 +31,11 @@ namespace AnimeViewer.Views
             InitializeComponent();
             // How to show the autoplay progress
             if (Device.OS == TargetPlatform.Android)
+            {
                 AutoPlayRadialProgressView.WidthRequest = 150;
-            AutoPlayRadialProgressView.ValueToLabelTextFunc = val => ""; //Math.Ceiling(val).ToString();
+                AutoPlayRadialProgressView.HeightRequest = 150;
+            }
+            AutoPlayRadialProgressView.ValueToLabelTextFunc = val => ""; //Math.Ceiling(8f - val).ToString();
             AutoPlayRadialProgressView.MaxValue = 8f; //(float) Application.Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisodeCancellableDelay]/1000f;
             AutoPlayRadialProgressView.Value = 0f; //(float) Application.Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisodeCancellableDelay]/1000f;
 
@@ -67,7 +70,7 @@ namespace AnimeViewer.Views
             if (!_firstAppearance)
             {
                 // Autoplay enabled, atleast 3 minutes in the video and there is another episode after this one
-                if (true && (_lastTappedEpisodeTime.AddMinutes(3) < DateTime.Now) && (_viewModel.Anime.Episodes.IndexOf(_lastTappedEpisode) < _viewModel.Anime.Episodes.Count - 1)) //(bool) Application.Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisode])
+                if (true && (_lastTappedEpisodeTime.AddMinutes(0) < DateTime.Now) && (_viewModel.Anime.Episodes.IndexOf(_lastTappedEpisode) < _viewModel.Anime.Episodes.Count - 1)) //(bool) Application.Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisode])
                 {
                     AutoPlayContentView.IsVisible = true;
                     const float updatesPerSecond = 40;
@@ -101,7 +104,7 @@ namespace AnimeViewer.Views
             }
             _firstAppearance = false;
             AutoPlayContentView.IsVisible = false;
-            AutoPlayContentView.Opacity = 0.85;
+            AutoPlayContentView.Opacity = 0.95;
 
             // Show a loading dialog
             UserDialogs.Instance.ShowLoading("Loading Anime");
@@ -229,6 +232,11 @@ namespace AnimeViewer.Views
         {
             if (AutoPlayContentView.IsVisible)
                 _hasCancelledAutoPlay = true;
+        }
+
+        private void AutoPlayProgressPlayButton_Tapped(object sender, EventArgs e)
+        {
+            AutoPlayRadialProgressView.Value = AutoPlayRadialProgressView.MaxValue;
         }
     }
 }
