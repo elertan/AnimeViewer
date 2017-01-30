@@ -35,7 +35,7 @@ namespace AnimeViewer
                 // Set default video quality
                 Current.Properties[AppSettingKeys.VideoQuality] = "720p";
                 Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisode] = true;
-                Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisodeCancellableDelay] = 8000f;
+                Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisodeCancellableDelay] = 10000;
 
                 Current.Properties[AppSettingKeys.NotFirstTimeOpeningApp] = true;
                 await Current.SavePropertiesAsync();

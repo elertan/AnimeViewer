@@ -3,8 +3,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:AnimeViewer.Controls;assembly=AnimeViewer"
+             xmlns:bindablePicker="clr-namespace:JPC.BindablePicker;assembly=JPC.BindablePicker"
              Title="Settings"
-             Appearing="SettingsPage_OnAppearing"
              Disappearing="SettingsPage_OnDisappearing"
              x:Class="AnimeViewer.Views.SettingsPage">
     <TableView Intent="Settings"
@@ -22,20 +22,12 @@
                                VerticalOptions="Center"
                                Margin="15,0"
                                Grid.Column="0" />
-                        <Picker Grid.Column="1"
-                                x:Name="QualitySelectionPicker"
-                                BackgroundColor="Transparent"
-                                Margin="5"
-                                Title="Choose quality"
-                                TextColor="White"
-                                SelectedIndexChanged="QualitySelectionPicker_SelectedIndexChanged">
-                            <Picker.Items>
-                                <x:String>1080p</x:String>
-                                <x:String>720p</x:String>
-                                <x:String>480p</x:String>
-                                <x:String>360p</x:String>
-                            </Picker.Items>
-                        </Picker>
+                        <bindablePicker:BindablePicker Grid.Column="1"
+                                                       BackgroundColor="Transparent"
+                                                       Margin="5"
+                                                       Title="Choose quality"
+                                                       TextColor="White"
+                                                       ItemsSource="{Binding VideoQualities}" />
                     </Grid>
                 </ViewCell>
                 <ViewCell Height="60">
