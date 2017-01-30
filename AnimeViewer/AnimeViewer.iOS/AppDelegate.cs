@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using Xamarin.Forms.Themes;
 using Xamarin.Forms.Themes.iOS;
+using XFGloss.iOS;
 
 namespace AnimeViewer.iOS
 {
@@ -26,6 +27,8 @@ namespace AnimeViewer.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Forms.Init();
+            /********** ADD THIS CALL TO INITIALIZE XFGloss *********/
+            Library.Init();
             LoadApplication(new App());
 
             var x = typeof(DarkThemeResources);

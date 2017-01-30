@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using AnimeViewer.Models;
 using AnimeViewer.ViewModels;
 using FFImageLoading.Transformations;
@@ -12,6 +12,7 @@ namespace AnimeViewer.Views
 {
     public partial class AllAnimeCollectionPage : ContentPage
     {
+        private readonly AdvancedSearchOptionsViewModel _advancedSearchOptionsViewModel;
         // The viewmodel
         private readonly AllAnimeCollectionPageViewModel _viewModel;
         // Is this the first time the page is appearing
@@ -21,8 +22,10 @@ namespace AnimeViewer.Views
         {
             InitializeComponent();
             // Create a new viewmodel and apply it as bindingcontext
-            _viewModel = new AllAnimeCollectionPageViewModel();
+            _advancedSearchOptionsViewModel = new AdvancedSearchOptionsViewModel();
+            _viewModel = new AllAnimeCollectionPageViewModel(_advancedSearchOptionsViewModel);
             BindingContext = _viewModel;
+            AdvancedSearchOptionsView.BindingContext = _advancedSearchOptionsViewModel;
         }
 
         /// <summary>
@@ -31,23 +34,24 @@ namespace AnimeViewer.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
             // If the page is not appearing for the first time, just return
-            if (!_firstTimeAppearing) return;
-            // Setup disclosure image
-            SearchBarDisclosureImage.Transformations = new List<ITransformation>
+            if (_firstTimeAppearing)
             {
-                new RotateTransformation(90),
-                new ColorSpaceTransformation(FFColorMatrix.InvertColorMatrix),
-                new CropTransformation(2.5, 0, 0)
-            };
+                // Setup disclosure image
+                SearchBarDisclosureImage.Transformations = new List<ITransformation>
+                {
+                    new RotateTransformation(90),
+                    new ColorSpaceTransformation(FFColorMatrix.InvertColorMatrix),
+                    new CropTransformation(2.5, 0, 0)
+                };
 
-            // Set to invisible position
-            //await AdvancedSearchOptionsView.FadeTo(0, 0);
-            //AdvancedSearchOptionsView.IsVisible = false;
+                // Initialize the viewmodel, or whatever this viewmodel might be doing
+                await _viewModel.InitializeAsync();
+                _firstTimeAppearing = false;
+            }
 
-            // Initialize the viewmodel, or whatever this viewmodel might be doing
-            await _viewModel.InitializeAsync();
-            _firstTimeAppearing = false;
+            await _advancedSearchOptionsViewModel.ApplyFilterAsync(_viewModel.AllAnimes);
         }
 
         /// <summary>
@@ -68,21 +72,13 @@ namespace AnimeViewer.Views
         /// <param name="e"></param>
         private async void FlowListView_OnFlowItemTapped(object sender, ItemTappedEventArgs e)
         {
+            // Show a loading dialog
+            UserDialogs.Instance.ShowLoading("Loading Anime");
+
             // Get the corrosponding anime that was tapped
             var anime = (Anime) e.Item;
             // Show the anime page for that anime
             await Navigation.PushAsync(new AnimePage(anime, _viewModel.HasConnectionIssue));
-        }
-
-        private void FlowListView_OnTapped(object sender, EventArgs e)
-        {
-            // TODO: DOES NOT WORK
-            //SearchBar.Unfocus();
-        }
-
-        private void ListView_OnRefreshing(object sender, EventArgs e)
-        {
-            //await _viewModel.RecacheAllAnimes();
         }
 
         /// <summary>
@@ -92,25 +88,8 @@ namespace AnimeViewer.Views
         /// <param name="e"></param>
         private async void HasConnectionIssueFrame_Tapped(object sender, EventArgs e)
         {
-            //var accepted = await DisplayAlert("Retry Connection", "Do you want to retry the connection?", "Yes", "No");
-            //if (accepted)
             // Retries the connection
             await _viewModel.RetryConnection();
-        }
-
-        private void IndicatorLabel_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == IsVisibleProperty.PropertyName)
-            {
-                var label = (Label) sender;
-                var contentView = (ContentView) label.Parent;
-                contentView.IsVisible = true;
-            }
-        }
-
-        private async void SearchBar_OnSearchButtonPressed(object sender, EventArgs e)
-        {
-            //await _viewModel.SetSearchQueryAsync(SearchBar.Text);
         }
 
         private async void SearchBarDisclosureImage_Tapped(object sender, EventArgs e)
@@ -127,6 +106,8 @@ namespace AnimeViewer.Views
             }
             else
             {
+                // Apply filter
+                tasks.Add(_advancedSearchOptionsViewModel.ApplyFilterAsync(_viewModel.AllAnimes));
                 tasks.Add(AdvancedSearchOptionsView.FadeTo(0, 250U, Easing.CubicInOut));
                 tasks.Add(SearchBarDisclosureImage.RotateTo(0, 250U, Easing.CubicInOut));
                 // Wait on all (animation) tasks

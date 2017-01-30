@@ -68,6 +68,1791 @@ namespace AnimeViewer.Droid
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::AnimeViewer.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::AnimeViewer.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::AnimeViewer.Droid.Resource.Attribute.actionBarSize;
+			global::XFGloss.Droid.Resource.Animation.abc_fade_in = global::AnimeViewer.Droid.Resource.Animation.abc_fade_in;
+			global::XFGloss.Droid.Resource.Animation.abc_fade_out = global::AnimeViewer.Droid.Resource.Animation.abc_fade_out;
+			global::XFGloss.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::AnimeViewer.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::XFGloss.Droid.Resource.Animation.abc_popup_enter = global::AnimeViewer.Droid.Resource.Animation.abc_popup_enter;
+			global::XFGloss.Droid.Resource.Animation.abc_popup_exit = global::AnimeViewer.Droid.Resource.Animation.abc_popup_exit;
+			global::XFGloss.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom = global::AnimeViewer.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::XFGloss.Droid.Resource.Animation.abc_slide_in_bottom = global::AnimeViewer.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::XFGloss.Droid.Resource.Animation.abc_slide_in_top = global::AnimeViewer.Droid.Resource.Animation.abc_slide_in_top;
+			global::XFGloss.Droid.Resource.Animation.abc_slide_out_bottom = global::AnimeViewer.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::XFGloss.Droid.Resource.Animation.abc_slide_out_top = global::AnimeViewer.Droid.Resource.Animation.abc_slide_out_top;
+			global::XFGloss.Droid.Resource.Animation.design_bottom_sheet_slide_in = global::AnimeViewer.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::XFGloss.Droid.Resource.Animation.design_bottom_sheet_slide_out = global::AnimeViewer.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::XFGloss.Droid.Resource.Animation.design_fab_in = global::AnimeViewer.Droid.Resource.Animation.design_fab_in;
+			global::XFGloss.Droid.Resource.Animation.design_fab_out = global::AnimeViewer.Droid.Resource.Animation.design_fab_out;
+			global::XFGloss.Droid.Resource.Animation.design_snackbar_in = global::AnimeViewer.Droid.Resource.Animation.design_snackbar_in;
+			global::XFGloss.Droid.Resource.Animation.design_snackbar_out = global::AnimeViewer.Droid.Resource.Animation.design_snackbar_out;
+			global::XFGloss.Droid.Resource.Attribute.MediaRouteControllerWindowBackground = global::AnimeViewer.Droid.Resource.Attribute.MediaRouteControllerWindowBackground;
+			global::XFGloss.Droid.Resource.Attribute.actionBarDivider = global::AnimeViewer.Droid.Resource.Attribute.actionBarDivider;
+			global::XFGloss.Droid.Resource.Attribute.actionBarItemBackground = global::AnimeViewer.Droid.Resource.Attribute.actionBarItemBackground;
+			global::XFGloss.Droid.Resource.Attribute.actionBarPopupTheme = global::AnimeViewer.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::XFGloss.Droid.Resource.Attribute.actionBarSize = global::AnimeViewer.Droid.Resource.Attribute.actionBarSize;
+			global::XFGloss.Droid.Resource.Attribute.actionBarSplitStyle = global::AnimeViewer.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionBarStyle = global::AnimeViewer.Droid.Resource.Attribute.actionBarStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionBarTabBarStyle = global::AnimeViewer.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionBarTabStyle = global::AnimeViewer.Droid.Resource.Attribute.actionBarTabStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionBarTabTextStyle = global::AnimeViewer.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionBarTheme = global::AnimeViewer.Droid.Resource.Attribute.actionBarTheme;
+			global::XFGloss.Droid.Resource.Attribute.actionBarWidgetTheme = global::AnimeViewer.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::XFGloss.Droid.Resource.Attribute.actionButtonStyle = global::AnimeViewer.Droid.Resource.Attribute.actionButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionDropDownStyle = global::AnimeViewer.Droid.Resource.Attribute.actionDropDownStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionLayout = global::AnimeViewer.Droid.Resource.Attribute.actionLayout;
+			global::XFGloss.Droid.Resource.Attribute.actionMenuTextAppearance = global::AnimeViewer.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.actionMenuTextColor = global::AnimeViewer.Droid.Resource.Attribute.actionMenuTextColor;
+			global::XFGloss.Droid.Resource.Attribute.actionModeBackground = global::AnimeViewer.Droid.Resource.Attribute.actionModeBackground;
+			global::XFGloss.Droid.Resource.Attribute.actionModeCloseButtonStyle = global::AnimeViewer.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionModeCloseDrawable = global::AnimeViewer.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModeCopyDrawable = global::AnimeViewer.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModeCutDrawable = global::AnimeViewer.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModeFindDrawable = global::AnimeViewer.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModePasteDrawable = global::AnimeViewer.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModePopupWindowStyle = global::AnimeViewer.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionModeSelectAllDrawable = global::AnimeViewer.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModeShareDrawable = global::AnimeViewer.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionModeSplitBackground = global::AnimeViewer.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::XFGloss.Droid.Resource.Attribute.actionModeStyle = global::AnimeViewer.Droid.Resource.Attribute.actionModeStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionModeWebSearchDrawable = global::AnimeViewer.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::XFGloss.Droid.Resource.Attribute.actionOverflowButtonStyle = global::AnimeViewer.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionOverflowMenuStyle = global::AnimeViewer.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::XFGloss.Droid.Resource.Attribute.actionProviderClass = global::AnimeViewer.Droid.Resource.Attribute.actionProviderClass;
+			global::XFGloss.Droid.Resource.Attribute.actionViewClass = global::AnimeViewer.Droid.Resource.Attribute.actionViewClass;
+			global::XFGloss.Droid.Resource.Attribute.activityChooserViewStyle = global::AnimeViewer.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::XFGloss.Droid.Resource.Attribute.alertDialogButtonGroupStyle = global::AnimeViewer.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::XFGloss.Droid.Resource.Attribute.alertDialogCenterButtons = global::AnimeViewer.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::XFGloss.Droid.Resource.Attribute.alertDialogStyle = global::AnimeViewer.Droid.Resource.Attribute.alertDialogStyle;
+			global::XFGloss.Droid.Resource.Attribute.alertDialogTheme = global::AnimeViewer.Droid.Resource.Attribute.alertDialogTheme;
+			global::XFGloss.Droid.Resource.Attribute.allowStacking = global::AnimeViewer.Droid.Resource.Attribute.allowStacking;
+			global::XFGloss.Droid.Resource.Attribute.arrowHeadLength = global::AnimeViewer.Droid.Resource.Attribute.arrowHeadLength;
+			global::XFGloss.Droid.Resource.Attribute.arrowShaftLength = global::AnimeViewer.Droid.Resource.Attribute.arrowShaftLength;
+			global::XFGloss.Droid.Resource.Attribute.autoCompleteTextViewStyle = global::AnimeViewer.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::XFGloss.Droid.Resource.Attribute.background = global::AnimeViewer.Droid.Resource.Attribute.background;
+			global::XFGloss.Droid.Resource.Attribute.backgroundSplit = global::AnimeViewer.Droid.Resource.Attribute.backgroundSplit;
+			global::XFGloss.Droid.Resource.Attribute.backgroundStacked = global::AnimeViewer.Droid.Resource.Attribute.backgroundStacked;
+			global::XFGloss.Droid.Resource.Attribute.backgroundTint = global::AnimeViewer.Droid.Resource.Attribute.backgroundTint;
+			global::XFGloss.Droid.Resource.Attribute.backgroundTintMode = global::AnimeViewer.Droid.Resource.Attribute.backgroundTintMode;
+			global::XFGloss.Droid.Resource.Attribute.barLength = global::AnimeViewer.Droid.Resource.Attribute.barLength;
+			global::XFGloss.Droid.Resource.Attribute.behavior_hideable = global::AnimeViewer.Droid.Resource.Attribute.behavior_hideable;
+			global::XFGloss.Droid.Resource.Attribute.behavior_overlapTop = global::AnimeViewer.Droid.Resource.Attribute.behavior_overlapTop;
+			global::XFGloss.Droid.Resource.Attribute.behavior_peekHeight = global::AnimeViewer.Droid.Resource.Attribute.behavior_peekHeight;
+			global::XFGloss.Droid.Resource.Attribute.borderWidth = global::AnimeViewer.Droid.Resource.Attribute.borderWidth;
+			global::XFGloss.Droid.Resource.Attribute.borderlessButtonStyle = global::AnimeViewer.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.bottomSheetDialogTheme = global::AnimeViewer.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::XFGloss.Droid.Resource.Attribute.bottomSheetStyle = global::AnimeViewer.Droid.Resource.Attribute.bottomSheetStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonBarButtonStyle = global::AnimeViewer.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonBarNegativeButtonStyle = global::AnimeViewer.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonBarNeutralButtonStyle = global::AnimeViewer.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonBarPositiveButtonStyle = global::AnimeViewer.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonBarStyle = global::AnimeViewer.Droid.Resource.Attribute.buttonBarStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonPanelSideLayout = global::AnimeViewer.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::XFGloss.Droid.Resource.Attribute.buttonStyle = global::AnimeViewer.Droid.Resource.Attribute.buttonStyle;
+			global::XFGloss.Droid.Resource.Attribute.buttonStyleSmall = global::AnimeViewer.Droid.Resource.Attribute.buttonStyleSmall;
+			global::XFGloss.Droid.Resource.Attribute.buttonTint = global::AnimeViewer.Droid.Resource.Attribute.buttonTint;
+			global::XFGloss.Droid.Resource.Attribute.buttonTintMode = global::AnimeViewer.Droid.Resource.Attribute.buttonTintMode;
+			global::XFGloss.Droid.Resource.Attribute.cardBackgroundColor = global::AnimeViewer.Droid.Resource.Attribute.cardBackgroundColor;
+			global::XFGloss.Droid.Resource.Attribute.cardCornerRadius = global::AnimeViewer.Droid.Resource.Attribute.cardCornerRadius;
+			global::XFGloss.Droid.Resource.Attribute.cardElevation = global::AnimeViewer.Droid.Resource.Attribute.cardElevation;
+			global::XFGloss.Droid.Resource.Attribute.cardMaxElevation = global::AnimeViewer.Droid.Resource.Attribute.cardMaxElevation;
+			global::XFGloss.Droid.Resource.Attribute.cardPreventCornerOverlap = global::AnimeViewer.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::XFGloss.Droid.Resource.Attribute.cardUseCompatPadding = global::AnimeViewer.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::XFGloss.Droid.Resource.Attribute.checkboxStyle = global::AnimeViewer.Droid.Resource.Attribute.checkboxStyle;
+			global::XFGloss.Droid.Resource.Attribute.checkedTextViewStyle = global::AnimeViewer.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::XFGloss.Droid.Resource.Attribute.closeIcon = global::AnimeViewer.Droid.Resource.Attribute.closeIcon;
+			global::XFGloss.Droid.Resource.Attribute.closeItemLayout = global::AnimeViewer.Droid.Resource.Attribute.closeItemLayout;
+			global::XFGloss.Droid.Resource.Attribute.collapseContentDescription = global::AnimeViewer.Droid.Resource.Attribute.collapseContentDescription;
+			global::XFGloss.Droid.Resource.Attribute.collapseIcon = global::AnimeViewer.Droid.Resource.Attribute.collapseIcon;
+			global::XFGloss.Droid.Resource.Attribute.collapsedTitleGravity = global::AnimeViewer.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::XFGloss.Droid.Resource.Attribute.collapsedTitleTextAppearance = global::AnimeViewer.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.color = global::AnimeViewer.Droid.Resource.Attribute.color;
+			global::XFGloss.Droid.Resource.Attribute.colorAccent = global::AnimeViewer.Droid.Resource.Attribute.colorAccent;
+			global::XFGloss.Droid.Resource.Attribute.colorButtonNormal = global::AnimeViewer.Droid.Resource.Attribute.colorButtonNormal;
+			global::XFGloss.Droid.Resource.Attribute.colorControlActivated = global::AnimeViewer.Droid.Resource.Attribute.colorControlActivated;
+			global::XFGloss.Droid.Resource.Attribute.colorControlHighlight = global::AnimeViewer.Droid.Resource.Attribute.colorControlHighlight;
+			global::XFGloss.Droid.Resource.Attribute.colorControlNormal = global::AnimeViewer.Droid.Resource.Attribute.colorControlNormal;
+			global::XFGloss.Droid.Resource.Attribute.colorPrimary = global::AnimeViewer.Droid.Resource.Attribute.colorPrimary;
+			global::XFGloss.Droid.Resource.Attribute.colorPrimaryDark = global::AnimeViewer.Droid.Resource.Attribute.colorPrimaryDark;
+			global::XFGloss.Droid.Resource.Attribute.colorSwitchThumbNormal = global::AnimeViewer.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::XFGloss.Droid.Resource.Attribute.commitIcon = global::AnimeViewer.Droid.Resource.Attribute.commitIcon;
+			global::XFGloss.Droid.Resource.Attribute.contentInsetEnd = global::AnimeViewer.Droid.Resource.Attribute.contentInsetEnd;
+			global::XFGloss.Droid.Resource.Attribute.contentInsetLeft = global::AnimeViewer.Droid.Resource.Attribute.contentInsetLeft;
+			global::XFGloss.Droid.Resource.Attribute.contentInsetRight = global::AnimeViewer.Droid.Resource.Attribute.contentInsetRight;
+			global::XFGloss.Droid.Resource.Attribute.contentInsetStart = global::AnimeViewer.Droid.Resource.Attribute.contentInsetStart;
+			global::XFGloss.Droid.Resource.Attribute.contentPadding = global::AnimeViewer.Droid.Resource.Attribute.contentPadding;
+			global::XFGloss.Droid.Resource.Attribute.contentPaddingBottom = global::AnimeViewer.Droid.Resource.Attribute.contentPaddingBottom;
+			global::XFGloss.Droid.Resource.Attribute.contentPaddingLeft = global::AnimeViewer.Droid.Resource.Attribute.contentPaddingLeft;
+			global::XFGloss.Droid.Resource.Attribute.contentPaddingRight = global::AnimeViewer.Droid.Resource.Attribute.contentPaddingRight;
+			global::XFGloss.Droid.Resource.Attribute.contentPaddingTop = global::AnimeViewer.Droid.Resource.Attribute.contentPaddingTop;
+			global::XFGloss.Droid.Resource.Attribute.contentScrim = global::AnimeViewer.Droid.Resource.Attribute.contentScrim;
+			global::XFGloss.Droid.Resource.Attribute.controlBackground = global::AnimeViewer.Droid.Resource.Attribute.controlBackground;
+			global::XFGloss.Droid.Resource.Attribute.counterEnabled = global::AnimeViewer.Droid.Resource.Attribute.counterEnabled;
+			global::XFGloss.Droid.Resource.Attribute.counterMaxLength = global::AnimeViewer.Droid.Resource.Attribute.counterMaxLength;
+			global::XFGloss.Droid.Resource.Attribute.counterOverflowTextAppearance = global::AnimeViewer.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.counterTextAppearance = global::AnimeViewer.Droid.Resource.Attribute.counterTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.customNavigationLayout = global::AnimeViewer.Droid.Resource.Attribute.customNavigationLayout;
+			global::XFGloss.Droid.Resource.Attribute.defaultQueryHint = global::AnimeViewer.Droid.Resource.Attribute.defaultQueryHint;
+			global::XFGloss.Droid.Resource.Attribute.dialogPreferredPadding = global::AnimeViewer.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::XFGloss.Droid.Resource.Attribute.dialogTheme = global::AnimeViewer.Droid.Resource.Attribute.dialogTheme;
+			global::XFGloss.Droid.Resource.Attribute.displayOptions = global::AnimeViewer.Droid.Resource.Attribute.displayOptions;
+			global::XFGloss.Droid.Resource.Attribute.divider = global::AnimeViewer.Droid.Resource.Attribute.divider;
+			global::XFGloss.Droid.Resource.Attribute.dividerHorizontal = global::AnimeViewer.Droid.Resource.Attribute.dividerHorizontal;
+			global::XFGloss.Droid.Resource.Attribute.dividerPadding = global::AnimeViewer.Droid.Resource.Attribute.dividerPadding;
+			global::XFGloss.Droid.Resource.Attribute.dividerVertical = global::AnimeViewer.Droid.Resource.Attribute.dividerVertical;
+			global::XFGloss.Droid.Resource.Attribute.drawableSize = global::AnimeViewer.Droid.Resource.Attribute.drawableSize;
+			global::XFGloss.Droid.Resource.Attribute.drawerArrowStyle = global::AnimeViewer.Droid.Resource.Attribute.drawerArrowStyle;
+			global::XFGloss.Droid.Resource.Attribute.dropDownListViewStyle = global::AnimeViewer.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::XFGloss.Droid.Resource.Attribute.dropdownListPreferredItemHeight = global::AnimeViewer.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::XFGloss.Droid.Resource.Attribute.editTextBackground = global::AnimeViewer.Droid.Resource.Attribute.editTextBackground;
+			global::XFGloss.Droid.Resource.Attribute.editTextColor = global::AnimeViewer.Droid.Resource.Attribute.editTextColor;
+			global::XFGloss.Droid.Resource.Attribute.editTextStyle = global::AnimeViewer.Droid.Resource.Attribute.editTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.elevation = global::AnimeViewer.Droid.Resource.Attribute.elevation;
+			global::XFGloss.Droid.Resource.Attribute.errorEnabled = global::AnimeViewer.Droid.Resource.Attribute.errorEnabled;
+			global::XFGloss.Droid.Resource.Attribute.errorTextAppearance = global::AnimeViewer.Droid.Resource.Attribute.errorTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable = global::AnimeViewer.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::XFGloss.Droid.Resource.Attribute.expanded = global::AnimeViewer.Droid.Resource.Attribute.expanded;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleGravity = global::AnimeViewer.Droid.Resource.Attribute.expandedTitleGravity;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleMargin = global::AnimeViewer.Droid.Resource.Attribute.expandedTitleMargin;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleMarginBottom = global::AnimeViewer.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleMarginEnd = global::AnimeViewer.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleMarginStart = global::AnimeViewer.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleMarginTop = global::AnimeViewer.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::XFGloss.Droid.Resource.Attribute.expandedTitleTextAppearance = global::AnimeViewer.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.externalRouteEnabledDrawable = global::AnimeViewer.Droid.Resource.Attribute.externalRouteEnabledDrawable;
+			global::XFGloss.Droid.Resource.Attribute.fabSize = global::AnimeViewer.Droid.Resource.Attribute.fabSize;
+			global::XFGloss.Droid.Resource.Attribute.foregroundInsidePadding = global::AnimeViewer.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::XFGloss.Droid.Resource.Attribute.gapBetweenBars = global::AnimeViewer.Droid.Resource.Attribute.gapBetweenBars;
+			global::XFGloss.Droid.Resource.Attribute.goIcon = global::AnimeViewer.Droid.Resource.Attribute.goIcon;
+			global::XFGloss.Droid.Resource.Attribute.headerLayout = global::AnimeViewer.Droid.Resource.Attribute.headerLayout;
+			global::XFGloss.Droid.Resource.Attribute.height = global::AnimeViewer.Droid.Resource.Attribute.height;
+			global::XFGloss.Droid.Resource.Attribute.hideOnContentScroll = global::AnimeViewer.Droid.Resource.Attribute.hideOnContentScroll;
+			global::XFGloss.Droid.Resource.Attribute.hintAnimationEnabled = global::AnimeViewer.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::XFGloss.Droid.Resource.Attribute.hintEnabled = global::AnimeViewer.Droid.Resource.Attribute.hintEnabled;
+			global::XFGloss.Droid.Resource.Attribute.hintTextAppearance = global::AnimeViewer.Droid.Resource.Attribute.hintTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.homeAsUpIndicator = global::AnimeViewer.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::XFGloss.Droid.Resource.Attribute.homeLayout = global::AnimeViewer.Droid.Resource.Attribute.homeLayout;
+			global::XFGloss.Droid.Resource.Attribute.icon = global::AnimeViewer.Droid.Resource.Attribute.icon;
+			global::XFGloss.Droid.Resource.Attribute.iconifiedByDefault = global::AnimeViewer.Droid.Resource.Attribute.iconifiedByDefault;
+			global::XFGloss.Droid.Resource.Attribute.imageButtonStyle = global::AnimeViewer.Droid.Resource.Attribute.imageButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.indeterminateProgressStyle = global::AnimeViewer.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::XFGloss.Droid.Resource.Attribute.initialActivityCount = global::AnimeViewer.Droid.Resource.Attribute.initialActivityCount;
+			global::XFGloss.Droid.Resource.Attribute.insetForeground = global::AnimeViewer.Droid.Resource.Attribute.insetForeground;
+			global::XFGloss.Droid.Resource.Attribute.isLightTheme = global::AnimeViewer.Droid.Resource.Attribute.isLightTheme;
+			global::XFGloss.Droid.Resource.Attribute.itemBackground = global::AnimeViewer.Droid.Resource.Attribute.itemBackground;
+			global::XFGloss.Droid.Resource.Attribute.itemIconTint = global::AnimeViewer.Droid.Resource.Attribute.itemIconTint;
+			global::XFGloss.Droid.Resource.Attribute.itemPadding = global::AnimeViewer.Droid.Resource.Attribute.itemPadding;
+			global::XFGloss.Droid.Resource.Attribute.itemTextAppearance = global::AnimeViewer.Droid.Resource.Attribute.itemTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.itemTextColor = global::AnimeViewer.Droid.Resource.Attribute.itemTextColor;
+			global::XFGloss.Droid.Resource.Attribute.keylines = global::AnimeViewer.Droid.Resource.Attribute.keylines;
+			global::XFGloss.Droid.Resource.Attribute.layout = global::AnimeViewer.Droid.Resource.Attribute.layout;
+			global::XFGloss.Droid.Resource.Attribute.layoutManager = global::AnimeViewer.Droid.Resource.Attribute.layoutManager;
+			global::XFGloss.Droid.Resource.Attribute.layout_anchor = global::AnimeViewer.Droid.Resource.Attribute.layout_anchor;
+			global::XFGloss.Droid.Resource.Attribute.layout_anchorGravity = global::AnimeViewer.Droid.Resource.Attribute.layout_anchorGravity;
+			global::XFGloss.Droid.Resource.Attribute.layout_behavior = global::AnimeViewer.Droid.Resource.Attribute.layout_behavior;
+			global::XFGloss.Droid.Resource.Attribute.layout_collapseMode = global::AnimeViewer.Droid.Resource.Attribute.layout_collapseMode;
+			global::XFGloss.Droid.Resource.Attribute.layout_collapseParallaxMultiplier = global::AnimeViewer.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::XFGloss.Droid.Resource.Attribute.layout_keyline = global::AnimeViewer.Droid.Resource.Attribute.layout_keyline;
+			global::XFGloss.Droid.Resource.Attribute.layout_scrollFlags = global::AnimeViewer.Droid.Resource.Attribute.layout_scrollFlags;
+			global::XFGloss.Droid.Resource.Attribute.layout_scrollInterpolator = global::AnimeViewer.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::XFGloss.Droid.Resource.Attribute.listChoiceBackgroundIndicator = global::AnimeViewer.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::XFGloss.Droid.Resource.Attribute.listDividerAlertDialog = global::AnimeViewer.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::XFGloss.Droid.Resource.Attribute.listItemLayout = global::AnimeViewer.Droid.Resource.Attribute.listItemLayout;
+			global::XFGloss.Droid.Resource.Attribute.listLayout = global::AnimeViewer.Droid.Resource.Attribute.listLayout;
+			global::XFGloss.Droid.Resource.Attribute.listPopupWindowStyle = global::AnimeViewer.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::XFGloss.Droid.Resource.Attribute.listPreferredItemHeight = global::AnimeViewer.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::XFGloss.Droid.Resource.Attribute.listPreferredItemHeightLarge = global::AnimeViewer.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::XFGloss.Droid.Resource.Attribute.listPreferredItemHeightSmall = global::AnimeViewer.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::XFGloss.Droid.Resource.Attribute.listPreferredItemPaddingLeft = global::AnimeViewer.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::XFGloss.Droid.Resource.Attribute.listPreferredItemPaddingRight = global::AnimeViewer.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::XFGloss.Droid.Resource.Attribute.logo = global::AnimeViewer.Droid.Resource.Attribute.logo;
+			global::XFGloss.Droid.Resource.Attribute.logoDescription = global::AnimeViewer.Droid.Resource.Attribute.logoDescription;
+			global::XFGloss.Droid.Resource.Attribute.maxActionInlineWidth = global::AnimeViewer.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::XFGloss.Droid.Resource.Attribute.maxButtonHeight = global::AnimeViewer.Droid.Resource.Attribute.maxButtonHeight;
+			global::XFGloss.Droid.Resource.Attribute.measureWithLargestChild = global::AnimeViewer.Droid.Resource.Attribute.measureWithLargestChild;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteBluetoothIconDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteBluetoothIconDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteButtonStyle = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteCastDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteCastDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteChooserPrimaryTextStyle = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteChooserPrimaryTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteChooserSecondaryTextStyle = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteChooserSecondaryTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteCloseDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteCloseDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteCollapseGroupDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteCollapseGroupDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteConnectingDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteConnectingDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteControllerPrimaryTextStyle = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteControllerPrimaryTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteControllerSecondaryTextStyle = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteControllerSecondaryTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteControllerTitleTextStyle = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteControllerTitleTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteExpandGroupDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteExpandGroupDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteOffDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteOffDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteOnDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteOnDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRoutePauseDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRoutePauseDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRoutePlayDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRoutePlayDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable;
+			global::XFGloss.Droid.Resource.Attribute.mediaRouteTvIconDrawable = global::AnimeViewer.Droid.Resource.Attribute.mediaRouteTvIconDrawable;
+			global::XFGloss.Droid.Resource.Attribute.menu = global::AnimeViewer.Droid.Resource.Attribute.menu;
+			global::XFGloss.Droid.Resource.Attribute.multiChoiceItemLayout = global::AnimeViewer.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::XFGloss.Droid.Resource.Attribute.navigationContentDescription = global::AnimeViewer.Droid.Resource.Attribute.navigationContentDescription;
+			global::XFGloss.Droid.Resource.Attribute.navigationIcon = global::AnimeViewer.Droid.Resource.Attribute.navigationIcon;
+			global::XFGloss.Droid.Resource.Attribute.navigationMode = global::AnimeViewer.Droid.Resource.Attribute.navigationMode;
+			global::XFGloss.Droid.Resource.Attribute.overlapAnchor = global::AnimeViewer.Droid.Resource.Attribute.overlapAnchor;
+			global::XFGloss.Droid.Resource.Attribute.paddingEnd = global::AnimeViewer.Droid.Resource.Attribute.paddingEnd;
+			global::XFGloss.Droid.Resource.Attribute.paddingStart = global::AnimeViewer.Droid.Resource.Attribute.paddingStart;
+			global::XFGloss.Droid.Resource.Attribute.panelBackground = global::AnimeViewer.Droid.Resource.Attribute.panelBackground;
+			global::XFGloss.Droid.Resource.Attribute.panelMenuListTheme = global::AnimeViewer.Droid.Resource.Attribute.panelMenuListTheme;
+			global::XFGloss.Droid.Resource.Attribute.panelMenuListWidth = global::AnimeViewer.Droid.Resource.Attribute.panelMenuListWidth;
+			global::XFGloss.Droid.Resource.Attribute.popupMenuStyle = global::AnimeViewer.Droid.Resource.Attribute.popupMenuStyle;
+			global::XFGloss.Droid.Resource.Attribute.popupTheme = global::AnimeViewer.Droid.Resource.Attribute.popupTheme;
+			global::XFGloss.Droid.Resource.Attribute.popupWindowStyle = global::AnimeViewer.Droid.Resource.Attribute.popupWindowStyle;
+			global::XFGloss.Droid.Resource.Attribute.preserveIconSpacing = global::AnimeViewer.Droid.Resource.Attribute.preserveIconSpacing;
+			global::XFGloss.Droid.Resource.Attribute.pressedTranslationZ = global::AnimeViewer.Droid.Resource.Attribute.pressedTranslationZ;
+			global::XFGloss.Droid.Resource.Attribute.progressBarPadding = global::AnimeViewer.Droid.Resource.Attribute.progressBarPadding;
+			global::XFGloss.Droid.Resource.Attribute.progressBarStyle = global::AnimeViewer.Droid.Resource.Attribute.progressBarStyle;
+			global::XFGloss.Droid.Resource.Attribute.queryBackground = global::AnimeViewer.Droid.Resource.Attribute.queryBackground;
+			global::XFGloss.Droid.Resource.Attribute.queryHint = global::AnimeViewer.Droid.Resource.Attribute.queryHint;
+			global::XFGloss.Droid.Resource.Attribute.radioButtonStyle = global::AnimeViewer.Droid.Resource.Attribute.radioButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.ratingBarStyle = global::AnimeViewer.Droid.Resource.Attribute.ratingBarStyle;
+			global::XFGloss.Droid.Resource.Attribute.ratingBarStyleIndicator = global::AnimeViewer.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::XFGloss.Droid.Resource.Attribute.ratingBarStyleSmall = global::AnimeViewer.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::XFGloss.Droid.Resource.Attribute.reverseLayout = global::AnimeViewer.Droid.Resource.Attribute.reverseLayout;
+			global::XFGloss.Droid.Resource.Attribute.rippleColor = global::AnimeViewer.Droid.Resource.Attribute.rippleColor;
+			global::XFGloss.Droid.Resource.Attribute.searchHintIcon = global::AnimeViewer.Droid.Resource.Attribute.searchHintIcon;
+			global::XFGloss.Droid.Resource.Attribute.searchIcon = global::AnimeViewer.Droid.Resource.Attribute.searchIcon;
+			global::XFGloss.Droid.Resource.Attribute.searchViewStyle = global::AnimeViewer.Droid.Resource.Attribute.searchViewStyle;
+			global::XFGloss.Droid.Resource.Attribute.seekBarStyle = global::AnimeViewer.Droid.Resource.Attribute.seekBarStyle;
+			global::XFGloss.Droid.Resource.Attribute.selectableItemBackground = global::AnimeViewer.Droid.Resource.Attribute.selectableItemBackground;
+			global::XFGloss.Droid.Resource.Attribute.selectableItemBackgroundBorderless = global::AnimeViewer.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::XFGloss.Droid.Resource.Attribute.showAsAction = global::AnimeViewer.Droid.Resource.Attribute.showAsAction;
+			global::XFGloss.Droid.Resource.Attribute.showDividers = global::AnimeViewer.Droid.Resource.Attribute.showDividers;
+			global::XFGloss.Droid.Resource.Attribute.showText = global::AnimeViewer.Droid.Resource.Attribute.showText;
+			global::XFGloss.Droid.Resource.Attribute.singleChoiceItemLayout = global::AnimeViewer.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::XFGloss.Droid.Resource.Attribute.spanCount = global::AnimeViewer.Droid.Resource.Attribute.spanCount;
+			global::XFGloss.Droid.Resource.Attribute.spinBars = global::AnimeViewer.Droid.Resource.Attribute.spinBars;
+			global::XFGloss.Droid.Resource.Attribute.spinnerDropDownItemStyle = global::AnimeViewer.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::XFGloss.Droid.Resource.Attribute.spinnerStyle = global::AnimeViewer.Droid.Resource.Attribute.spinnerStyle;
+			global::XFGloss.Droid.Resource.Attribute.splitTrack = global::AnimeViewer.Droid.Resource.Attribute.splitTrack;
+			global::XFGloss.Droid.Resource.Attribute.srcCompat = global::AnimeViewer.Droid.Resource.Attribute.srcCompat;
+			global::XFGloss.Droid.Resource.Attribute.stackFromEnd = global::AnimeViewer.Droid.Resource.Attribute.stackFromEnd;
+			global::XFGloss.Droid.Resource.Attribute.state_above_anchor = global::AnimeViewer.Droid.Resource.Attribute.state_above_anchor;
+			global::XFGloss.Droid.Resource.Attribute.statusBarBackground = global::AnimeViewer.Droid.Resource.Attribute.statusBarBackground;
+			global::XFGloss.Droid.Resource.Attribute.statusBarScrim = global::AnimeViewer.Droid.Resource.Attribute.statusBarScrim;
+			global::XFGloss.Droid.Resource.Attribute.submitBackground = global::AnimeViewer.Droid.Resource.Attribute.submitBackground;
+			global::XFGloss.Droid.Resource.Attribute.subtitle = global::AnimeViewer.Droid.Resource.Attribute.subtitle;
+			global::XFGloss.Droid.Resource.Attribute.subtitleTextAppearance = global::AnimeViewer.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.subtitleTextColor = global::AnimeViewer.Droid.Resource.Attribute.subtitleTextColor;
+			global::XFGloss.Droid.Resource.Attribute.subtitleTextStyle = global::AnimeViewer.Droid.Resource.Attribute.subtitleTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.suggestionRowLayout = global::AnimeViewer.Droid.Resource.Attribute.suggestionRowLayout;
+			global::XFGloss.Droid.Resource.Attribute.switchMinWidth = global::AnimeViewer.Droid.Resource.Attribute.switchMinWidth;
+			global::XFGloss.Droid.Resource.Attribute.switchPadding = global::AnimeViewer.Droid.Resource.Attribute.switchPadding;
+			global::XFGloss.Droid.Resource.Attribute.switchStyle = global::AnimeViewer.Droid.Resource.Attribute.switchStyle;
+			global::XFGloss.Droid.Resource.Attribute.switchTextAppearance = global::AnimeViewer.Droid.Resource.Attribute.switchTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.tabBackground = global::AnimeViewer.Droid.Resource.Attribute.tabBackground;
+			global::XFGloss.Droid.Resource.Attribute.tabContentStart = global::AnimeViewer.Droid.Resource.Attribute.tabContentStart;
+			global::XFGloss.Droid.Resource.Attribute.tabGravity = global::AnimeViewer.Droid.Resource.Attribute.tabGravity;
+			global::XFGloss.Droid.Resource.Attribute.tabIndicatorColor = global::AnimeViewer.Droid.Resource.Attribute.tabIndicatorColor;
+			global::XFGloss.Droid.Resource.Attribute.tabIndicatorHeight = global::AnimeViewer.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::XFGloss.Droid.Resource.Attribute.tabMaxWidth = global::AnimeViewer.Droid.Resource.Attribute.tabMaxWidth;
+			global::XFGloss.Droid.Resource.Attribute.tabMinWidth = global::AnimeViewer.Droid.Resource.Attribute.tabMinWidth;
+			global::XFGloss.Droid.Resource.Attribute.tabMode = global::AnimeViewer.Droid.Resource.Attribute.tabMode;
+			global::XFGloss.Droid.Resource.Attribute.tabPadding = global::AnimeViewer.Droid.Resource.Attribute.tabPadding;
+			global::XFGloss.Droid.Resource.Attribute.tabPaddingBottom = global::AnimeViewer.Droid.Resource.Attribute.tabPaddingBottom;
+			global::XFGloss.Droid.Resource.Attribute.tabPaddingEnd = global::AnimeViewer.Droid.Resource.Attribute.tabPaddingEnd;
+			global::XFGloss.Droid.Resource.Attribute.tabPaddingStart = global::AnimeViewer.Droid.Resource.Attribute.tabPaddingStart;
+			global::XFGloss.Droid.Resource.Attribute.tabPaddingTop = global::AnimeViewer.Droid.Resource.Attribute.tabPaddingTop;
+			global::XFGloss.Droid.Resource.Attribute.tabSelectedTextColor = global::AnimeViewer.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::XFGloss.Droid.Resource.Attribute.tabTextAppearance = global::AnimeViewer.Droid.Resource.Attribute.tabTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.tabTextColor = global::AnimeViewer.Droid.Resource.Attribute.tabTextColor;
+			global::XFGloss.Droid.Resource.Attribute.textAllCaps = global::AnimeViewer.Droid.Resource.Attribute.textAllCaps;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceLargePopupMenu = global::AnimeViewer.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceListItem = global::AnimeViewer.Droid.Resource.Attribute.textAppearanceListItem;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceListItemSmall = global::AnimeViewer.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle = global::AnimeViewer.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceSearchResultTitle = global::AnimeViewer.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::XFGloss.Droid.Resource.Attribute.textAppearanceSmallPopupMenu = global::AnimeViewer.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::XFGloss.Droid.Resource.Attribute.textColorAlertDialogListItem = global::AnimeViewer.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::XFGloss.Droid.Resource.Attribute.textColorError = global::AnimeViewer.Droid.Resource.Attribute.textColorError;
+			global::XFGloss.Droid.Resource.Attribute.textColorSearchUrl = global::AnimeViewer.Droid.Resource.Attribute.textColorSearchUrl;
+			global::XFGloss.Droid.Resource.Attribute.theme = global::AnimeViewer.Droid.Resource.Attribute.theme;
+			global::XFGloss.Droid.Resource.Attribute.thickness = global::AnimeViewer.Droid.Resource.Attribute.thickness;
+			global::XFGloss.Droid.Resource.Attribute.thumbTextPadding = global::AnimeViewer.Droid.Resource.Attribute.thumbTextPadding;
+			global::XFGloss.Droid.Resource.Attribute.title = global::AnimeViewer.Droid.Resource.Attribute.title;
+			global::XFGloss.Droid.Resource.Attribute.titleEnabled = global::AnimeViewer.Droid.Resource.Attribute.titleEnabled;
+			global::XFGloss.Droid.Resource.Attribute.titleMarginBottom = global::AnimeViewer.Droid.Resource.Attribute.titleMarginBottom;
+			global::XFGloss.Droid.Resource.Attribute.titleMarginEnd = global::AnimeViewer.Droid.Resource.Attribute.titleMarginEnd;
+			global::XFGloss.Droid.Resource.Attribute.titleMarginStart = global::AnimeViewer.Droid.Resource.Attribute.titleMarginStart;
+			global::XFGloss.Droid.Resource.Attribute.titleMarginTop = global::AnimeViewer.Droid.Resource.Attribute.titleMarginTop;
+			global::XFGloss.Droid.Resource.Attribute.titleMargins = global::AnimeViewer.Droid.Resource.Attribute.titleMargins;
+			global::XFGloss.Droid.Resource.Attribute.titleTextAppearance = global::AnimeViewer.Droid.Resource.Attribute.titleTextAppearance;
+			global::XFGloss.Droid.Resource.Attribute.titleTextColor = global::AnimeViewer.Droid.Resource.Attribute.titleTextColor;
+			global::XFGloss.Droid.Resource.Attribute.titleTextStyle = global::AnimeViewer.Droid.Resource.Attribute.titleTextStyle;
+			global::XFGloss.Droid.Resource.Attribute.toolbarId = global::AnimeViewer.Droid.Resource.Attribute.toolbarId;
+			global::XFGloss.Droid.Resource.Attribute.toolbarNavigationButtonStyle = global::AnimeViewer.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::XFGloss.Droid.Resource.Attribute.toolbarStyle = global::AnimeViewer.Droid.Resource.Attribute.toolbarStyle;
+			global::XFGloss.Droid.Resource.Attribute.track = global::AnimeViewer.Droid.Resource.Attribute.track;
+			global::XFGloss.Droid.Resource.Attribute.useCompatPadding = global::AnimeViewer.Droid.Resource.Attribute.useCompatPadding;
+			global::XFGloss.Droid.Resource.Attribute.voiceIcon = global::AnimeViewer.Droid.Resource.Attribute.voiceIcon;
+			global::XFGloss.Droid.Resource.Attribute.windowActionBar = global::AnimeViewer.Droid.Resource.Attribute.windowActionBar;
+			global::XFGloss.Droid.Resource.Attribute.windowActionBarOverlay = global::AnimeViewer.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::XFGloss.Droid.Resource.Attribute.windowActionModeOverlay = global::AnimeViewer.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::XFGloss.Droid.Resource.Attribute.windowFixedHeightMajor = global::AnimeViewer.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::XFGloss.Droid.Resource.Attribute.windowFixedHeightMinor = global::AnimeViewer.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::XFGloss.Droid.Resource.Attribute.windowFixedWidthMajor = global::AnimeViewer.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::XFGloss.Droid.Resource.Attribute.windowFixedWidthMinor = global::AnimeViewer.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::XFGloss.Droid.Resource.Attribute.windowMinWidthMajor = global::AnimeViewer.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::XFGloss.Droid.Resource.Attribute.windowMinWidthMinor = global::AnimeViewer.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::XFGloss.Droid.Resource.Attribute.windowNoTitle = global::AnimeViewer.Droid.Resource.Attribute.windowNoTitle;
+			global::XFGloss.Droid.Resource.Boolean.abc_action_bar_embed_tabs = global::AnimeViewer.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::XFGloss.Droid.Resource.Boolean.abc_action_bar_embed_tabs_pre_jb = global::AnimeViewer.Droid.Resource.Boolean.abc_action_bar_embed_tabs_pre_jb;
+			global::XFGloss.Droid.Resource.Boolean.abc_action_bar_expanded_action_views_exclusive = global::AnimeViewer.Droid.Resource.Boolean.abc_action_bar_expanded_action_views_exclusive;
+			global::XFGloss.Droid.Resource.Boolean.abc_allow_stacked_button_bar = global::AnimeViewer.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::XFGloss.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::AnimeViewer.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::XFGloss.Droid.Resource.Boolean.abc_config_allowActionMenuItemTextWithIcon = global::AnimeViewer.Droid.Resource.Boolean.abc_config_allowActionMenuItemTextWithIcon;
+			global::XFGloss.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::AnimeViewer.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::XFGloss.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::AnimeViewer.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::XFGloss.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark = global::AnimeViewer.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::XFGloss.Droid.Resource.Color.abc_background_cache_hint_selector_material_light = global::AnimeViewer.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::XFGloss.Droid.Resource.Color.abc_color_highlight_material = global::AnimeViewer.Droid.Resource.Color.abc_color_highlight_material;
+			global::XFGloss.Droid.Resource.Color.abc_input_method_navigation_guard = global::AnimeViewer.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::XFGloss.Droid.Resource.Color.abc_primary_text_disable_only_material_dark = global::AnimeViewer.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::XFGloss.Droid.Resource.Color.abc_primary_text_disable_only_material_light = global::AnimeViewer.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::XFGloss.Droid.Resource.Color.abc_primary_text_material_dark = global::AnimeViewer.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::XFGloss.Droid.Resource.Color.abc_primary_text_material_light = global::AnimeViewer.Droid.Resource.Color.abc_primary_text_material_light;
+			global::XFGloss.Droid.Resource.Color.abc_search_url_text = global::AnimeViewer.Droid.Resource.Color.abc_search_url_text;
+			global::XFGloss.Droid.Resource.Color.abc_search_url_text_normal = global::AnimeViewer.Droid.Resource.Color.abc_search_url_text_normal;
+			global::XFGloss.Droid.Resource.Color.abc_search_url_text_pressed = global::AnimeViewer.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::XFGloss.Droid.Resource.Color.abc_search_url_text_selected = global::AnimeViewer.Droid.Resource.Color.abc_search_url_text_selected;
+			global::XFGloss.Droid.Resource.Color.abc_secondary_text_material_dark = global::AnimeViewer.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::XFGloss.Droid.Resource.Color.abc_secondary_text_material_light = global::AnimeViewer.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::XFGloss.Droid.Resource.Color.accent_material_dark = global::AnimeViewer.Droid.Resource.Color.accent_material_dark;
+			global::XFGloss.Droid.Resource.Color.accent_material_light = global::AnimeViewer.Droid.Resource.Color.accent_material_light;
+			global::XFGloss.Droid.Resource.Color.background_floating_material_dark = global::AnimeViewer.Droid.Resource.Color.background_floating_material_dark;
+			global::XFGloss.Droid.Resource.Color.background_floating_material_light = global::AnimeViewer.Droid.Resource.Color.background_floating_material_light;
+			global::XFGloss.Droid.Resource.Color.background_material_dark = global::AnimeViewer.Droid.Resource.Color.background_material_dark;
+			global::XFGloss.Droid.Resource.Color.background_material_light = global::AnimeViewer.Droid.Resource.Color.background_material_light;
+			global::XFGloss.Droid.Resource.Color.bright_foreground_disabled_material_dark = global::AnimeViewer.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::XFGloss.Droid.Resource.Color.bright_foreground_disabled_material_light = global::AnimeViewer.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::XFGloss.Droid.Resource.Color.bright_foreground_inverse_material_dark = global::AnimeViewer.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::XFGloss.Droid.Resource.Color.bright_foreground_inverse_material_light = global::AnimeViewer.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::XFGloss.Droid.Resource.Color.bright_foreground_material_dark = global::AnimeViewer.Droid.Resource.Color.bright_foreground_material_dark;
+			global::XFGloss.Droid.Resource.Color.bright_foreground_material_light = global::AnimeViewer.Droid.Resource.Color.bright_foreground_material_light;
+			global::XFGloss.Droid.Resource.Color.button_material_dark = global::AnimeViewer.Droid.Resource.Color.button_material_dark;
+			global::XFGloss.Droid.Resource.Color.button_material_light = global::AnimeViewer.Droid.Resource.Color.button_material_light;
+			global::XFGloss.Droid.Resource.Color.cardview_dark_background = global::AnimeViewer.Droid.Resource.Color.cardview_dark_background;
+			global::XFGloss.Droid.Resource.Color.cardview_light_background = global::AnimeViewer.Droid.Resource.Color.cardview_light_background;
+			global::XFGloss.Droid.Resource.Color.cardview_shadow_end_color = global::AnimeViewer.Droid.Resource.Color.cardview_shadow_end_color;
+			global::XFGloss.Droid.Resource.Color.cardview_shadow_start_color = global::AnimeViewer.Droid.Resource.Color.cardview_shadow_start_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_shadow_end_color = global::AnimeViewer.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_shadow_mid_color = global::AnimeViewer.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_shadow_start_color = global::AnimeViewer.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_stroke_end_inner_color = global::AnimeViewer.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_stroke_end_outer_color = global::AnimeViewer.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_stroke_top_inner_color = global::AnimeViewer.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::XFGloss.Droid.Resource.Color.design_fab_stroke_top_outer_color = global::AnimeViewer.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::XFGloss.Droid.Resource.Color.design_snackbar_background_color = global::AnimeViewer.Droid.Resource.Color.design_snackbar_background_color;
+			global::XFGloss.Droid.Resource.Color.design_textinput_error_color_dark = global::AnimeViewer.Droid.Resource.Color.design_textinput_error_color_dark;
+			global::XFGloss.Droid.Resource.Color.design_textinput_error_color_light = global::AnimeViewer.Droid.Resource.Color.design_textinput_error_color_light;
+			global::XFGloss.Droid.Resource.Color.dim_foreground_disabled_material_dark = global::AnimeViewer.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::XFGloss.Droid.Resource.Color.dim_foreground_disabled_material_light = global::AnimeViewer.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::XFGloss.Droid.Resource.Color.dim_foreground_material_dark = global::AnimeViewer.Droid.Resource.Color.dim_foreground_material_dark;
+			global::XFGloss.Droid.Resource.Color.dim_foreground_material_light = global::AnimeViewer.Droid.Resource.Color.dim_foreground_material_light;
+			global::XFGloss.Droid.Resource.Color.foreground_material_dark = global::AnimeViewer.Droid.Resource.Color.foreground_material_dark;
+			global::XFGloss.Droid.Resource.Color.foreground_material_light = global::AnimeViewer.Droid.Resource.Color.foreground_material_light;
+			global::XFGloss.Droid.Resource.Color.highlighted_text_material_dark = global::AnimeViewer.Droid.Resource.Color.highlighted_text_material_dark;
+			global::XFGloss.Droid.Resource.Color.highlighted_text_material_light = global::AnimeViewer.Droid.Resource.Color.highlighted_text_material_light;
+			global::XFGloss.Droid.Resource.Color.hint_foreground_material_dark = global::AnimeViewer.Droid.Resource.Color.hint_foreground_material_dark;
+			global::XFGloss.Droid.Resource.Color.hint_foreground_material_light = global::AnimeViewer.Droid.Resource.Color.hint_foreground_material_light;
+			global::XFGloss.Droid.Resource.Color.material_blue_grey_800 = global::AnimeViewer.Droid.Resource.Color.material_blue_grey_800;
+			global::XFGloss.Droid.Resource.Color.material_blue_grey_900 = global::AnimeViewer.Droid.Resource.Color.material_blue_grey_900;
+			global::XFGloss.Droid.Resource.Color.material_blue_grey_950 = global::AnimeViewer.Droid.Resource.Color.material_blue_grey_950;
+			global::XFGloss.Droid.Resource.Color.material_deep_teal_200 = global::AnimeViewer.Droid.Resource.Color.material_deep_teal_200;
+			global::XFGloss.Droid.Resource.Color.material_deep_teal_500 = global::AnimeViewer.Droid.Resource.Color.material_deep_teal_500;
+			global::XFGloss.Droid.Resource.Color.material_grey_100 = global::AnimeViewer.Droid.Resource.Color.material_grey_100;
+			global::XFGloss.Droid.Resource.Color.material_grey_300 = global::AnimeViewer.Droid.Resource.Color.material_grey_300;
+			global::XFGloss.Droid.Resource.Color.material_grey_50 = global::AnimeViewer.Droid.Resource.Color.material_grey_50;
+			global::XFGloss.Droid.Resource.Color.material_grey_600 = global::AnimeViewer.Droid.Resource.Color.material_grey_600;
+			global::XFGloss.Droid.Resource.Color.material_grey_800 = global::AnimeViewer.Droid.Resource.Color.material_grey_800;
+			global::XFGloss.Droid.Resource.Color.material_grey_850 = global::AnimeViewer.Droid.Resource.Color.material_grey_850;
+			global::XFGloss.Droid.Resource.Color.material_grey_900 = global::AnimeViewer.Droid.Resource.Color.material_grey_900;
+			global::XFGloss.Droid.Resource.Color.primary_dark_material_dark = global::AnimeViewer.Droid.Resource.Color.primary_dark_material_dark;
+			global::XFGloss.Droid.Resource.Color.primary_dark_material_light = global::AnimeViewer.Droid.Resource.Color.primary_dark_material_light;
+			global::XFGloss.Droid.Resource.Color.primary_material_dark = global::AnimeViewer.Droid.Resource.Color.primary_material_dark;
+			global::XFGloss.Droid.Resource.Color.primary_material_light = global::AnimeViewer.Droid.Resource.Color.primary_material_light;
+			global::XFGloss.Droid.Resource.Color.primary_text_default_material_dark = global::AnimeViewer.Droid.Resource.Color.primary_text_default_material_dark;
+			global::XFGloss.Droid.Resource.Color.primary_text_default_material_light = global::AnimeViewer.Droid.Resource.Color.primary_text_default_material_light;
+			global::XFGloss.Droid.Resource.Color.primary_text_disabled_material_dark = global::AnimeViewer.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::XFGloss.Droid.Resource.Color.primary_text_disabled_material_light = global::AnimeViewer.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::XFGloss.Droid.Resource.Color.ripple_material_dark = global::AnimeViewer.Droid.Resource.Color.ripple_material_dark;
+			global::XFGloss.Droid.Resource.Color.ripple_material_light = global::AnimeViewer.Droid.Resource.Color.ripple_material_light;
+			global::XFGloss.Droid.Resource.Color.secondary_text_default_material_dark = global::AnimeViewer.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::XFGloss.Droid.Resource.Color.secondary_text_default_material_light = global::AnimeViewer.Droid.Resource.Color.secondary_text_default_material_light;
+			global::XFGloss.Droid.Resource.Color.secondary_text_disabled_material_dark = global::AnimeViewer.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::XFGloss.Droid.Resource.Color.secondary_text_disabled_material_light = global::AnimeViewer.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::XFGloss.Droid.Resource.Color.switch_thumb_disabled_material_dark = global::AnimeViewer.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::XFGloss.Droid.Resource.Color.switch_thumb_disabled_material_light = global::AnimeViewer.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::XFGloss.Droid.Resource.Color.switch_thumb_material_dark = global::AnimeViewer.Droid.Resource.Color.switch_thumb_material_dark;
+			global::XFGloss.Droid.Resource.Color.switch_thumb_material_light = global::AnimeViewer.Droid.Resource.Color.switch_thumb_material_light;
+			global::XFGloss.Droid.Resource.Color.switch_thumb_normal_material_dark = global::AnimeViewer.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::XFGloss.Droid.Resource.Color.switch_thumb_normal_material_light = global::AnimeViewer.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_content_inset_material = global::AnimeViewer.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_default_height_material = global::AnimeViewer.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material = global::AnimeViewer.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material = global::AnimeViewer.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::AnimeViewer.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::AnimeViewer.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::AnimeViewer.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_progress_bar_size = global::AnimeViewer.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_stacked_max_height = global::AnimeViewer.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::AnimeViewer.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::AnimeViewer.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::AnimeViewer.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_button_min_height_material = global::AnimeViewer.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_button_min_width_material = global::AnimeViewer.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material = global::AnimeViewer.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height = global::AnimeViewer.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::XFGloss.Droid.Resource.Dimension.abc_button_inset_horizontal_material = global::AnimeViewer.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_button_inset_vertical_material = global::AnimeViewer.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_button_padding_horizontal_material = global::AnimeViewer.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_button_padding_vertical_material = global::AnimeViewer.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_config_prefDialogWidth = global::AnimeViewer.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::XFGloss.Droid.Resource.Dimension.abc_control_corner_material = global::AnimeViewer.Droid.Resource.Dimension.abc_control_corner_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_control_inset_material = global::AnimeViewer.Droid.Resource.Dimension.abc_control_inset_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_control_padding_material = global::AnimeViewer.Droid.Resource.Dimension.abc_control_padding_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_fixed_height_major = global::AnimeViewer.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_fixed_height_minor = global::AnimeViewer.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_fixed_width_major = global::AnimeViewer.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_fixed_width_minor = global::AnimeViewer.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_list_padding_vertical_material = global::AnimeViewer.Droid.Resource.Dimension.abc_dialog_list_padding_vertical_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_min_width_major = global::AnimeViewer.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_min_width_minor = global::AnimeViewer.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_padding_material = global::AnimeViewer.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_dialog_padding_top_material = global::AnimeViewer.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_disabled_alpha_material_dark = global::AnimeViewer.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::XFGloss.Droid.Resource.Dimension.abc_disabled_alpha_material_light = global::AnimeViewer.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::XFGloss.Droid.Resource.Dimension.abc_dropdownitem_icon_width = global::AnimeViewer.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::XFGloss.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left = global::AnimeViewer.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::XFGloss.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right = global::AnimeViewer.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::XFGloss.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material = global::AnimeViewer.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::AnimeViewer.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_edit_text_inset_top_material = global::AnimeViewer.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_floating_window_z = global::AnimeViewer.Droid.Resource.Dimension.abc_floating_window_z;
+			global::XFGloss.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material = global::AnimeViewer.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_panel_menu_list_width = global::AnimeViewer.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::XFGloss.Droid.Resource.Dimension.abc_search_view_preferred_width = global::AnimeViewer.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::XFGloss.Droid.Resource.Dimension.abc_search_view_text_min_width = global::AnimeViewer.Droid.Resource.Dimension.abc_search_view_text_min_width;
+			global::XFGloss.Droid.Resource.Dimension.abc_seekbar_track_background_height_material = global::AnimeViewer.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material = global::AnimeViewer.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_select_dialog_padding_start_material = global::AnimeViewer.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_switch_padding = global::AnimeViewer.Droid.Resource.Dimension.abc_switch_padding;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_body_1_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_body_2_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_button_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_caption_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_display_1_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_display_2_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_display_3_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_display_4_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_headline_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_large_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_medium_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_menu_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_small_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_subhead_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_title_material = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::XFGloss.Droid.Resource.Dimension.abc_text_size_title_material_toolbar = global::AnimeViewer.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::XFGloss.Droid.Resource.Dimension.cardview_compat_inset_shadow = global::AnimeViewer.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::XFGloss.Droid.Resource.Dimension.cardview_default_elevation = global::AnimeViewer.Droid.Resource.Dimension.cardview_default_elevation;
+			global::XFGloss.Droid.Resource.Dimension.cardview_default_radius = global::AnimeViewer.Droid.Resource.Dimension.cardview_default_radius;
+			global::XFGloss.Droid.Resource.Dimension.design_appbar_elevation = global::AnimeViewer.Droid.Resource.Dimension.design_appbar_elevation;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation = global::AnimeViewer.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::XFGloss.Droid.Resource.Dimension.design_bottom_sheet_modal_peek_height = global::AnimeViewer.Droid.Resource.Dimension.design_bottom_sheet_modal_peek_height;
+			global::XFGloss.Droid.Resource.Dimension.design_fab_border_width = global::AnimeViewer.Droid.Resource.Dimension.design_fab_border_width;
+			global::XFGloss.Droid.Resource.Dimension.design_fab_elevation = global::AnimeViewer.Droid.Resource.Dimension.design_fab_elevation;
+			global::XFGloss.Droid.Resource.Dimension.design_fab_image_size = global::AnimeViewer.Droid.Resource.Dimension.design_fab_image_size;
+			global::XFGloss.Droid.Resource.Dimension.design_fab_size_mini = global::AnimeViewer.Droid.Resource.Dimension.design_fab_size_mini;
+			global::XFGloss.Droid.Resource.Dimension.design_fab_size_normal = global::AnimeViewer.Droid.Resource.Dimension.design_fab_size_normal;
+			global::XFGloss.Droid.Resource.Dimension.design_fab_translation_z_pressed = global::AnimeViewer.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::XFGloss.Droid.Resource.Dimension.design_navigation_elevation = global::AnimeViewer.Droid.Resource.Dimension.design_navigation_elevation;
+			global::XFGloss.Droid.Resource.Dimension.design_navigation_icon_padding = global::AnimeViewer.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::XFGloss.Droid.Resource.Dimension.design_navigation_icon_size = global::AnimeViewer.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::XFGloss.Droid.Resource.Dimension.design_navigation_max_width = global::AnimeViewer.Droid.Resource.Dimension.design_navigation_max_width;
+			global::XFGloss.Droid.Resource.Dimension.design_navigation_padding_bottom = global::AnimeViewer.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::XFGloss.Droid.Resource.Dimension.design_navigation_separator_vertical_padding = global::AnimeViewer.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_action_inline_max_width = global::AnimeViewer.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_background_corner_radius = global::AnimeViewer.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_elevation = global::AnimeViewer.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::AnimeViewer.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_max_width = global::AnimeViewer.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_min_width = global::AnimeViewer.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_padding_horizontal = global::AnimeViewer.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_padding_vertical = global::AnimeViewer.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::AnimeViewer.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::XFGloss.Droid.Resource.Dimension.design_snackbar_text_size = global::AnimeViewer.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::XFGloss.Droid.Resource.Dimension.design_tab_max_width = global::AnimeViewer.Droid.Resource.Dimension.design_tab_max_width;
+			global::XFGloss.Droid.Resource.Dimension.design_tab_scrollable_min_width = global::AnimeViewer.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::XFGloss.Droid.Resource.Dimension.design_tab_text_size = global::AnimeViewer.Droid.Resource.Dimension.design_tab_text_size;
+			global::XFGloss.Droid.Resource.Dimension.design_tab_text_size_2line = global::AnimeViewer.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::XFGloss.Droid.Resource.Dimension.disabled_alpha_material_dark = global::AnimeViewer.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::XFGloss.Droid.Resource.Dimension.disabled_alpha_material_light = global::AnimeViewer.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::XFGloss.Droid.Resource.Dimension.highlight_alpha_material_colored = global::AnimeViewer.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::XFGloss.Droid.Resource.Dimension.highlight_alpha_material_dark = global::AnimeViewer.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::XFGloss.Droid.Resource.Dimension.highlight_alpha_material_light = global::AnimeViewer.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::XFGloss.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::AnimeViewer.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::XFGloss.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::AnimeViewer.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::XFGloss.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::AnimeViewer.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::XFGloss.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height = global::AnimeViewer.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height;
+			global::XFGloss.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size = global::AnimeViewer.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size;
+			global::XFGloss.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height = global::AnimeViewer.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height;
+			global::XFGloss.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top = global::AnimeViewer.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top;
+			global::XFGloss.Droid.Resource.Dimension.mr_dialog_fixed_width_major = global::AnimeViewer.Droid.Resource.Dimension.mr_dialog_fixed_width_major;
+			global::XFGloss.Droid.Resource.Dimension.mr_dialog_fixed_width_minor = global::AnimeViewer.Droid.Resource.Dimension.mr_dialog_fixed_width_minor;
+			global::XFGloss.Droid.Resource.Dimension.notification_large_icon_height = global::AnimeViewer.Droid.Resource.Dimension.notification_large_icon_height;
+			global::XFGloss.Droid.Resource.Dimension.notification_large_icon_width = global::AnimeViewer.Droid.Resource.Dimension.notification_large_icon_width;
+			global::XFGloss.Droid.Resource.Dimension.notification_subtext_size = global::AnimeViewer.Droid.Resource.Dimension.notification_subtext_size;
+			global::XFGloss.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_action_bar_item_background_material = global::AnimeViewer.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_borderless_material = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_check_material = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_check_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_colored_material = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_default_mtrl_shape = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_radio_material = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_rating_star_off_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_rating_star_off_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_rating_star_on_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_rating_star_on_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::XFGloss.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::AnimeViewer.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::XFGloss.Droid.Resource.Drawable.abc_cab_background_internal_bg = global::AnimeViewer.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::XFGloss.Droid.Resource.Drawable.abc_cab_background_top_material = global::AnimeViewer.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_control_background_material = global::AnimeViewer.Droid.Resource.Drawable.abc_control_background_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_dialog_material_background_dark = global::AnimeViewer.Droid.Resource.Drawable.abc_dialog_material_background_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_dialog_material_background_light = global::AnimeViewer.Droid.Resource.Drawable.abc_dialog_material_background_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_edit_text_material = global::AnimeViewer.Droid.Resource.Drawable.abc_edit_text_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_ab_back_mtrl_am_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_ab_back_mtrl_am_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_clear_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_clear_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_go_search_api_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_go_search_api_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_menu_moreoverflow_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_menu_moreoverflow_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_search_api_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_search_api_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_star_black_16dp = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_star_black_36dp = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_star_half_black_16dp = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_star_half_black_36dp = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::XFGloss.Droid.Resource.Drawable.abc_ic_voice_search_api_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_ic_voice_search_api_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_item_background_holo_dark = global::AnimeViewer.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_item_background_holo_light = global::AnimeViewer.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_focused_holo = global::AnimeViewer.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_longpressed_holo = global::AnimeViewer.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_pressed_holo_dark = global::AnimeViewer.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_pressed_holo_light = global::AnimeViewer.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::AnimeViewer.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::AnimeViewer.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::AnimeViewer.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light = global::AnimeViewer.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_selector_holo_dark = global::AnimeViewer.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::XFGloss.Droid.Resource.Drawable.abc_list_selector_holo_light = global::AnimeViewer.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::XFGloss.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::AnimeViewer.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::XFGloss.Droid.Resource.Drawable.abc_popup_background_mtrl_mult = global::AnimeViewer.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::XFGloss.Droid.Resource.Drawable.abc_ratingbar_full_material = global::AnimeViewer.Droid.Resource.Drawable.abc_ratingbar_full_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_ratingbar_indicator_material = global::AnimeViewer.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_ratingbar_small_material = global::AnimeViewer.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::AnimeViewer.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::XFGloss.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::AnimeViewer.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::XFGloss.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_seekbar_thumb_material = global::AnimeViewer.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_seekbar_track_material = global::AnimeViewer.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_spinner_textfield_background_material = global::AnimeViewer.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_switch_thumb_material = global::AnimeViewer.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_tab_indicator_material = global::AnimeViewer.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_text_cursor_material = global::AnimeViewer.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::XFGloss.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::AnimeViewer.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::XFGloss.Droid.Resource.Drawable.abc_textfield_search_material = global::AnimeViewer.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::XFGloss.Droid.Resource.Drawable.design_fab_background = global::AnimeViewer.Droid.Resource.Drawable.design_fab_background;
+			global::XFGloss.Droid.Resource.Drawable.design_snackbar_background = global::AnimeViewer.Droid.Resource.Drawable.design_snackbar_background;
+			global::XFGloss.Droid.Resource.Drawable.ic_audiotrack = global::AnimeViewer.Droid.Resource.Drawable.ic_audiotrack;
+			global::XFGloss.Droid.Resource.Drawable.ic_audiotrack_light = global::AnimeViewer.Droid.Resource.Drawable.ic_audiotrack_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_bluetooth_grey = global::AnimeViewer.Droid.Resource.Drawable.ic_bluetooth_grey;
+			global::XFGloss.Droid.Resource.Drawable.ic_bluetooth_white = global::AnimeViewer.Droid.Resource.Drawable.ic_bluetooth_white;
+			global::XFGloss.Droid.Resource.Drawable.ic_cast_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_cast_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_cast_disabled_light = global::AnimeViewer.Droid.Resource.Drawable.ic_cast_disabled_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_cast_grey = global::AnimeViewer.Droid.Resource.Drawable.ic_cast_grey;
+			global::XFGloss.Droid.Resource.Drawable.ic_cast_light = global::AnimeViewer.Droid.Resource.Drawable.ic_cast_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_cast_off_light = global::AnimeViewer.Droid.Resource.Drawable.ic_cast_off_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_cast_on_0_light = global::AnimeViewer.Droid.Resource.Drawable.ic_cast_on_0_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_cast_on_1_light = global::AnimeViewer.Droid.Resource.Drawable.ic_cast_on_1_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_cast_on_2_light = global::AnimeViewer.Droid.Resource.Drawable.ic_cast_on_2_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_cast_on_light = global::AnimeViewer.Droid.Resource.Drawable.ic_cast_on_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_cast_white = global::AnimeViewer.Droid.Resource.Drawable.ic_cast_white;
+			global::XFGloss.Droid.Resource.Drawable.ic_close_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_close_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_close_light = global::AnimeViewer.Droid.Resource.Drawable.ic_close_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00000 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00000;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00001 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00001;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00002 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00002;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00003 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00003;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00004 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00004;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00005 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00005;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00006 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00006;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00007 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00007;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00008 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00008;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00009 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00009;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00010 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00010;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00011 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00011;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00012 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00012;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00013 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00013;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00014 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00014;
+			global::XFGloss.Droid.Resource.Drawable.ic_collapse_00015 = global::AnimeViewer.Droid.Resource.Drawable.ic_collapse_00015;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand = global::AnimeViewer.Droid.Resource.Drawable.ic_expand;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00000 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00000;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00001 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00001;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00002 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00002;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00003 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00003;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00004 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00004;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00005 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00005;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00006 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00006;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00007 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00007;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00008 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00008;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00009 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00009;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00010 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00010;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00011 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00011;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00012 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00012;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00013 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00013;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00014 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00014;
+			global::XFGloss.Droid.Resource.Drawable.ic_expand_00015 = global::AnimeViewer.Droid.Resource.Drawable.ic_expand_00015;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_pause = global::AnimeViewer.Droid.Resource.Drawable.ic_media_pause;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_play = global::AnimeViewer.Droid.Resource.Drawable.ic_media_play;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_route_disabled_mono_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_media_route_disabled_mono_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_route_off_mono_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_media_route_off_mono_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_route_on_0_mono_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_media_route_on_0_mono_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_route_on_1_mono_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_media_route_on_1_mono_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_route_on_2_mono_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_media_route_on_2_mono_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_media_route_on_mono_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_media_route_on_mono_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_pause_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_pause_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_pause_light = global::AnimeViewer.Droid.Resource.Drawable.ic_pause_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_play_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_play_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_play_light = global::AnimeViewer.Droid.Resource.Drawable.ic_play_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_speaker_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_speaker_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_speaker_group_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_speaker_group_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_speaker_group_light = global::AnimeViewer.Droid.Resource.Drawable.ic_speaker_group_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_speaker_light = global::AnimeViewer.Droid.Resource.Drawable.ic_speaker_light;
+			global::XFGloss.Droid.Resource.Drawable.ic_tv_dark = global::AnimeViewer.Droid.Resource.Drawable.ic_tv_dark;
+			global::XFGloss.Droid.Resource.Drawable.ic_tv_light = global::AnimeViewer.Droid.Resource.Drawable.ic_tv_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_dialog_material_background_dark = global::AnimeViewer.Droid.Resource.Drawable.mr_dialog_material_background_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_dialog_material_background_light = global::AnimeViewer.Droid.Resource.Drawable.mr_dialog_material_background_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_audiotrack_light = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_audiotrack_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_cast_dark = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_cast_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_cast_light = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_cast_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_close_dark = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_close_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_close_light = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_close_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_media_route_connecting_mono_dark = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_media_route_connecting_mono_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_media_route_connecting_mono_light = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_media_route_connecting_mono_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_media_route_mono_dark = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_media_route_mono_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_media_route_mono_light = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_media_route_mono_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_pause_dark = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_pause_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_pause_light = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_pause_light;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_play_dark = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_play_dark;
+			global::XFGloss.Droid.Resource.Drawable.mr_ic_play_light = global::AnimeViewer.Droid.Resource.Drawable.mr_ic_play_light;
+			global::XFGloss.Droid.Resource.Drawable.notification_template_icon_bg = global::AnimeViewer.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::XFGloss.Droid.Resource.Id.action0 = global::AnimeViewer.Droid.Resource.Id.action0;
+			global::XFGloss.Droid.Resource.Id.action_bar = global::AnimeViewer.Droid.Resource.Id.action_bar;
+			global::XFGloss.Droid.Resource.Id.action_bar_activity_content = global::AnimeViewer.Droid.Resource.Id.action_bar_activity_content;
+			global::XFGloss.Droid.Resource.Id.action_bar_container = global::AnimeViewer.Droid.Resource.Id.action_bar_container;
+			global::XFGloss.Droid.Resource.Id.action_bar_root = global::AnimeViewer.Droid.Resource.Id.action_bar_root;
+			global::XFGloss.Droid.Resource.Id.action_bar_spinner = global::AnimeViewer.Droid.Resource.Id.action_bar_spinner;
+			global::XFGloss.Droid.Resource.Id.action_bar_subtitle = global::AnimeViewer.Droid.Resource.Id.action_bar_subtitle;
+			global::XFGloss.Droid.Resource.Id.action_bar_title = global::AnimeViewer.Droid.Resource.Id.action_bar_title;
+			global::XFGloss.Droid.Resource.Id.action_context_bar = global::AnimeViewer.Droid.Resource.Id.action_context_bar;
+			global::XFGloss.Droid.Resource.Id.action_divider = global::AnimeViewer.Droid.Resource.Id.action_divider;
+			global::XFGloss.Droid.Resource.Id.action_menu_divider = global::AnimeViewer.Droid.Resource.Id.action_menu_divider;
+			global::XFGloss.Droid.Resource.Id.action_menu_presenter = global::AnimeViewer.Droid.Resource.Id.action_menu_presenter;
+			global::XFGloss.Droid.Resource.Id.action_mode_bar = global::AnimeViewer.Droid.Resource.Id.action_mode_bar;
+			global::XFGloss.Droid.Resource.Id.action_mode_bar_stub = global::AnimeViewer.Droid.Resource.Id.action_mode_bar_stub;
+			global::XFGloss.Droid.Resource.Id.action_mode_close_button = global::AnimeViewer.Droid.Resource.Id.action_mode_close_button;
+			global::XFGloss.Droid.Resource.Id.activity_chooser_view_content = global::AnimeViewer.Droid.Resource.Id.activity_chooser_view_content;
+			global::XFGloss.Droid.Resource.Id.alertTitle = global::AnimeViewer.Droid.Resource.Id.alertTitle;
+			global::XFGloss.Droid.Resource.Id.always = global::AnimeViewer.Droid.Resource.Id.always;
+			global::XFGloss.Droid.Resource.Id.beginning = global::AnimeViewer.Droid.Resource.Id.beginning;
+			global::XFGloss.Droid.Resource.Id.bottom = global::AnimeViewer.Droid.Resource.Id.bottom;
+			global::XFGloss.Droid.Resource.Id.buttonPanel = global::AnimeViewer.Droid.Resource.Id.buttonPanel;
+			global::XFGloss.Droid.Resource.Id.cancel_action = global::AnimeViewer.Droid.Resource.Id.cancel_action;
+			global::XFGloss.Droid.Resource.Id.center = global::AnimeViewer.Droid.Resource.Id.center;
+			global::XFGloss.Droid.Resource.Id.center_horizontal = global::AnimeViewer.Droid.Resource.Id.center_horizontal;
+			global::XFGloss.Droid.Resource.Id.center_vertical = global::AnimeViewer.Droid.Resource.Id.center_vertical;
+			global::XFGloss.Droid.Resource.Id.checkbox = global::AnimeViewer.Droid.Resource.Id.checkbox;
+			global::XFGloss.Droid.Resource.Id.chronometer = global::AnimeViewer.Droid.Resource.Id.chronometer;
+			global::XFGloss.Droid.Resource.Id.clip_horizontal = global::AnimeViewer.Droid.Resource.Id.clip_horizontal;
+			global::XFGloss.Droid.Resource.Id.clip_vertical = global::AnimeViewer.Droid.Resource.Id.clip_vertical;
+			global::XFGloss.Droid.Resource.Id.collapseActionView = global::AnimeViewer.Droid.Resource.Id.collapseActionView;
+			global::XFGloss.Droid.Resource.Id.contentPanel = global::AnimeViewer.Droid.Resource.Id.contentPanel;
+			global::XFGloss.Droid.Resource.Id.custom = global::AnimeViewer.Droid.Resource.Id.custom;
+			global::XFGloss.Droid.Resource.Id.customPanel = global::AnimeViewer.Droid.Resource.Id.customPanel;
+			global::XFGloss.Droid.Resource.Id.decor_content_parent = global::AnimeViewer.Droid.Resource.Id.decor_content_parent;
+			global::XFGloss.Droid.Resource.Id.default_activity_button = global::AnimeViewer.Droid.Resource.Id.default_activity_button;
+			global::XFGloss.Droid.Resource.Id.design_bottom_sheet = global::AnimeViewer.Droid.Resource.Id.design_bottom_sheet;
+			global::XFGloss.Droid.Resource.Id.design_menu_item_action_area = global::AnimeViewer.Droid.Resource.Id.design_menu_item_action_area;
+			global::XFGloss.Droid.Resource.Id.design_menu_item_action_area_stub = global::AnimeViewer.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::XFGloss.Droid.Resource.Id.design_menu_item_text = global::AnimeViewer.Droid.Resource.Id.design_menu_item_text;
+			global::XFGloss.Droid.Resource.Id.design_navigation_view = global::AnimeViewer.Droid.Resource.Id.design_navigation_view;
+			global::XFGloss.Droid.Resource.Id.disableHome = global::AnimeViewer.Droid.Resource.Id.disableHome;
+			global::XFGloss.Droid.Resource.Id.edit_query = global::AnimeViewer.Droid.Resource.Id.edit_query;
+			global::XFGloss.Droid.Resource.Id.end = global::AnimeViewer.Droid.Resource.Id.end;
+			global::XFGloss.Droid.Resource.Id.end_padder = global::AnimeViewer.Droid.Resource.Id.end_padder;
+			global::XFGloss.Droid.Resource.Id.enterAlways = global::AnimeViewer.Droid.Resource.Id.enterAlways;
+			global::XFGloss.Droid.Resource.Id.enterAlwaysCollapsed = global::AnimeViewer.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::XFGloss.Droid.Resource.Id.exitUntilCollapsed = global::AnimeViewer.Droid.Resource.Id.exitUntilCollapsed;
+			global::XFGloss.Droid.Resource.Id.expand_activities_button = global::AnimeViewer.Droid.Resource.Id.expand_activities_button;
+			global::XFGloss.Droid.Resource.Id.expanded_menu = global::AnimeViewer.Droid.Resource.Id.expanded_menu;
+			global::XFGloss.Droid.Resource.Id.fill = global::AnimeViewer.Droid.Resource.Id.fill;
+			global::XFGloss.Droid.Resource.Id.fill_horizontal = global::AnimeViewer.Droid.Resource.Id.fill_horizontal;
+			global::XFGloss.Droid.Resource.Id.fill_vertical = global::AnimeViewer.Droid.Resource.Id.fill_vertical;
+			global::XFGloss.Droid.Resource.Id.@fixed = global::AnimeViewer.Droid.Resource.Id.@fixed;
+			global::XFGloss.Droid.Resource.Id.home = global::AnimeViewer.Droid.Resource.Id.home;
+			global::XFGloss.Droid.Resource.Id.homeAsUp = global::AnimeViewer.Droid.Resource.Id.homeAsUp;
+			global::XFGloss.Droid.Resource.Id.icon = global::AnimeViewer.Droid.Resource.Id.icon;
+			global::XFGloss.Droid.Resource.Id.ifRoom = global::AnimeViewer.Droid.Resource.Id.ifRoom;
+			global::XFGloss.Droid.Resource.Id.image = global::AnimeViewer.Droid.Resource.Id.image;
+			global::XFGloss.Droid.Resource.Id.info = global::AnimeViewer.Droid.Resource.Id.info;
+			global::XFGloss.Droid.Resource.Id.item_touch_helper_previous_elevation = global::AnimeViewer.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::XFGloss.Droid.Resource.Id.left = global::AnimeViewer.Droid.Resource.Id.left;
+			global::XFGloss.Droid.Resource.Id.line1 = global::AnimeViewer.Droid.Resource.Id.line1;
+			global::XFGloss.Droid.Resource.Id.line3 = global::AnimeViewer.Droid.Resource.Id.line3;
+			global::XFGloss.Droid.Resource.Id.listMode = global::AnimeViewer.Droid.Resource.Id.listMode;
+			global::XFGloss.Droid.Resource.Id.list_item = global::AnimeViewer.Droid.Resource.Id.list_item;
+			global::XFGloss.Droid.Resource.Id.media_actions = global::AnimeViewer.Droid.Resource.Id.media_actions;
+			global::XFGloss.Droid.Resource.Id.middle = global::AnimeViewer.Droid.Resource.Id.middle;
+			global::XFGloss.Droid.Resource.Id.mini = global::AnimeViewer.Droid.Resource.Id.mini;
+			global::XFGloss.Droid.Resource.Id.mr_art = global::AnimeViewer.Droid.Resource.Id.mr_art;
+			global::XFGloss.Droid.Resource.Id.mr_chooser_list = global::AnimeViewer.Droid.Resource.Id.mr_chooser_list;
+			global::XFGloss.Droid.Resource.Id.mr_chooser_route_desc = global::AnimeViewer.Droid.Resource.Id.mr_chooser_route_desc;
+			global::XFGloss.Droid.Resource.Id.mr_chooser_route_icon = global::AnimeViewer.Droid.Resource.Id.mr_chooser_route_icon;
+			global::XFGloss.Droid.Resource.Id.mr_chooser_route_name = global::AnimeViewer.Droid.Resource.Id.mr_chooser_route_name;
+			global::XFGloss.Droid.Resource.Id.mr_close = global::AnimeViewer.Droid.Resource.Id.mr_close;
+			global::XFGloss.Droid.Resource.Id.mr_control_divider = global::AnimeViewer.Droid.Resource.Id.mr_control_divider;
+			global::XFGloss.Droid.Resource.Id.mr_control_play_pause = global::AnimeViewer.Droid.Resource.Id.mr_control_play_pause;
+			global::XFGloss.Droid.Resource.Id.mr_control_subtitle = global::AnimeViewer.Droid.Resource.Id.mr_control_subtitle;
+			global::XFGloss.Droid.Resource.Id.mr_control_title = global::AnimeViewer.Droid.Resource.Id.mr_control_title;
+			global::XFGloss.Droid.Resource.Id.mr_control_title_container = global::AnimeViewer.Droid.Resource.Id.mr_control_title_container;
+			global::XFGloss.Droid.Resource.Id.mr_custom_control = global::AnimeViewer.Droid.Resource.Id.mr_custom_control;
+			global::XFGloss.Droid.Resource.Id.mr_default_control = global::AnimeViewer.Droid.Resource.Id.mr_default_control;
+			global::XFGloss.Droid.Resource.Id.mr_dialog_area = global::AnimeViewer.Droid.Resource.Id.mr_dialog_area;
+			global::XFGloss.Droid.Resource.Id.mr_expandable_area = global::AnimeViewer.Droid.Resource.Id.mr_expandable_area;
+			global::XFGloss.Droid.Resource.Id.mr_group_expand_collapse = global::AnimeViewer.Droid.Resource.Id.mr_group_expand_collapse;
+			global::XFGloss.Droid.Resource.Id.mr_media_main_control = global::AnimeViewer.Droid.Resource.Id.mr_media_main_control;
+			global::XFGloss.Droid.Resource.Id.mr_name = global::AnimeViewer.Droid.Resource.Id.mr_name;
+			global::XFGloss.Droid.Resource.Id.mr_playback_control = global::AnimeViewer.Droid.Resource.Id.mr_playback_control;
+			global::XFGloss.Droid.Resource.Id.mr_title_bar = global::AnimeViewer.Droid.Resource.Id.mr_title_bar;
+			global::XFGloss.Droid.Resource.Id.mr_volume_control = global::AnimeViewer.Droid.Resource.Id.mr_volume_control;
+			global::XFGloss.Droid.Resource.Id.mr_volume_group_list = global::AnimeViewer.Droid.Resource.Id.mr_volume_group_list;
+			global::XFGloss.Droid.Resource.Id.mr_volume_item_icon = global::AnimeViewer.Droid.Resource.Id.mr_volume_item_icon;
+			global::XFGloss.Droid.Resource.Id.mr_volume_slider = global::AnimeViewer.Droid.Resource.Id.mr_volume_slider;
+			global::XFGloss.Droid.Resource.Id.multiply = global::AnimeViewer.Droid.Resource.Id.multiply;
+			global::XFGloss.Droid.Resource.Id.navigation_header_container = global::AnimeViewer.Droid.Resource.Id.navigation_header_container;
+			global::XFGloss.Droid.Resource.Id.never = global::AnimeViewer.Droid.Resource.Id.never;
+			global::XFGloss.Droid.Resource.Id.none = global::AnimeViewer.Droid.Resource.Id.none;
+			global::XFGloss.Droid.Resource.Id.normal = global::AnimeViewer.Droid.Resource.Id.normal;
+			global::XFGloss.Droid.Resource.Id.parallax = global::AnimeViewer.Droid.Resource.Id.parallax;
+			global::XFGloss.Droid.Resource.Id.parentPanel = global::AnimeViewer.Droid.Resource.Id.parentPanel;
+			global::XFGloss.Droid.Resource.Id.pin = global::AnimeViewer.Droid.Resource.Id.pin;
+			global::XFGloss.Droid.Resource.Id.progress_circular = global::AnimeViewer.Droid.Resource.Id.progress_circular;
+			global::XFGloss.Droid.Resource.Id.progress_horizontal = global::AnimeViewer.Droid.Resource.Id.progress_horizontal;
+			global::XFGloss.Droid.Resource.Id.radio = global::AnimeViewer.Droid.Resource.Id.radio;
+			global::XFGloss.Droid.Resource.Id.right = global::AnimeViewer.Droid.Resource.Id.right;
+			global::XFGloss.Droid.Resource.Id.screen = global::AnimeViewer.Droid.Resource.Id.screen;
+			global::XFGloss.Droid.Resource.Id.scroll = global::AnimeViewer.Droid.Resource.Id.scroll;
+			global::XFGloss.Droid.Resource.Id.scrollIndicatorDown = global::AnimeViewer.Droid.Resource.Id.scrollIndicatorDown;
+			global::XFGloss.Droid.Resource.Id.scrollIndicatorUp = global::AnimeViewer.Droid.Resource.Id.scrollIndicatorUp;
+			global::XFGloss.Droid.Resource.Id.scrollView = global::AnimeViewer.Droid.Resource.Id.scrollView;
+			global::XFGloss.Droid.Resource.Id.scrollable = global::AnimeViewer.Droid.Resource.Id.scrollable;
+			global::XFGloss.Droid.Resource.Id.search_badge = global::AnimeViewer.Droid.Resource.Id.search_badge;
+			global::XFGloss.Droid.Resource.Id.search_bar = global::AnimeViewer.Droid.Resource.Id.search_bar;
+			global::XFGloss.Droid.Resource.Id.search_button = global::AnimeViewer.Droid.Resource.Id.search_button;
+			global::XFGloss.Droid.Resource.Id.search_close_btn = global::AnimeViewer.Droid.Resource.Id.search_close_btn;
+			global::XFGloss.Droid.Resource.Id.search_edit_frame = global::AnimeViewer.Droid.Resource.Id.search_edit_frame;
+			global::XFGloss.Droid.Resource.Id.search_go_btn = global::AnimeViewer.Droid.Resource.Id.search_go_btn;
+			global::XFGloss.Droid.Resource.Id.search_mag_icon = global::AnimeViewer.Droid.Resource.Id.search_mag_icon;
+			global::XFGloss.Droid.Resource.Id.search_plate = global::AnimeViewer.Droid.Resource.Id.search_plate;
+			global::XFGloss.Droid.Resource.Id.search_src_text = global::AnimeViewer.Droid.Resource.Id.search_src_text;
+			global::XFGloss.Droid.Resource.Id.search_voice_btn = global::AnimeViewer.Droid.Resource.Id.search_voice_btn;
+			global::XFGloss.Droid.Resource.Id.select_dialog_listview = global::AnimeViewer.Droid.Resource.Id.select_dialog_listview;
+			global::XFGloss.Droid.Resource.Id.shortcut = global::AnimeViewer.Droid.Resource.Id.shortcut;
+			global::XFGloss.Droid.Resource.Id.showCustom = global::AnimeViewer.Droid.Resource.Id.showCustom;
+			global::XFGloss.Droid.Resource.Id.showHome = global::AnimeViewer.Droid.Resource.Id.showHome;
+			global::XFGloss.Droid.Resource.Id.showTitle = global::AnimeViewer.Droid.Resource.Id.showTitle;
+			global::XFGloss.Droid.Resource.Id.snackbar_action = global::AnimeViewer.Droid.Resource.Id.snackbar_action;
+			global::XFGloss.Droid.Resource.Id.snackbar_text = global::AnimeViewer.Droid.Resource.Id.snackbar_text;
+			global::XFGloss.Droid.Resource.Id.snap = global::AnimeViewer.Droid.Resource.Id.snap;
+			global::XFGloss.Droid.Resource.Id.spacer = global::AnimeViewer.Droid.Resource.Id.spacer;
+			global::XFGloss.Droid.Resource.Id.split_action_bar = global::AnimeViewer.Droid.Resource.Id.split_action_bar;
+			global::XFGloss.Droid.Resource.Id.src_atop = global::AnimeViewer.Droid.Resource.Id.src_atop;
+			global::XFGloss.Droid.Resource.Id.src_in = global::AnimeViewer.Droid.Resource.Id.src_in;
+			global::XFGloss.Droid.Resource.Id.src_over = global::AnimeViewer.Droid.Resource.Id.src_over;
+			global::XFGloss.Droid.Resource.Id.start = global::AnimeViewer.Droid.Resource.Id.start;
+			global::XFGloss.Droid.Resource.Id.status_bar_latest_event_content = global::AnimeViewer.Droid.Resource.Id.status_bar_latest_event_content;
+			global::XFGloss.Droid.Resource.Id.submit_area = global::AnimeViewer.Droid.Resource.Id.submit_area;
+			global::XFGloss.Droid.Resource.Id.tabMode = global::AnimeViewer.Droid.Resource.Id.tabMode;
+			global::XFGloss.Droid.Resource.Id.text = global::AnimeViewer.Droid.Resource.Id.text;
+			global::XFGloss.Droid.Resource.Id.text2 = global::AnimeViewer.Droid.Resource.Id.text2;
+			global::XFGloss.Droid.Resource.Id.textSpacerNoButtons = global::AnimeViewer.Droid.Resource.Id.textSpacerNoButtons;
+			global::XFGloss.Droid.Resource.Id.time = global::AnimeViewer.Droid.Resource.Id.time;
+			global::XFGloss.Droid.Resource.Id.title = global::AnimeViewer.Droid.Resource.Id.title;
+			global::XFGloss.Droid.Resource.Id.title_template = global::AnimeViewer.Droid.Resource.Id.title_template;
+			global::XFGloss.Droid.Resource.Id.top = global::AnimeViewer.Droid.Resource.Id.top;
+			global::XFGloss.Droid.Resource.Id.topPanel = global::AnimeViewer.Droid.Resource.Id.topPanel;
+			global::XFGloss.Droid.Resource.Id.touch_outside = global::AnimeViewer.Droid.Resource.Id.touch_outside;
+			global::XFGloss.Droid.Resource.Id.up = global::AnimeViewer.Droid.Resource.Id.up;
+			global::XFGloss.Droid.Resource.Id.useLogo = global::AnimeViewer.Droid.Resource.Id.useLogo;
+			global::XFGloss.Droid.Resource.Id.view_offset_helper = global::AnimeViewer.Droid.Resource.Id.view_offset_helper;
+			global::XFGloss.Droid.Resource.Id.volume_item_container = global::AnimeViewer.Droid.Resource.Id.volume_item_container;
+			global::XFGloss.Droid.Resource.Id.withText = global::AnimeViewer.Droid.Resource.Id.withText;
+			global::XFGloss.Droid.Resource.Id.wrap_content = global::AnimeViewer.Droid.Resource.Id.wrap_content;
+			global::XFGloss.Droid.Resource.Integer.abc_config_activityDefaultDur = global::AnimeViewer.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::XFGloss.Droid.Resource.Integer.abc_config_activityShortDur = global::AnimeViewer.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::XFGloss.Droid.Resource.Integer.abc_max_action_buttons = global::AnimeViewer.Droid.Resource.Integer.abc_max_action_buttons;
+			global::XFGloss.Droid.Resource.Integer.bottom_sheet_slide_duration = global::AnimeViewer.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::XFGloss.Droid.Resource.Integer.cancel_button_image_alpha = global::AnimeViewer.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::XFGloss.Droid.Resource.Integer.design_snackbar_text_max_lines = global::AnimeViewer.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::XFGloss.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms = global::AnimeViewer.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms;
+			global::XFGloss.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms = global::AnimeViewer.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms;
+			global::XFGloss.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms = global::AnimeViewer.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms;
+			global::XFGloss.Droid.Resource.Integer.status_bar_notification_info_maxnum = global::AnimeViewer.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::XFGloss.Droid.Resource.Interpolator.mr_fast_out_slow_in = global::AnimeViewer.Droid.Resource.Interpolator.mr_fast_out_slow_in;
+			global::XFGloss.Droid.Resource.Interpolator.mr_linear_out_slow_in = global::AnimeViewer.Droid.Resource.Interpolator.mr_linear_out_slow_in;
+			global::XFGloss.Droid.Resource.Layout.abc_action_bar_title_item = global::AnimeViewer.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::XFGloss.Droid.Resource.Layout.abc_action_bar_up_container = global::AnimeViewer.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::XFGloss.Droid.Resource.Layout.abc_action_bar_view_list_nav_layout = global::AnimeViewer.Droid.Resource.Layout.abc_action_bar_view_list_nav_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_action_menu_item_layout = global::AnimeViewer.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_action_menu_layout = global::AnimeViewer.Droid.Resource.Layout.abc_action_menu_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_action_mode_bar = global::AnimeViewer.Droid.Resource.Layout.abc_action_mode_bar;
+			global::XFGloss.Droid.Resource.Layout.abc_action_mode_close_item_material = global::AnimeViewer.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::XFGloss.Droid.Resource.Layout.abc_activity_chooser_view = global::AnimeViewer.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::XFGloss.Droid.Resource.Layout.abc_activity_chooser_view_list_item = global::AnimeViewer.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::XFGloss.Droid.Resource.Layout.abc_alert_dialog_button_bar_material = global::AnimeViewer.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::XFGloss.Droid.Resource.Layout.abc_alert_dialog_material = global::AnimeViewer.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::XFGloss.Droid.Resource.Layout.abc_dialog_title_material = global::AnimeViewer.Droid.Resource.Layout.abc_dialog_title_material;
+			global::XFGloss.Droid.Resource.Layout.abc_expanded_menu_layout = global::AnimeViewer.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_list_menu_item_checkbox = global::AnimeViewer.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::XFGloss.Droid.Resource.Layout.abc_list_menu_item_icon = global::AnimeViewer.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::XFGloss.Droid.Resource.Layout.abc_list_menu_item_layout = global::AnimeViewer.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_list_menu_item_radio = global::AnimeViewer.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::XFGloss.Droid.Resource.Layout.abc_popup_menu_item_layout = global::AnimeViewer.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::XFGloss.Droid.Resource.Layout.abc_screen_content_include = global::AnimeViewer.Droid.Resource.Layout.abc_screen_content_include;
+			global::XFGloss.Droid.Resource.Layout.abc_screen_simple = global::AnimeViewer.Droid.Resource.Layout.abc_screen_simple;
+			global::XFGloss.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode = global::AnimeViewer.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::XFGloss.Droid.Resource.Layout.abc_screen_toolbar = global::AnimeViewer.Droid.Resource.Layout.abc_screen_toolbar;
+			global::XFGloss.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line = global::AnimeViewer.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::XFGloss.Droid.Resource.Layout.abc_search_view = global::AnimeViewer.Droid.Resource.Layout.abc_search_view;
+			global::XFGloss.Droid.Resource.Layout.abc_select_dialog_material = global::AnimeViewer.Droid.Resource.Layout.abc_select_dialog_material;
+			global::XFGloss.Droid.Resource.Layout.design_bottom_sheet_dialog = global::AnimeViewer.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::XFGloss.Droid.Resource.Layout.design_layout_snackbar = global::AnimeViewer.Droid.Resource.Layout.design_layout_snackbar;
+			global::XFGloss.Droid.Resource.Layout.design_layout_snackbar_include = global::AnimeViewer.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::XFGloss.Droid.Resource.Layout.design_layout_tab_icon = global::AnimeViewer.Droid.Resource.Layout.design_layout_tab_icon;
+			global::XFGloss.Droid.Resource.Layout.design_layout_tab_text = global::AnimeViewer.Droid.Resource.Layout.design_layout_tab_text;
+			global::XFGloss.Droid.Resource.Layout.design_menu_item_action_area = global::AnimeViewer.Droid.Resource.Layout.design_menu_item_action_area;
+			global::XFGloss.Droid.Resource.Layout.design_navigation_item = global::AnimeViewer.Droid.Resource.Layout.design_navigation_item;
+			global::XFGloss.Droid.Resource.Layout.design_navigation_item_header = global::AnimeViewer.Droid.Resource.Layout.design_navigation_item_header;
+			global::XFGloss.Droid.Resource.Layout.design_navigation_item_separator = global::AnimeViewer.Droid.Resource.Layout.design_navigation_item_separator;
+			global::XFGloss.Droid.Resource.Layout.design_navigation_item_subheader = global::AnimeViewer.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::XFGloss.Droid.Resource.Layout.design_navigation_menu = global::AnimeViewer.Droid.Resource.Layout.design_navigation_menu;
+			global::XFGloss.Droid.Resource.Layout.design_navigation_menu_item = global::AnimeViewer.Droid.Resource.Layout.design_navigation_menu_item;
+			global::XFGloss.Droid.Resource.Layout.mr_chooser_dialog = global::AnimeViewer.Droid.Resource.Layout.mr_chooser_dialog;
+			global::XFGloss.Droid.Resource.Layout.mr_chooser_list_item = global::AnimeViewer.Droid.Resource.Layout.mr_chooser_list_item;
+			global::XFGloss.Droid.Resource.Layout.mr_controller_material_dialog_b = global::AnimeViewer.Droid.Resource.Layout.mr_controller_material_dialog_b;
+			global::XFGloss.Droid.Resource.Layout.mr_controller_volume_item = global::AnimeViewer.Droid.Resource.Layout.mr_controller_volume_item;
+			global::XFGloss.Droid.Resource.Layout.mr_playback_control = global::AnimeViewer.Droid.Resource.Layout.mr_playback_control;
+			global::XFGloss.Droid.Resource.Layout.mr_volume_control = global::AnimeViewer.Droid.Resource.Layout.mr_volume_control;
+			global::XFGloss.Droid.Resource.Layout.notification_media_action = global::AnimeViewer.Droid.Resource.Layout.notification_media_action;
+			global::XFGloss.Droid.Resource.Layout.notification_media_cancel_action = global::AnimeViewer.Droid.Resource.Layout.notification_media_cancel_action;
+			global::XFGloss.Droid.Resource.Layout.notification_template_big_media = global::AnimeViewer.Droid.Resource.Layout.notification_template_big_media;
+			global::XFGloss.Droid.Resource.Layout.notification_template_big_media_narrow = global::AnimeViewer.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::XFGloss.Droid.Resource.Layout.notification_template_lines = global::AnimeViewer.Droid.Resource.Layout.notification_template_lines;
+			global::XFGloss.Droid.Resource.Layout.notification_template_media = global::AnimeViewer.Droid.Resource.Layout.notification_template_media;
+			global::XFGloss.Droid.Resource.Layout.notification_template_part_chronometer = global::AnimeViewer.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::XFGloss.Droid.Resource.Layout.notification_template_part_time = global::AnimeViewer.Droid.Resource.Layout.notification_template_part_time;
+			global::XFGloss.Droid.Resource.Layout.select_dialog_item_material = global::AnimeViewer.Droid.Resource.Layout.select_dialog_item_material;
+			global::XFGloss.Droid.Resource.Layout.select_dialog_multichoice_material = global::AnimeViewer.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::XFGloss.Droid.Resource.Layout.select_dialog_singlechoice_material = global::AnimeViewer.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::XFGloss.Droid.Resource.Layout.support_simple_spinner_dropdown_item = global::AnimeViewer.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::XFGloss.Droid.Resource.String.abc_action_bar_home_description = global::AnimeViewer.Droid.Resource.String.abc_action_bar_home_description;
+			global::XFGloss.Droid.Resource.String.abc_action_bar_home_description_format = global::AnimeViewer.Droid.Resource.String.abc_action_bar_home_description_format;
+			global::XFGloss.Droid.Resource.String.abc_action_bar_home_subtitle_description_format = global::AnimeViewer.Droid.Resource.String.abc_action_bar_home_subtitle_description_format;
+			global::XFGloss.Droid.Resource.String.abc_action_bar_up_description = global::AnimeViewer.Droid.Resource.String.abc_action_bar_up_description;
+			global::XFGloss.Droid.Resource.String.abc_action_menu_overflow_description = global::AnimeViewer.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::XFGloss.Droid.Resource.String.abc_action_mode_done = global::AnimeViewer.Droid.Resource.String.abc_action_mode_done;
+			global::XFGloss.Droid.Resource.String.abc_activity_chooser_view_see_all = global::AnimeViewer.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::XFGloss.Droid.Resource.String.abc_activitychooserview_choose_application = global::AnimeViewer.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::XFGloss.Droid.Resource.String.abc_capital_off = global::AnimeViewer.Droid.Resource.String.abc_capital_off;
+			global::XFGloss.Droid.Resource.String.abc_capital_on = global::AnimeViewer.Droid.Resource.String.abc_capital_on;
+			global::XFGloss.Droid.Resource.String.abc_search_hint = global::AnimeViewer.Droid.Resource.String.abc_search_hint;
+			global::XFGloss.Droid.Resource.String.abc_searchview_description_clear = global::AnimeViewer.Droid.Resource.String.abc_searchview_description_clear;
+			global::XFGloss.Droid.Resource.String.abc_searchview_description_query = global::AnimeViewer.Droid.Resource.String.abc_searchview_description_query;
+			global::XFGloss.Droid.Resource.String.abc_searchview_description_search = global::AnimeViewer.Droid.Resource.String.abc_searchview_description_search;
+			global::XFGloss.Droid.Resource.String.abc_searchview_description_submit = global::AnimeViewer.Droid.Resource.String.abc_searchview_description_submit;
+			global::XFGloss.Droid.Resource.String.abc_searchview_description_voice = global::AnimeViewer.Droid.Resource.String.abc_searchview_description_voice;
+			global::XFGloss.Droid.Resource.String.abc_shareactionprovider_share_with = global::AnimeViewer.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::XFGloss.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::AnimeViewer.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::XFGloss.Droid.Resource.String.abc_toolbar_collapse_description = global::AnimeViewer.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::XFGloss.Droid.Resource.String.appbar_scrolling_view_behavior = global::AnimeViewer.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::XFGloss.Droid.Resource.String.bottom_sheet_behavior = global::AnimeViewer.Droid.Resource.String.bottom_sheet_behavior;
+			global::XFGloss.Droid.Resource.String.character_counter_pattern = global::AnimeViewer.Droid.Resource.String.character_counter_pattern;
+			global::XFGloss.Droid.Resource.String.library_name = global::AnimeViewer.Droid.Resource.String.library_name;
+			global::XFGloss.Droid.Resource.String.mr_button_content_description = global::AnimeViewer.Droid.Resource.String.mr_button_content_description;
+			global::XFGloss.Droid.Resource.String.mr_chooser_searching = global::AnimeViewer.Droid.Resource.String.mr_chooser_searching;
+			global::XFGloss.Droid.Resource.String.mr_chooser_title = global::AnimeViewer.Droid.Resource.String.mr_chooser_title;
+			global::XFGloss.Droid.Resource.String.mr_controller_casting_screen = global::AnimeViewer.Droid.Resource.String.mr_controller_casting_screen;
+			global::XFGloss.Droid.Resource.String.mr_controller_close_description = global::AnimeViewer.Droid.Resource.String.mr_controller_close_description;
+			global::XFGloss.Droid.Resource.String.mr_controller_collapse_group = global::AnimeViewer.Droid.Resource.String.mr_controller_collapse_group;
+			global::XFGloss.Droid.Resource.String.mr_controller_disconnect = global::AnimeViewer.Droid.Resource.String.mr_controller_disconnect;
+			global::XFGloss.Droid.Resource.String.mr_controller_expand_group = global::AnimeViewer.Droid.Resource.String.mr_controller_expand_group;
+			global::XFGloss.Droid.Resource.String.mr_controller_no_info_available = global::AnimeViewer.Droid.Resource.String.mr_controller_no_info_available;
+			global::XFGloss.Droid.Resource.String.mr_controller_no_media_selected = global::AnimeViewer.Droid.Resource.String.mr_controller_no_media_selected;
+			global::XFGloss.Droid.Resource.String.mr_controller_pause = global::AnimeViewer.Droid.Resource.String.mr_controller_pause;
+			global::XFGloss.Droid.Resource.String.mr_controller_play = global::AnimeViewer.Droid.Resource.String.mr_controller_play;
+			global::XFGloss.Droid.Resource.String.mr_controller_stop = global::AnimeViewer.Droid.Resource.String.mr_controller_stop;
+			global::XFGloss.Droid.Resource.String.mr_system_route_name = global::AnimeViewer.Droid.Resource.String.mr_system_route_name;
+			global::XFGloss.Droid.Resource.String.mr_user_route_category_name = global::AnimeViewer.Droid.Resource.String.mr_user_route_category_name;
+			global::XFGloss.Droid.Resource.String.status_bar_notification_info_overflow = global::AnimeViewer.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::XFGloss.Droid.Resource.Style.AlertDialog_AppCompat = global::AnimeViewer.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::XFGloss.Droid.Resource.Style.AlertDialog_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Animation_AppCompat_Dialog = global::AnimeViewer.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Animation_AppCompat_DropDownUp = global::AnimeViewer.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::XFGloss.Droid.Resource.Style.Animation_Design_BottomSheetDialog = global::AnimeViewer.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::XFGloss.Droid.Resource.Style.Base_AlertDialog_AppCompat = global::AnimeViewer.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_Animation_AppCompat_Dialog = global::AnimeViewer.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::AnimeViewer.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::XFGloss.Droid.Resource.Style.Base_CardView = global::AnimeViewer.Droid.Resource.Style.Base_CardView;
+			global::XFGloss.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat = global::AnimeViewer.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::AnimeViewer.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::XFGloss.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::AnimeViewer.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Dialog = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::XFGloss.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::AnimeViewer.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::XFGloss.Droid.Resource.Style.Base_ThemeOverlay_AppCompat = global::AnimeViewer.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::AnimeViewer.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::AnimeViewer.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::XFGloss.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::AnimeViewer.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::AnimeViewer.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::AnimeViewer.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::AnimeViewer.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::XFGloss.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::AnimeViewer.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::XFGloss.Droid.Resource.Style.Base_V21_Theme_AppCompat = global::AnimeViewer.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::AnimeViewer.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::AnimeViewer.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V22_Theme_AppCompat = global::AnimeViewer.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_V23_Theme_AppCompat = global::AnimeViewer.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_V7_Theme_AppCompat = global::AnimeViewer.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::AnimeViewer.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::AnimeViewer.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::XFGloss.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::AnimeViewer.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::XFGloss.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::AnimeViewer.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Button = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_EditText = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ListView = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_SearchView = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Spinner = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::AnimeViewer.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::XFGloss.Droid.Resource.Style.Base_Widget_Design_TabLayout = global::AnimeViewer.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::XFGloss.Droid.Resource.Style.CardView = global::AnimeViewer.Droid.Resource.Style.CardView;
+			global::XFGloss.Droid.Resource.Style.CardView_Dark = global::AnimeViewer.Droid.Resource.Style.CardView_Dark;
+			global::XFGloss.Droid.Resource.Style.CardView_Light = global::AnimeViewer.Droid.Resource.Style.CardView_Light;
+			global::XFGloss.Droid.Resource.Style.Platform_AppCompat = global::AnimeViewer.Droid.Resource.Style.Platform_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Platform_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat = global::AnimeViewer.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::AnimeViewer.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::XFGloss.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Platform_V11_AppCompat = global::AnimeViewer.Droid.Resource.Style.Platform_V11_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Platform_V11_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.Platform_V11_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Platform_V14_AppCompat = global::AnimeViewer.Droid.Resource.Style.Platform_V14_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Platform_V14_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.Platform_V14_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner = global::AnimeViewer.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::AnimeViewer.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::AnimeViewer.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::AnimeViewer.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::AnimeViewer.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::AnimeViewer.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::AnimeViewer.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::AnimeViewer.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::AnimeViewer.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::AnimeViewer.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::AnimeViewer.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::AnimeViewer.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::XFGloss.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::AnimeViewer.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::XFGloss.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::AnimeViewer.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::XFGloss.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::AnimeViewer.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Body1 = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Body2 = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Button = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Caption = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Display1 = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Display2 = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Display3 = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Display4 = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Headline = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Inverse = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Large = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Medium = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Menu = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Small = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Subhead = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Title = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::AnimeViewer.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::AnimeViewer.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_Counter = global::AnimeViewer.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow = global::AnimeViewer.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_Error = global::AnimeViewer.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_Hint = global::AnimeViewer.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message = global::AnimeViewer.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Design_Tab = global::AnimeViewer.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_StatusBar_EventContent = global::AnimeViewer.Droid.Resource.Style.TextAppearance_StatusBar_EventContent;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Info = global::AnimeViewer.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Info;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Line2 = global::AnimeViewer.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Line2;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Time = global::AnimeViewer.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Time;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Title = global::AnimeViewer.Droid.Resource.Style.TextAppearance_StatusBar_EventContent_Title;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::AnimeViewer.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::AnimeViewer.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::XFGloss.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::AnimeViewer.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_CompactMenu = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Dialog = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light_Dialog = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_AppCompat_NoActionBar = global::AnimeViewer.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_Design = global::AnimeViewer.Droid.Resource.Style.Theme_Design;
+			global::XFGloss.Droid.Resource.Style.Theme_Design_BottomSheetDialog = global::AnimeViewer.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::XFGloss.Droid.Resource.Style.Theme_Design_Light = global::AnimeViewer.Droid.Resource.Style.Theme_Design_Light;
+			global::XFGloss.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::AnimeViewer.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::XFGloss.Droid.Resource.Style.Theme_Design_Light_NoActionBar = global::AnimeViewer.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_Design_NoActionBar = global::AnimeViewer.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::XFGloss.Droid.Resource.Style.Theme_MediaRouter = global::AnimeViewer.Droid.Resource.Style.Theme_MediaRouter;
+			global::XFGloss.Droid.Resource.Style.Theme_MediaRouter_Light = global::AnimeViewer.Droid.Resource.Style.Theme_MediaRouter_Light;
+			global::XFGloss.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel = global::AnimeViewer.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel;
+			global::XFGloss.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel = global::AnimeViewer.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_AppCompat = global::AnimeViewer.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::AnimeViewer.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark = global::AnimeViewer.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::AnimeViewer.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::XFGloss.Droid.Resource.Style.ThemeOverlay_AppCompat_Light = global::AnimeViewer.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionBar = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionButton = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActionMode = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Button = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Button_Borderless = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Button_Colored = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Button_Small = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ButtonBar = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_EditText = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ImageButton = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_SearchView = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ListView = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ListView_Menu = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_PopupMenu = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_PopupWindow = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ProgressBar = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_RatingBar = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_SearchView = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_SeekBar = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Spinner = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Toolbar = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::XFGloss.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::AnimeViewer.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_AppBarLayout = global::AnimeViewer.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_BottomSheet_Modal = global::AnimeViewer.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_CollapsingToolbar = global::AnimeViewer.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_CoordinatorLayout = global::AnimeViewer.Droid.Resource.Style.Widget_Design_CoordinatorLayout;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_FloatingActionButton = global::AnimeViewer.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_NavigationView = global::AnimeViewer.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::AnimeViewer.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_Snackbar = global::AnimeViewer.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_TabLayout = global::AnimeViewer.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::XFGloss.Droid.Resource.Style.Widget_Design_TextInputLayout = global::AnimeViewer.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ChooserText = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ChooserText;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ChooserText_Primary = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ChooserText_Primary;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ChooserText_Primary_Dark = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ChooserText_Primary_Dark;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ChooserText_Primary_Light = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ChooserText_Primary_Light;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ChooserText_Secondary = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ChooserText_Secondary;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ChooserText_Secondary_Dark = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ChooserText_Secondary_Dark;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ChooserText_Secondary_Light = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ChooserText_Secondary_Light;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ControllerText = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ControllerText;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Primary = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Primary;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Primary_Dark = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Primary_Dark;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Primary_Light = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Primary_Light;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Secondary = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Secondary;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Secondary_Dark = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Secondary_Dark;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Secondary_Light = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Secondary_Light;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Title = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Title;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Title_Dark = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Title_Dark;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Title_Light = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_ControllerText_Title_Light;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton;
+			global::XFGloss.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton = global::AnimeViewer.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar = global::AnimeViewer.Droid.Resource.Styleable.ActionBar;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_background = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_background;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_backgroundSplit = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_backgroundStacked = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_contentInsetEnd = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_contentInsetLeft = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_contentInsetRight = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_contentInsetStart = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_customNavigationLayout = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_displayOptions = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_divider = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_divider;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_elevation = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_elevation;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_height = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_height;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_hideOnContentScroll = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_homeLayout = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_icon = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_icon;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_itemPadding = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_logo = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_logo;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_navigationMode = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_popupTheme = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_progressBarPadding = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_progressBarStyle = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_subtitle = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_subtitleTextStyle = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_title = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_title;
+			global::XFGloss.Droid.Resource.Styleable.ActionBar_titleTextStyle = global::AnimeViewer.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::XFGloss.Droid.Resource.Styleable.ActionBarLayout = global::AnimeViewer.Droid.Resource.Styleable.ActionBarLayout;
+			global::XFGloss.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::AnimeViewer.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::XFGloss.Droid.Resource.Styleable.ActionMenuItemView = global::AnimeViewer.Droid.Resource.Styleable.ActionMenuItemView;
+			global::XFGloss.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth = global::AnimeViewer.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::XFGloss.Droid.Resource.Styleable.ActionMenuView = global::AnimeViewer.Droid.Resource.Styleable.ActionMenuView;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode = global::AnimeViewer.Droid.Resource.Styleable.ActionMode;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode_background = global::AnimeViewer.Droid.Resource.Styleable.ActionMode_background;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode_backgroundSplit = global::AnimeViewer.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode_closeItemLayout = global::AnimeViewer.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode_height = global::AnimeViewer.Droid.Resource.Styleable.ActionMode_height;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode_subtitleTextStyle = global::AnimeViewer.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::XFGloss.Droid.Resource.Styleable.ActionMode_titleTextStyle = global::AnimeViewer.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::XFGloss.Droid.Resource.Styleable.ActivityChooserView = global::AnimeViewer.Droid.Resource.Styleable.ActivityChooserView;
+			global::XFGloss.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::AnimeViewer.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::XFGloss.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount = global::AnimeViewer.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog = global::AnimeViewer.Droid.Resource.Styleable.AlertDialog;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_android_layout = global::AnimeViewer.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::AnimeViewer.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_listItemLayout = global::AnimeViewer.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_listLayout = global::AnimeViewer.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::AnimeViewer.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::XFGloss.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::AnimeViewer.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout = global::AnimeViewer.Droid.Resource.Styleable.AppBarLayout;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout_android_background = global::AnimeViewer.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout_elevation = global::AnimeViewer.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout_expanded = global::AnimeViewer.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout_LayoutParams = global::AnimeViewer.Droid.Resource.Styleable.AppBarLayout_LayoutParams;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout_LayoutParams_layout_scrollFlags = global::AnimeViewer.Droid.Resource.Styleable.AppBarLayout_LayoutParams_layout_scrollFlags;
+			global::XFGloss.Droid.Resource.Styleable.AppBarLayout_LayoutParams_layout_scrollInterpolator = global::AnimeViewer.Droid.Resource.Styleable.AppBarLayout_LayoutParams_layout_scrollInterpolator;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatImageView = global::AnimeViewer.Droid.Resource.Styleable.AppCompatImageView;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatImageView_android_src = global::AnimeViewer.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatImageView_srcCompat = global::AnimeViewer.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextView = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTextView;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTextView_textAllCaps = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarSize = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorAccent = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorPrimary = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_controlBackground = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_dialogTheme = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_dividerVertical = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_editTextBackground = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_editTextColor = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_editTextStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_panelBackground = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_switchStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowActionBar = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::XFGloss.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle = global::AnimeViewer.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::XFGloss.Droid.Resource.Styleable.BottomSheetBehavior_Params = global::AnimeViewer.Droid.Resource.Styleable.BottomSheetBehavior_Params;
+			global::XFGloss.Droid.Resource.Styleable.BottomSheetBehavior_Params_behavior_hideable = global::AnimeViewer.Droid.Resource.Styleable.BottomSheetBehavior_Params_behavior_hideable;
+			global::XFGloss.Droid.Resource.Styleable.BottomSheetBehavior_Params_behavior_peekHeight = global::AnimeViewer.Droid.Resource.Styleable.BottomSheetBehavior_Params_behavior_peekHeight;
+			global::XFGloss.Droid.Resource.Styleable.ButtonBarLayout = global::AnimeViewer.Droid.Resource.Styleable.ButtonBarLayout;
+			global::XFGloss.Droid.Resource.Styleable.ButtonBarLayout_allowStacking = global::AnimeViewer.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::XFGloss.Droid.Resource.Styleable.CardView = global::AnimeViewer.Droid.Resource.Styleable.CardView;
+			global::XFGloss.Droid.Resource.Styleable.CardView_android_minHeight = global::AnimeViewer.Droid.Resource.Styleable.CardView_android_minHeight;
+			global::XFGloss.Droid.Resource.Styleable.CardView_android_minWidth = global::AnimeViewer.Droid.Resource.Styleable.CardView_android_minWidth;
+			global::XFGloss.Droid.Resource.Styleable.CardView_cardBackgroundColor = global::AnimeViewer.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::XFGloss.Droid.Resource.Styleable.CardView_cardCornerRadius = global::AnimeViewer.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::XFGloss.Droid.Resource.Styleable.CardView_cardElevation = global::AnimeViewer.Droid.Resource.Styleable.CardView_cardElevation;
+			global::XFGloss.Droid.Resource.Styleable.CardView_cardMaxElevation = global::AnimeViewer.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::XFGloss.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap = global::AnimeViewer.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::XFGloss.Droid.Resource.Styleable.CardView_cardUseCompatPadding = global::AnimeViewer.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::XFGloss.Droid.Resource.Styleable.CardView_contentPadding = global::AnimeViewer.Droid.Resource.Styleable.CardView_contentPadding;
+			global::XFGloss.Droid.Resource.Styleable.CardView_contentPaddingBottom = global::AnimeViewer.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::XFGloss.Droid.Resource.Styleable.CardView_contentPaddingLeft = global::AnimeViewer.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::XFGloss.Droid.Resource.Styleable.CardView_contentPaddingRight = global::AnimeViewer.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::XFGloss.Droid.Resource.Styleable.CardView_contentPaddingTop = global::AnimeViewer.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingAppBarLayout_LayoutParams = global::AnimeViewer.Droid.Resource.Styleable.CollapsingAppBarLayout_LayoutParams;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingAppBarLayout_LayoutParams_layout_collapseMode = global::AnimeViewer.Droid.Resource.Styleable.CollapsingAppBarLayout_LayoutParams_layout_collapseMode;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingAppBarLayout_LayoutParams_layout_collapseParallaxMultiplier = global::AnimeViewer.Droid.Resource.Styleable.CollapsingAppBarLayout_LayoutParams_layout_collapseParallaxMultiplier;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_title = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::XFGloss.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::AnimeViewer.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::XFGloss.Droid.Resource.Styleable.CompoundButton = global::AnimeViewer.Droid.Resource.Styleable.CompoundButton;
+			global::XFGloss.Droid.Resource.Styleable.CompoundButton_android_button = global::AnimeViewer.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::XFGloss.Droid.Resource.Styleable.CompoundButton_buttonTint = global::AnimeViewer.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::XFGloss.Droid.Resource.Styleable.CompoundButton_buttonTintMode = global::AnimeViewer.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout = global::AnimeViewer.Droid.Resource.Styleable.CoordinatorLayout;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_keylines = global::AnimeViewer.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::AnimeViewer.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_LayoutParams = global::AnimeViewer.Droid.Resource.Styleable.CoordinatorLayout_LayoutParams;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_LayoutParams_android_layout_gravity = global::AnimeViewer.Droid.Resource.Styleable.CoordinatorLayout_LayoutParams_android_layout_gravity;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_LayoutParams_layout_anchor = global::AnimeViewer.Droid.Resource.Styleable.CoordinatorLayout_LayoutParams_layout_anchor;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_LayoutParams_layout_anchorGravity = global::AnimeViewer.Droid.Resource.Styleable.CoordinatorLayout_LayoutParams_layout_anchorGravity;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_LayoutParams_layout_behavior = global::AnimeViewer.Droid.Resource.Styleable.CoordinatorLayout_LayoutParams_layout_behavior;
+			global::XFGloss.Droid.Resource.Styleable.CoordinatorLayout_LayoutParams_layout_keyline = global::AnimeViewer.Droid.Resource.Styleable.CoordinatorLayout_LayoutParams_layout_keyline;
+			global::XFGloss.Droid.Resource.Styleable.DesignTheme = global::AnimeViewer.Droid.Resource.Styleable.DesignTheme;
+			global::XFGloss.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::AnimeViewer.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::XFGloss.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle = global::AnimeViewer.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::XFGloss.Droid.Resource.Styleable.DesignTheme_textColorError = global::AnimeViewer.Droid.Resource.Styleable.DesignTheme_textColorError;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle = global::AnimeViewer.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::AnimeViewer.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::AnimeViewer.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_barLength = global::AnimeViewer.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_color = global::AnimeViewer.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize = global::AnimeViewer.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::AnimeViewer.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_spinBars = global::AnimeViewer.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::XFGloss.Droid.Resource.Styleable.DrawerArrowToggle_thickness = global::AnimeViewer.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton = global::AnimeViewer.Droid.Resource.Styleable.FloatingActionButton;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_backgroundTint = global::AnimeViewer.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::AnimeViewer.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_borderWidth = global::AnimeViewer.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_elevation = global::AnimeViewer.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_fabSize = global::AnimeViewer.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::AnimeViewer.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_rippleColor = global::AnimeViewer.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::XFGloss.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding = global::AnimeViewer.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::XFGloss.Droid.Resource.Styleable.ForegroundLinearLayout = global::AnimeViewer.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::XFGloss.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::AnimeViewer.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::XFGloss.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::AnimeViewer.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::XFGloss.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::AnimeViewer.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_divider = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_showDividers = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_Layout = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::XFGloss.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::AnimeViewer.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::XFGloss.Droid.Resource.Styleable.ListPopupWindow = global::AnimeViewer.Droid.Resource.Styleable.ListPopupWindow;
+			global::XFGloss.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::AnimeViewer.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::XFGloss.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::AnimeViewer.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::XFGloss.Droid.Resource.Styleable.MediaRouteButton = global::AnimeViewer.Droid.Resource.Styleable.MediaRouteButton;
+			global::XFGloss.Droid.Resource.Styleable.MediaRouteButton_android_minHeight = global::AnimeViewer.Droid.Resource.Styleable.MediaRouteButton_android_minHeight;
+			global::XFGloss.Droid.Resource.Styleable.MediaRouteButton_android_minWidth = global::AnimeViewer.Droid.Resource.Styleable.MediaRouteButton_android_minWidth;
+			global::XFGloss.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable = global::AnimeViewer.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup = global::AnimeViewer.Droid.Resource.Styleable.MenuGroup;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior = global::AnimeViewer.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup_android_enabled = global::AnimeViewer.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup_android_id = global::AnimeViewer.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup_android_menuCategory = global::AnimeViewer.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup_android_orderInCategory = global::AnimeViewer.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::XFGloss.Droid.Resource.Styleable.MenuGroup_android_visible = global::AnimeViewer.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem = global::AnimeViewer.Droid.Resource.Styleable.MenuItem;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_actionLayout = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_actionProviderClass = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_actionViewClass = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_checkable = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_checked = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_enabled = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_icon = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_id = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_id;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_menuCategory = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_numericShortcut = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_onClick = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_orderInCategory = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_title = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_title;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_titleCondensed = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_android_visible = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::XFGloss.Droid.Resource.Styleable.MenuItem_showAsAction = global::AnimeViewer.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::XFGloss.Droid.Resource.Styleable.MenuView = global::AnimeViewer.Droid.Resource.Styleable.MenuView;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_headerBackground = global::AnimeViewer.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_horizontalDivider = global::AnimeViewer.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_itemBackground = global::AnimeViewer.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::AnimeViewer.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_itemTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_verticalDivider = global::AnimeViewer.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle = global::AnimeViewer.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::XFGloss.Droid.Resource.Styleable.MenuView_preserveIconSpacing = global::AnimeViewer.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView = global::AnimeViewer.Droid.Resource.Styleable.NavigationView;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_android_background = global::AnimeViewer.Droid.Resource.Styleable.NavigationView_android_background;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::AnimeViewer.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_android_maxWidth = global::AnimeViewer.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_elevation = global::AnimeViewer.Droid.Resource.Styleable.NavigationView_elevation;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_headerLayout = global::AnimeViewer.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_itemBackground = global::AnimeViewer.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_itemIconTint = global::AnimeViewer.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_itemTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_itemTextColor = global::AnimeViewer.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::XFGloss.Droid.Resource.Styleable.NavigationView_menu = global::AnimeViewer.Droid.Resource.Styleable.NavigationView_menu;
+			global::XFGloss.Droid.Resource.Styleable.PopupWindow = global::AnimeViewer.Droid.Resource.Styleable.PopupWindow;
+			global::XFGloss.Droid.Resource.Styleable.PopupWindow_android_popupBackground = global::AnimeViewer.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::XFGloss.Droid.Resource.Styleable.PopupWindow_overlapAnchor = global::AnimeViewer.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::XFGloss.Droid.Resource.Styleable.PopupWindowBackgroundState = global::AnimeViewer.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::XFGloss.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::AnimeViewer.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView = global::AnimeViewer.Droid.Resource.Styleable.RecyclerView;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView_android_orientation = global::AnimeViewer.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView_layoutManager = global::AnimeViewer.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView_reverseLayout = global::AnimeViewer.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView_spanCount = global::AnimeViewer.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::XFGloss.Droid.Resource.Styleable.RecyclerView_stackFromEnd = global::AnimeViewer.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::XFGloss.Droid.Resource.Styleable.ScrimInsetsFrameLayout = global::AnimeViewer.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::XFGloss.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::AnimeViewer.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::XFGloss.Droid.Resource.Styleable.ScrollingViewBehavior_Params = global::AnimeViewer.Droid.Resource.Styleable.ScrollingViewBehavior_Params;
+			global::XFGloss.Droid.Resource.Styleable.ScrollingViewBehavior_Params_behavior_overlapTop = global::AnimeViewer.Droid.Resource.Styleable.ScrollingViewBehavior_Params_behavior_overlapTop;
+			global::XFGloss.Droid.Resource.Styleable.SearchView = global::AnimeViewer.Droid.Resource.Styleable.SearchView;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_android_focusable = global::AnimeViewer.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_android_imeOptions = global::AnimeViewer.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_android_inputType = global::AnimeViewer.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_android_maxWidth = global::AnimeViewer.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_closeIcon = global::AnimeViewer.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_commitIcon = global::AnimeViewer.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_defaultQueryHint = global::AnimeViewer.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_goIcon = global::AnimeViewer.Droid.Resource.Styleable.SearchView_goIcon;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_iconifiedByDefault = global::AnimeViewer.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_layout = global::AnimeViewer.Droid.Resource.Styleable.SearchView_layout;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_queryBackground = global::AnimeViewer.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_queryHint = global::AnimeViewer.Droid.Resource.Styleable.SearchView_queryHint;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_searchHintIcon = global::AnimeViewer.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_searchIcon = global::AnimeViewer.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_submitBackground = global::AnimeViewer.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_suggestionRowLayout = global::AnimeViewer.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::XFGloss.Droid.Resource.Styleable.SearchView_voiceIcon = global::AnimeViewer.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::XFGloss.Droid.Resource.Styleable.SnackbarLayout = global::AnimeViewer.Droid.Resource.Styleable.SnackbarLayout;
+			global::XFGloss.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth = global::AnimeViewer.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::XFGloss.Droid.Resource.Styleable.SnackbarLayout_elevation = global::AnimeViewer.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::XFGloss.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::AnimeViewer.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::XFGloss.Droid.Resource.Styleable.Spinner = global::AnimeViewer.Droid.Resource.Styleable.Spinner;
+			global::XFGloss.Droid.Resource.Styleable.Spinner_android_dropDownWidth = global::AnimeViewer.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::XFGloss.Droid.Resource.Styleable.Spinner_android_entries = global::AnimeViewer.Droid.Resource.Styleable.Spinner_android_entries;
+			global::XFGloss.Droid.Resource.Styleable.Spinner_android_popupBackground = global::AnimeViewer.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::XFGloss.Droid.Resource.Styleable.Spinner_android_prompt = global::AnimeViewer.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::XFGloss.Droid.Resource.Styleable.Spinner_popupTheme = global::AnimeViewer.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat = global::AnimeViewer.Droid.Resource.Styleable.SwitchCompat;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_android_textOff = global::AnimeViewer.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_android_textOn = global::AnimeViewer.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_android_thumb = global::AnimeViewer.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_showText = global::AnimeViewer.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_splitTrack = global::AnimeViewer.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_switchMinWidth = global::AnimeViewer.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_switchPadding = global::AnimeViewer.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding = global::AnimeViewer.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::XFGloss.Droid.Resource.Styleable.SwitchCompat_track = global::AnimeViewer.Droid.Resource.Styleable.SwitchCompat_track;
+			global::XFGloss.Droid.Resource.Styleable.TabItem = global::AnimeViewer.Droid.Resource.Styleable.TabItem;
+			global::XFGloss.Droid.Resource.Styleable.TabItem_android_icon = global::AnimeViewer.Droid.Resource.Styleable.TabItem_android_icon;
+			global::XFGloss.Droid.Resource.Styleable.TabItem_android_layout = global::AnimeViewer.Droid.Resource.Styleable.TabItem_android_layout;
+			global::XFGloss.Droid.Resource.Styleable.TabItem_android_text = global::AnimeViewer.Droid.Resource.Styleable.TabItem_android_text;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout = global::AnimeViewer.Droid.Resource.Styleable.TabLayout;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabBackground = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabContentStart = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabGravity = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabIndicatorColor = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabMaxWidth = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabMinWidth = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabMode = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabPadding = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabPaddingBottom = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabPaddingEnd = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabPaddingStart = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabPaddingTop = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.TabLayout_tabTextColor = global::AnimeViewer.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance = global::AnimeViewer.Droid.Resource.Styleable.TextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_shadowColor = global::AnimeViewer.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_shadowDx = global::AnimeViewer.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_shadowDy = global::AnimeViewer.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_shadowRadius = global::AnimeViewer.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_textColor = global::AnimeViewer.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_textSize = global::AnimeViewer.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_textStyle = global::AnimeViewer.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_android_typeface = global::AnimeViewer.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::XFGloss.Droid.Resource.Styleable.TextAppearance_textAllCaps = global::AnimeViewer.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout = global::AnimeViewer.Droid.Resource.Styleable.TextInputLayout;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_android_hint = global::AnimeViewer.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_android_textColorHint = global::AnimeViewer.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_counterEnabled = global::AnimeViewer.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_counterMaxLength = global::AnimeViewer.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_errorEnabled = global::AnimeViewer.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::AnimeViewer.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_hintEnabled = global::AnimeViewer.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::XFGloss.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar = global::AnimeViewer.Droid.Resource.Styleable.Toolbar;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_android_gravity = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_android_minHeight = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_collapseContentDescription = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_collapseIcon = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_contentInsetEnd = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_contentInsetLeft = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_contentInsetRight = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_contentInsetStart = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_logo = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_logo;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_logoDescription = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_maxButtonHeight = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_navigationContentDescription = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_navigationIcon = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_popupTheme = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_subtitle = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_subtitleTextColor = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_title = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_title;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleMarginBottom = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleMarginEnd = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleMarginStart = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleMarginTop = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleMargins = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleTextAppearance = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::XFGloss.Droid.Resource.Styleable.Toolbar_titleTextColor = global::AnimeViewer.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::XFGloss.Droid.Resource.Styleable.View = global::AnimeViewer.Droid.Resource.Styleable.View;
+			global::XFGloss.Droid.Resource.Styleable.View_android_focusable = global::AnimeViewer.Droid.Resource.Styleable.View_android_focusable;
+			global::XFGloss.Droid.Resource.Styleable.View_android_theme = global::AnimeViewer.Droid.Resource.Styleable.View_android_theme;
+			global::XFGloss.Droid.Resource.Styleable.View_paddingEnd = global::AnimeViewer.Droid.Resource.Styleable.View_paddingEnd;
+			global::XFGloss.Droid.Resource.Styleable.View_paddingStart = global::AnimeViewer.Droid.Resource.Styleable.View_paddingStart;
+			global::XFGloss.Droid.Resource.Styleable.View_theme = global::AnimeViewer.Droid.Resource.Styleable.View_theme;
+			global::XFGloss.Droid.Resource.Styleable.ViewBackgroundHelper = global::AnimeViewer.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::XFGloss.Droid.Resource.Styleable.ViewBackgroundHelper_android_background = global::AnimeViewer.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::XFGloss.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::AnimeViewer.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::XFGloss.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::AnimeViewer.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::XFGloss.Droid.Resource.Styleable.ViewStubCompat = global::AnimeViewer.Droid.Resource.Styleable.ViewStubCompat;
+			global::XFGloss.Droid.Resource.Styleable.ViewStubCompat_android_id = global::AnimeViewer.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::XFGloss.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::AnimeViewer.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::XFGloss.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::AnimeViewer.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 		}
 		
 		public partial class Animation
@@ -2029,298 +3814,301 @@ namespace AnimeViewer.Droid
 			public const int arrow_disclosure = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int blue = 2130837582;
+			public const int black_alpha_270_degree_gradient = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int design_fab_background = 2130837583;
+			public const int blue = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int design_snackbar_background = 2130837584;
+			public const int design_fab_background = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int heart = 2130837585;
+			public const int design_snackbar_background = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int ic_audiotrack = 2130837586;
+			public const int heart = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int ic_audiotrack_light = 2130837587;
+			public const int ic_audiotrack = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int ic_bluetooth_grey = 2130837588;
+			public const int ic_audiotrack_light = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int ic_bluetooth_white = 2130837589;
+			public const int ic_bluetooth_grey = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int ic_cast_dark = 2130837590;
+			public const int ic_bluetooth_white = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int ic_cast_disabled_light = 2130837591;
+			public const int ic_cast_dark = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int ic_cast_grey = 2130837592;
+			public const int ic_cast_disabled_light = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int ic_cast_light = 2130837593;
+			public const int ic_cast_grey = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int ic_cast_off_light = 2130837594;
+			public const int ic_cast_light = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int ic_cast_on_0_light = 2130837595;
+			public const int ic_cast_off_light = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int ic_cast_on_1_light = 2130837596;
+			public const int ic_cast_on_0_light = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int ic_cast_on_2_light = 2130837597;
+			public const int ic_cast_on_1_light = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int ic_cast_on_light = 2130837598;
+			public const int ic_cast_on_2_light = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int ic_cast_white = 2130837599;
+			public const int ic_cast_on_light = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int ic_close_dark = 2130837600;
+			public const int ic_cast_white = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int ic_close_light = 2130837601;
+			public const int ic_close_dark = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int ic_collapse = 2130837602;
+			public const int ic_close_light = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int ic_collapse_00000 = 2130837603;
+			public const int ic_collapse = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int ic_collapse_00001 = 2130837604;
+			public const int ic_collapse_00000 = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int ic_collapse_00002 = 2130837605;
+			public const int ic_collapse_00001 = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int ic_collapse_00003 = 2130837606;
+			public const int ic_collapse_00002 = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int ic_collapse_00004 = 2130837607;
+			public const int ic_collapse_00003 = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int ic_collapse_00005 = 2130837608;
+			public const int ic_collapse_00004 = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int ic_collapse_00006 = 2130837609;
+			public const int ic_collapse_00005 = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int ic_collapse_00007 = 2130837610;
+			public const int ic_collapse_00006 = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int ic_collapse_00008 = 2130837611;
+			public const int ic_collapse_00007 = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int ic_collapse_00009 = 2130837612;
+			public const int ic_collapse_00008 = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int ic_collapse_00010 = 2130837613;
+			public const int ic_collapse_00009 = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int ic_collapse_00011 = 2130837614;
+			public const int ic_collapse_00010 = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int ic_collapse_00012 = 2130837615;
+			public const int ic_collapse_00011 = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int ic_collapse_00013 = 2130837616;
+			public const int ic_collapse_00012 = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int ic_collapse_00014 = 2130837617;
+			public const int ic_collapse_00013 = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int ic_collapse_00015 = 2130837618;
+			public const int ic_collapse_00014 = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int ic_errorstatus = 2130837619;
+			public const int ic_collapse_00015 = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int ic_expand = 2130837620;
+			public const int ic_errorstatus = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int ic_expand_00000 = 2130837621;
+			public const int ic_expand = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int ic_expand_00001 = 2130837622;
+			public const int ic_expand_00000 = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int ic_expand_00002 = 2130837623;
+			public const int ic_expand_00001 = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int ic_expand_00003 = 2130837624;
+			public const int ic_expand_00002 = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int ic_expand_00004 = 2130837625;
+			public const int ic_expand_00003 = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int ic_expand_00005 = 2130837626;
+			public const int ic_expand_00004 = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int ic_expand_00006 = 2130837627;
+			public const int ic_expand_00005 = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int ic_expand_00007 = 2130837628;
+			public const int ic_expand_00006 = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int ic_expand_00008 = 2130837629;
+			public const int ic_expand_00007 = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int ic_expand_00009 = 2130837630;
+			public const int ic_expand_00008 = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int ic_expand_00010 = 2130837631;
+			public const int ic_expand_00009 = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int ic_expand_00011 = 2130837632;
+			public const int ic_expand_00010 = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int ic_expand_00012 = 2130837633;
+			public const int ic_expand_00011 = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int ic_expand_00013 = 2130837634;
+			public const int ic_expand_00012 = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int ic_expand_00014 = 2130837635;
+			public const int ic_expand_00013 = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int ic_expand_00015 = 2130837636;
+			public const int ic_expand_00014 = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int ic_media_pause = 2130837637;
+			public const int ic_expand_00015 = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int ic_media_play = 2130837638;
+			public const int ic_media_pause = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int ic_media_route_disabled_mono_dark = 2130837639;
+			public const int ic_media_play = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int ic_media_route_off_mono_dark = 2130837640;
+			public const int ic_media_route_disabled_mono_dark = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int ic_media_route_on_0_mono_dark = 2130837641;
+			public const int ic_media_route_off_mono_dark = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int ic_media_route_on_1_mono_dark = 2130837642;
+			public const int ic_media_route_on_0_mono_dark = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int ic_media_route_on_2_mono_dark = 2130837643;
+			public const int ic_media_route_on_1_mono_dark = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int ic_media_route_on_mono_dark = 2130837644;
+			public const int ic_media_route_on_2_mono_dark = 2130837644;
 			
 			// aapt resource value: 0x7f02008d
-			public const int ic_pause_dark = 2130837645;
+			public const int ic_media_route_on_mono_dark = 2130837645;
 			
 			// aapt resource value: 0x7f02008e
-			public const int ic_pause_light = 2130837646;
+			public const int ic_pause_dark = 2130837646;
 			
 			// aapt resource value: 0x7f02008f
-			public const int ic_play_dark = 2130837647;
+			public const int ic_pause_light = 2130837647;
 			
 			// aapt resource value: 0x7f020090
-			public const int ic_play_light = 2130837648;
+			public const int ic_play_dark = 2130837648;
 			
 			// aapt resource value: 0x7f020091
-			public const int ic_speaker_dark = 2130837649;
+			public const int ic_play_light = 2130837649;
 			
 			// aapt resource value: 0x7f020092
-			public const int ic_speaker_group_dark = 2130837650;
+			public const int ic_speaker_dark = 2130837650;
 			
 			// aapt resource value: 0x7f020093
-			public const int ic_speaker_group_light = 2130837651;
+			public const int ic_speaker_group_dark = 2130837651;
 			
 			// aapt resource value: 0x7f020094
-			public const int ic_speaker_light = 2130837652;
+			public const int ic_speaker_group_light = 2130837652;
 			
 			// aapt resource value: 0x7f020095
-			public const int ic_successstatus = 2130837653;
+			public const int ic_speaker_light = 2130837653;
 			
 			// aapt resource value: 0x7f020096
-			public const int ic_tv_dark = 2130837654;
+			public const int ic_successstatus = 2130837654;
 			
 			// aapt resource value: 0x7f020097
-			public const int ic_tv_light = 2130837655;
+			public const int ic_tv_dark = 2130837655;
 			
 			// aapt resource value: 0x7f020098
-			public const int icon = 2130837656;
+			public const int ic_tv_light = 2130837656;
 			
 			// aapt resource value: 0x7f020099
-			public const int list_icon = 2130837657;
+			public const int icon = 2130837657;
 			
 			// aapt resource value: 0x7f02009a
-			public const int mr_dialog_material_background_dark = 2130837658;
+			public const int list_icon = 2130837658;
 			
 			// aapt resource value: 0x7f02009b
-			public const int mr_dialog_material_background_light = 2130837659;
+			public const int mr_dialog_material_background_dark = 2130837659;
 			
 			// aapt resource value: 0x7f02009c
-			public const int mr_ic_audiotrack_light = 2130837660;
+			public const int mr_dialog_material_background_light = 2130837660;
 			
 			// aapt resource value: 0x7f02009d
-			public const int mr_ic_cast_dark = 2130837661;
+			public const int mr_ic_audiotrack_light = 2130837661;
 			
 			// aapt resource value: 0x7f02009e
-			public const int mr_ic_cast_light = 2130837662;
+			public const int mr_ic_cast_dark = 2130837662;
 			
 			// aapt resource value: 0x7f02009f
-			public const int mr_ic_close_dark = 2130837663;
+			public const int mr_ic_cast_light = 2130837663;
 			
 			// aapt resource value: 0x7f0200a0
-			public const int mr_ic_close_light = 2130837664;
+			public const int mr_ic_close_dark = 2130837664;
 			
 			// aapt resource value: 0x7f0200a1
-			public const int mr_ic_media_route_connecting_mono_dark = 2130837665;
+			public const int mr_ic_close_light = 2130837665;
 			
 			// aapt resource value: 0x7f0200a2
-			public const int mr_ic_media_route_connecting_mono_light = 2130837666;
+			public const int mr_ic_media_route_connecting_mono_dark = 2130837666;
 			
 			// aapt resource value: 0x7f0200a3
-			public const int mr_ic_media_route_mono_dark = 2130837667;
+			public const int mr_ic_media_route_connecting_mono_light = 2130837667;
 			
 			// aapt resource value: 0x7f0200a4
-			public const int mr_ic_media_route_mono_light = 2130837668;
+			public const int mr_ic_media_route_mono_dark = 2130837668;
 			
 			// aapt resource value: 0x7f0200a5
-			public const int mr_ic_pause_dark = 2130837669;
+			public const int mr_ic_media_route_mono_light = 2130837669;
 			
 			// aapt resource value: 0x7f0200a6
-			public const int mr_ic_pause_light = 2130837670;
+			public const int mr_ic_pause_dark = 2130837670;
 			
 			// aapt resource value: 0x7f0200a7
-			public const int mr_ic_play_dark = 2130837671;
+			public const int mr_ic_pause_light = 2130837671;
 			
 			// aapt resource value: 0x7f0200a8
-			public const int mr_ic_play_light = 2130837672;
-			
-			// aapt resource value: 0x7f0200af
-			public const int notification_template_icon_bg = 2130837679;
+			public const int mr_ic_play_dark = 2130837672;
 			
 			// aapt resource value: 0x7f0200a9
-			public const int playbutton_icon = 2130837673;
+			public const int mr_ic_play_light = 2130837673;
+			
+			// aapt resource value: 0x7f0200b0
+			public const int notification_template_icon_bg = 2130837680;
 			
 			// aapt resource value: 0x7f0200aa
-			public const int red = 2130837674;
+			public const int playbutton_icon = 2130837674;
 			
 			// aapt resource value: 0x7f0200ab
-			public const int roundedbg = 2130837675;
+			public const int red = 2130837675;
 			
 			// aapt resource value: 0x7f0200ac
-			public const int roundedbgdark = 2130837676;
+			public const int roundedbg = 2130837676;
 			
 			// aapt resource value: 0x7f0200ad
-			public const int settings_icon = 2130837677;
+			public const int roundedbgdark = 2130837677;
 			
 			// aapt resource value: 0x7f0200ae
-			public const int star_icon = 2130837678;
+			public const int settings_icon = 2130837678;
+			
+			// aapt resource value: 0x7f0200af
+			public const int star_icon = 2130837679;
 			
 			static Drawable()
 			{
@@ -3077,11 +4865,11 @@ namespace AnimeViewer.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f080027
-			public const int ApplicationName = 2131230759;
+			// aapt resource value: 0x7f080028
+			public const int ApplicationName = 2131230760;
 			
-			// aapt resource value: 0x7f080026
-			public const int Hello = 2131230758;
+			// aapt resource value: 0x7f080027
+			public const int Hello = 2131230759;
 			
 			// aapt resource value: 0x7f08000f
 			public const int abc_action_bar_home_description = 2131230735;
@@ -3149,8 +4937,8 @@ namespace AnimeViewer.Droid
 			// aapt resource value: 0x7f080025
 			public const int character_counter_pattern = 2131230757;
 			
-			// aapt resource value: 0x7f080028
-			public const int library_name = 2131230760;
+			// aapt resource value: 0x7f080026
+			public const int library_name = 2131230758;
 			
 			// aapt resource value: 0x7f080000
 			public const int mr_button_content_description = 2131230720;

@@ -241,6 +241,14 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.3.175\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="XFGloss, Version=1.0.5.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ansuria.XFGloss.1.0.5.40\lib\MonoAndroid10\XFGloss.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XFGloss.Droid, Version=1.0.5.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ansuria.XFGloss.1.0.5.40\lib\MonoAndroid10\XFGloss.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomRenderers\ContentViewRoundedCornersRenderer.cs" />
@@ -316,6 +324,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\playbutton_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\black_alpha_270_degree_gradient.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

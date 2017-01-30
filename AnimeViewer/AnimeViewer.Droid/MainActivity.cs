@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms.Themes;
 using Xamarin.Forms.Themes.Android;
+using XFGloss.Droid;
 
 namespace AnimeViewer.Droid
 {
@@ -23,6 +24,9 @@ namespace AnimeViewer.Droid
 
             Forms.Init(this, bundle);
             LoadApplication(new App());
+
+            // IMPORTANT: Initialize XFGloss AFTER calling LoadApplication on the Android platform
+            Library.Init(this, bundle);
 
             var x = typeof(DarkThemeResources);
             x = typeof(UnderlineEffect);

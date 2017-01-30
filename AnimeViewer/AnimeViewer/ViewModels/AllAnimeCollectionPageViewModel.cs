@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AnimeViewer.EventArguments;
@@ -9,16 +10,24 @@ namespace AnimeViewer.ViewModels
 {
     public class AllAnimeCollectionPageViewModel : BaseViewModel
     {
-        private ObservableRangeCollection<Anime> _allAnimes;
+        private List<Anime> _allAnimes;
+        private ObservableRangeCollection<Anime> _filteredAnimes;
         private bool _hasConnectionIssue;
         private bool _isCachingAnimes;
         private bool _isInitializing = true;
         private ObservableRangeCollection<Anime> _visibleAnimes;
 
-        public AllAnimeCollectionPageViewModel()
+        public AllAnimeCollectionPageViewModel(AdvancedSearchOptionsViewModel filterModel)
         {
-            AllAnimes = new ObservableRangeCollection<Anime>();
+            FilterModel = filterModel;
+            FilterModel.AnimesFiltered += FilterModel_AnimesFiltered;
+            AllAnimes = new List<Anime>();
+            FilteredAnimes = new ObservableRangeCollection<Anime>(AllAnimes);
+
+            //AnimeManager.Instance.UpdatedCachedAnimeInformation += Instance_UpdatedCachedAnimeInformation;
         }
+
+        public AdvancedSearchOptionsViewModel FilterModel { get; set; }
 
         public bool IsInitializing
         {
@@ -42,12 +51,22 @@ namespace AnimeViewer.ViewModels
 
         public string SearchKeyword { get; private set; }
 
-        public ObservableRangeCollection<Anime> AllAnimes
+        public List<Anime> AllAnimes
         {
             get { return _allAnimes; }
             set
             {
                 _allAnimes = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ObservableRangeCollection<Anime> FilteredAnimes
+        {
+            get { return _filteredAnimes; }
+            set
+            {
+                _filteredAnimes = value;
                 OnPropertyChanged();
             }
         }
@@ -72,6 +91,12 @@ namespace AnimeViewer.ViewModels
             }
         }
 
+        private async void FilterModel_AnimesFiltered(object sender, AnimesFilteredEventArgs e)
+        {
+            FilteredAnimes = new ObservableRangeCollection<Anime>(e.Animes);
+            VisibleAnimes = new ObservableRangeCollection<Anime>(await ApplySearchQueryAsync());
+        }
+
         public async Task InitializeAsync()
         {
             IsBusy = true;
@@ -81,7 +106,7 @@ namespace AnimeViewer.ViewModels
             AnimeManager.Instance.AnimeManagerApiConnectionError += Instance_AnimeManagerApiConnectionError;
             AnimeManager.Instance.CacheRemoved += Instance_CacheRemoved;
             AllAnimes.AddRange(await AnimeManager.Instance.GetAnimeListAsync());
-            VisibleAnimes = AllAnimes;
+            VisibleAnimes = FilteredAnimes;
             IsBusy = false;
         }
 
@@ -101,32 +126,27 @@ namespace AnimeViewer.ViewModels
         {
             IsBusy = true;
             HasConnectionIssue = false;
-            AllAnimes = new ObservableRangeCollection<Anime>(await AnimeManager.Instance.GetAnimeListAsync());
-            VisibleAnimes = AllAnimes;
+            AllAnimes = await AnimeManager.Instance.GetAnimeListAsync();
+            VisibleAnimes = new ObservableRangeCollection<Anime>(AllAnimes);
             await SetSearchQueryAsync(SearchKeyword);
             IsBusy = false;
         }
 
         public async Task SetSearchQueryAsync(string query)
         {
-            //while ((VisibleAnimes == null) || (VisibleAnimes.Count == 0)) await Task.Delay(200);
-            if (string.IsNullOrWhiteSpace(query))
-                SearchKeyword = "";
-            else
-                SearchKeyword = query.ToLower();
-            await ApplySearchQueryAsync();
+            SearchKeyword = string.IsNullOrWhiteSpace(query) ? "" : query.ToLower();
+            VisibleAnimes = new ObservableRangeCollection<Anime>(await ApplySearchQueryAsync());
         }
 
-        private async Task ApplySearchQueryAsync()
+        public async Task<IEnumerable<Anime>> ApplySearchQueryAsync()
         {
             if (string.IsNullOrWhiteSpace(SearchKeyword))
-                VisibleAnimes = AllAnimes;
-            else
-            {
-                var animes = await Task.Run(() => new ObservableRangeCollection<Anime>(
-                    AllAnimes.Where(anime => anime.Name.ToLower().Contains(SearchKeyword)).ToArray()));
-                VisibleAnimes = animes;
-            }
+                return FilteredAnimes;
+
+            var animes = await Task.Run(() => new ObservableRangeCollection<Anime>(
+                    FilteredAnimes.Where(anime => anime.Name.ToLower().Contains(SearchKeyword)).ToArray())
+            );
+            return animes;
         }
 
         private void Instance_AnimeManagerApiConnectionError(object sender, EventArgs e)
@@ -134,21 +154,25 @@ namespace AnimeViewer.ViewModels
             HasConnectionIssue = true;
         }
 
-        private void Instance_CachedAnimesUpdated(object sender, AnimesUpdatedEventArgs e)
+        private async void Instance_CachedAnimesUpdated(object sender, AnimesUpdatedEventArgs e)
         {
             if (IsInitializing) IsInitializing = false;
             IsCachingAnimes = true;
-            AllAnimes.AddRange(e.Animes);
-            ApplySearchQueryAsync();
+            //foreach (var anime in e.Animes)
+            //{
+            //    if (AllAnimes.FirstOrDefault(a => a.Name == anime.Name && a.Language == anime.Language) != null) AllAnimes.r
+            //}
+            //AllAnimes.AddRange(e.Animes);
+            await ApplySearchQueryAsync();
         }
 
         public async Task RecacheAllAnimes()
         {
             IsBusy = true;
             await AnimeManager.Instance.RemoveCache();
-            AllAnimes = new ObservableRangeCollection<Anime>();
+            AllAnimes = new List<Anime>();
             AllAnimes.AddRange(await AnimeManager.Instance.GetAnimeListAsync());
-            VisibleAnimes = AllAnimes;
+            VisibleAnimes = new ObservableRangeCollection<Anime>(AllAnimes);
             IsBusy = false;
         }
     }

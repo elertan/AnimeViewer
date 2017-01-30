@@ -90,6 +90,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CustomRenderers\ContentViewRoundedCornersRenderer.cs" />
+    <Compile Include="CustomRenderers\GradientContentViewRenderer.cs" />
     <Compile Include="CustomRenderers\RadialProgressViewRenderer.cs" />
     <Compile Include="CustomRenderers\SearchBarRenderer.cs" />
     <Compile Include="Main.cs" />
@@ -252,6 +253,14 @@
     <Reference Include="WebP.Touch">
       <HintPath>..\..\packages\WebP.Touch.1.0.2\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
     </Reference>
+    <Reference Include="XFGloss, Version=1.0.5.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ansuria.XFGloss.1.0.5.40\lib\Xamarin.iOS10\XFGloss.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XFGloss.iOS, Version=1.0.5.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ansuria.XFGloss.1.0.5.40\lib\Xamarin.iOS10\XFGloss.iOS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\menu.png" />
@@ -333,6 +342,9 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\playbutton_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\black_alpha_270_degree_gradient.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

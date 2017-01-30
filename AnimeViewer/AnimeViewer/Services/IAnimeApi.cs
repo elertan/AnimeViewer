@@ -53,5 +53,7 @@ namespace AnimeViewer.Services
         /// <param name="episodeUrl">The episode url</param>
         /// <returns></returns>
         Task<IEnumerable<VideoSource>> GetVideoSourcesByEpisodeUrlAsync(string episodeUrl);
+
+        Task<IEnumerable<Anime>> GetMostPopularAnimesAsync();
     }
 }

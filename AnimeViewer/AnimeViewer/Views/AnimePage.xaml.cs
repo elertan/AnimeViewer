@@ -106,9 +106,6 @@ namespace AnimeViewer.Views
             AutoPlayContentView.IsVisible = false;
             AutoPlayContentView.Opacity = 0.95;
 
-            // Show a loading dialog
-            UserDialogs.Instance.ShowLoading("Loading Anime");
-
             // Set the custom background (blur background) to the anime's poster image
             CustomBackgroundImage.Source = _viewModel.Anime.ImageUrl;
             CustomBackgroundImage.Transformations = new List<ITransformation> {new BlurredTransformation(3)};

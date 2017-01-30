@@ -3,14 +3,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
-             xmlns:viewModels="clr-namespace:AnimeViewer.ViewModels;assembly=AnimeViewer"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:partials="clr-namespace:AnimeViewer.Views.Partials;assembly=AnimeViewer"
              xmlns:controls="clr-namespace:AnimeViewer.Controls;assembly=AnimeViewer"
              xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:valueConverters="clr-namespace:AnimeViewer.ValueConverters;assembly=AnimeViewer"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
              x:Class="AnimeViewer.Views.AllAnimeCollectionPage"
              x:Name="Page"
              Title="All Anime">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <valueConverters:IsEmptyListToBoolValueConverter x:Key="IsEmptyListToBoolValueConverter" />
+            <valueConverters:InvertBoolValueConverter x:Key="InvertBoolValueConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <StackLayout>
         <!-- These are the notification views, for example the Establishing Connection notification -->
         <!-- Notification that shows when the animemanager is establishing a connection with the api -->
@@ -54,7 +61,6 @@
             <SearchBar Placeholder="Search..."
                        BackgroundColor="Transparent"
                        TextChanged="SearchBar_OnTextChanged"
-                       SearchButtonPressed="SearchBar_OnSearchButtonPressed"
                        x:Name="SearchBar"
                        Grid.Column="0">
                 <SearchBar.TextColor>
@@ -90,7 +96,7 @@
             </Grid.RowDefinitions>
             <!-- The animes to show in a collectionview format -->
             <flv:FlowListView FlowColumnMinWidth="110"
-                              RowHeight="190"
+                              RowHeight="215"
                               FlowItemsSource="{Binding VisibleAnimes}"
                               FlowItemTapped="FlowListView_OnFlowItemTapped"
                               Grid.Row="0">
@@ -111,7 +117,7 @@
                             <!-- The poster image -->
                             <ffimageloading:CachedImage Aspect="Fill"
                                                         Source="{Binding ImageUrl}"
-                                                        HeightRequest="125"
+                                                        HeightRequest="150"
                                                         HorizontalOptions="FillAndExpand"
                                                         CacheType="Disk"
                                                         RetryCount="3"
@@ -122,6 +128,12 @@
                                     <transformations:RoundedTransformation Radius="5" />
                                 </ffimageloading:CachedImage.Transformations>
                             </ffimageloading:CachedImage>
+                            <!--<controls:GradientContentView StartColor="Transparent"
+                                                          EndColor="Black"
+                                                          HeightRequest="30"
+                                                          VerticalOptions="End"
+                                                          HorizontalOptions="Fill"
+                                                          Grid.Row="0" />-->
                             <!-- Subbed and dubbed indicators -->
                             <controls:ContentViewRoundedCorners HeightRequest="10"
                                                                 Margin="3"
@@ -204,6 +216,15 @@
                     </DataTemplate>
                 </flv:FlowListView.FlowColumnTemplate>
             </flv:FlowListView>
+            <Label Grid.Row="0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   TextColor="White"
+                   Text="No animes could be shown for these conditions"
+                   IsVisible="{Binding VisibleAnimes,
+                               Converter={StaticResource IsEmptyListToBoolValueConverter}}" />
             <ContentView x:Name="AdvancedSearchOptionsView"
                          Opacity="0"
                          IsVisible="False"
@@ -221,6 +242,42 @@
                                    HasUnevenRows="True"
                                    BackgroundColor="Transparent">
                             <TableRoot>
+                                <TableSection Title="Main">
+                                    <ViewCell Height="60">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="Only show favorited animes"
+                                                   TextColor="White"
+                                                   VerticalOptions="Center"
+                                                   Margin="15,0"
+                                                   Grid.Column="0" />
+                                            <Switch Grid.Column="1"
+                                                    Margin="10,0"
+                                                    VerticalOptions="Center"
+                                                    IsToggled="{Binding MainOnlyShowFavoritedAnimes}" />
+                                        </Grid>
+                                    </ViewCell>
+                                    <ViewCell Height="60">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="Only show popular animes"
+                                                   TextColor="White"
+                                                   VerticalOptions="Center"
+                                                   Margin="15,0"
+                                                   Grid.Column="0" />
+                                            <Switch Grid.Column="1"
+                                                    Margin="10,0"
+                                                    VerticalOptions="Center"
+                                                    IsToggled="{Binding MainOnlyShowPopularAnimes}" />
+                                        </Grid>
+                                    </ViewCell>
+                                </TableSection>
                                 <TableSection Title="Language">
                                     <ViewCell Height="60">
                                         <Grid>
@@ -235,7 +292,10 @@
                                                    Grid.Column="0" />
                                             <Switch Grid.Column="1"
                                                     VerticalOptions="Center"
-                                                    IsToggled="True" />
+                                                    Margin="15,0"
+                                                    IsToggled="{Binding LanguageShowAllLanguages}"
+                                                    IsEnabled="{Binding LanguageShowAllLanguages, 
+                                                    Converter={StaticResource InvertBoolValueConverter}}" />
                                         </Grid>
                                     </ViewCell>
                                     <ViewCell Height="60">
@@ -250,8 +310,9 @@
                                                    Margin="15,0"
                                                    Grid.Column="0" />
                                             <Switch Grid.Column="1"
+                                                    Margin="10,0"
                                                     VerticalOptions="Center"
-                                                    IsToggled="False" />
+                                                    IsToggled="{Binding LanguageShowSubbedLanguage}" />
                                         </Grid>
                                     </ViewCell>
                                     <ViewCell Height="60">
@@ -267,12 +328,17 @@
                                                    Grid.Column="0" />
                                             <Switch Grid.Column="1"
                                                     VerticalOptions="Center"
-                                                    IsToggled="False" />
+                                                    Margin="10,0"
+                                                    IsToggled="{Binding LanguageShowDubbedLanguage}" />
                                         </Grid>
                                     </ViewCell>
                                 </TableSection>
                             </TableRoot>
                         </TableView>
+                        <Button Text="Restore Defaults"
+                                Margin="15,10"
+                                Command="{Binding RestoreDefaultsCommand}"
+                                StyleClass="Primary" />
                     </StackLayout>
                 </Grid>
             </ContentView>

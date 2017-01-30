@@ -48,6 +48,8 @@ namespace AnimeViewer
         /// </summary>
         public event EventHandler CacheRemoved;
 
+        public event EventHandler<UpdatedCachedAnimeEventArgs> UpdatedCachedAnimeInformation;
+
         /// <summary>
         ///     This method is used to invoke our FinishedCachingAnimes event
         /// </summary>
@@ -156,6 +158,9 @@ namespace AnimeViewer
                 {
                     // We are done caching
                     OnFinishedCachingAnimes();
+                    // Update popular references
+//                    var popularAnimes = await GetMostPopularAnimesAsync();
+
                     // Leave the loop and end the caching process
                     break;
                 }
@@ -204,24 +209,27 @@ namespace AnimeViewer
                 await
                     DbConnection.GetAllWithChildrenAsync<Anime>(
                         dto => (dto.Name == anime.Name) && (dto.Language == anime.Language));
-            var a = animes.First();
+            anime.Episodes = animes.First().Episodes;
             // If it already contains all information, simply return that anime
-            if (a.ContainsAllInformation)
-                return a;
+            if (anime.ContainsAllInformation)
+                return anime;
 
             // Retrieve the anime with full information from the api
-            a = await Api.GetFullAnimeInformationByPageUrlAsync(anime.PageUrl);
+            var a = await Api.GetFullAnimeInformationByPageUrlAsync(anime.PageUrl);
             // Assign same id to overwrite current cached anime
-            a.Id = anime.Id;
 
-            // TEMPORARY SINCE PAGEURL IS NULL
-            a.PageUrl = anime.PageUrl;
+            anime.Summary = a.Summary;
+            anime.Episodes = a.Episodes;
+            anime.Genres = a.Genres;
+            //anime.ImageUrl = a.ImageUrl;
+            anime.Language = a.Language;
+
             // Set it to contain all information
-            a.ContainsAllInformation = true;
+            anime.ContainsAllInformation = true;
             // Update database entries (with children to also affect the episodes and their children)
-            await DbConnection.InsertAllWithChildrenAsync(a.Episodes);
-            await UpdateAnimeInformationForCachedAnime(a);
-            return a;
+            await DbConnection.InsertAllWithChildrenAsync(anime.Episodes);
+            await UpdateAnimeInformationForCachedAnime(anime);
+            return anime;
         }
 
         /// <summary>
@@ -234,6 +242,8 @@ namespace AnimeViewer
             //await DbConnection.UpdateWithChildrenAsync(anime);
             await DbConnection.UpdateAsync(anime);
             await DbConnection.UpdateAllAsync(anime.Episodes);
+
+            //OnUpdatedCachedAnimeInformation(new UpdatedCachedAnimeEventArgs {Anime = anime});
         }
 
         /// <summary>
@@ -274,6 +284,19 @@ namespace AnimeViewer
             return sources;
         }
 
+        public async Task<IEnumerable<Anime>> GetMostPopularAnimesAsync()
+        {
+            var animes = await Api.GetMostPopularAnimesAsync();
+            var dbAnimes = await DbConnection.Table<Anime>().ToListAsync();
+            await DbConnection.UpdateAllAsync(dbAnimes.Select(anime =>
+            {
+                var popularAnime = animes.FirstOrDefault(a => (a.Name == anime.Name) && (a.Language == anime.Language));
+                anime.IsHot = popularAnime != null;
+                return anime;
+            }));
+            return dbAnimes.Where(anime => anime.IsHot);
+        }
+
         /// <summary>
         /// </summary>
         /// <returns></returns>
@@ -286,6 +309,11 @@ namespace AnimeViewer
         protected virtual void OnCacheRemoved()
         {
             CacheRemoved?.Invoke(this, EventArgs.Empty);
+        }
+
+        protected virtual void OnUpdatedCachedAnimeInformation(UpdatedCachedAnimeEventArgs e)
+        {
+            UpdatedCachedAnimeInformation?.Invoke(this, e);
         }
     }
 }

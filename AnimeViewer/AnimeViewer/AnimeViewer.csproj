@@ -41,10 +41,13 @@
     </Compile>
     <Compile Include="AppSettingKeys.cs" />
     <Compile Include="Controls\ContentViewRoundedCorners.cs" />
+    <Compile Include="Controls\GradientContentView.cs" />
     <Compile Include="Controls\RadialProgressView.cs" />
     <Compile Include="Controls\ViewCellButton.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="EventArguments\AnimesFilteredEventArgs.cs" />
     <Compile Include="EventArguments\AnimesUpdatedEventArgs.cs" />
+    <Compile Include="EventArguments\UpdatedCachedAnimeEventArgs.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Models\Anime.cs" />
     <Compile Include="Models\Episode.cs" />
@@ -53,6 +56,9 @@
     <Compile Include="Services\IDatabaseService.cs" />
     <Compile Include="Services\Implementations\KissanimeApi.cs" />
     <Compile Include="Services\IVideoPlayer.cs" />
+    <Compile Include="ValueConverters\InvertBoolValueConverter.cs" />
+    <Compile Include="ValueConverters\IsEmptyListToBoolValueConverter.cs" />
+    <Compile Include="ViewModels\AdvancedSearchOptionsViewModel.cs" />
     <Compile Include="ViewModels\AllAnimeCollectionPageViewModel.cs" />
     <Compile Include="ViewModels\AnimeCollectionPageViewModel.cs" />
     <Compile Include="ViewModels\AnimePageViewModel.cs" />
@@ -230,6 +236,10 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.3.175\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XFGloss, Version=1.0.5.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ansuria.XFGloss.1.0.5.40\lib\portable-net45+wp8+win8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\XFGloss.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

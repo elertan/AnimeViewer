@@ -165,6 +165,20 @@ namespace AnimeViewer.Services.Implementations
             return sources;
         }
 
+        public async Task<IEnumerable<Anime>> GetMostPopularAnimesAsync()
+        {
+            var animes = new List<Anime>();
+            var tasks = new List<Task>();
+            for (var i = 1; i < 4; i++)
+                tasks.Add(Task.Run(async () =>
+                {
+                    var response = await HttpClient.GetStringAsync($"/AnimeList/MostPopular?page={i}");
+                    animes.AddRange(ExtractFromListingTable(response));
+                }));
+            await Task.WhenAll(tasks);
+            return animes;
+        }
+
         public async Task Initialize()
         {
             // Add cookies to request data
