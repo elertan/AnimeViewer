@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SQLite.Net.Attributes;
 using SQLiteNetExtensions.Attributes;
 
@@ -34,6 +35,14 @@ namespace AnimeViewer.Models
         {
             get { return (AnimeLanguage) LanguageId; }
             set { LanguageId = (int) value; }
+        }
+
+        public virtual long LastVisitedDateTimeTicks { get; set; }
+
+        public DateTime LastVisitedDateTime
+        {
+            get { return new DateTime(LastVisitedDateTimeTicks); }
+            set { LastVisitedDateTimeTicks = value.Ticks; }
         }
 
         public bool ContainsAllInformation { get; set; }

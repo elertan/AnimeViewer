@@ -102,13 +102,12 @@ namespace AnimeViewer.ViewModels
             if (MainOnlyShowFavoritedAnimes) filterMethods.Add(async animes => await Task.Run(() => animes.Where(anime => anime.IsFavourited)));
             if (MainOnlyShowPopularAnimes)
             {
-                
             }
-                //filterMethods.Add(async animes => await Task.Run(async () =>
-                //{
-                //    var popularAnimes = await AnimeManager.Instance.GetMostPopularAnimesAsync();
-                //    return animes.Where(a => { return popularAnimes.FirstOrDefault(pa => (a.Name == pa.Name) && (a.Language == pa.Language)) != null; });
-                //}));
+            //filterMethods.Add(async animes => await Task.Run(async () =>
+            //{
+            //    var popularAnimes = await AnimeManager.Instance.GetMostPopularAnimesAsync();
+            //    return animes.Where(a => { return popularAnimes.FirstOrDefault(pa => (a.Name == pa.Name) && (a.Language == pa.Language)) != null; });
+            //}));
 
             // Language
             // both

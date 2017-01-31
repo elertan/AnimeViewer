@@ -32,17 +32,6 @@
                    HorizontalOptions="Center"
                    HorizontalTextAlignment="Center"
                    Text="Watch anime free &amp; adfree on any iOS or Android device. Developed and maintained by Elertan." />
-            <controls:RadialProgressView HorizontalOptions="Center"
-                                         VerticalOptions="Center"
-                                         MinValue="0"
-                                         MaxValue="5"
-                                         Value="5"
-                                         x:Name="ProgressView"
-                                         Grid.Row="3">
-                <controls:RadialProgressView.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
-                </controls:RadialProgressView.GestureRecognizers>
-            </controls:RadialProgressView>
             <!-- This label shows the fact we don't have official consent by our host -->
             <!--<Label Grid.Row="3"
                    Margin="35"

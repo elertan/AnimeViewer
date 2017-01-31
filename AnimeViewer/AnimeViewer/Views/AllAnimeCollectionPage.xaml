@@ -96,7 +96,8 @@
             </Grid.RowDefinitions>
             <!-- The animes to show in a collectionview format -->
             <flv:FlowListView FlowColumnMinWidth="110"
-                              RowHeight="215"
+                              x:Name="FlowListView"
+                              RowHeight="175"
                               FlowItemsSource="{Binding VisibleAnimes}"
                               FlowItemTapped="FlowListView_OnFlowItemTapped"
                               Grid.Row="0">
@@ -106,18 +107,13 @@
                               WidthRequest="110"
                               HorizontalOptions="Center"
                               VerticalOptions="CenterAndExpand">
-                            <!-- The poster image of an anime -->
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="7*" />
-                                <RowDefinition Height="2*" />
-                            </Grid.RowDefinitions>
                             <!-- Gray color when no poster image is loaded -->
                             <ContentView BackgroundColor="Gray"
                                          Grid.Row="0" />
                             <!-- The poster image -->
                             <ffimageloading:CachedImage Aspect="Fill"
                                                         Source="{Binding ImageUrl}"
-                                                        HeightRequest="150"
+                                                        HeightRequest="160"
                                                         HorizontalOptions="FillAndExpand"
                                                         CacheType="Disk"
                                                         RetryCount="3"
@@ -138,7 +134,7 @@
                             <controls:ContentViewRoundedCorners HeightRequest="10"
                                                                 Margin="3"
                                                                 CornerRadius="3"
-                                                                Padding="3"
+                                                                Padding="5"
                                                                 HorizontalOptions="Start"
                                                                 VerticalOptions="Start"
                                                                 BackgroundColor="Orange"
@@ -164,7 +160,7 @@
                             <controls:ContentViewRoundedCorners HeightRequest="10"
                                                                 Margin="3"
                                                                 CornerRadius="3"
-                                                                Padding="3"
+                                                                Padding="5"
                                                                 HorizontalOptions="Start"
                                                                 VerticalOptions="Start"
                                                                 BackgroundColor="Blue"
@@ -186,32 +182,45 @@
                                     </DataTrigger>
                                 </ContentView.Triggers>
                             </controls:ContentViewRoundedCorners>
+                            <!-- Hot or updated indicators -->
+                            <ContentView BackgroundColor="Red"
+                                         x:Name="HotLabelView"
+                                         IsVisible="{Binding IsHot}"
+                                         TranslationX="5"
+                                         Grid.Row="0"
+                                         Rotation="45"
+                                         VerticalOptions="Start"
+                                         HeightRequest="20"
+                                         HorizontalOptions="End">
+                                <ContentView.Content>
+                                    <Label x:Name="HotLabel"
+                                           Text="Hot"
+                                           TextColor="White"
+                                           FontSize="Micro"
+                                           Margin="5,1"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center" />
+                                </ContentView.Content>
+                            </ContentView>
 
-                            <!-- Label color background (to indicate popular and hot animes -->
-                            <controls:ContentViewRoundedCorners BackgroundColor="Black"
-                                                                Grid.Row="1"
-                                                                CornerRadius="5"
-                                                                Opacity="0.8" />
-                            <controls:ContentViewRoundedCorners BackgroundColor="Red"
-                                                                IsVisible="{Binding IsHot}"
-                                                                Grid.Row="1"
-                                                                CornerRadius="5"
-                                                                Opacity="0.8" />
-                            <controls:ContentViewRoundedCorners BackgroundColor="Blue"
-                                                                IsVisible="{Binding JustUpdated}"
-                                                                Grid.Row="1"
-                                                                CornerRadius="5"
-                                                                Opacity="0.8" />
-                            <Label x:Name="Label"
-                                   HorizontalOptions="Fill"
+                            <ContentView BackgroundColor="Black"
+                                         Grid.Row="0"
+                                         VerticalOptions="End"
+                                         HeightRequest="35"
+                                         Padding="3"
+                                         Opacity="0.8" />
+                            <Label HorizontalOptions="Fill"
                                    HorizontalTextAlignment="Center"
-                                   VerticalOptions="FillAndExpand"
+                                   VerticalOptions="End"
+                                   HeightRequest="35"
                                    TextColor="White"
                                    Text="{Binding Name}"
                                    VerticalTextAlignment="Center"
                                    LineBreakMode="WordWrap"
                                    FontSize="Small"
-                                   Grid.Row="1" />
+                                   Grid.Row="0" />
                         </Grid>
                     </DataTemplate>
                 </flv:FlowListView.FlowColumnTemplate>

@@ -27,6 +27,7 @@ namespace AnimeViewer.ViewModels
             //AnimeManager.Instance.UpdatedCachedAnimeInformation += Instance_UpdatedCachedAnimeInformation;
         }
 
+        public Action AfterAnimeCachedUpdatedAction { get; set; }
         public AdvancedSearchOptionsViewModel FilterModel { get; set; }
 
         public bool IsInitializing
@@ -163,7 +164,11 @@ namespace AnimeViewer.ViewModels
             //    if (AllAnimes.FirstOrDefault(a => a.Name == anime.Name && a.Language == anime.Language) != null) AllAnimes.r
             //}
             //AllAnimes.AddRange(e.Animes);
-            await ApplySearchQueryAsync();
+            AllAnimes.AddRange(e.Animes);
+            FilteredAnimes = new ObservableRangeCollection<Anime>(AllAnimes);
+            VisibleAnimes = new ObservableRangeCollection<Anime>(await ApplySearchQueryAsync());
+
+            AfterAnimeCachedUpdatedAction?.Invoke();
         }
 
         public async Task RecacheAllAnimes()

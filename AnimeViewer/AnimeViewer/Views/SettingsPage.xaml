@@ -4,9 +4,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:AnimeViewer.Controls;assembly=AnimeViewer"
              xmlns:bindablePicker="clr-namespace:JPC.BindablePicker;assembly=JPC.BindablePicker"
+             xmlns:valueConverters="clr-namespace:AnimeViewer.ValueConverters;assembly=AnimeViewer"
              Title="Settings"
              Disappearing="SettingsPage_OnDisappearing"
              x:Class="AnimeViewer.Views.SettingsPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <valueConverters:IntToStringValueConverter x:Key="IntToStringValueConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <TableView Intent="Settings"
                HasUnevenRows="True"
                BackgroundColor="Transparent">
@@ -22,12 +28,13 @@
                                VerticalOptions="Center"
                                Margin="15,0"
                                Grid.Column="0" />
-                        <bindablePicker:BindablePicker Grid.Column="1"
-                                                       BackgroundColor="Transparent"
-                                                       Margin="5"
-                                                       Title="Choose quality"
-                                                       TextColor="White"
-                                                       ItemsSource="{Binding VideoQualities}" />
+                        <controls:BindablePicker Grid.Column="1"
+                                                 BackgroundColor="Transparent"
+                                                 Margin="5"
+                                                 Title="Choose quality"
+                                                 TextColor="White"
+                                                 ItemsSource="{Binding VideoQualities}"
+                                                 SelectedItem="{Binding VideoQuality}" />
                     </Grid>
                 </ViewCell>
                 <ViewCell Height="60">
@@ -42,7 +49,8 @@
                                Grid.Column="0" />
                         <Switch Grid.Column="1"
                                 Margin="0,0,10,0"
-                                IsToggled="True" />
+                                VerticalOptions="Center"
+                                IsToggled="{Binding AutoPlayEnabled}" />
                     </Grid>
                 </ViewCell>
                 <ViewCell Height="60">
@@ -60,7 +68,7 @@
                                Keyboard="Numeric"
                                VerticalOptions="Center"
                                HorizontalOptions="Center"
-                               Text="5000" />
+                               Text="{Binding AutoPlayDuration, Converter={StaticResource IntToStringValueConverter}}" />
                         <Label Grid.Column="2"
                                FontSize="Small"
                                VerticalOptions="Center"

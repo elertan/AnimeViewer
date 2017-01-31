@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using AnimeViewer.EventArguments;
 using AnimeViewer.Models;
 using AnimeViewer.ViewModels;
 using FFImageLoading.Transformations;
@@ -17,6 +19,7 @@ namespace AnimeViewer.Views
         private readonly AllAnimeCollectionPageViewModel _viewModel;
         // Is this the first time the page is appearing
         private bool _firstTimeAppearing = true;
+        private bool _scrollBackToTopAfterCachingProcess;
 
         public AllAnimeCollectionPage()
         {
@@ -26,6 +29,13 @@ namespace AnimeViewer.Views
             _viewModel = new AllAnimeCollectionPageViewModel(_advancedSearchOptionsViewModel);
             BindingContext = _viewModel;
             AdvancedSearchOptionsView.BindingContext = _advancedSearchOptionsViewModel;
+        }
+
+        private void Instance_CachedAnimesUpdated(object sender, AnimesUpdatedEventArgs e)
+        {
+            if (!_scrollBackToTopAfterCachingProcess) _scrollBackToTopAfterCachingProcess = true;
+            var last = FlowListView.ItemsSource.Cast<object>().LastOrDefault();
+            FlowListView.ScrollTo(last, ScrollToPosition.MakeVisible, false);
         }
 
         /// <summary>
@@ -48,10 +58,22 @@ namespace AnimeViewer.Views
 
                 // Initialize the viewmodel, or whatever this viewmodel might be doing
                 await _viewModel.InitializeAsync();
+                AnimeManager.Instance.CachedAnimesUpdated += Instance_CachedAnimesUpdated;
+                AnimeManager.Instance.FinishedCachingAnimes += Instance_FinishedCachingAnimes;
                 _firstTimeAppearing = false;
             }
 
             await _advancedSearchOptionsViewModel.ApplyFilterAsync(_viewModel.AllAnimes);
+        }
+
+        private void Instance_FinishedCachingAnimes(object sender, EventArgs e)
+        {
+            if (_scrollBackToTopAfterCachingProcess)
+            {
+                _scrollBackToTopAfterCachingProcess = false;
+                var first = FlowListView.ItemsSource.Cast<object>().FirstOrDefault();
+                FlowListView.ScrollTo(first, ScrollToPosition.MakeVisible, false);
+            }
         }
 
         /// <summary>

@@ -1,9 +1,10 @@
 ﻿using System;
 using AnimeViewer.ViewModels;
+using Xamarin.Forms;
 
 namespace AnimeViewer.Views
 {
-    public partial class SettingsPage
+    public partial class SettingsPage : ContentPage
     {
         private readonly SettingPageViewModel _settingsPageViewModel;
 
@@ -22,7 +23,9 @@ namespace AnimeViewer.Views
 
         private async void SettingsPage_OnDisappearing(object sender, EventArgs e)
         {
-            await _settingsPageViewModel.SaveSettings();
+            if (_settingsPageViewModel.AutoPlayDuration < 2500) _settingsPageViewModel.AutoPlayDuration = 2500;
+            if (_settingsPageViewModel.AutoPlayDuration > 300000) _settingsPageViewModel.AutoPlayDuration = 300000;
+            await _settingsPageViewModel.SaveSettingsAsync();
         }
     }
 }

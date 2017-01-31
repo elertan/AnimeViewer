@@ -40,6 +40,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppSettingKeys.cs" />
+    <Compile Include="Controls\BindablePicker.cs" />
     <Compile Include="Controls\ContentViewRoundedCorners.cs" />
     <Compile Include="Controls\GradientContentView.cs" />
     <Compile Include="Controls\RadialProgressView.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Services\IDatabaseService.cs" />
     <Compile Include="Services\Implementations\KissanimeApi.cs" />
     <Compile Include="Services\IVideoPlayer.cs" />
+    <Compile Include="ValueConverters\IntToStringValueConverter.cs" />
     <Compile Include="ValueConverters\InvertBoolValueConverter.cs" />
     <Compile Include="ValueConverters\IsEmptyListToBoolValueConverter.cs" />
     <Compile Include="ViewModels\AdvancedSearchOptionsViewModel.cs" />

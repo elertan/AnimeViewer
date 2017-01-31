@@ -205,14 +205,16 @@ namespace AnimeViewer
         public async Task<Anime> GetFullAnimeInformation(Anime anime)
         {
             // Get the anime from the database that corresponds to the given anime (so we can store the full data after using its id)
-            var animes =
-                await
-                    DbConnection.GetAllWithChildrenAsync<Anime>(
-                        dto => (dto.Name == anime.Name) && (dto.Language == anime.Language));
-            anime.Episodes = animes.First().Episodes;
+            if (anime.Episodes == null)
+                anime.Episodes = await DbConnection.Table<Episode>().Where(ep => ep.AnimeId == anime.Id).ToListAsync();
+
+            anime.LastVisitedDateTime = DateTime.Now;
             // If it already contains all information, simply return that anime
             if (anime.ContainsAllInformation)
+            {
+                await UpdateAnimeInformationForCachedAnime(anime);
                 return anime;
+            }
 
             // Retrieve the anime with full information from the api
             var a = await Api.GetFullAnimeInformationByPageUrlAsync(anime.PageUrl);
@@ -220,6 +222,8 @@ namespace AnimeViewer
 
             anime.Summary = a.Summary;
             anime.Episodes = a.Episodes;
+            foreach (var episode in anime.Episodes)
+                episode.Anime = anime;
             anime.Genres = a.Genres;
             //anime.ImageUrl = a.ImageUrl;
             anime.Language = a.Language;

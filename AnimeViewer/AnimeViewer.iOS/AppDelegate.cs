@@ -1,6 +1,7 @@
 ﻿using FFImageLoading.Forms.Touch;
 using FFImageLoading.Transformations;
 using Foundation;
+using JPC.BindablePicker;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -34,6 +35,7 @@ namespace AnimeViewer.iOS
             var x = typeof(DarkThemeResources);
             x = typeof(UnderlineEffect);
             x = typeof(BlurredTransformation);
+            x = typeof(BindablePicker);
 
             CachedImageRenderer.Init();
             //app.SetStatusBarHidden(true, UIStatusBarAnimation.Fade);

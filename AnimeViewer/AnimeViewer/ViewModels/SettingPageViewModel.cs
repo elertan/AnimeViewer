@@ -11,7 +11,6 @@ namespace AnimeViewer.ViewModels
         private int _autoPlayDuration;
         private bool _autoPlayEnabled;
         private string _videoQuality;
-        public List<string> VideoQualities = new List<string> {"1080p", "720p", "480p", "360p", "240p"};
 
         public SettingPageViewModel()
         {
@@ -22,6 +21,8 @@ namespace AnimeViewer.ViewModels
                 (int) Application.Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisodeCancellableDelay];
             VideoQuality = (string) Application.Current.Properties[AppSettingKeys.VideoQuality];
         }
+
+        public List<string> VideoQualities => new List<string> {"1080p", "720p", "480p", "360p", "240p"};
 
         public int SelectedVideoQualityItemIndex
         {
@@ -59,7 +60,7 @@ namespace AnimeViewer.ViewModels
             }
         }
 
-        public async Task SaveSettings()
+        public async Task SaveSettingsAsync()
         {
             Application.Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisode] = AutoPlayEnabled;
             Application.Current.Properties[AppSettingKeys.AutomaticallyPlayNextEpisodeCancellableDelay] =
