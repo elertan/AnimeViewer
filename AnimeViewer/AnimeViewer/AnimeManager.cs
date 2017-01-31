@@ -206,7 +206,7 @@ namespace AnimeViewer
         {
             // Get the anime from the database that corresponds to the given anime (so we can store the full data after using its id)
             if (anime.Episodes == null)
-                anime.Episodes = await DbConnection.Table<Episode>().Where(ep => ep.AnimeId == anime.Id).ToListAsync();
+                anime.Episodes = await DbConnection.GetAllWithChildrenAsync<Episode>(ep => ep.AnimeId == anime.Id);
 
             anime.LastVisitedDateTime = DateTime.Now;
             // If it already contains all information, simply return that anime

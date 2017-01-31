@@ -67,7 +67,7 @@ namespace AnimeViewer.ViewModels
         public async Task SetEpisodeAsWatched(Episode episode)
         {
             episode.HasWatched = true;
-            await AnimeManager.Instance.UpdateAnimeInformationForCachedAnime(episode.Anime);
+            await AnimeManager.Instance.UpdateAnimeInformationForCachedAnime(Anime);
         }
 
         public async Task SetAnimeFavouriteStateAsync(bool state)
